@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --color-brand-950: #061a44;
+  --color-brand-900: #0a2a66;
+  --color-brand-800: #0c3782;
+  --color-brand-700: #0b4bb3;
+  --color-brand-600: #1560d4;
+  --color-brand-500: #2f7bf0;
+  --color-brand-100: #dbe8fd;
+  --color-brand-50: #eef4ff;
+
+  --color-accent-500: #f08a24;
+  --color-accent-100: #fdebd8;
+
+  --color-critico: #c9281f;
+  --color-critico-bg: #fef2f2;
+  --color-atencao: #e8a600;
+  --color-atencao-ink: #a15c00;
+  --color-atencao-bg: #fffbeb;
+  --color-conforme: #1c9a4a;
+  --color-conforme-bg: #f0fdf4;
+  --color-neutro: #64748b;
+  --color-neutro-bg: #f1f5f9;
+
+  --animate-slide-in: slide-in 0.22s ease-out;
+  --animate-fade-in: fade-in 0.15s ease-out;
+  @keyframes slide-in {
+    from { transform: translateX(24px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: #f4f6fb;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+.scrollbar-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }

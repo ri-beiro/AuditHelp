@@ -1,0 +1,284 @@
+// Modelo de dados do sistema WISE.
+// Estrutura pensada para crescer: "Framework" identifica a metodologia avaliada
+// (WISE, 12 Básicos e, no futuro, outros protocolos de auditoria), e as tabelas de
+// avaliação, evidência e plano de ação são genéricas por requisito.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum Role {
+  ADMIN
+  AUDITOR
+  RESPONSAVEL
+}
+
+enum Framework {
+  WISE
+  BASICS
+}
+
+enum ElementStatus {
+  NAO_INICIADO
+  EM_ANDAMENTO
+  CONCLUIDO
+}
+
+enum EvidenceKind {
+  FILE
+  LINK
+}
+
+enum ActionPriority {
+  BAIXA
+  MEDIA
+  ALTA
+  CRITICA
+}
+
+enum ActionStatus {
+  ABERTA
+  EM_ANDAMENTO
+  CONCLUIDA
+  CANCELADA
+}
+
+// ---------------------------------------------------------------------------
+// Organização e usuários
+// ---------------------------------------------------------------------------
+
+model Unit {
+  id        String   @id @default(cuid())
+  name      String
+  code      String   @unique
+  city      String?
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  members     UnitMember[]
+  assessments Assessment[]
+  actionPlans ActionPlan[]
+  snapshots   ScoreSnapshot[]
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(RESPONSAVEL)
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+
+  units               UnitMember[]
+  responsibleElements ElementAssessment[] @relation("ElementResponsible")
+  updatedElements     ElementAssessment[] @relation("ElementUpdatedBy")
+  scores              RequirementScore[]
+  evidences           Evidence[]
+  ownedActions        ActionPlan[]        @relation("ActionOwner")
+  createdActions      ActionPlan[]        @relation("ActionCreator")
+  assessments         Assessment[]
+}
+
+model UnitMember {
+  userId String
+  unitId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  unit   Unit   @relation(fields: [unitId], references: [id], onDelete: Cascade)
+
+  @@id([userId, unitId])
+}
+
+// ---------------------------------------------------------------------------
+// Catálogo (matrizes)
+// ---------------------------------------------------------------------------
+
+model Pillar {
+  id        String    @id @default(cuid())
+  framework Framework
+  name      String
+  order     Int
+  color     String
+
+  elements Element[]
+
+  @@unique([framework, name])
+}
+
+model Element {
+  id          String    @id @default(cuid())
+  framework   Framework
+  number      Int
+  code        String    @unique // W1..W13, B1..B12
+  name        String
+  shortName   String
+  description String
+  objective   String
+  glossary    String?
+  icon        String
+  pillarId    String
+  pillar      Pillar    @relation(fields: [pillarId], references: [id])
+
+  requirements       Requirement[]
+  elementAssessments ElementAssessment[]
+  evidences          Evidence[]
+  actionPlans        ActionPlan[]
+
+  @@unique([framework, number])
+}
+
+model Requirement {
+  id        String  @id @default(cuid())
+  elementId String
+  element   Element @relation(fields: [elementId], references: [id], onDelete: Cascade)
+  code      String  @unique
+  order     Int
+  text      String
+
+  // WISE: nível de maturidade (1-5) e dimensão (ATIVIDADE | QUALIDADE | IMPACTO)
+  level     Int?
+  dimension String?
+
+  // 12 Básicos: nível de risco (1 = crítico) e critérios Básico/Parcial/Significativo
+  riskLevel Int?
+  criteria  Json?
+
+  evidenceHint String?
+
+  scores      RequirementScore[]
+  evidences   Evidence[]
+  actionPlans ActionPlan[]
+
+  @@index([elementId])
+}
+
+// ---------------------------------------------------------------------------
+// Avaliações
+// ---------------------------------------------------------------------------
+
+model Assessment {
+  id          String    @id @default(cuid())
+  unitId      String
+  unit        Unit      @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  framework   Framework
+  cycle       String // ex.: "2026"
+  createdAt   DateTime  @default(now())
+  createdById String?
+  createdBy   User?     @relation(fields: [createdById], references: [id], onDelete: SetNull)
+
+  elements    ElementAssessment[]
+  scores      RequirementScore[]
+  evidences   Evidence[]
+  actionPlans ActionPlan[]
+
+  @@unique([unitId, framework, cycle])
+}
+
+model ElementAssessment {
+  id              String         @id @default(cuid())
+  assessmentId    String
+  assessment      Assessment     @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  elementId       String
+  element         Element        @relation(fields: [elementId], references: [id], onDelete: Cascade)
+  responsibleId   String?
+  responsible     User?          @relation("ElementResponsible", fields: [responsibleId], references: [id], onDelete: SetNull)
+  status          ElementStatus?
+  summary         String?
+  recommendations String?
+  updatedAt       DateTime       @updatedAt
+  updatedById     String?
+  updatedBy       User?          @relation("ElementUpdatedBy", fields: [updatedById], references: [id], onDelete: SetNull)
+
+  @@unique([assessmentId, elementId])
+}
+
+model RequirementScore {
+  id            String      @id @default(cuid())
+  assessmentId  String
+  assessment    Assessment  @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  requirementId String
+  requirement   Requirement @relation(fields: [requirementId], references: [id], onDelete: Cascade)
+  // WISE: "0" | "1" | "2"   —   Básicos: "BASIC" | "PARTIAL" | "SIGNIFICANT" | "COMPLIANT" | "NA"
+  value         String?
+  observation   String?
+  updatedAt     DateTime    @updatedAt
+  updatedById   String?
+  updatedBy     User?       @relation(fields: [updatedById], references: [id], onDelete: SetNull)
+
+  @@unique([assessmentId, requirementId])
+}
+
+model Evidence {
+  id            String       @id @default(cuid())
+  assessmentId  String
+  assessment    Assessment   @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  elementId     String
+  element       Element      @relation(fields: [elementId], references: [id], onDelete: Cascade)
+  requirementId String?
+  requirement   Requirement? @relation(fields: [requirementId], references: [id], onDelete: SetNull)
+  kind          EvidenceKind
+  name          String
+  url           String
+  mimeType      String?
+  size          Int?
+  description   String?
+  uploadedById  String?
+  uploadedBy    User?        @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+  createdAt     DateTime     @default(now())
+
+  @@index([assessmentId, elementId])
+}
+
+// Plano de ação no modelo 5W2H
+model ActionPlan {
+  id            String         @id @default(cuid())
+  unitId        String
+  unit          Unit           @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  assessmentId  String?
+  assessment    Assessment?    @relation(fields: [assessmentId], references: [id], onDelete: SetNull)
+  elementId     String
+  element       Element        @relation(fields: [elementId], references: [id], onDelete: Cascade)
+  requirementId String?
+  requirement   Requirement?   @relation(fields: [requirementId], references: [id], onDelete: SetNull)
+
+  what     String // O quê?
+  why      String? // Por quê?
+  ownerId  String? // Quem?
+  owner    User?     @relation("ActionOwner", fields: [ownerId], references: [id], onDelete: SetNull)
+  dueDate  DateTime? // Quando?
+  where    String? // Onde?
+  how      String? // Como?
+  cost     Decimal?  @db.Decimal(12, 2) // Quanto?
+
+  priority    ActionPriority @default(MEDIA)
+  status      ActionStatus   @default(ABERTA)
+  completedAt DateTime?
+  createdById String?
+  createdBy   User?          @relation("ActionCreator", fields: [createdById], references: [id], onDelete: SetNull)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  @@index([unitId, status])
+}
+
+// Fotografia mensal das pontuações, usada no gráfico de evolução.
+// scope = "OVERALL" ou o código do elemento (W1, B3...).
+model ScoreSnapshot {
+  id        String    @id @default(cuid())
+  unitId    String
+  unit      Unit      @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  framework Framework
+  scope     String
+  month     String // "2026-09"
+  score     Float?
+  percent   Float?
+  updatedAt DateTime  @updatedAt
+
+  @@unique([unitId, framework, scope, month])
+}

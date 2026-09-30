@@ -1,0 +1,1904 @@
+[
+ {
+  "number": 1,
+  "header": "1. Direção(Motorista) - aplicável aos condutores da frota própria - Danone",
+  "requirements": [
+   {
+    "text": "O atual Padrão de Condução Corporativa da DANONE é conhecido e está disponível para todos os funcionários.",
+    "risk": 3,
+    "code": "1.1",
+    "criteria": {
+     "basic": "A Norma de Condução Corporativa da Danone está faltando.",
+     "partial": "Norma conhecida apenas pela gerência e Coordenador do WISE local.",
+     "significant": "Norma conhecida por > 75% dos funcionários; contudo, os procedimentos locais levam em conta alguns elementos da norma."
+    }
+   },
+   {
+    "text": "Existe um processo interno definido para validar as licenças de condução externas para os funcionários da Danone que conduzem veículos da empresa ou negócios da empresa (independentemente da função ou posição). As cartas de condução são validadas pelo menos uma vez por ano.",
+    "risk": 1,
+    "code": "1.2",
+    "criteria": {
+     "basic": "Não há nenhum processo interno definido para validar carteira de habilitação externa.",
+     "partial": "Carteiras de habilitação externas são verificadas, porém, não em bases anuais.",
+     "significant": "Pequenas deficiências foram observadas."
+    }
+   },
+   {
+    "text": "Um Certificado Interno de Direção da Danone (autorização) é dado anualmente detalhando o tipo específico de veículo que o funcionário da Danone está autorizado a dirigir. A certificação interna é dada após treinamentos e avaliações práticas e teóricas (tanto para novos contratados quanto para empregados existentes); e leva em consideração uma avaliação anual de seu desempenho de direção atual e passado (por exemplo, acidentes, violações de direção, etc.) para assegurar que o motorista atenda aos critérios mínimos definidos para operar o veículo; bem como passar quaisquer exames médicos legalmente exigidos para aquele veículo. Não é possível falsificar a licença e fazer alterações manuscritas nela.",
+    "risk": 1,
+    "code": "1.3",
+    "criteria": {
+     "basic": "Não é emitido nenhum certificado interno de condução ou uma certificação interna é emitida, porém, não indica um veículo específico que os motoristas estão autorizados a dirigir. Ou observações são feitas durante a auditoria de motoristas que operam veículos que não constam da certificação interna.",
+     "partial": "Um certificado de condução interna expressa os tipos específicos de veículo, porém, não é verificado anualmente, ou o processo de certificação interna não apresenta uma avaliação anual de desempenho de condução. Carteiras podem ser alteradas ou falsificadas facilmente; p.ex. o tipo de veículo pode ser alterado.",
+     "significant": "Pequenas deficiências são observadas"
+    }
+   },
+   {
+    "text": "As verificações de saúde (organizadas através da empresa ou através do serviço local de saúde) são realizadas para todos os funcionários da Danone que dirigem regularmente no negócio da empresa de acordo com os requisitos mínimos da legislação local, mas devem pelo menos incluir exames oftalmológicos regulares a cada 2 anos.",
+    "risk": 2,
+    "code": "1.4",
+    "criteria": {
+     "basic": "Não são realizadas quaisquer inspeções de saúde ou testes de visão.",
+     "partial": "Apenas testes oftalmológicos são realizados, porém, não inspeções gerais da saúde (ou inspeções gerais de saúde, porém, não testes de visão).",
+     "significant": "Inspeções de saúde e testes oftalmológicos são realizados para todos os novos iniciantes. Pequenas deficiências são observadas."
+    }
+   },
+   {
+    "text": "Regra de Segurança Cardinal (Ouro) estabelece e reforça que os cintos de segurança devem ser usados por todos os motoristas e passageiros em veículos (carros, caminhões, táxis e ônibus). Isso inclui todos os veículos pessoais usados para fins comerciais.",
+    "risk": 1,
+    "code": "1.5",
+    "criteria": {
+     "basic": "Não há quaisquer Regras de Segurança Cardinal (Dourada) disponíveis.",
+     "partial": "Regras de segurança para o uso de cinto de segurança são estabelecidas, porém, não são escritas ou aplicadas.",
+     "significant": "Há uma regra dourada por escrito para cinto de segurança, e algumas inspeções são efetuadas na aplicação"
+    }
+   },
+   {
+    "text": "Todos os passageiros devem estar posicionados (sentados e o cinto de segurança devidamente aplicado) na cabine do veículo enquanto o veículo estiver em movimento. É proibido localizar pessoas em qualquer outra parte do veículo enquanto o veículo estiver em movimento (independentemente da velocidade ou distância).",
+    "risk": 1,
+    "code": "1.6",
+    "criteria": {
+     "basic": "Não há quaisquer Regras de Segurança Cardinal (Dourada) disponíveis.",
+     "partial": "Regras de segurança são estabelecidas, porém, não são escritas ou aplicadas.",
+     "significant": "Regras de segurança por escrito e algumas inspeções são realizadas na aplicação."
+    }
+   },
+   {
+    "text": "Regra de Segurança Cardinal (Ouro) estabelecida e aplicada que nenhum motorista deve estar sob a influência de álcool ou drogas enquanto estiver dirigindo.",
+    "risk": 1,
+    "code": "1.7",
+    "criteria": {
+     "basic": "Não há quaisquer Regras de Segurança disponíveis.",
+     "partial": "Regras relativas a álcool e drogas são estabelecidas, porém, não são escritas ou aplicadas.",
+     "significant": "Regra dourada por escrito, e implantada, e algumas inspeções e aplicação."
+    }
+   },
+   {
+    "text": "O uso de qualquer dispositivo móvel (celular, I pad etc) enquanto estiver dirigindo (incluindo mãos livres(hands free/blueetooth) e fones de ouvido) é estritamente proibido, auditado e aplicado.",
+    "risk": 1,
+    "code": "1.8",
+    "criteria": {
+     "basic": "Telefones móveis (incluindo viva-voz & fones de ouvido) são permitidos, mas não há quaisquer diretrizes.",
+     "partial": "Dispositivos móveis (inclusive viva-voz & fones de ouvido) permitidos mediante diretrizes e regras por escrito bastante rígidas, que são auditadas e aplicadas.",
+     "significant": "O uso de todos os dispositivos móveis (inclusive viva-voz & fone de ouvido) é proibido enquanto no volante, porém, a regra não é auditada ou aplicada estritamente."
+    }
+   },
+   {
+    "text": "Treinamento de condução defensiva foi fornecido para todos os funcionários que dirigem para fins de empresa. A duração do treinamento não deve ser inferior a 8 horas por ano. O treinamento deve ser ministrado por um instrutor local competente (experiência e habilidades treinadas, qualificadas e relevantes para ministrar treinamento) e deve estar em conformidade com os requisitos legais mínimos do país local em relação a horas de treinamento e competência. O treinamento deve incluir uma avaliação dinâmica de riscos, permitindo que os motoristas avaliem jornadas individuais, o tempo necessário e outras situações que possam afetar a jornada. clima, trânsito, fadiga etc.",
+    "risk": 1,
+    "code": "1.9",
+    "criteria": {
+     "basic": "Não foi dado nenhum treinamento em direção defensiva.",
+     "partial": "O treinamento em direção defensiva é ministrado a funcionários que dirigem para as finalidades da empresa, mas não cumpre a maioria dos requisitos (instrutor competente, tempos de treinamento mínimo de 8 h, avaliação de risco tec.). O treinamento em direção defensiva limita-se a “dias de acompanhamento” (sala de aula & em cenário controlado -- não em situação real nas vias). Ou o treinamento em direção defensiva já foi ministrado a < 50% dos funcionários que dirigem para os propósitos da empresa, e atende à maioria dos requisitos.",
+     "significant": "O treinamento em direção defensiva já foi ministrado a > 50% dos funcionários que dirigem para os propósitos da empresa, e atende à maioria dos requisitos."
+    }
+   },
+   {
+    "text": "As regras foram estabelecidas e comunicadas para comportamentos de condução seguros (por exemplo, limites de velocidade, distância de frenagem, estacionamento, etc ...).",
+    "risk": 2,
+    "code": "1.10",
+    "criteria": {
+     "basic": "Não há regras em vigor.",
+     "partial": "As regras são referenciadas em reuniões locais, porém, não são escritas e comunicadas com clareza. As regras não são aplicadas.",
+     "significant": "As regras são escritas e comunicadas, mas não são aplicadas. Pequenas deficiências são observadas."
+    }
+   },
+   {
+    "text": "Um processo de reconhecimento e disciplinar foi estabelecido para motoristas seguros e inseguros que têm um veículo da empresa designado.",
+    "risk": 3,
+    "code": "1.11",
+    "criteria": {
+     "basic": "Não há programa implantado.",
+     "partial": "Apenas um programa de reconhecimento foi implementado.",
+     "significant": "Há um programa para reconhecimento e disciplina, porém, não há nenhuma demonstração de uso."
+    }
+   },
+   {
+    "text": "O transporte de produtos ou objetos soltos não é permitido na área da cabine do veículo, a menos que seja colocado e protegido dentro de uma unidade de compartimento equipada dentro da cabine.",
+    "risk": 2,
+    "code": "1.12",
+    "criteria": {
+     "basic": "Não há regras em vigor.",
+     "partial": "As regras são referenciadas em reuniões locais, porém, não são escritas e comunicadas com clareza. São encontrados itens inseguros na área de cabine em 25% dos caminhões observados.",
+     "significant": "As regras são escritas e comunicadas, mas não são aplicadas. Alguns pequenos desvios observados."
+    }
+   },
+   {
+    "text": "Todos os caminhões e vans devem manter os faróis acessos em farol baixo, mesmo durante o dia, enquanto o veículo estiver em movimento (exceto quando a legislação local proibir isso). [Onde as leis dos países locais proíbem este requisito, os critérios devem ser classificados como \"N / A\" com nota nos comentários]",
+    "risk": 1,
+    "code": "1.13",
+    "criteria": {
+     "basic": "Não há regras em vigor.",
+     "partial": "As regras são referenciadas em reuniões locais, porém, não são escritas e comunicadas com clareza.",
+     "significant": "As regras são escritas e comunicadas, mas não são aplicadas."
+    }
+   },
+   {
+    "text": "Existe um processo disciplinar para qualquer funcionário que desabilite o GPS ou remova dispositivos de segurança. O procedimento documentado é formalmente comunicado a 100% dos motoristas.",
+    "risk": 3,
+    "code": "1.14",
+    "criteria": {
+     "basic": "Não há programa implantado.",
+     "partial": "Processo disciplinar implantado, mas este não é comunicado & aplicado.",
+     "significant": "Processo disciplinar implantado, comunicado, mas o processo de aplicação requer melhorias."
+    }
+   },
+   {
+    "text": "A CBU tem um registro completo e uma lista de motoristas e veículos (atuais e históricos). Também inclui o registro de todos os acidentes e lesões, bem como um banco de dados de violações das regras de direção pelos motoristas.",
+    "risk": 2,
+    "code": "1.15",
+    "criteria": {
+     "basic": "Não são mantidos quaisquer registros.",
+     "partial": "É mantida somente uma lista (ou base de dados) de motoristas autorizados & dos seus respectivos veículos.",
+     "significant": "É mantida uma lista (ou base de dados) de motoristas autorizados & dos seus respectivos veículos (inclusive registros de acidentes, ferimentos & violações), porém, a lista presente não está atualizada."
+    }
+   },
+   {
+    "text": "A CBU implementou os tempos de descanso necessários para a condução e, quando aplicável, estas cumprem as regras mínimas de segurança legal, orientações e recomendações.",
+    "risk": 2,
+    "code": "1.16",
+    "criteria": {
+     "basic": "Não foram estabelecidas quaisquer diretrizes.",
+     "partial": "É feita referência a períodos de descanso, mas estes não estão definidos com clareza.",
+     "significant": "Períodos de descanso são definidos com clareza, porém, não são comunicados eficazmente ou só são conhecidos por 75% dos motoristas."
+    }
+   },
+   {
+    "text": "As chaves devem ser removidas da cabine ao serem carregadas, descarregadas ou estacionados quando na ruas fazendo entregas aos clientes ou ao estacionar nos CDs/sites.",
+    "risk": 1,
+    "code": "1.17",
+    "criteria": {
+     "basic": "Não há regras em vigor.",
+     "partial": "As regras são referenciadas em reuniões locais, porém, não são escritas e comunicadas com clareza. Ou as regras não são aplicadas.",
+     "significant": "Regras são elaboradas por escrito e comunicadas. Pequenas deficiências são observadas."
+    }
+   },
+   {
+    "text": "A CBU implementou regra, e é reforçado que o motorista / ajudante verifique em volta e debaixo do veículo, pessoas, crianças, obstruções antes de sair. Isso deve ser feito toda vez que o veículo parar para fazer uma entrega antes de sair novamente.",
+    "risk": 1,
+    "code": "1.18",
+    "criteria": {
+     "basic": "Não há regras em vigor.",
+     "partial": "Há uma regra, porém, esta não é aplicada.",
+     "significant": "Há uma regra e esta é aplicada. Observados alguns desvios."
+    }
+   },
+   {
+    "text": "Para operações de entrega e distribuição, um programa ativo de planejamento de gerenciamento de viagens (AJMP-active journey management planning) (incluindo avaliação de risco, EPIs, rotas seguras, carga máxima de jornada de trabalho, sistema sem dinheiro, portas e estacionamento) deve estar em vigor, juntamente com um procedimento para auditoria. O AJMP deve ser revisado periodicamente ou quando houver mudanças significativas.",
+    "risk": 2,
+    "code": "1.19",
+    "criteria": {
+     "basic": "Não há nenhum sistema de gestão de planejamento de viagem implantado.",
+     "partial": "Programa AJMP disponível, mas não foi implementado & comunicado.",
+     "significant": "Programa de planejamento de gestão de viagens disponível, mas estes não são revistos periodicamente ou quando há alterações significativas."
+    }
+   },
+   {
+    "text": "O transporte de caronas, armas de fogo, materiais perigosos ou resíduos perigosos é estritamente proibido.",
+    "risk": 1,
+    "code": "1.20",
+    "criteria": {
+     "basic": "Não há regras em vigor.",
+     "partial": "As regras são referenciadas em reuniões locais, porém, não são escritas e comunicadas com clareza.",
+     "significant": "As regras são escritas e comunicadas, mas não são aplicadas."
+    }
+   },
+   {
+    "text": "Os incidentes devido à condução (por exemplo, (LTA)perda de tempo e (NLTA)tempo não perdido, acidentes com danos materiais e quase acidentes com alto potencial de gravidade) são investigados detalhadamente, incluindo uma análise de causa raiz e medidas preventivas comunicadas e implementadas. [Onde o CD tiver um procedimento e puder comprovar exemplos de investigação de acidentes e notificação de quase acidentes, mas não houver acidentes específicos relacionados à direção, os critérios podem ser marcados como \"compatíveis\", no entanto, um comentário deve ser feito para esse efeito]",
+    "risk": 3,
+    "code": "1.21",
+    "criteria": {
+     "basic": "Incidentes e quase-acidentes com alto potencial não são investigados.",
+     "partial": "Incidente investigado parcialmente (por exemplo, análise insuficiente da causa principal, medidas preventivas não identificadas com clareza.).",
+     "significant": "Incidente investigado até a causa principal, mas não é realizado um acompanhamento da implementação das medidas corretivas."
+    }
+   },
+   {
+    "text": "O site possui um subcomitê de condução estruturado em funcionamento, para analisar os acidentes com veículos e gerar planos de ação preventivos e corretivos. Isso é um acréscimo ao comitê de segurança do site.",
+    "risk": 3,
+    "code": "1.22",
+    "criteria": {
+     "basic": "Não foi formado nenhum subcomitê de condução ou equipe de trabalho. Há somente um comitê de segurança do site, ou há subcomitês, mas não há nenhum dedicado à condução de veículo.",
+     "partial": "Há um subcomitê de condução ou equipe de trabalho formada, porém não está ativo. (i.e., reúne-se menos de 4 x ao ano)",
+     "significant": "Subcomitê de condução ou equipe de trabalho está funcionando (reúne-se 4x ou mais por ano), mas o subcomitê não analisa todos os acidentes com veículos. Ações preventivas e corretivas não são implementadas."
+    }
+   }
+  ]
+ },
+ {
+  "number": 2,
+  "header": "2. Direção (Veiculo) - aplicável para frota própria Danone",
+  "requirements": [
+   {
+    "text": "Nos veículos de entrega, o equipamento de segurança mínimo no veículo deve estar em conformidade com os regulamentos locais e, além do Padrão Corporativo da Danone para a Direção, deve incluir: - Alarme de inversão (opcional: câmera de marcha atrás). - Espelhos laterais, lava-vidros, buzina e luzes - Sistema de frenagem totalmente operacional e mantido (sem vazamentos e purgado quando aplicável) - Apoios para a cabeça e cintos de segurança para o condutor e cada passageiro - Pega na cabine e mão na área de armazenamento (para auxiliar na subida e descida do veículo) - GPS para rastreamento e controle de velocidade / governança",
+    "risk": 1,
+    "code": "2.1",
+    "criteria": {
+     "basic": "Não há um mínimo de equipamento de segurança disponível.",
+     "partial": "Pelo menos 75% dos equipamentos de segurança mínimos estão disponíveis.",
+     "significant": "Há 100% dos equipamentos de segurança disponíveis, mas alguns estão em péssimas condições de trabalho."
+    }
+   },
+   {
+    "text": "Todos os outros veículos (não cobertos pelo item 2.1) devem estar em conformidade com o Padrão Corporativo da Danone (ABS, cintos de segurança, airbags na frente, encosto de cabeça para todos os assentos).",
+    "risk": 1,
+    "code": "2.2",
+    "criteria": {
+     "basic": "Não há freio ABS, cintos de segurança, airbags na frente & apoio de cabeça para todos os assentos.",
+     "partial": "Apenas cintos de segurança estão instalados.",
+     "significant": "Cintos de segurança & apoio de cabeça estão instalados, mas somente airbags ou freio ABS estão disponíveis."
+    }
+   },
+   {
+    "text": "Todos os veículos devem ter o equipamento mínimo de emergência conforme definido no padrão Danone Corporate (Extintor de Incêndio, kit de primeiros socorros sem itens vencidos), triângulo refletivo, jaqueta de alta visibilidade (se as fitas não forem uniformes), Pneu Sobressalente * (ou alternativa: executar apartamentos); número de telefone de emergência exibido no veículo, lanterna, luvas. Todos os itens devem estar em boas condições e adequados para uso. * Pneus Sobressalentes para Caminhões: Não é necessário que os caminhões tenham pneus sobressalentes, a menos que seja exigido operacionalmente. Onde os pneus sobressalentes estão montados, estes devem estar em boas condições.",
+    "risk": 2,
+    "code": "2.3",
+    "criteria": {
+     "basic": "Menos de 50% dos equipamentos requeridos são emitidos.",
+     "partial": "Menos de 75% de equipamento requeridos emitidos, ou >25% estão em péssimas condições.",
+     "significant": "Todos os equipamentos de emergência necessários são emitidos, contudo, alguns itens (menos de 10%) observados estão vencidos ou em má condição."
+    }
+   },
+   {
+    "text": "A manutenção formal é realizada de acordo com as especificações do fabricante, tipo e uso do veículo. Isto deve ser documentado e a equipe de Controle de Gestão da Frota Interna da Danone é responsável por administrar este procedimento / processo.",
+    "risk": 2,
+    "code": "2.4",
+    "criteria": {
+     "basic": "Não há nenhum procedimento.",
+     "partial": "Há um procedimento, mas este não é comunicado & documentado, ou é aplicado de forma deficiente.",
+     "significant": "Procedimento escrito comunicado, porém, pequenas deficiências observadas."
+    }
+   },
+   {
+    "text": "Existe uma lista de verificação documentada para a inspeção física de veículos. A lista de verificação deve ser preenchida diariamente para caminhões, vendas e veículos da instalação. Veículos DC Executive devem ser verificados semanalmente.",
+    "risk": 2,
+    "code": "2.5",
+    "criteria": {
+     "basic": "Não são realizadas quaisquer inspeções ou inspeções informais ad hoc.",
+     "partial": "Inspeções regulares são realizadas e registradas, mas apenas para 75% dos caminhões, veículos de vendas & instalações.",
+     "significant": "Inspeções regulares são realizadas & documentadas, porém, pequenas deficiências são observadas. Não são realizadas quaisquer inspeções em veículos de executivos."
+    }
+   },
+   {
+    "text": "O limite de peso da carga e o balanceamento de carga são cumpridos de acordo com os padrões do local ou com as recomendações do fabricante (o que for mais alto padrão)",
+    "risk": 1,
+    "code": "2.6",
+    "criteria": {
+     "basic": "Os limites de peso da carga não são definidos.",
+     "partial": "O limite de peso da carga & o equilíbrio da carga é definido, mas não registrados.",
+     "significant": "O limite de peso da carga & equilíbrio da carga são definidos e registrados, mas não confrontados com as normas do site vs. recomendações do fabricante."
+    }
+   },
+   {
+    "text": "As manobras de inversão são estritamente proibidas por um caminhão / van, a menos que o veículo esteja equipado com um sinal de advertência reversível ou um banqueiro.",
+    "risk": 1,
+    "code": "2.7",
+    "criteria": {
+     "basic": "Não é efetuada nenhuma análise de risco.",
+     "partial": "Somente uma única análise de risco padronizada foi efetuada para todos os veículos.",
+     "significant": "Uma análise de risco para manobras de reversão foi realizada, abrangendo todos os tipos de veículos no site, porém, não há pops implementados."
+    }
+   }
+  ]
+ },
+ {
+  "number": 3,
+  "header": "3. Veículo - Manutenção",
+  "requirements": [
+   {
+    "text": "Existe um arquivo / banco de dados para cada veículo que permite ao site rastrear e acompanhar a vida útil, a manutenção e os acidentes do veículo.",
+    "risk": 3,
+    "code": "3.1",
+    "criteria": {
+     "basic": "Não há nenhuma base de dados ou arquivo para cada veículo.",
+     "partial": "Há uma base de dados (arquivo) para cada veículo, porém, esta só oferece detalhes sobre sua vida útil (idade & quilometragem).",
+     "significant": "Há uma base de dados (arquivo) para cada veículo, que inclui apenas a vida útil (idade & quilometragem) do veículo, os registros e requisitos de manutenção. Ela não inclui acidentes em que o veículo esteve envolvido."
+    }
+   },
+   {
+    "text": "Veículos que estão fora de serviço ou em manutenção são identificados e não podem ser fisicamente ligados / movidos acidentalmente enquanto isto está ocorrendo, expl. bloqueou pneus, bateria desconectada e chaves presas por pessoal autorizado.",
+    "risk": 2,
+    "code": "3.2",
+    "criteria": {
+     "basic": "Não há identificação & segregação de veículos que estão fora de serviço ou em manutenção.",
+     "partial": "Os veículos que estão fora de serviço/em manutenção são identificados, mas não existe um sistema que impeça qualquer arranque/movimento acidental.",
+     "significant": "Há um sistema implantado; contudo, alguns pequenos desvios foram observados."
+    }
+   },
+   {
+    "text": "Onde a manutenção local da Danone é realizada, riscos de energia perigosos são identificados. Deve haver um procedimento para eliminar esses riscos.",
+    "risk": 2,
+    "code": "3.3",
+    "criteria": {
+     "basic": "Energias perigosas no site não são identificadas.",
+     "partial": "Energias perigosas no site são identificadas, porém, não há um procedimento para controlar o risco.",
+     "significant": "Energias perigosas no site são identificadas, e há procedimentos por escrito implantados. Contudo, eses não estão prontamente disponíveis nem conhecidos por menos de 75% da equipe de manutenção."
+    }
+   },
+   {
+    "text": "Há um critério de segurança estabelecido para determinar se um veículo pode ou não sair para rota. Existem medidas disciplinares no caso de alguém permitir que um veículo saia na rota sob condições que não sejam aceitáveis para a CBU, ou que a informação na lista de verificação diária (ver ponto 2.4) seja falsificada para permitir isso.",
+    "risk": 2,
+    "code": "3.4",
+    "criteria": {
+     "basic": "Não há critérios de segurança para determinar se o veículo pode ou não sair.",
+     "partial": "Critérios sobre segurança implantados, porém, não comunicados & aplicação deficiente.",
+     "significant": "Critérios sobre segurança estabelecidos, comunicados & aplicados, porém, não há medidas disciplinares implantadas."
+    }
+   },
+   {
+    "text": "Os requisitos de reparo são suportados por um documento numerado para gerenciar o reparo. O formulário é fornecido e validado pelo Gerenciamento / Controle da Frota Interna da Danone.",
+    "risk": 3,
+    "code": "3.5",
+    "criteria": {
+     "basic": "Não há sistema estabelecido para administrar requisitos de reparo.",
+     "partial": "Sistema de reparos deficiente estabelecido.",
+     "significant": "Sistema de reparos estabelecido, porém, falta processo de validação."
+    }
+   },
+   {
+    "text": "Os técnicos da frota que realizam a manutenção no local usam EPI adequados fornecidos pela Danone. O EPI deve ser definido por site através da avaliação de risco das atividades realizadas.",
+    "risk": 1,
+    "code": "3.6",
+    "criteria": {
+     "basic": "Não há nenhum EPI definido, não é fornecido EPI a técnicos da frota ou os técnicos da frota não estão usando o EPI requerido.",
+     "partial": "EPI é definido, porém, não determinado por avaliação de risco. EPI é fornecido, e pelo menos 50% dos técnicos estão usando o EPI.",
+     "significant": "EPI é definido através de avaliação de risco, e é fornecido. Observadas algumas pequenas deficiências no uso de EPI ou na condição do EPI."
+    }
+   },
+   {
+    "text": "Todas as atividades de manutenção e tarefas (incluindo sub-tarefas) realizadas no site são bem definidas e apoiadas por um procedimento operacional de segurança.",
+    "risk": 3,
+    "code": "3.7",
+    "criteria": {
+     "basic": "As atividades e tarefas (incluindo subtarefas) de manutenção não são definidas.",
+     "partial": "As atividades e tarefas (incluindo subtarefas) de manutenção são definidas, mas não são apoiadas por POPs.",
+     "significant": "As atividades e tarefas (incluindo subtarefas) de manutenção são definidas e apoiadas por um POP, mas somente para atividades de alto risco."
+    }
+   },
+   {
+    "text": "A área de manutenção do veículo deve ter acesso restrito, e a área de trabalho em torno de cada veículo em manutenção deve ser marcada e protegida (por exemplo, o uso de cones, etc.) para proteger o trabalhador.",
+    "risk": 1,
+    "code": "3.8",
+    "criteria": {
+     "basic": "A área de manutenção de veículo não é restrita.",
+     "partial": "A área de manutenção de veículo é restrita, porém, foi observado que o portão (ou o acesso restrito) estava aberto, ou que pessoas não autorizadas foram encontradas na área.",
+     "significant": "A área de manutenção de veículo é totalmente restrita; contudo, a área de trabalho em torno de cada veículo em manutenção não foi definida e protegida."
+    }
+   }
+  ]
+ },
+ {
+  "number": 4,
+  "header": "4. Segurança dos pedestres",
+  "requirements": [
+   {
+    "text": "Os funcionários recebem EPI completo por sua função. Os critérios para o EPI foram estabelecidos por meio de avaliação de risco e adesão à norma ou lei local. No mínimo, o EPI deve incluir, no mínimo: - sapatos de segurança, - uniforme. A especificação para uniformes para todos os funcionários / cargos operacionais que entram em áreas de risco (armazém, zonas de tráfego) no centro de distribuição ou estão trabalhando em vias públicas inclui faixas de alta visibilidade que garantem sua visibilidade de acordo com os padrões internacionais. O uso de uma jaqueta refletiva é aceitável como uma alternativa. - e / ou colete de alta visibilidade.",
+    "risk": 1,
+    "code": "4.1",
+    "criteria": {
+     "basic": "Não são fornecidos EPIs.",
+     "partial": "EPIs fornecidos, mas os critérios não são estabelecidos através de avaliações de risco. Como alternativa, a norma sobre EPI não é observada plenamente.",
+     "significant": "A maioria dos funcionários recebeu o EPI, mas nem todos conhecem as avaliações de risco. EPIs não são substituídos regularmente."
+    }
+   },
+   {
+    "text": "Há um critério de segurança estabelecido para pedestres a fim de reduzir a exposição ao risco na rota, na rua e dentro das instalações. Este critério de segurança é documentado, comunicado e aplicado para a segurança de pedestres. Isso deve incluir a segregação entre pedestres e veículos tanto no local quanto em locais onde as manobras de carga / descarga são realizadas em áreas públicas de trânsito e tráfego. Inclui interação com empilhadeiras.",
+    "risk": 2,
+    "code": "4.2",
+    "criteria": {
+     "basic": "Não há critérios de segurança estabelecidos.",
+     "partial": "Critérios de segurança estabelecidos, porém, não documentados & comunicados com clareza. Desvios significativos são observados durante a auditoria (> 5% de funcionários observados).",
+     "significant": "Alguns critérios são escritos, documentados e comunicados, porém, não aplicados plenamente. Pequenos desvios observados (< 5% dos funcionários)"
+    }
+   },
+   {
+    "text": "Uma avaliação de risco foi realizada para a interação entre pessoas e caminhões, empilhadeiras ou qualquer outro equipamento móvel, a fim de reduzir o risco e os pontos de controle da interface.",
+    "risk": 2,
+    "code": "4.3",
+    "criteria": {
+     "basic": "Não foi realizada nenhuma avaliação de risco.",
+     "partial": "Avaliação de risco foi realizada, porém, não foi comunicada e as medidas de controle não são implementadas.",
+     "significant": "Avaliação de risco realizada e comunicada. > 75% das medidas preventivas e corretivas identificadas foram implementadas, porém, não 100%."
+    }
+   },
+   {
+    "text": "100% do local é zoneado (passarelas de pedestres, faixas de travessia, pontos de encontro, caminhos) com o objetivo de controlar o tráfego e o fluxo de pedestres.",
+    "risk": 1,
+    "code": "4.4",
+    "criteria": {
+     "basic": "Não há zoneamento do site, ou menos de 50% são zoneados.",
+     "partial": "> 50% zoneados, mas < 75%.",
+     "significant": "> 75% zoneados, mas < 100%."
+    }
+   },
+   {
+    "text": "Há restrições quanto ao uso de distratores durante a caminhada (portátil, documentos, iPad, telefone celular, incluindo mãos livres, fones de ouvido, etc.) para reduzir o risco de acidentes. Estas restrições são aplicáveis dentro ou fora do site, enquanto no trabalho e as violações são tratadas de acordo com os procedimentos disciplinares da CBU local.",
+    "risk": 1,
+    "code": "4.5",
+    "criteria": {
+     "basic": "Não foram estabelecidas quaisquer restrições.",
+     "partial": "Restrições estabelecidas, mas há uma má comunicação & nenhuma aplicação.",
+     "significant": "Restrições estabelecidas e comunicadas amplamente, porém, a aplicação é ruim, sendo alguns desvios observados durante a auditoria."
+    }
+   },
+   {
+    "text": "Existem zonas definidas na instalação para o uso seguro de telefones celulares (chamadas ou texto). Essas zonas estão claramente marcadas.",
+    "risk": 3,
+    "code": "4.6",
+    "criteria": {
+     "basic": "Não há zonas definidas.",
+     "partial": "Zonas são definidas, mas não comunicadas ou marcadas",
+     "significant": "Zonas são definidas, marcadas e comunicadas claramente, mas não há aplicação, ou desvios são observados."
+    }
+   }
+  ]
+ },
+ {
+  "number": 5,
+  "header": "5. Carregamento / Descarga / Manuseio e Levantamento de Carga",
+  "requirements": [
+   {
+    "text": "Todos os funcionários receberam treinamento em técnicas de manuseio de carga. Este é o treinamento formalmente registrado. O treinamento deve incluir riscos associados a tarefas e técnicas de manuseio seguro e postura, além do uso correto de auxílios de levantamento. O treinamento deve ser atualizado anualmente. Operadores, motoristas e ajudantes são observados usando técnicas corretas de manuseio / carga manual.",
+    "risk": 2,
+    "code": "5.1",
+    "criteria": {
+     "basic": "Não há evidência no treinamento em manuseio de carga, ou há deficiências significativas no conteúdo do treinamento.",
+     "partial": "Acima de 50% dos funcionários receberam treinamento no manuseio de carga. Ou > 50% de operadores, motoristas, ajudantes foram observados empregando técnicas deficientes de carga e elevação de carga",
+     "significant": "Acima de 75 % dos funcionários afetados receberam treinamento no manuseio de carga. Ou não há treinamento de reciclagem. Funcionários observados empregando técnicas deficientes de carga e elevação de carga"
+    }
+   },
+   {
+    "text": "Existe um procedimento de manipulação de carga que é suportado por uma análise de risco e estudo ergonômico. Não é permitido carregar fisicamente cargas> 25 kg.",
+    "risk": 2,
+    "code": "5.2",
+    "criteria": {
+     "basic": "Não há um procedimento formal estabelecido nem análise de risco.",
+     "partial": "Há uma análise de risco ergonômico, mas a solução/plano de mitigação cobre apenas 50% do risco suscitado. Não há procedimento formal.",
+     "significant": "Há um procedimento para manuseio de carga que é amparado por uma análise de risco e um estudo ergonômico com > 75% dos riscos mitigados e controlados, porém, não 100%. Funcionários tem permissão para transportar cargas > 25 kg (sem auxílios de elevação)."
+    }
+   },
+   {
+    "text": "As verificações médicas são realizadas anualmente para 100% dos funcionários que são obrigados a lidar com as cargas. Um arquivo médico é mantido para cada funcionário de acordo com os requisitos locais de proteção de dados. Os pedidos de raios-X ou outras investigações médicas só podem ser feitos pelo médico assistente após o exame físico.",
+    "risk": 2,
+    "code": "5.3",
+    "criteria": {
+     "basic": "Não há controles médicos associados a manuseio de carga (há outros tipos de controle). Exames médios não são realizados anualmente.",
+     "partial": "Acima de 50% dos funcionários fazem exames médicos anualmente, e prontuários médicos de cada um são evidenciados.",
+     "significant": "Acima de 75% dos funcionários fazem exames médicos anualmente, e prontuários médicos de cada um são evidenciados."
+    }
+   },
+   {
+    "text": "Uma análise de segurança foi realizada nos pontos de captura das cortinas e portas dos caminhões / van. Os caminhões / vans são equipados com dispositivos de segurança e / ou pontos de manuseio seguro codificados por cores com o objetivo de reduzir os pontos de estrangulamento.",
+    "risk": 2,
+    "code": "5.4",
+    "criteria": {
+     "basic": "Não há análise de segurança sobre pontos de retenção nas portas e cortinas de caminhões/vans. Pontos de retenção não são identificados ou codificados por cor.",
+     "partial": "Uma análise de segurança foi realizada sobre os pontos de retenção nas cortinas de caminhão/van.",
+     "significant": "Uma análise de segurança foi realizada sobre os pontos de retenção nas cortinas de caminhão/van. Pontos de retenção foram estabelecidos. > 75% mas 100% dos caminhões e vans possuem esses pontos de retenção codificados por cores ou são dotados de dispositivos de segurança para reduzir os pontos de compressão."
+    }
+   },
+   {
+    "text": "Existe um procedimento documentado, comunicado e aplicado para a subida e descida de veículos para áreas de armazenamento de cabine e produtos.",
+    "risk": 3,
+    "code": "5.5",
+    "criteria": {
+     "basic": "Não há procedimento formal estabelecido.",
+     "partial": "Pontos de retenção foram estabelecidos. > 50% mas < 75% dos caminhões e vans possuem esses pontos de retenção codificados por cores ou são dotados de dispositivos de segurança para reduzir os pontos de compressão.",
+     "significant": "Há um procedimento por escrito. Pelo menos 75% dos funcionários receberam comunicação e treinamento."
+    }
+   },
+   {
+    "text": "A CBU, em parceria com ergonomistas, trabalha em análises de risco e programas preventivos que geram soluções práticas para a redução de riscos identificados. [Nota: para a Divisão de Águas, o ergonomista deve ser treinado profissionalmente devido às cargas pesadas que devem ser carregadas. Para outras divisões, a análise de risco pode ser realizada por um profissional de segurança com treinamento profissional, cuja qualificação e experiência incluem ergonomia]",
+    "risk": 2,
+    "code": "5.6",
+    "criteria": {
+     "basic": "Não há análise de risco ergonômico ou plano de mitigação.",
+     "partial": "Há um procedimento por escrito. Pelo menos 50% dos funcionários receberam comunicação e treinamento.",
+     "significant": "Há uma análise de risco ergonômico, mas o plano de ação/mitigação cobre apenas 75% do risco identificado."
+    }
+   },
+   {
+    "text": "O site tem um valor de peso máximo estabelecido para levantamento, carrinhos e paleteira, com base em uma análise de risco. (Isso é apoiado pelo treinamento dado no uso correto desses equipamentos). O levantamento de cargas manualmente (sem auxiliares de elevação) deve ser restrito a não mais de 25 kg.",
+    "risk": 2,
+    "code": "5.7",
+    "criteria": {
+     "basic": "Não há evidência de valor de peso máximo estabelecido.",
+     "partial": "Há uma análise de risco ergonômico, e o plano de ação / mitigação cobre apenas 50% do risco identificado.",
+     "significant": "O site estabeleceu um valor de peso máximo, e pelo menos 80% dos funcionários tem conhecimento deste."
+    }
+   },
+   {
+    "text": "Calços ou itens de bloqueio devem estar em vigor durante as atividades de carga / descarga da parte traseira de um caminhão nas baias de carga. Medidas adicionais (por exemplo, procedimentos da chave de ignição, controle) para evitar a partida inesperada do caminhão estão no lugar.",
+    "risk": 1,
+    "code": "5.8",
+    "criteria": {
+     "basic": "Não há procedimento de caminhão LOTO disponível.",
+     "partial": "Há um procedimento de bloqueio de caminhão, mas somente 50%-70% dos caminhões aplicam-no.",
+     "significant": "Há um procedimento de bloqueio d caminhão, porém, há desvios pontuais observados."
+    }
+   },
+   {
+    "text": "Enquanto as atividades de carga e descarga estão ocorrendo, os motoristas de caminhão devem estar em uma área dedicada.",
+    "risk": 1,
+    "code": "5.9",
+    "criteria": {
+     "basic": "Não há evidência de uma área dedicada a motoristas de caminhão.",
+     "partial": "Há uma área limitada, mas somente 50% dos motoristas a respeitam.",
+     "significant": "Há uma área limitada, mas somente 75% dos motoristas a respeitam."
+    }
+   },
+   {
+    "text": "As verificações são realizadas em caminhões de fornecedores terceirizados no local para garantir que estejam em condições seguras e não representam um risco de segurança para os Danoners enquanto estiverem no local.",
+    "risk": 2,
+    "code": "5.10",
+    "criteria": {
+     "basic": "Os cais ou a plataformas de caminhão não se adaptam ao caminhão e deixam espaço entre o caminhão e a doca.",
+     "partial": "50% - 75% dos cais ou plataformas de caminhão atendem à adaptação e fechamento entre o espaço do caminhão e da doca.",
+     "significant": "Acima de 75% dos cais ou plataformas de caminhão atendem à adaptação e fechamento entre o espaço do caminhão e da doca."
+    }
+   },
+   {
+    "text": "Espaço deve ser adaptado para plataforma de caminhão, altura e espaço entre caminhão e doca.",
+    "risk": 2,
+    "code": "5.11",
+    "criteria": {
+     "basic": "Não são feitas quaisquer inspeções.",
+     "partial": "Inspeções informais são realizadas, porém, não são registradas.",
+     "significant": "Inspeções são realizadas e registradas, havendo alguns pequenos desvios nos registros observados."
+    }
+   },
+   {
+    "text": "Existe um procedimento documentado e atualizado no local para a operação de carrinhos de mão e qualquer outro equipamento de elevação (talhas, etc). O procedimento deve ser comunicado pelo menos uma vez por ano ao pessoal que opera ou trabalha na proximidade deste equipamento.",
+    "risk": 2,
+    "code": "5.12",
+    "criteria": {
+     "basic": "Não há procedimento formal evidenciado para carrinhos manuais ou equipamento de elevação.",
+     "partial": "Há um procedimento, porém, este só foi comunicado a, e é conhecido por, 50% dos operadores.",
+     "significant": "Há um procedimento, porém, este só foi comunicado a, e é conhecido por, 75% dos operadores."
+    }
+   },
+   {
+    "text": "Existe uma análise de risco para determinar o tipo de carrinho de mão a ser usado de acordo com a tarefa e os critérios de go / no go para seu uso.",
+    "risk": 2,
+    "code": "5.13",
+    "criteria": {
+     "basic": "Não há evidência de análise de risco para determinar o tipo de carrinho manual.",
+     "partial": "Há uma análise de risco e > 50% das equipes estão conformes.",
+     "significant": "Há uma análise de risco e > 75% das equipes estão conformes."
+    }
+   },
+   {
+    "text": "A metodologia vermelho / verde é usada para identificar os pontos seguros e inseguros para o manuseio do carrinho de mão.",
+    "risk": 2,
+    "code": "5.14",
+    "criteria": {
+     "basic": "Não há metodologia verde/vermelha para o uso de carrinhos manuais, e menos de 50% desses carrinhos possuem essa identificação.",
+     "partial": "Existe a metodologia verde/vermelha. > 50% mas menos de 75% dos carrinhos possuem essa identificação.",
+     "significant": "Existe a metodologia verde/vermelha. > 75% mas menos de 100% dos carrinhos possuem essa identificação."
+    }
+   },
+   {
+    "text": "Existe um procedimento que estabelece o limite de carga para carrinhos de mão (em superfícies planas e inclinações) e qualquer outro equipamento de elevação (talhas, etc). Este procedimento é estritamente aplicado e reforçado.",
+    "risk": 2,
+    "code": "5.15",
+    "criteria": {
+     "basic": "Não há procedimento formal evidenciado para carrinhos manuais e limite de carga.",
+     "partial": "Há um procedimento. > 50% mas menos de 75% dos operadores o cumprem.",
+     "significant": "Há um procedimento. > 75% mas menos de 100% dos operadores o cumprem."
+    }
+   },
+   {
+    "text": "Os veículos de entrega são equipados com um espaço definido para a colocação de um carrinho de mão / carrinhos (ou outro equipamento de carregamento) fora da cabine e / ou áreas de produtos, para que não haja risco para o pessoal ou produtos. Os carrinhos de mão / carrinhos (ou outro equipamento de carregamento) devem ser presos, amarrados ou acorrentados para impedir o movimento.",
+    "risk": 1,
+    "code": "5.16",
+    "criteria": {
+     "basic": "As unidades não têm uma área definida para transportar os carrinhos/vagonetes, ou < menos de 50% dos veículos possuem essa área definida.",
+     "partial": "As unidades dispõem de uma área definida para os carrinhos manuais/vagonetes. > 50% mas menos de 75% dos veículos não a utilizam, ou há alguns riscos associados à área escolhida.",
+     "significant": "As unidades possuem uma área definida para os carrinhos/vagonetes manuais, mas 75% dos veículos não a utilizam. Não há riscos associados à área escolhida para os carrinhos/vagonetes manuais."
+    }
+   },
+   {
+    "text": "Existe um procedimento para bloquear mecanicamente equipamentos de elevação quebrados para evitar o uso.",
+    "risk": 2,
+    "code": "5.17",
+    "criteria": {
+     "basic": "Não há nenhum procedimento estabelecido.",
+     "partial": "Há um procedimento, mas é conhecido por > 50%, mas < 75% dos funcionários.",
+     "significant": "Há um procedimento que é conhecimento por > 75% dos funcionários, contudo, desvios foram observados."
+    }
+   }
+  ]
+ },
+ {
+  "number": 6,
+  "header": "6. Armazenagem, Racks e pallets",
+  "requirements": [
+   {
+    "text": "Os paletes carregados recebidos cumprem os requisitos de segurança (sem sobrecarga, sem saliência, sem abaulamento, condições de paletes físicas), conforme definido pelos padrões de segurança locais da CBU.",
+    "risk": 2,
+    "code": "6.1",
+    "criteria": {
+     "basic": "Algumas condições críticas foram observadas em relação a paletes sobre prateleiras; ou Uma proporção significativa de paletes (>8) foi constatada em más condições. Cargas pesadas (tambores sobre paletes etc.) foram observadas transportadas ou empilhadas sem estarem presas e apresentando risco de queda.",
+     "partial": "Uma pequena proporção de paletes (3-8) foi constatada em péssimas condições. Paletes danificados, apresentando riscos, foram observados armazenados no nível do solo.",
+     "significant": "Muitos poucos paletes (1-3) observados danificados, e cargas nos paletes não completamente presas."
+    }
+   },
+   {
+    "text": "Pessoal do armazém / distribuição recebem instrução ou uma OPL (lição de um ponto) pelo menos uma vez por ano nos requisitos de uso e segurança de estantes e paletes aplicáveis ao local.",
+    "risk": 3,
+    "code": "6.2",
+    "criteria": {
+     "basic": "Não há nenhuma instrução ou OPL disponível.",
+     "partial": "A instrução ou OPL é dada a > 50% mas < 75% dos funcionários.",
+     "significant": "A instrução ou OPL é recebida por > 75% dos funcionários, mas não por todos."
+    }
+   },
+   {
+    "text": "Existe uma avaliação / análise de risco realizada para o papel de trabalhador do armazém.",
+    "risk": 2,
+    "code": "6.3",
+    "criteria": {
+     "basic": "Não há nenhuma análise ou avaliação de risco.",
+     "partial": "Há uma análise / avaliação de risco concluída, porém, não foi comunicada.",
+     "significant": "Há uma análise / avaliação de risco concluída, porém e comunicada. Contudo, não foi revista ou atualizada periodicamente (pelo menos a cada 2 anos)."
+    }
+   },
+   {
+    "text": "A CBU tem critérios bem estabelecidos que exigem o bloqueio de racks em caso de danos ou qualquer outra condição abaixo do padrão. O treinamento é fornecido aos funcionários relevantes. No caso de rack danificado, o rack e as células superiores são identificadas e bloqueadas. Um procedimento LOTO específico está em vigor.",
+    "risk": 1,
+    "code": "6.4",
+    "criteria": {
+     "basic": "Não há critérios estabelecidos, e não há nenhum treinamento para o pessoal. Há uma prateleira(s) em má condição observada, que ainda está em uso, e LOTO não aplicado.",
+     "partial": "Os critérios são estabelecidos, mas não há nenhum treinamento para o pessoal. Não há prateleira(s) em péssima condição observada, que ainda esteja(m) em uso; contudo, não há nenhum procedimento LOTO definido.",
+     "significant": "Os critérios estão estabelecidos e o pessoal está treinado, porém, pequenas deficiências foram observadas. Não há prateleiras danificadas em uso, mas o travamento de prateleiras danificadas é insuficiente para garantir um bloqueio adequado."
+    }
+   },
+   {
+    "text": "Os racks atendem a um bom projeto de engenharia e estão em conformidade com os requisitos regulamentares locais, no entanto, no mínimo, todos os racks com passagem pedestres tem proteção; limitadores de paletes; vigas fixadas por dois ganchos (travas), estruturas bem fixadas ao chão com pelo menos dois parafusos. (Veja 6.6 para proteção de conexão ao chão).",
+    "risk": 1,
+    "code": "6.5",
+    "criteria": {
+     "basic": "Algumas condições críticas foram observadas em relação a paletes (p.ex. falta de chega até a proteção em áreas de coleta, ausência de fechaduras, dano em estrutura na prateleira utilizada etc.); ou um número significativo de prateleiras foram encontradas em más condições.",
+     "partial": "Foi encontrada uma prateleira isolada com alguns problemas não críticos.",
+     "significant": "Não foram observadas quaisquer deficiências. Contudo, documentação confirmando que os requisitos de engenharia são atendidos não prontamente disponível."
+    }
+   },
+   {
+    "text": "As conexões de piso dos racks são protegidas com uma proteção de cobertura especial (bate rodas) para proteger contra danos causados por empilhadeiras.",
+    "risk": 1,
+    "code": "6.6",
+    "criteria": {
+     "basic": "Não há quaisquer proteções por blindagem de cobertura, ou menos de 75% das prateleiras possuem blindagem de cobertura.",
+     "partial": "Pelo menos 75% das conexões de piso de prateleiras possuem uma cobertura.",
+     "significant": "Todas as conexões de piso possuem cobertura, mas há alguns danos críticos observados."
+    }
+   },
+   {
+    "text": "Um programa anual de auditoria de rack é implementado. Isso inclui uma inspeção de racks e condição de armazenamento em racks.",
+    "risk": 2,
+    "code": "6.7",
+    "criteria": {
+     "basic": "Prateleiras não inspecionadas nem auditadas.",
+     "partial": "Há um programa de auditoria estabelecido, mas este inclui deficiências significativas.",
+     "significant": "Prateleiras inspecionadas na frequência certa, mas não há um follow-up formal de medidas corretivas; ou Documentação associada às inspeções não disponível."
+    }
+   },
+   {
+    "text": "Racks de carregamento atendem aos requisitos em termos de peso máximo, balanceamento de carga de acordo com os requisitos do fornecedor.",
+    "risk": 1,
+    "code": "6.8",
+    "criteria": {
+     "basic": "Prateleiras observadas como estando sobrecarregadas.",
+     "partial": "Não há mostra de regras de carga para uma proporção significativa de prateleiras, e as cargas máximas autorizadas não são conhecidas pelos funcionários (ou não podem ser demonstradas).",
+     "significant": "Não há mostra de regras de carregamento para uma pequena proporção de prateleiras."
+    }
+   },
+   {
+    "text": "As cargas devem ser armazenadas em prateleiras de maneira equilibrada, de acordo com seu peso. Cargas mais pesadas devem ser colocadas em posições inferiores nas estantes e cargas mais leves na parte superior._x000D_ Onde todas os paletes tiverem o mesmo peso, estas devem ser distribuídas uniformemente, e regras claras sobre carga e descarga para evitar racks desequilibrados, isto é, o carregamento deve ser de baixo para cima; descarregando de cima para baixo. Onde paletes são empilhados, estes devem ser empilhados de forma estável de acordo com o peso.",
+    "risk": 1,
+    "code": "6.9",
+    "criteria": {
+     "basic": "As cargas não estão armazenadas de acordo com o seu peso. Não há quaisquer regras estabelecidas no estabelecimento. Prateleiras ou paletes desbalanceados foram observados.",
+     "partial": "Regras são estabelecidas e comunicadas, porém, paletes com cargas não balanceadas de acordo com o seu peso foram encontrados com alguns problemas não críticos.",
+     "significant": "Regras são estabelecidas e comunicadas; contudo, foram observadas algumas poucas e pequenas deficiências."
+    }
+   },
+   {
+    "text": "Inspeções diárias formais são realizadas e registradas para observar quaisquer paletes que se tornaram desequilibrados, perdidos ou incorretamente armazenados em prateleiras. Esses desvios são corrigidos imediatamente.",
+    "risk": 3,
+    "code": "6.10",
+    "criteria": {
+     "basic": "Não há registros de inspeções.",
+     "partial": "Há registros de inspeções, porém, estes não são concluídos diariamente, ou não concluídos completamente.",
+     "significant": "Há registros de inspeções concluídas completa e diariamente, contudo, os desvios não são corrigidos imediatamente."
+    }
+   },
+   {
+    "text": "Racks de frente para passagens para pedestres (não operativas) não devem ser empilhados no segundo nível ou acima dele. Se o 2º nível for usado / empilhado, deve haver uma tela ou algum tipo de barreira física para proteger o pedestre.",
+    "risk": 1,
+    "code": "6.11",
+    "criteria": {
+     "basic": "As prateleiras voltadas para passarelas de pedestres não têm barreiras físicas para proteger os pedestres.",
+     "partial": "Pelo menos 50% das prateleiras voltadas para passarelas de pedestres possuem barreiras físicas para proteger os pedestres.",
+     "significant": "Pelo menos 75% das prateleiras voltadas para passarelas de pedestres possuem barreiras físicas para proteger os pedestres."
+    }
+   },
+   {
+    "text": "A área de picking é restrita apenas ao tráfego de empilhadeiras ou aos pedestres, dependendo apenas do tipo de atividade de coleta realizada.",
+    "risk": 1,
+    "code": "6.12",
+    "criteria": {
+     "basic": "A área de coleta não é restrita, e há uma interação entre empilhadeiras e pedestres.",
+     "partial": "A área de coleta conta com algumas áreas restritas, mas há alguns locais em que empilhadeiras e pedestres tem interações.",
+     "significant": "A área de coleta é restrita para garantir que não haja interação entre pedestres e empilhadeiras; contudo, foram observadas pequenas deficiências."
+    }
+   },
+   {
+    "text": "Incidentes sérios com cremalheiras e paletes (por exemplo, perda de tempo e acidentes sem perda de tempo, quase acidentes com alto potencial de gravidade) são profundamente investigados, incluindo uma análise de causa raiz e medidas preventivas comunicadas e implementadas. [Onde o CD tiver um procedimento e puder comprovar exemplos de investigação de acidentes e notificação de quase acidentes, mas não houver acidentes específicos relacionados à direção, os critérios podem ser marcados como \"compatíveis\", no entanto, um comentário deve ser feito para esse efeito]",
+    "risk": 3,
+    "code": "6.13",
+    "criteria": {
+     "basic": "Incidentes e quase-acidentes com alto potencial não são investigados.",
+     "partial": "Incidente investigado parcialmente (por exemplo, análise insuficiente da causa principal, medidas preventivas não identificadas com clareza.).",
+     "significant": "Incidente investigado apropriadamente, mas não é realizado um acompanhamento da implementação das medidas corretivas."
+    }
+   },
+   {
+    "text": "Máquinas e equipamentos que apresentem alto risco de ferimentos (por exemplo, empacotador de paletes) estão em boas condições e sujeitos a um programa de manutenção preventiva. Em particular, os intertravamentos de segurança nas proteções e as paradas de emergência são testados pelo menos anualmente e em boas condições. existe uma lista de inspeção.",
+    "risk": 2,
+    "code": "6.14",
+    "criteria": {
+     "basic": "Uma grande parcela de máquinas que apresentam alto risco de ferimento não está sujeita a manutenção preventiva, ou máquinas que apresentam alto risco de ferimento observadas como em péssimo estado.",
+     "partial": "Foram observadas máquinas em boas condições. Uma pequena parcela de máquinas que apresentam alto risco de ferimento não está sujeita a manutenção preventiva.",
+     "significant": "Há um programa de manutenção preventiva, mas este pode ser melhorado; ou há falta ou registros de manutenção ou atrasos na implementação do programa de manutenção preventiva."
+    }
+   },
+   {
+    "text": "Um treinamento específico é desenvolvido para funcionários que usam máquinas e equipamentos que apresentam alto risco de lesão (por exemplo, empacotador de paletes).",
+    "risk": 2,
+    "code": "6.15",
+    "criteria": {
+     "basic": "Há um programa de treinamento específico, mas a maioria dos funcionários não é treinada (< 50%).",
+     "partial": "Há um programa de treinamento específico, porém, precisa de uma melhoria significativa no conteúdo do treinamento; ou > 50% mas < 75% dos funcionários que utilizam essas máquinas/equipamentos são treinados.",
+     "significant": "Um programa de treinamento específico pode beneficiar-se de pequenas melhorias. > 75% dos funcionários são treinados."
+    }
+   }
+  ]
+ },
+ {
+  "number": 7,
+  "header": "7. Empilhadeiras",
+  "requirements": [
+   {
+    "text": "A chave de contato deve ser removida quando a empilhadeira estiver estacionada e o acesso à chave controlado. O freio de estacionamento deve estar ligado.",
+    "risk": 1,
+    "code": "7.1",
+    "criteria": {
+     "basic": "Grande parcela (> 20%) das empilhadeiras com chaves de contato não removidas ou freio não acionado.",
+     "partial": "Observada pelo menos uma empilhadeira com a chave no contato ou freio não acionado.",
+     "significant": "Empilhadeiras com chaves removidas e freio acionado, mas o acesso às chaves não é controlado. Qualquer pessoa presente poderia acessar as chaves."
+    }
+   },
+   {
+    "text": "Uma lista de verificação é usada diariamente para verificar as condições críticas do equipamento de empilhadeira (freios, alarme de inversão, luzes, buzina ...). No caso de uma não conformidade no equipamento básico de segurança, a empilhadeira é colocada fora de serviço.",
+    "risk": 2,
+    "code": "7.2",
+    "criteria": {
+     "basic": "Falta de checklist; ou Existe uma checklist, mas não é utilizada por uma grande parcela de empilhadeiras; ou Deficiência crítica observada em uma empilhadeira, seja não identificada pelo operador de empilhadeira ou notificada, mas não corrigida.",
+     "partial": "Checklist concluída, mas ainda faltando para uma pequena parcela (< 10%) de empilhadeiras.",
+     "significant": "Checklist concluída, mas os registros mostram lacunas, seja na frequência das inspeções (diárias) ou na abrangência das inspeções."
+    }
+   },
+   {
+    "text": "Os cintos de segurança são utilizados em todos os momentos pelos condutores de empilhadores dianteiros.",
+    "risk": 1,
+    "code": "7.3",
+    "criteria": {
+     "basic": "Observada uma grande parcela de empilhadeiras (> 10%) não equipadas com cintos de segurança; ou Uma grande parcela dos operadores de empilhadeiras (> 10%) foi observada não usando cintos de segurança;",
+     "partial": "Há uma regra sobre cinto de segurança estabelecida claramente no site. Observada pequena parcela de empilhadeiras (< 10%) não equipadas com cintos de segurança; ou Observada uma pequena parcela dos operadores de empilhadeiras (< 10%) não usando cinto de segurança.",
+     "significant": "Alguns desvios foram observados, porém, corrigidos imediatamente. Todos os motoristas conhecem a regra."
+    }
+   },
+   {
+    "text": "Proteção de cabeça fixa (teto) deve ser fornecida em empilhadeiras em áreas de rack.",
+    "risk": 1,
+    "code": "7.4",
+    "criteria": {
+     "basic": "Não é provida nenhuma proteção física.",
+     "partial": "Há uma parcela significativa de empilhadeiras (> 10%) não equipadas, ou há uma estrutura fixa apenas para proteção, porém, não há uma proteção complete para proteger contra itens menores que caem.",
+     "significant": "< 10% das empilhadeiras não possuem proteção plena e fixa para a cabeça, para proteger contra a queda de objetos grandes e menores."
+    }
+   },
+   {
+    "text": "Há uma regra de que duas empilhadeiras não podem entrar em um caminhão para fins de carga ou descarga ao mesmo tempo. Esta regra é comunicada e aplicada.",
+    "risk": 1,
+    "code": "7.5",
+    "criteria": {
+     "basic": "Não há regra estabelecida, e/ou má prática observada.",
+     "partial": "Regra informal conhecida por operadores de empilhadeira, porém, não é escrita.",
+     "significant": "A regra foi estabelecida, contudo, embora não tenham sido observadas deficiências, sabe-se que, em discussões com funcionários, tal prática pode acontecer em algumas situações."
+    }
+   },
+   {
+    "text": "A avaliação de risco foi realizada para avaliar o risco de interações entre empilhadeiras e pedestres e medidas de controle estão implementadas.",
+    "risk": 3,
+    "code": "7.6",
+    "criteria": {
+     "basic": "Não foi realizada nenhuma avaliação de risco.",
+     "partial": "Avaliação de risco significativamente incompleta (p.ex. faltam medidas de controle para identificar riscos críticos, e algumas tarefas como de manutenção não tem sido avaliadas quanto a risco etc.) ou parte do site não é onde ocorrem interações e não é coberta na avaliação de risco.",
+     "significant": "Foi realizada uma avaliação de risco, mas esta não é revista há mais de um ano ou após alguma alteração significativa."
+    }
+   },
+   {
+    "text": "Regras foram estabelecidas para determinar quem tem prioridade no local entre empilhadeiras e pedestres. A prioridade também é estabelecida entre empilhadeiras na mesma área. Estes foram claramente definidos, comunicados e são aplicados.",
+    "risk": 2,
+    "code": "7.7",
+    "criteria": {
+     "basic": "Regras de prioridade não definidas.",
+     "partial": "Regras de prioridade definidas, mas não são conhecidas por > 50% mas menos de 75% dos funcionários.",
+     "significant": "Regras de prioridade definidas e conhecidas por > 75% dos funcionários, porém, a comunicação pode ser melhorada."
+    }
+   },
+   {
+    "text": "Durante a condução, as empilhadeiras devem ter garfos posicionados para baixo (aprox. 20 cm do chão) e visibilidade total. Se uma carga obstruir a visão do motorista, a empilhadeira deve ser conduzida em sentido inverso (para trás).",
+    "risk": 1,
+    "code": "7.8",
+    "criteria": {
+     "basic": "Má prática observada, apresentando risco imediato a funcionários.",
+     "partial": "Regra não muito conhecida por um grande número de funcionários (> 50%).",
+     "significant": "Não foi observada nenhuma má prática. Uma pequena parcela de operadores (< 10%) não conhecia a regra."
+    }
+   },
+   {
+    "text": "O limite de velocidade da empilhadeira deve ser definido dependendo do tipo de zona:_x000D_ - Se os pedestres forem proibidos na área, o limite é de no máximo 12 km / h_x000D_ - Nas áreas onde há co-atividade entre pedestres e empilhadeiras o limite é de no máximo 6 km / h (por exemplo, nos pontos de cruzamento entre empilhadeiras e pedestres ou em áreas onde os pedestres podem caminhar ou trabalhar próximos a empilhadeiras sem proteção física entre eles )._x000D_ - Para outras áreas, os limites de velocidade podem ser definidos, mas sempre com base em uma avaliação de risco._x000D_ Os limites de velocidade devem ser conhecidos pelos motoristas de empilhadeira.",
+    "risk": 1,
+    "code": "7.9",
+    "criteria": {
+     "basic": "A velocidade das empilhadeiras não está limitada corretamente. Ou ultrapassa 12 km/h em zona sem pedestre; ou ultrapassa 6 km/h em zona em que haja a presença de pedestres.",
+     "partial": "A velocidade das empilhadeiras é limitada, porém, foram observados operadores de empilhadeira acima desse limite (não apresentando um alto risco imediato para os funcionários).",
+     "significant": "Velocidade das empilhadeiras limitada acima de 12 km/h em outras áreas, porém, não é justificada por meio de uma avaliação formal de risco."
+    }
+   },
+   {
+    "text": "Empilhadeiras são equipadas com um \"holofote de segurança azul\" para avisar os pedestres de reversão de empilhadeira que está funcionando totalmente.",
+    "risk": 1,
+    "code": "7.10",
+    "criteria": {
+     "basic": "Não há luz refletora de segurança azul instalada em nenhuma das empilhadeiras.",
+     "partial": "> 50% das empilhadeiras são equipadas com luz refletora de segurança azul.",
+     "significant": "> 75% das empilhadeiras são equipadas com luz refletora de segurança azul funcional."
+    }
+   },
+   {
+    "text": "Durante as operações, uma distância segura deve ser mantida mantendo pelo menos 5m da empilhadeira mais próxima.",
+    "risk": 1,
+    "code": "7.11",
+    "criteria": {
+     "basic": "Não foi estabelecida nenhuma regra, sendo observada mais de uma prática insegura.",
+     "partial": "Regra estabelecida e conhecida por > 50% dos operadores, sendo observada uma prática insegura.",
+     "significant": "Regra estabelecida e conhecida por > 75% dos operadores. Pequena deficiência observada."
+    }
+   },
+   {
+    "text": "Motoristas de empilhadeiras são treinados e certificados por pessoas autorizadas. O treinamento e a certificação devem ser regularmente aprovados novamente (com uma frequência que não exceda 5 anos).",
+    "risk": 1,
+    "code": "7.12",
+    "criteria": {
+     "basic": "Um operador de empilhadeira estava dirigindo sem treinamento ou permissão.",
+     "partial": "Autorização para operar uma empilhadeira foi entregue sem um treinamento específico requerido.",
+     "significant": "Permissão e autorização de um operador de empilhadeira foram concedidas com base em treinamento; contudo, a data de expiração da permissão havia sido excedida sem renovação."
+    }
+   },
+   {
+    "text": "Incidentes sérios com a empilhadeiras (por exemplo, perda de tempo e acidentes sem perda de tempo, quase acidentes com alto potencial de gravidade) são investigados detalhadamente, incluindo uma análise de causa raiz e medidas preventivas comunicadas e implementadas.",
+    "risk": 3,
+    "code": "7.13",
+    "criteria": {
+     "basic": "Incidente não investigado.",
+     "partial": "Incidente investigado parcialmente (por exemplo, análise insuficiente da causa principal, medidas preventivas não identificadas com clareza.).",
+     "significant": "Incidente investigado apropriadamente, mas não é realizado um acompanhamento da implementação das medidas corretivas."
+    }
+   },
+   {
+    "text": "Veículos fora de serviço e em manutenção são identificados, com pneus bloqueados, bateria desconectada e chaves protegidas por pessoal autorizado.",
+    "risk": 2,
+    "code": "7.14",
+    "criteria": {
+     "basic": "Veículos fora de serviço não são identificados.",
+     "partial": "Veículos fora de serviço e em manutenção são identificados, mas não estão bloqueados.",
+     "significant": "Veículos fora de serviço e em manutenção são identificados e bloqueados em pelo menos 75% dos casos. O processo pode ser melhorado."
+    }
+   },
+   {
+    "text": "Há acesso restrito à sala de recarga da bateria, e todos os outros trabalhos na sala são estritamente proibidos. Há uma lista de pessoas com acesso à área de recarga da bateria da empilhadeira. Essas pessoas foram totalmente treinadas e existem POPs que são cumpridos.",
+    "risk": 2,
+    "code": "7.15",
+    "criteria": {
+     "basic": "A área de carga de bateria tem um acesso livre, e não há POPs ou comprovação de treinamento. Ou nenhuma má prática foi observada.",
+     "partial": "Há uma lista de pessoas que são treinadas juntamente com os POPs, contudo, o acesso à área de carga de baterias não é restrito.",
+     "significant": "O acesso é restrito, as pessoas são treinadas e há POPs; contudo, foram observadas pequenas deficiências."
+    }
+   },
+   {
+    "text": "Os equipamentos e acessórios na sala de recarga da bateria são à prova de explosão (por exemplo, iluminação, mecanismos de elevação, etc.). Equipamentos adequados de combate a incêndio (por exemplo, extintores) devem estar localizados na sala.",
+    "risk": 1,
+    "code": "7.16",
+    "criteria": {
+     "basic": "A iluminação e o equipamento não são à prova de explosão.",
+     "partial": "A iluminação é à prova de explosão; contudo, foram observados alguns equipamentos < 50% na sala que não são à prova de explosão.",
+     "significant": "Equipamento e iluminação são à prova de explosão; contudo, há equipamentos de combate a incêndio inadequados na sala de recarga de bateria."
+    }
+   },
+   {
+    "text": "Um sensor de hidrogênio (adequado para as salas de recarga da bateria) é instalado na sala de recarga da bateria e o sensor é inspecionado, verificado e verificado uma vez por ano.",
+    "risk": 2,
+    "code": "7.17",
+    "criteria": {
+     "basic": "Não há nenhum sensor.",
+     "partial": "Há um sensor de hidrogênio instalado, porém, não são realizadas inspeções.",
+     "significant": "Sensor de hidrogênio instalado, e verificado anualmente, porém, os registros são deficientes."
+    }
+   },
+   {
+    "text": "As baterias devem ser fechadas na sala de recarga da bateria e colocadas no suporte.",
+    "risk": 3,
+    "code": "7.18",
+    "criteria": {
+     "basic": "Baterias não estão fechadas ou colocadas sobre um pedestal.",
+     "partial": "Todas as baterias fechadas; contudo, algumas < 25% não estão colocadas sobre os pedestais.",
+     "significant": "Baterias estão fechadas e colocadas sobre um pedestal, porém, algumas pequenas deficiências são observadas."
+    }
+   },
+   {
+    "text": "Para empilhadeiras movidas a diesel (GLP), a área de armazenamento de combustível atende aos requisitos mínimos e os operadores são treinados no uso seguro, riscos e perigos. A área em que essas empilhadeiras trabalham é bem ventilada e os fumos não apresentam risco.",
+    "risk": 1,
+    "code": "7.19",
+    "criteria": {
+     "basic": "A área de armazenagem não atende às normas mínimas, e operadores não são treinados. Ou a área não é bem ventilada.",
+     "partial": "A área de armazenagem atende aos requisitos mínimos, contudo, os operadores não são plenamente treinados, e não há POPs estabelecidos.",
+     "significant": "Os requisitos mínimos são atendidos, os operadores são treinados, mas alguns pequenos desvios são observados."
+    }
+   },
+   {
+    "text": "Um ponto de contato que conduz a implementação do padrão de empilhadeira é designado pelo Gerente do Site. Essa pessoa adquiriu um bom conhecimento do padrão e riscos relacionados e medidas de controle por treinamento.",
+    "risk": 3,
+    "code": "7.20",
+    "criteria": {
+     "basic": "Não há ponto de contato no site. Não há ninguém no site encarregado de coordenar este tópico.",
+     "partial": "Ponto de contato no site, porém, não treinado.",
+     "significant": "Ponto de contato designado, devidamente treinado, mas com tempo insuficiente dedicado a conduzir o programa."
+    }
+   }
+  ]
+ },
+ {
+  "number": 8,
+  "header": "8. Quimicos",
+  "requirements": [
+   {
+    "text": "Uma sala de armazenamento de produtos químicos perigosos é fornecida com um conjunto completo de EPI de acordo com os produtos químicos armazenados lá dentro._x000D_ _x000D_ [Um produto químico perigoso é qualquer produto químico que possa causar um perigo físico ou de saúde. É qualquer substância química que seja tóxica, nociva, corrosiva, irritante, substância asfixiante ou uma mistura de substâncias.]",
+    "risk": 1,
+    "code": "8.1",
+    "criteria": {
+     "basic": "Observado o manuseio de substância química perigosa sem EPI; ou Observados funcionários ingressando em armazenagem de substâncias químicas sem uma alta proteção pertinente.",
+     "partial": "Observado manuseio de substância química perigosa, porém, o EPI não era apropriado (p.ex. luvas não químicas utilizadas para manusear uma substância química); ou Nenhuma instrução comunicada a funcionários para acessar armazenagem de substâncias químicas (embora EPIs adequados fossem usados).",
+     "significant": "Observado manuseio de substância química perigosa com EPI apropriado, porém, faltava sinalização para utilizar EPI."
+    }
+   },
+   {
+    "text": "Existe um kit de derramamento de fácil acesso, é controlado periodicamente e o pessoal é devidamente treinado em seu uso.",
+    "risk": 2,
+    "code": "8.2",
+    "criteria": {
+     "basic": "Kit de emergência não disponível. Não há nenhum procedimento estabelecido para administrar derrames. Funcionários não receberam treinamento sobre a gestão de derrames.",
+     "partial": "Kits de emergência disponíveis, mas em quantidade insuficiente ou não presents em áreas de risco. Ou Nenhum procedimento para derrame elaborado. Ou Observada a falta de elementos nos kits antiderrame que estão disponíveis. > 50% mas menos de 75% dos funcionários que podem administrar derrames não receberam nenhum treinamento formal.",
+     "significant": "Havia kits de emergência disponíveis em muitas áreas (> 75% mas menos de 100%), em que substâncias químicas são empregadas. Há um procedimento para derrames. > 75% (mas menos de 100%) de funcionários são treinados no procedimento."
+    }
+   },
+   {
+    "text": "As pessoas que utilizam os produtos químicos são treinadas sobre riscos, incompatibilidade de produtos, EPI, armazenamento seguro, gerenciamento de derramamentos e uso de equipamentos de primeiros socorros. Todo o pessoal que manuseia equipamentos químicos recebeu um conjunto completo de EPI de acordo com esses produtos e usa de acordo com seu treinamento.",
+    "risk": 1,
+    "code": "8.3",
+    "criteria": {
+     "basic": "< 75% das pessoas são treinadas.",
+     "partial": "> 75% das pessoas são treinadas (mas não 100%); ou o programa de treinamento é significativamente insuficiente.",
+     "significant": "100% das pessoas que lidam com substâncias químicas aão devidamente treinadas. Contudo, pessoas entrevistadas não conheciam plenamente o procedimento ou o interpretavam mal."
+    }
+   },
+   {
+    "text": "Os Produtos Químicos são separados por tipo de produto em conformidade com as regras de compatibilidade (consulte a lista de verificação específica de conformidade química).",
+    "risk": 1,
+    "code": "8.4",
+    "criteria": {
+     "basic": "Observados produtos incompatíveis armazenados na mesma contenção secundária, ou não existe um sistema de gestão.",
+     "partial": "Observada alguma incompatibilidade (de baixo risco). Não há sistema estabelecido para assegurar a implementação de regras de compatibilidade / monitoramento.",
+     "significant": "Não foi observada nenhuma incompatibilidade, e as regras de riscos de compatibilidade são mostradas, porém, o sistema para assegurar que não haja incompatibilidade pode ser melhorado."
+    }
+   },
+   {
+    "text": "A área de armazenamento foi projetada de acordo com os requisitos descritos nas Especificações Técnicas de Segurança e requisitos legais._x000D_ Em particular, locais onde quantidades significativas (> 1 tonelada) de produtos inflamáveis são armazenados, estes devem ser equipados com ventilação apropriada, alarme de incêndio, sistemas de extinção e portas corta-fogo, de acordo com os regulamentos locais e quantidades de produtos inflamáveis armazenados.",
+    "risk": 1,
+    "code": "8.5",
+    "criteria": {
+     "basic": "Áreas de armazenagem não conformes significativamente com os requisitos legais ou normativos (conformidade inferior a 50%).",
+     "partial": "A área de armazenagem tem uma conformidade inferior a 75% com requisitos legais ou normativos. ou Conformidade inferior a 75% em confronto com as recomendações das MSDS.",
+     "significant": "Área de armazenagem ligeiramente não conforme com os requisitos legais ou normativos, ou com as recomendações das MSDS."
+    }
+   },
+   {
+    "text": "Os produtos químicos são usados em seu original ou em um recipiente apropriado. Embalagens de alimentos ou recipientes (garrafas, jarras, caixas, baús, etc.) não são usados / reutilizados para armazenar ou manusear produtos químicos (Ex. Amostragem, armazenamento de produtos químicos, dosagem, etc.)",
+    "risk": 1,
+    "code": "8.6",
+    "criteria": {
+     "basic": "Observação de uma embalagem alimentar que continha um produto químico. Observado risco de incompatibilidade entre o conteúdo e o recipiente.",
+     "partial": "Observação de mais de um recipiente com grau não alimentar contendo uma substância química que não era adequada para a finalidade (sem risco de incompatibilidade).",
+     "significant": "Observação de um único recipiente com grau não alimentar contendo uma substância química não adequada para a finalidade (sem risco de incompatibilidade)."
+    }
+   },
+   {
+    "text": "Uma contenção de derramamento garante a coleta de 110% do maior recipiente de produtos químicos corrosivos fortes em todos os lugares.",
+    "risk": 1,
+    "code": "8.7",
+    "criteria": {
+     "basic": "Substâncias químicas corrosivas armazenadas sem contenção de derrame.",
+     "partial": "Substâncias corrosivas armazenadas em contenção de derrame, mas com capacidade insuficiente.",
+     "significant": "A contenção de derrame de 110% de substância corrosiva armazenada está disponível em todos os locais necessários, porém, a condição para contenção pode ser melhorada."
+    }
+   },
+   {
+    "text": "Todos os recipientes são identificados corretamente, de acordo com a legislação vigente.",
+    "risk": 1,
+    "code": "8.8",
+    "criteria": {
+     "basic": "Rotulagem de recipientes significativamente deficientes, de forma a apresentar riscos de incompatibilidade (> 25%).",
+     "partial": "Observada rotulagem incorreta em alta proporção de recipientes de químicos (> 10%).",
+     "significant": "Observada rotulagem incorreta em uma pequena proporção de recipientes de químicos (< 10%)."
+    }
+   },
+   {
+    "text": "Chuveiro de emergência e lava olhos (ex: soluções de diphoterine) estão localizados corretamente e são inspecionados pelo menos uma vez por mês e em boas condições de trabalho. As inspeções são registradas.",
+    "risk": 1,
+    "code": "8.9",
+    "criteria": {
+     "basic": "Uma parcela significativa (> 10%) de chuveiros de emergência e lava-olhos encontrava-se em má condição funcional ou faltando em um local em que sua presença é requerida. Não há programa de inspeção estabelecido. Observado equipamento de primeiros socorros, com registro hídrico na posição fechada.",
+     "partial": "Pequena parcela de chuveiros de emergência e limpadores/lava-olho (< 10%) encontrada em má condição funcional ou faltando, em um local em que sua presença é requerida. Há um programa de inspeção estabelecido, mas observadas deficiências significativas. Funcionários entrevistados não sabem onde se localiza o equipamento de primeiros socorros. Válvulas de fechamento observadas em diversos equipamentos de primeiros socorros (mas na posição aberta).",
+     "significant": "Chuveiros de emergência e limpadores/lava-olhos encontrados em boas condições funcionais e corretamente localizados. Os funcionários entrevistados sabem onde se localiza o equipamento de primeiros socorros. Programa de inspeção estabelecido, porém, pequenas deficiências observadas. Inspeções são efetivamente realizadas, mas não documentadas."
+    }
+   },
+   {
+    "text": "Os Produtos Químicos utilizados fora de salas dedicadas são usados em volume mínimo e transportados em contêineres de derramamento especiais, com uma pessoa clara responsável, devidamente identificada e com o FISPQ (ficha de segurança) são colocados no local de trabalho onde produtos químicos perigosos são usados.",
+    "risk": 2,
+    "code": "8.10",
+    "criteria": {
+     "basic": "Observados produtos em grande volume a serem transportados sem contenção de derrame; ou Não havia SDS presente no local de uso / armazenagem ou não disponível no idioma do país.",
+     "partial": "Observados produtos em grande volume a serem transportados com contenção de derrame. Produtos em grandes volumes (< 50 L) ainda são transportados sem contenção de derrame. Observada uma parcela significativa de SDS não prontamente disponível ou não atualizada.",
+     "significant": "Uma pequena parcela (<10%) de SDS não prontamente disponível ou não atualizada. ou Não há funções e responsabilidades definidas claramente para o transporte de substâncias químicas fora de salas dedicadas."
+    }
+   },
+   {
+    "text": "Se houver resíduos químicos gerados, estes são coletados, identificados e armazenados em condições seguras (separados por tipo, contêineres adaptados, acesso restrito / bloqueado).",
+    "risk": 1,
+    "code": "8.11",
+    "criteria": {
+     "basic": "Armazenagem de resíduo químico (p.ex. recipientes não adaptados, incompatibilidade observada, não há restrição a acesso etc.)",
+     "partial": "Alguns desvios (<10%) observados na armazenagem de resíduo químico, que não apresentavam um alto risco imediato.",
+     "significant": "Chemical waste storage observed well managed. There is Proper labelling of chemical waste , but some minor improvements can be made."
+    }
+   },
+   {
+    "text": "Existe um procedimento para gerenciar produtos químicos, incluindo a especificação de todos os produtos e a ficha de dados de segurança do material (FISPQ). Abrange a introdução de novos produtos químicos (processo de validação, armazenamento, uso, tratamento de emergência).",
+    "risk": 3,
+    "code": "8.12",
+    "criteria": {
+     "basic": "Não há nenhum procedimento definido no site.",
+     "partial": "Existe um procedimento, mas este não abrange um dos aspectos da gestão de substâncias químicas (p.ex. introdução de substâncias químicas no site, operações de carga & descarga, armazenagem, manuseio, gestão de resíduos, gestão de derrame, prontidão para emergência, gestão de SDS etc.); ou Grande parcela de pessoas não treinadas para seguir o procedimento.",
+     "significant": "Procedimento existente e conforme, mas uma pequena parcela de pessoas (<10%) não treinadas para seguir o procedimento ou treinamento de reciclagem não ministrado no devido tempo."
+    }
+   },
+   {
+    "text": "Uma lista de inventário de produtos químicos fornece um registro dos tipos e quantidade de cada produto mantido no local.",
+    "risk": 3,
+    "code": "8.13",
+    "criteria": {
+     "basic": "Não há inventário estabelecido ou inventário disponível, mas significativamente desatualizado.",
+     "partial": "Inventário estabelecido, mas desatualizado em alguns casos isolados (< 5%).",
+     "significant": "Inventário atualizado, mas não especificando a localização exata de cada substância química."
+    }
+   }
+  ]
+ },
+ {
+  "number": 9,
+  "header": "9. Trabalho em altura",
+  "requirements": [
+   {
+    "text": "O acesso a telhados, tetos, ... estão bloqueados.",
+    "risk": 1,
+    "code": "9.1",
+    "criteria": {
+     "basic": "Acessos não são controlados. ou Observada parcela significativa (<10%) de acessos não bloqueados durante a auditoria. ou Pessoal não autorizado e não treinado foi observado nas áreas envolvidas.",
+     "partial": "Observada uma pequena proporção (<10%) de acessos não bloqueados.",
+     "significant": "Todos os acessos verificados foram encontrados bloqueados, mas não há sistema estabelecido para assegurar que o acesso seja restrito apenas a pessoas autorizadas (inclusive subcontratados).."
+    }
+   },
+   {
+    "text": "O acesso a plataformas, passarelas com mais de 3 metros de altura (que não são usadas como caminho de passagem normal/habitual) está bloqueado ou tem acesso restrito para pessoas autorizadas.",
+    "risk": 1,
+    "code": "9.2",
+    "criteria": {
+     "basic": "Acessos não são controlados. ou Observada parcela significativa (>10%) de acessos não bloqueados durante a auditoria. ou Pessoal não autorizado e não treinado foi observado nas áreas envolvidas.",
+     "partial": "Observada uma pequena proporção (<10%) de acessos não bloqueados.",
+     "significant": "Todos os acessos verificados foram encontrados bloqueados, mas não há sistema estabelecido para assegurar que o acesso seja restrito apenas a pessoas autorizadas (inclusive subcontratados)."
+    }
+   },
+   {
+    "text": "O acesso a silos, tanques são bloqueados ou têm acesso restrito para pessoas autorizadas.",
+    "risk": 1,
+    "code": "9.3",
+    "criteria": {
+     "basic": "Acessos não são controlados. ou Observada parcela significativa (>10%) de acessos não bloqueados durante a auditoria. ou Pessoal não autorizado e não treinado foi observado nas áreas envolvidas.",
+     "partial": "Observada uma pequena parcela (<10%) de acessos não bloqueados.",
+     "significant": "Todos os acessos verificados foram encontrados bloqueados, mas não há sistema estabelecido para assegurar que o acesso seja restrito apenas a pessoas autorizadas (inclusive subcontratados)."
+    }
+   },
+   {
+    "text": "Plataformas e passagens onde trabalhos regulares são realizados devem ser protegidos por uma barreira de 1m, intermediária a 50cm e um rodapé de 10cm.",
+    "risk": 1,
+    "code": "9.4",
+    "criteria": {
+     "basic": "Observação de uma plataforma ou passarela não fixada.",
+     "partial": "Observação de uma plataforma ou passarela que poderia estar melhor fixada.",
+     "significant": "Todas as plataformas e passarelas devidamente fixadas, mas as condições de proteção podem ser melhoradas."
+    }
+   },
+   {
+    "text": "As autorizações de trabalho em altura são entregues para qualquer trabalho acima de 2 m de altura a partir de uma plataforma fixa ou fixada, e para qualquer trabalho em um telhado ou silo / tanque. O trabalho em altura permite identificar riscos e medidas de controle a serem implementadas, são válidos apenas um dia e são assinados por uma pessoa competente formalmente designada pelo gerente do local (não é necessária autorização para trabalho em altura para o uso regular de meios seguros de acesso a uma plataforma segura) .",
+    "risk": 2,
+    "code": "9.5",
+    "criteria": {
+     "basic": "Não há sistema para trabalho em altura estabelecido. ou Falta de permissão observada para um trabalho em altura. ou Permissões para trabalho em altura não incluem identificação de risco. ou Medidas de controle identificadas como inapropriadas para evitar acidentes graves.",
+     "partial": "O exame de permissões mostra lacunas na identificação de riscos, e medidas de controle podem ser aperfeiçoadas. ou Não há treinamento formal ou autorização da pessoa encarregada de validar as permissões.",
+     "significant": "Permissões para trabalho em altura estabelecidas e concluídas, mas válidas para mais de um dia e/ou não assinada por uma pessoa formalmente competente."
+    }
+   },
+   {
+    "text": "Escadas fixas são seguras a partir de 2 metros do nível do solo (escadas marinheiro - guarda corpo fixo).",
+    "risk": 1,
+    "code": "9.6",
+    "criteria": {
+     "basic": "Escadas fixas que permitem o acesso a mais de 2 m não são seguras; ou apenas algumas escadas são fixadas e/ou há um risco significativo de queda, ao utilizar escadas inseguras.",
+     "partial": "Escadas fixas são em geral seguras. Alguns exemplos de escadas não seguras (1-2)",
+     "significant": "Escadas fixas são em geral seguras. Alguns exemplos de escadas (1-2) não seguras, porém, procedimentos alternativos são implementados para impedir quedas (arnês, cordas de segurança etc..)"
+    }
+   },
+   {
+    "text": "Escadas fixas e móveis e plataformas móveis que dão acesso a uma altura superior a 2 m são bloqueadas (com exceção das escadas fixas normalmente usadas para acessar plataformas de processo).",
+    "risk": 1,
+    "code": "9.7",
+    "criteria": {
+     "basic": "Não há sistema estabelecido para travar escadas ou uma parcela significativa de escadas não travadas (>10%).",
+     "partial": "Há um sistema estabelecido para restringir o acesso a escadas móveis e fixas através dos sinais “Somente funcionários autorizados” e meios físicos (corrente, cadeados). Observada uma pequena parcela de escadas não travadas (<10%).",
+     "significant": "Todas as escadas encontradas travadas, mas não há sistema estabelecido para assegurar que apenas funcionários autorizados possam acessá-las."
+    }
+   },
+   {
+    "text": "Escadas fixas e móveis e plataformas móveis que dão acesso a uma altura superior a 2 m são inspecionadas pelo menos anualmente.",
+    "risk": 2,
+    "code": "9.8",
+    "criteria": {
+     "basic": "Não há programa de inspeção estabelecido; ou Há um sistema estabelecido, contudo, não pôde ser estabelecido se todo o equipamento está incluído no programa.",
+     "partial": "Programa de inspeção estabelecido, e todo equipamento consta de lista (confirmado através de observações arquivadas). Uma parcela significativa de equipamento (>10%) ou não é inspecionada ou não está de acordo com a periodicidade definida.",
+     "significant": "Não há programa de inspeção estabelecido. Funcionários foram treinados formalmente para realizar inspeções. Usuários podem identificar rapidamente se as escadas foram inspecionadas no devido prazo e se o equipamento pode ser utilizado. Observada uma pequena parcela de escadas não travadas não inspecionadas (<10%)."
+    }
+   },
+   {
+    "text": "3 pontos de contato devem ser mantidos em todos os momentos ao usar uma escada.",
+    "risk": 1,
+    "code": "9.9",
+    "criteria": {
+     "basic": "O pessoal não utiliza 3 pontos de contato quando usa uma escada.",
+     "partial": "Menos de 80% do pessoal utilizam os 3 pontos de contato, quando utilizam uma escala.",
+     "significant": "Mais de 80% utiliza 3 pontos de contato quando usa uma escada."
+    }
+   },
+   {
+    "text": "As escadas devem estar equipadas com pés antiderrapantes e em bom estado (por exemplo, sem degraus quebrados, sem equipamento enferrujado, etc.).",
+    "risk": 1,
+    "code": "9.10",
+    "criteria": {
+     "basic": "Escadas estão em condições inadequadas para serem usadas.",
+     "partial": "Pelo menos 80% das escadas estão em condições adequadas para uso.",
+     "significant": "Mais de 80% das escadas estão em condições adequadas para uso."
+    }
+   },
+   {
+    "text": "As escadas não devem ser usadas como a estação de trabalho usual.",
+    "risk": 2,
+    "code": "9.11",
+    "criteria": {
+     "basic": "Escadas são utilizadas como uma estação de trabalho usual.",
+     "partial": "As escadas são utilizadas em > 50% de tarefas em que não são necessárias.",
+     "significant": "As escadas são utilizadas em < 10% de tarefas em que não são necessárias."
+    }
+   },
+   {
+    "text": "Trabalhos temporários que requerem o uso de uma escada não podem ser feitos nas duas últimas etapas de uma escada.",
+    "risk": 1,
+    "code": "9.12",
+    "criteria": {
+     "basic": "Funcionários que utilizam escadas usam cada um dos degraus.",
+     "partial": "Mais de 50%, mas menos de 80%, dos funcionários que utilizam escadas não usam os dois últimos degraus.",
+     "significant": "Mais de 80% (mas menos de 100%) dos funcionários que utilizam escadas não usam os dois últimos degraus."
+    }
+   },
+   {
+    "text": "Qualquer trabalho temporário realizado em uma escada requer o uso obrigatório de um cinto de segurança durante a realização de obras a 2 metros ou mais.",
+    "risk": 1,
+    "code": "9.13",
+    "criteria": {
+     "basic": "Em trabalho realizado em escadas com mais de 2 metros, arneses não são utilizados, ou não há arneses disponíveis.",
+     "partial": "Em trabalho realizado em escadas com mais de 2 metros, arneses são utilizados, porém, em más condições, ou não há nenhum procedimento disponível ou treinamento ministrado.",
+     "significant": "Em trabalho executado em escadas com mais de 2 metros, arneses nas condições padrão requeridas são usados, e há um procedimento e treinamento, porém, algumas pequenas melhorias poderiam ser efetuadas."
+    }
+   },
+   {
+    "text": "Os andaimes são estáveis e têm uma barreira a 0,5 m e 1,0 m um raodapé de 10 cm. Acessos entre diferentes níveis devem estar dentro da estrutura (escadas). Eles foram projetados por uma pessoa competente.",
+    "risk": 1,
+    "code": "9.14",
+    "criteria": {
+     "basic": "Foi observado que um andaima não atenda ao requisito.",
+     "partial": "Observado andaime sem nenhuma deficiência. Nenhuma pessoa competente confirmou o design apropriado do andaime.",
+     "significant": "Observado andaime sem nenhuma deficiência. Uma pessoa competente presente no site é envolvida na montagem dos andaimes. Não é realizada inspeção formal dos andaimes antes do uso. Não é realizada inspeção formal dos andaimes enquanto em uso."
+    }
+   },
+   {
+    "text": "Enquanto estão em uso, os andaimes fixos são inspecionados pelo menos semanalmente por uma pessoa competente e diariamente pelos usuários.",
+    "risk": 2,
+    "code": "9.15",
+    "criteria": {
+     "basic": "Não há programa de inspeção estabelecido; ou Os funcionários encarregados de realizar as inspeções não são treinadas para isso.",
+     "partial": "Inspeções são realizadas antes do primeiro uso de andaimes, após a montagem. Inspeções são realizadas diariamente por funcionários treinados. Não há um programa de inspeção desenvolvido para trabalhos que durem mais de uma semana.",
+     "significant": "Programa de inspeção desenvolvido; Funcionário(s) designado(s) foi(ram) treinado(s) formalmente para realizar inspeções. Usuários podem identificar rapidamente se os andaimes foram inspecionados ou não e se o equipamento pode ser utilizado. Registros de inspeção plena não podem ser providos completamente."
+    }
+   },
+   {
+    "text": "Queda através de clarabóias é impedida através de uma grade ou pelo menos uma barreira física.",
+    "risk": 1,
+    "code": "9.16",
+    "criteria": {
+     "basic": "Uma parcela significativa (>10%) de claraboias (ou todas) não equipadas, e não há nenhuma medida de mitigação de risco estabelecida visando administrar o risco de quedas.",
+     "partial": "Uma parcela significativa (>10%) de claraboias não equipada. Acessos a telhados são administrados de forma a assegurar que apenas funcionários treinados possam acessar as áreas em que há claraboias presentes. A prevenção plena conta com os meios organizacionais (distância mínimas das claraboias)",
+     "significant": "Uma parcela significativa de claraboias não equipada. Medidas temporárias de prevenção de queda, baseados em avaliação de risco, são implementadas enquanto se acessa as áreas concernentes (arneses, corda de segurança etc.)."
+    }
+   },
+   {
+    "text": "Uma barreira de altura suficiente deve estar presente ao redor da borda do telhado para evitar risco de queda. Se não, uma linha de vida a pelo menos 2 metros da borda do telhado deve estar disponível em caso de trabalho no telhado.",
+    "risk": 1,
+    "code": "9.17",
+    "criteria": {
+     "basic": "Uma parcela significativa (>10%) das ou todas as bordas de telhado não equipadas. Não foi desenvolvido nenhum sistema para assegurar que o funcionário não se aproxime menos que 2 metros das bordas do telhado.",
+     "partial": "Uma parcela significativa (>10%) das ou todas as bordas de telhado não equipadas. Acessos a telhados são administrados de forma a assegurar que apenas funcionários treinados possam acessar. A prevenção contra queda conta com os meios organizacionais e treinamento (distância mínimas das claraboias).",
+     "significant": "Pequena parcela de telhados (>10%) não equipados com barreiras. Medidas temporárias de prevenção de queda, baseados em avaliação de risco, são implementadas enquanto se acessa as áreas concernentes (arneses, corda de segurança etc.)."
+    }
+   },
+   {
+    "text": "Elementos de elevação (ex: plataformas, gaiola metálica) estão em boas condições. (Gaiola metálica em bom estado inclui a presença de ponto de ancoragem entre a gaiola e o veículo localizado abaixo da plataforma, a gaiola pode ser fixada com segurança à plataforma, o acesso às partes móveis do veículo a partir da plataforma é impedido).",
+    "risk": 1,
+    "code": "9.18",
+    "criteria": {
+     "basic": "Observado equipamento de elevação em condição significativamente ruim.",
+     "partial": "SObservada pequena parcela (<10%) de elementos de elevação em más condições.",
+     "significant": "A condição dos elementos de elevação pode ser melhorada."
+    }
+   },
+   {
+    "text": "Os elementos de elevação (por exemplo, plataformas, gaiola metálica e empilhadeira) são inspecionados pelo menos anualmente.",
+    "risk": 2,
+    "code": "9.19",
+    "criteria": {
+     "basic": "Não há programa de inspeção estabelecido.",
+     "partial": "Programa de inspeção estabelecido, porém, deficiências significativas observadas. Inspeções periódicas estão desatualizadas, ou parte do equipamento não está incluído no programa.",
+     "significant": "Programa de inspeção estabelecido, porém, pequenas deficiências observadas. (p ex. pequenos atrasos nas inspeções periódicas)"
+    }
+   },
+   {
+    "text": "Os elementos de elevação (por exemplo, plataformas, gaiola metálica e empilhadeira) são usados apenas por pessoas qualificadas.",
+    "risk": 2,
+    "code": "9.20",
+    "criteria": {
+     "basic": "Observado que elementos de elevação são utilizados por pessoas não qualificadas (incluindo qualificação desatualizada); ou Má prática observada.",
+     "partial": "Observado que elementos de elevação são utilizados por pessoas cuja prova de qualificação não estava prontamente disponível.",
+     "significant": "Observado que elementos de elevação são utilizados por pessoas cuja qualificação não pode ser comprovada, mas não há nenhum sistema estabelecido para verificar essa qualificação antecipadamente."
+    }
+   },
+   {
+    "text": "Equipamentos de proteção individual contra queda (por exemplo, chicotes, linhas de vida, pontos de ancoragem, etc.) são fornecidos em boas condições. Os cintos de segurança devem ser projetados com dois pontos de ancoragem (pelo menos um é usado o tempo todo) e não devem permitir queda livre de mais de 1 metro.",
+    "risk": 1,
+    "code": "9.21",
+    "criteria": {
+     "basic": "Equipamento pessoal de proteção contra queda encontrado em má condição. ou Funcionários estão equipados incorretamente para cobrir riscos reais. e/ou Observado trabalho sendo realizado incorretamente.",
+     "partial": "A condição de equipamento pessoal de proteção contra queda pode ser melhorada significativamente.",
+     "significant": "Encontradas pequenas deficiências em equipamento de proteção pessoal contra queda."
+    }
+   },
+   {
+    "text": "Equipamentos pessoais de proteção contra quedas (por exemplo: cintos de segurança, linhas de vida, pontos de ancoragem, etc.) inspecionados pelo menos uma vez por ano.",
+    "risk": 2,
+    "code": "9.22",
+    "criteria": {
+     "basic": "Não há programa de inspeção estabelecido.",
+     "partial": "Programa de inspeção estabelecido, porém, deficiências significativas observadas. Parte do equipamento não coberto por programa de inspeção. Irregularidades do equipamento não abordadas, e equipamento ainda em uso). Comprovação de inspeções não pode ser fornecida. Inspeções desatualizadas e equipamento observado utilizado.",
+     "significant": "Não há programa de inspeção estabelecido. Todo equipamento coberto pelo plano de inspeção. Registros de inspeções estão disponíveis. Algumas inspeções estão desatualizadas, mas o equipamento não é usado. A competência das pessoas encarregadas de realizar inspeções periódicas não pode ser estabelecida."
+    }
+   },
+   {
+    "text": "Cintos de segurança, linhas de vida, pontos de ancoragem, etc.) são usados apenas por pessoas qualificadas. Treinamento específico deve ser entregue aos funcionários que trabalham em altura.",
+    "risk": 2,
+    "code": "9.23",
+    "criteria": {
+     "basic": "Não há programa de treinamento específico ministrado para pessoas que trabalham com equipamento de proteção pessoal contra queda. ou Observado trabalho em altura sendo realizado por uma pessoa não treinada.",
+     "partial": "Programa de treinamento específico estabelecido, mas observada a falta de elementos significativos no conteúdo do programa ou o treinamento não atende às necessidades atuais do site.",
+     "significant": "Programa de treinamento específico estabelecido, porém, pode ser aperfeiçoado. Alguns treinamentos de reciclagem estão desatualizados."
+    }
+   },
+   {
+    "text": "Os incidentes são minuciosamente investigados, incluindo uma análise de causa raiz e medidas preventivas comunicadas e implementadas. [Onde o CD tiver um procedimento e puder comprovar exemplos de investigação de acidentes e notificação de quase acidentes, mas não houver acidentes específicos relacionados à direção, os critérios podem ser marcados como \"compatíveis\", no entanto, um comentário deve ser feito para esse efeito]",
+    "risk": 3,
+    "code": "9.24",
+    "criteria": {
+     "basic": "Incidente foi comunicado, mas não investigado.",
+     "partial": "InIncidente investigado parcialmente (por exemplo, análise insuficiente da causa principal, medidas preventivas não identificadas com clareza.).",
+     "significant": "Incidente investigado apropriadamente, mas não é realizado um acompanhamento da implementação das medidas corretivas."
+    }
+   },
+   {
+    "text": "Um procedimento de trabalho em altura foi elaborado pelo gerenciamento de sites e contém pelo menos os requisitos desse elemento de Lista de Verificação de trabalho oem altura.",
+    "risk": 3,
+    "code": "9.25",
+    "criteria": {
+     "basic": "Falta de procedimento",
+     "partial": "Procedimento existente, porém, não atende plenamente à norma. ou Grande parcela de pessoas (>10%) não treinadas para seguir o procedimento.",
+     "significant": "Procedimento existente e conforme, mas há uma pequena parcela (<10%) de pessoas que trabalham em altura não treinadas par seguir o procedimento."
+    }
+   },
+   {
+    "text": "A avaliação de risco é realizada para qualquer operação regular (limpeza, produção) que exija acesso a uma plataforma.",
+    "risk": 3,
+    "code": "9.26",
+    "criteria": {
+     "basic": "Nenhuma avaliação de risco foi realizada para operação regular (limpeza, produção) que requeira o acesso a locais/plataformas em altura.",
+     "partial": "A avaliação de risco não cobre todas as operações, há riscos significativos que não são devidamente identificados ou não há ações para abordar riscos significativos.",
+     "significant": "Avaliação de risco estabelecida. Algumas áreas (<10%) não são totalmente cobertas, ou o nível de risco ainda poderia ser abaixado."
+    }
+   },
+   {
+    "text": "Um ponto de contato que conduz a implementação do padrão (Standard) de trabalho em altura é designado pelo Gerente do Site. Essa pessoa adquiriu um bom conhecimento do padrão e riscos relacionados e medidas de controle por treinamento.",
+    "risk": 3,
+    "code": "9.27",
+    "criteria": {
+     "basic": "Não há ponto de contato no site. Não há ninguém no site encarregado de coordenar este tópico.",
+     "partial": "Ponto de contato no site, porém, não treinado.",
+     "significant": "Ponto de contato designado, devidamente treinado, mas com tempo insuficiente dedicado a conduzir o programa."
+    }
+   }
+  ]
+ },
+ {
+  "number": 10,
+  "header": "10. Instalações Gerais",
+  "requirements": [
+   {
+    "text": "Portas e portões (por exemplo, portas rolantes, portas corta-fogo que separam prédios, portões de aço, etc.) que apresentam riscos de ferimentos graves em caso de falha são listados e inspecionados pelo menos anualmente. Planos de ação de manutenção preventiva são implementados._x000D_ Portas e portais rolantes horizontais devem ser equipados com uma orientação fechada na parte superior, de tal maneira que o mecanismo de rolagem nunca possa ser liberado desta orientação. Eles devem estar equipados com blocos físicos que parem as portas quando totalmente fechadas ou totalmente abertas, evitando que as portas sejam abertas no sistema de orientação.",
+    "risk": 1,
+    "code": "10.1",
+    "criteria": {
+     "basic": "Não há programa de inspeção estabelecido, ou constatação importante comunicada no relatório não abordado pelo site. Portais e portas de enrolar horizontais não são equipadas com bloqueios físicos e guia fechada.",
+     "partial": "Programa de inspeção estabelecido, mas cobrindo apenas uma parte do equipamento presente no site (ex. apenas portas automáticas são cobertas pelo programa de inspeção), ou inspecionadas menos que anualmente, ou há planos de ação para manutenção preventiva, porém, não implementados plenamente.",
+     "significant": "Programa de inspeção estabelecido cobrindo todos os equipamentos. Ações corretivas implementadas, mas não rastreadas ou poucas faltam na lista de equipamentos verificados, porém, que não apresentam risco."
+    }
+   },
+   {
+    "text": "Auditorias mensais de limpeza são realizadas para detectar condições inseguras. Um plano de ação corretiva é gerado e rastreado para acompanhamento.",
+    "risk": 3,
+    "code": "10.2",
+    "criteria": {
+     "basic": "Não há auditorias de organização interno",
+     "partial": "Auditorias de organização interna (‘housekeeping’) são realizadas visando detectar condições inseguras, porém, um plano de ação corretiva não é gerado.",
+     "significant": "Auditorias mensais de organização interna são realizadas visando detectar condições inseguras, e um plano de ação corretiva é gerado e rastreado para follow-up, porém, observadas pequenas deficiências."
+    }
+   },
+   {
+    "text": "Condição de construção (fadiga) é regularmente inspecionada e registros mantidos.",
+    "risk": 1,
+    "code": "10.3",
+    "criteria": {
+     "basic": "A condição do edifício não é inspecionada, ou a condição do edifício é ruim ou há altos riscos.",
+     "partial": "Programa de inspeção estabelecido, mas cobrindo apenas parte da condição do edifício no site, ou inspecionado com menos frequência do que requerido pela avaliação de risco ou planos de ação de manutenção preventiva existem, mas não são implementados plenamente.",
+     "significant": "Programa de inspeção estabelecido, cobrindo toda a condição do edifício, porém, as inspeções são implementadas menos periodicamente do que definido na avaliação de risco ou ações corretivas a partir das inspeções são implementadas, porém, algumas pequenas deficiências foram observadas."
+    }
+   },
+   {
+    "text": "Os pisos estão em boas condições, sem buracos, superfícies irregulares, etc. No caso de um defeito ser detectado, um plano de ação é gerado e os recursos são atribuídos para sua correção.",
+    "risk": 2,
+    "code": "10.4",
+    "criteria": {
+     "basic": "Os pisos estão em más condições com buracos, superfícies irregulares etc.",
+     "partial": "Os pisos estão em más condições com buracos, superfícies irregulares etc., porém, estes riscos estão marcados e um plano de ação é gerado.",
+     "significant": "Os pisos estão em boas condições sem buracos, sem superfícies irregulares, porém, algumas pequenas deficiências foram observadas. No caso de um defeito ser detectado, um plano de ação é gerado, e recursos são designados para sua correção."
+    }
+   },
+   {
+    "text": "Instalações elétricas são identificadas, armários elétricos ou partes de equipamentos que apresentam riscos elétricos (por exemplo, gerador de ozônio) são bloqueados e devem permitir a aplicação de LOTO.",
+    "risk": 1,
+    "code": "10.5",
+    "criteria": {
+     "basic": "Instalações elétricas não são identificadas ou há uma grande parcela de gabinetes elétricos encontrados destrancados, ou o procedimento LOTO não é utilizado.",
+     "partial": "Instalações elétricas são identificadas (>90%), mas não todas ou alguns gabinetes elétricos foram encontrados destrancados (<10%) ou procedimento LOTO utilizado, mas algumas pequenas deficiências são observadas.",
+     "significant": "Instalações elétricas são identificadas, contudo, uma pequena parte destas foi observada destrancada (<5%). Procedimento de LOTO é utilizado plenamente."
+    }
+   },
+   {
+    "text": "Uma avaliação de risco é realizada para máquinas que apresentam alto risco de lesão e medidas de controle são identificadas",
+    "risk": 3,
+    "code": "10.6",
+    "criteria": {
+     "basic": "Não há nenhuma avaliação de risco disponível.",
+     "partial": "Avaliação de risco significativamente incompleta (p.ex. faltam medidas de controle para identificar riscos críticos, e algumas tarefas como de manutenção não tem sido avaliadas quanto a risco etc. claraboias). ou parte do equipamento não está coberta na avaliação de risco.",
+     "significant": "Necessária uma pequena melhoria na avaliação de risco."
+    }
+   },
+   {
+    "text": "A velocidade de todos os veículos (caminhões, vans e outros veículos) deve ser limitada a <20 km / h e os sinais que exibem claramente o limite devem ser exibidos ao entrar no local. Violações são sancionadas.",
+    "risk": 1,
+    "code": "10.7",
+    "criteria": {
+     "basic": "Não havia limite de velocidade mostrada, e foi observado um caminhão a mais de 20 km/h.",
+     "partial": "Limite de velocidade mostrada, mas foi observado um caminhão não conforme.",
+     "significant": "Limites de velocidade mostrados, e motoristas são informados por um funcionário da Danone sobre os limites de velocidade no site. Não há quaisquer sanções estabelecidas."
+    }
+   },
+   {
+    "text": "As instalações de armazenamento de gás a granel têm um perímetro demarcado de segurança e acesso restrito, de acordo com a legislação local.",
+    "risk": 1,
+    "code": "10.8",
+    "criteria": {
+     "basic": "Observou-se que os acessos não eram restritos para pessoas não autorizadas.",
+     "partial": "Os acessos são restringidos apenas por meio de placas.",
+     "significant": "Todos os acessos verificados foram encontrados bloqueados, mas não há sistema estabelecido para assegurar que o acesso seja restrito apenas a pessoas autorizadas (inclusive subcontratados), ou a lista de funcionários autorizados não foi estabelecida formalmente."
+    }
+   },
+   {
+    "text": "Cilindros de gás / garrafas atendem aos requisitos de armazenamento adequados (armazenamento ao ar livre, espaços fechados, conectados a um ponto fixo, com proteção de válvula contra choques, ...)",
+    "risk": 1,
+    "code": "10.9",
+    "criteria": {
+     "basic": "Constatado equipamento significativamente não conforme.",
+     "partial": "Área de armazenagem de gás, em casos isolados, não atende aos requisitos da norma.",
+     "significant": "Não foi observado nenhum desvio da norma durante a auditoria, mas não havia sistema estabelecido para verificar a conformidade das instalações de gás com os requisitos previstos na norma."
+    }
+   },
+   {
+    "text": "Um estudo é realizado por um especialista para os riscos associados às instalações que contêm mais de 1 tonelada de gás de amônia são avaliados, medidas de controle identificadas e implementadas.",
+    "risk": 2,
+    "code": "10.10",
+    "criteria": {
+     "basic": "Não há avaliação detalhada de risco disponível.",
+     "partial": "Avaliação de risco significativamente incompleto (p.ex. faltam medidas de controle para identificar riscos críticos).",
+     "significant": "Avaliação de risco realizada, mas não revista após uma mudança significativa."
+    }
+   },
+   {
+    "text": "Todas as pessoas que trabalham com gases perigosos receberam um treinamento específico sobre os riscos.",
+    "risk": 2,
+    "code": "10.11",
+    "criteria": {
+     "basic": "Não há um programa de treinamento específico estabelecido.",
+     "partial": "Programa de treinamento desenvolvido e implementado para funcionários expostos diretamente e para operações de manutenção. Informações sobre os riscos são fornecidas aos demais funcionários.",
+     "significant": "Programa de treinamento específico apresenta pequenas deficiências. Não é realizado treinamento de reciclagem. Treinamento não é uma condição para ser autorizado a trabalhar com gases perigosos."
+    }
+   },
+   {
+    "text": "Existe um procedimento para gerenciar e arquivar permissões de trabalho.",
+    "risk": 3,
+    "code": "10.12",
+    "criteria": {
+     "basic": "Falta de procedimento",
+     "partial": "Procedimento existente, porém, não atende plenamente à legislação ou norma. Ou há uma grande parcela de pessoas não treinadas para seguir o procedimento.",
+     "significant": "Procedimento existente e conforme, mas há uma pequena parcela (<10%) de pessoas não treinadas par seguir o procedimento"
+    }
+   },
+   {
+    "text": "Danoners e empreiteiros envolvidos em trabalhos quentes são qualificados (treinamento, certificado, etc ...)",
+    "risk": 2,
+    "code": "10.13",
+    "criteria": {
+     "basic": "Observado trabalho sendo realizado por uma pessoa não qualificada.",
+     "partial": "Existe qualificação de pessoas, porém, esta não tem sido verificada.",
+     "significant": "Pessoas envolvidas em trabalhos a quente são treinadas e qualificadas. Não são realizadas verificações sobre treinamento de reciclagem."
+    }
+   },
+   {
+    "text": "Medidas de prevenção são tomadas para que os funcionários envolvidos em trabalhos a quente não sejam expostos a riscos significativos (por exemplo, nenhum material combustível na área de trabalho, extintores disponíveis nas proximidades, área de trabalho delineada, etc ...).",
+    "risk": 1,
+    "code": "10.14",
+    "criteria": {
+     "basic": "Má prática observada.",
+     "partial": "As medidas de prevenção observadas podem ser melhoradas significativamente.",
+     "significant": "Pequenas melhorias são necessárias."
+    }
+   },
+   {
+    "text": "Há autorização de trabalho a quente (Danoners + contratantes) emitida para qualquer trabalho que produza chama ou faíscas (por exemplo, soldagem, esmerilhamento, etc ...) em um ambiente não dedicado (por exemplo, não em uma oficina de manutenção para atividade de soldagem ou não uma área dedicada ao contratado)_x000D_ As autorizações de trabalho a quente são aprovadas por uma pessoa competente formalmente designada pelo gerente do local. Eles identificam riscos e medidas de controle para implementar e são válidos apenas um dia. Medidas para monitorar os riscos residuais potenciais 2 horas e 4 horas após o término do trabalho a quente estão incluídas.",
+    "risk": 1,
+    "code": "10.15",
+    "criteria": {
+     "basic": "Observada ausência de permissão durante trabalhos. Medidas de controle identificadas inapropriadas para evitar acidente grave. O atual sistema de permissão para trabalho não abrange trabalhos de escavação e demolição. As permissões para trabalho a quente não incluem a vigia contra incêndio a 2 e 4 horas.",
+     "partial": "Permissões obtidas, mas a identificação de riscos e as medidas de controle podem ser aperfeiçoadas.",
+     "significant": "Permissões estabelecidas e concluídas, mas válidas por mais de um dia e/ou não assinadas por uma pessoa formalmente competente."
+    }
+   },
+   {
+    "text": "Medidas apropriadas são tomadas (Telas, EPIs) durante o trabalho nas proximidades de partes elétricas energizadas (inclui trabalhos executados em instalações de baixa tensão). Medidas de proteção são definidas através de avaliação de risco ou por um eletricista qualificado.",
+    "risk": 1,
+    "code": "10.16",
+    "criteria": {
+     "basic": "Má prática observada.",
+     "partial": "As medidas de prevenção observadas podem ser melhoradas significativamente.",
+     "significant": "Pequenas melhorias são necessárias."
+    }
+   },
+   {
+    "text": "Permissão para trabalho de alta tensão (Danoners + contratantes) emitida antes de qualquer trabalho nas instalações de alta e média tensão (> 1kVA), a menos que um Procedimetno Operacional de Segurança (SOP) para tarefas específicas esteja em vigor com base na avaliação de risco. Entrada simples por uma pessoa autorizada Uma área de alta ou média tensão não requer a emissão de uma licença de alta tensão ou SOP. As autorizações de trabalho de alta tensão são aprovadas por uma pessoa competente, formalmente designada pelo gerente do local, identificando os riscos e as medidas de controle a serem implementadas e são validas por 1 (um) dia.",
+    "risk": 1,
+    "code": "10.17",
+    "criteria": {
+     "basic": "Observada ausência de Controle. Medidas de controle identificadas inapropriadas para evitar acidente grave. Ou não há um sistema de permissão estabelecido no site.",
+     "partial": "Permissões obtidas, mas a identificação de riscos e as medidas de controle podem ser aperfeiçoadas.",
+     "significant": "Permissões existentes e completas, mas válidas por mais de um dia."
+    }
+   }
+  ]
+ },
+ {
+  "number": 11,
+  "header": "11.- Contratados (Terceiros)",
+  "requirements": [
+   {
+    "text": "Todos os contratados foram treinados para as tarefas que devem executar. Contratados recebem uma integração no local, que inclui padrões aplicáveis às suas tarefas e informações sobre o WISE.",
+    "risk": 3,
+    "code": "11.1",
+    "criteria": {
+     "basic": "Não há evidência de treinamento de integração sobre risco para contratados, ou menos de 50% foram treinados.",
+     "partial": "Não há evidência de treinamento de integração sobre risco para contratados, mas apenas 50% foram treinados.",
+     "significant": "Acima de 75% de contratados foram treinados. Pode haver algumas melhorias no programa de treinamento de integração."
+    }
+   },
+   {
+    "text": "Existe um processo sistemático para verificar qualificações para todos os terceiros necessários para realizar trabalhos perigosos (por exemplo, alta tensão, trabalhos a quente, etc.).",
+    "risk": 3,
+    "code": "11.2",
+    "criteria": {
+     "basic": "Não existe processo sistemático.",
+     "partial": "Existe um processo sistemático e pelo menos 50% dos contratados foram treinados.",
+     "significant": "Existe um processo sistemático e pelo menos 80% dos contratados foram treinados."
+    }
+   },
+   {
+    "text": "Todos os terceiros têm o seguro legal local exigido (responsabilidade pública, médica, estadual).",
+    "risk": 3,
+    "code": "11.3",
+    "criteria": {
+     "basic": "O contratado não possui nenhum seguro, ou é incapaz de fornecer uma comprovação de que possui seguro.",
+     "partial": "Pelo menos 75% dos contratados tem comprovação do seu seguro para a CBU, porém, não há um procedimento formal para averiguar isto.",
+     "significant": "Todos os contratados possuem o seu seguro local obrigatório, contudo, não há um procedimento sólido para a CBU averiguar isto."
+    }
+   },
+   {
+    "text": "O departamento de compras está familiarizado com os requisitos do padrão corporativo da Danone para empreiteiros e reforça os requisitos ao contratar serviços de terceiros.",
+    "risk": 3,
+    "code": "11.4",
+    "criteria": {
+     "basic": "As contratações não mencionam a norma corporativa para contratados.",
+     "partial": "As contratações mencionam a norma corporativa, e pelo menos 50% dos contratados preenchem o requisito.",
+     "significant": "As contratações mencionam a norma corporativa, e 80% ou mais dos contratados preenchem o requisito."
+    }
+   },
+   {
+    "text": "Todas as atividades de trabalho perigoso dos terceiros são controladas por meio de um sistema de autorização para trabalhar.",
+    "risk": 2,
+    "code": "11.5",
+    "criteria": {
+     "basic": "Não existe um sistema de permissão para trabalho.",
+     "partial": "Não há um sistema de permissão para trabalho; contudo, foi observada uma tarefa perigosa sem a emissão de uma permissão.",
+     "significant": "Há permissões de trabalho para todas as tarefas perigosas, mas pequenas deficiências foram observadas."
+    }
+   },
+   {
+    "text": "Auditorias periódicas de segurança são realizadas para as atividades dos terceiros.",
+    "risk": 2,
+    "code": "11.6",
+    "criteria": {
+     "basic": "Não são evidenciadas quaisquer auditorias periódicas.",
+     "partial": "Auditorias periódicas de segurança são realizadas, porém, não sistematicamente.",
+     "significant": "Auditorias periódicas de segurança são realizadas, e há um sistema para essas auditorias, porém, pequenas deficiências nas auditorias são observadas."
+    }
+   },
+   {
+    "text": "No caso de terceiros, uma avaliação é realizada no final do trabalho / serviço e é gerado um relatório que é enviado ao contratado e enviado para o departamento de compras para ser inserido no registro dos contratados, para que possa ser considerado serviços adicionais.",
+    "risk": 3,
+    "code": "11.7",
+    "criteria": {
+     "basic": "Não são realizadas avaliações com um relatório aos contratados.",
+     "partial": "Algumas avaliações são efetuadas, mas os contratados não recebem um feedback. Os resultados não são considerados para outros serviços.",
+     "significant": "Todas as avaliações são realizadas, e 80% ou mais receberam um feedback."
+    }
+   },
+   {
+    "text": "Existe uma análise de risco no local para cada tarefa perigosa a ser realizada pelos terceiros.",
+    "risk": 2,
+    "code": "11.8",
+    "criteria": {
+     "basic": "Não há evidência da participação de contratados.",
+     "partial": "Apenas 50% ou menos dos contratados participam de atividades de análise de risco.",
+     "significant": "Setenta e cinco por cento (75%) ou mais dos contratados participam de atividades de análise de risco."
+    }
+   },
+   {
+    "text": "Há uma pessoa no local designada por escrito como o ponto de contato para o acompanhamento da atividade do terceiros.",
+    "risk": 3,
+    "code": "11.9",
+    "criteria": {
+     "basic": "Não há pessoa designadas",
+     "partial": "Há uma pessoa designada, porém, nem sempre é localizada no site para guardar o registro.",
+     "significant": "Há uma pessoa designada, que é sempre localizada no site para guardar o registro."
+    }
+   },
+   {
+    "text": "Existe um registro / controle de todos osterceiros que trabalham no local.",
+    "risk": 3,
+    "code": "11.10",
+    "criteria": {
+     "basic": "Não há registros de todos os contratados que trabalham no site.",
+     "partial": "Há um registro, mas não está atualizado.",
+     "significant": "Há um registro atualizado."
+    }
+   },
+   {
+    "text": "Os acidentes dos terceiros são registrados e investigados. [Quando o CD tiver um procedimento para a comunicação e investigação de acidentes de contratados, mas não houver acidentes específicos com relação aos contratados, os critérios podem ser marcados como \"compatíveis\", no entanto, um comentário deve ser feito para este efeito]",
+    "risk": 3,
+    "code": "11.11",
+    "criteria": {
+     "basic": "Não há registros de acidentes relativos a contratados.",
+     "partial": "Há um registro de acidentes de contratados, mas não está atualizado.",
+     "significant": "Há um registro de acidentes de contratados, e está atualizado."
+    }
+   }
+  ]
+ },
+ {
+  "number": 12,
+  "header": "12. Incêndio e Evacuação",
+  "requirements": [
+   {
+    "text": "Sistemas de detecção, alarmes, sinais de saída de emergência e sinais de vias estão no lugar e sem obstrução. Os pontos de reunião (encontro) estão localizados corretamente.",
+    "risk": 1,
+    "code": "12.1",
+    "criteria": {
+     "basic": "Não há detecção, alarmes ou sinalização estabelecidos.",
+     "partial": "Apenas sinais de Alarmes, Saída de Emergência & sinais de rota estão disponíveis. Há um ponto de reunião e encontro.",
+     "significant": "Alarmes & sistemas de detecção disponíveis. Placas de saída de emergência & placas indicando o caminho estão estabelecidas, mas constatou-se que algumas estavam bloqueadas. Há um ponto de reunião e encontro."
+    }
+   },
+   {
+    "text": "Quando uma avaliação foi feita pela FM Global, todos os elementos humanos estão sob controle. [Onde não foi realizada nenhuma avaliação da FM Global, é necessário que seja marcado como N/A]",
+    "risk": 2,
+    "code": "12.2",
+    "criteria": {
+     "basic": "Não foi executada nenhuma ação quanto às constatações da FM Global.",
+     "partial": "Um plano de ação foi criado após a avaliação da FM Global, mas não foi implementado.",
+     "significant": "Plano de ação estabelecido, contudo, nem todos os elementos humanos estão sob controle."
+    }
+   },
+   {
+    "text": "Sistemas de detecção e alarmes são inspecionados pelo menos anualmente.",
+    "risk": 2,
+    "code": "12.3",
+    "criteria": {
+     "basic": "Não são realizadas quaisquer inspeções.",
+     "partial": "Inspeção realizada para alarmes, mas não para os sistemas de detecção.",
+     "significant": "Alarmes & sistemas de detecção são inspecionados, contudo, a periodicidade ultrapassa um ano."
+    }
+   },
+   {
+    "text": "Os equipamentos móveis de combate a incêndios (por exemplo, extintores de incêndio, mangueiras,…) estão presentes em número suficiente, adequados aos riscos, sempre acessíveis e tornados visíveis (sinalização).",
+    "risk": 1,
+    "code": "12.4",
+    "criteria": {
+     "basic": "Não há equipamento móvel de combate a incêndio disponível.",
+     "partial": "Constatou-se que o acesso a alguns equipamentos móveis de combate a incêndio estava bloqueado.",
+     "significant": "Não foi constatado nenhum equipamento móvel de combate a incêndio bloqueado; contudo, a sinalização não está claramente visível."
+    }
+   },
+   {
+    "text": "Bombas de sprinklers e sistemas associados são testados pelo menos mensalmente.",
+    "risk": 2,
+    "code": "12.5",
+    "criteria": {
+     "basic": "Não há testes planejados & executados.",
+     "partial": "Testes executados, mas uma vez ao ano.",
+     "significant": "Testes executados a cada 6 meses"
+    }
+   },
+   {
+    "text": "As válvulas do sprinkler estão travadas na posição aberta.",
+    "risk": 1,
+    "code": "12.6",
+    "criteria": {
+     "basic": "Valores dos sprinklers não estão travados.",
+     "partial": "Constatou-se que >75% das válvulas de sprinklers estavam travadas na posição aberta.",
+     "significant": "Constatou-se que >90% das válvulas de sprinklers estavam travadas na posição aberta."
+    }
+   },
+   {
+    "text": "Equipamentos de combate a incêndio (por exemplo, extintores de incêndio, sprinklers, etc.) são inspecionados (incl. FM Global) pelo menos uma vez por ano.",
+    "risk": 2,
+    "code": "12.7",
+    "criteria": {
+     "basic": "Não há nenhuma inspeção de equipamentos de combate a incêndio.",
+     "partial": "Equipamentos de combate a incêndio são inspecionados em bases ad hoc, ou são inspecionados a intervalos superiores e 1 ano. Observados alguns equipamentos de combate a incêndio em má condição.",
+     "significant": "Os equipamentos de combate a incêndio são inspecionados pelo menos anualmente; contudo, observou-se que estavam faltando algumas inspeções de equipamentos de combate a incêndio (<5% dos equipamentos)."
+    }
+   },
+   {
+    "text": "Nos locais onde existe uma brigada de incêndio no local, os EPIs corretos para esta equipe estão prontamente disponíveis, localizados corretamente e em boas condições de funcionamento._x000D_ A brigada realiza exercícios regulares .",
+    "risk": 1,
+    "code": "12.8",
+    "criteria": {
+     "basic": "Não há EPI fornecido para a Brigada de Incêndio no local.",
+     "partial": "EPI fornecido, mas não localizado corretamente, e não está em boas condições funcionais.",
+     "significant": "A brigada de incêndio realiza simulações de incêndio apenas em bases ad hoc."
+    }
+   },
+   {
+    "text": "Uma regra para não fumantes em áreas que apresentam riscos de incêndio foi comunicada e aplicada no local.",
+    "risk": 1,
+    "code": "12.9",
+    "criteria": {
+     "basic": "Regra sobre proibição de fumar disponível.",
+     "partial": "Regra estabelecida, mas comunicada de forma deficiente. Regra sobre proibição de fumar não está suficientemente visível em áreas com risco de incêndio.",
+     "significant": null
+    }
+   },
+   {
+    "text": "Os riscos de incêndio foram identificados e o cenário de emergência específico foi definido e testado (simulado).",
+    "risk": 3,
+    "code": "12.10",
+    "criteria": {
+     "basic": "Não foram identificados riscos de incêndio.",
+     "partial": "Identificados riscos de incêndio, porém, não há cenário de emergência definido.",
+     "significant": "Riscos de incêndio identificados & cenário de emergência definido, mas não testado."
+    }
+   },
+   {
+    "text": "Incidentes graves que desencadeiam incêndios (por exemplo, perda de tempo e acidentes sem perda de tempo, quase acidentes com alto potencial de gravidade) são investigados detalhadamente, incluindo uma análise de causa raiz e medidas preventivas comunicadas e implementadas. [Onde o CD tem um procedimento e pode evidenciar exemplos de investigação de acidentes e notificação de quase acidentes, mas não houve acidentes específicos relacionados a incêndios, os critérios podem ser marcados como \"compatíveis\", no entanto, um comentário deve ser feito para este efeito]",
+    "risk": 3,
+    "code": "12.11",
+    "criteria": {
+     "basic": "Não há incidentes causadores de incêndio que sejam rastreados e registrados.",
+     "partial": "Incidente investigado parcialmente (por exemplo, análise insuficiente da causa principal, medidas preventivas não identificadas com clareza.).",
+     "significant": "Não há incidentes causadores de incêndio que sejam rastreados, registrados e investigados. Medidas preventivas bem definidas, mas não implementadas."
+    }
+   },
+   {
+    "text": "Procedimentos de emergência existem e são conhecidos por todas as pessoas em todos os eventos de emergência (fogo, terrorismo, terremotos, etc.). Exercícios de evacuação / emergência foram conduzidos nos últimos 12 meses.",
+    "risk": 1,
+    "code": "12.12",
+    "criteria": {
+     "basic": "Não há procedimentos de emergência.",
+     "partial": "Só há procedimentos informais.",
+     "significant": "Há procedimentos formais, mas não foram realizadas simulações de emergência nos últimos 12 meses."
+    }
+   },
+   {
+    "text": "Existe um sistema para registro de visitantes no local, emissão de crachá, informações de segurança fornecidas (verbal, folheto etc.) sobre procedimentos de emergência, regras de segurança, etc.",
+    "risk": 2,
+    "code": "12.13",
+    "criteria": {
+     "basic": "Não são mantidos quaisquer registros.",
+     "partial": "Os visitantes assinam apenas na entrada, mas não há nenhum crachá de identificação.",
+     "significant": "Os visitantes assinam na entrada, e recebem crachá de identificação, mas nenhuma informação é dada sobre procedimentos de emergência e regras de segurança fornecidas."
+    }
+   },
+   {
+    "text": "O procedimento da CBU local está em vigor e é divulgado para a comunicação e investigação de acidentes e quase acidentes.",
+    "risk": 3,
+    "code": "12.14",
+    "criteria": {
+     "basic": "Nenhum procedimento estabelecido.",
+     "partial": "Procedimentos formais só existem para acidentes, mas não para quase-acidente.",
+     "significant": "Procedimento formal só existe para acidentes, mas não para quase-acidente."
+    }
+   },
+   {
+    "text": "A Diretriz de Acidentes Graves da Danone está incorporada nos procedimentos locais de acidentes da CBU.",
+    "risk": 3,
+    "code": "12.15",
+    "criteria": {
+     "basic": "Diretiva não conhecida.",
+     "partial": "Diretiva conhecida apenas pelo Gerente de Segurança.",
+     "significant": null
+    }
+   },
+   {
+    "text": "Procedimentos de emergência, incluindo lista de contatos locais para bombeiros, políciais, hospitais e protocolos de intervenção são regularmente revisados.",
+    "risk": 2,
+    "code": "12.16",
+    "criteria": {
+     "basic": "Não existe protocolo para rever procedimentos de contato e protocolos de intervenção.",
+     "partial": "Procedimentos de contato e protocolos de intervenção só são revistos quando uma alteração significativa se tornar conhecida.",
+     "significant": null
+    }
+   },
+   {
+    "text": "Um ponto de contato que conduz a implementação do padrão de incêndio e evacuação é designado pelo gerente do local. Essa pessoa adquiriu um bom conhecimento do padrão e riscos relacionados e medidas de controle por treinamento.",
+    "risk": 3,
+    "code": "12.17",
+    "criteria": {
+     "basic": "Não há nenhum ponto de contato designado pelo gerente do site.",
+     "partial": "Ponto de contato designado, porém, não recebeu nenhum treinamento.",
+     "significant": "Ponto de contato só recebeu treinamento informal."
+    }
+   },
+   {
+    "text": "Atendentes de emergência (socorristas, bombeiros, bombeiros) são nomeados e o treinamento atende aos requisitos legais locais mínimos. O treinamento deve ser ministrado por instrutores / profissionais legais e qualificados e pela competência dos atendentes de emergência avaliados. O treinamento é gravado e documentado.",
+    "risk": 2,
+    "code": "12.18",
+    "criteria": {
+     "basic": "Não há socorristas de emergência designados.",
+     "partial": "Socorristas de emergência designados, mas não recebem um treinamento formal, e por instrutores legais & qualificados.",
+     "significant": "Socorristas de emergência designados, e que receberam treinamento por parte de instrutores legais & qualificados, mas isto não está registrado formalmente."
+    }
+   },
+   {
+    "text": "O treinamento de reciclagem é realizado periodicamente para os socorristas. O treinamento é documentado e registrado.",
+    "risk": 3,
+    "code": "12.19",
+    "criteria": {
+     "basic": "Não é realizado treinamento de reciclagem.",
+     "partial": null,
+     "significant": "Treinamento de reciclagem realizado, mas não registrado."
+    }
+   },
+   {
+    "text": "O equipamento de primeiros socorros (incluindo o DEA) está disponível no local e inspecionado regularmente. Existe um inventário de itens de primeiros socorros usados.",
+    "risk": 2,
+    "code": "12.20",
+    "criteria": {
+     "basic": "Não há equipamentos de primeiros socorros disponíveis.",
+     "partial": "Equipamentos de primeiros socorros são fornecidos, mas não são regularmente inspecionados, verificados e sem inventários de itens utilizados.",
+     "significant": "Equipamentos de primeiros socorros (inclusive AED) regularmente inspecionados, verificados, porém, não há um inventário adequado de itens de primeiros socorros utilizados e não há análise do uso. Na ausência de AED, há médicos ou enfermeiros no site para administrar massagem cardíaca e ventilação até a chegada dos serviços de emergência."
+    }
+   }
+  ]
+ }
+]

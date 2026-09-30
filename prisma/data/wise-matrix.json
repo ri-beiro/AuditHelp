@@ -1,0 +1,3838 @@
+[
+ {
+  "number": 1,
+  "title": "None",
+  "glossary": null,
+  "levelMax": {
+   "1": 6,
+   "2": 18,
+   "3": 24,
+   "4": 26,
+   "5": 18
+  },
+  "requirements": [
+   {
+    "code": "E1.N1.1",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança elaborou, assinou e introduziu uma política de segurança"
+   },
+   {
+    "code": "E1.N1.2",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "A política de segurança é apoiada por alguns recursos: orçamento, pessoas dedicadas"
+   },
+   {
+    "code": "E1.N1.3",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários começam a reconhecer e compreender que a gestão está comprometida com a segurança (investimentos simples visíveis)"
+   },
+   {
+    "code": "E1.N2.1",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança e a gestão intermediária aplicam regras de segurança diárias"
+   },
+   {
+    "code": "E1.N2.2",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança entende a importância de um comportamento exemplar e começa a impor o cumprimento das regras com sua equipe (exemplo BOS \"APR/BBS\", medida disciplinar aplicada, etc)"
+   },
+   {
+    "code": "E1.N2.3",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários começam a ver os membros da equipe de liderança como modelos de comportamento de boa segurança e sentem certa pressão para seguir as regras básicas, limpeza e procedimentos"
+   },
+   {
+    "code": "E1.N2.4",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "Equipe de liderança se comunica a respeito de segurança (DDS, parada de segurança, contatos de segurança antes das reuniões, etc)"
+   },
+   {
+    "code": "E1.N2.5",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A comunicação das expectativas de segurança (política, regras, objetivos, ICD, planos de ação) é apoiada por conselhos, reuniões, boletins informativos, em uma abordagem de cima para baixo"
+   },
+   {
+    "code": "E1.N2.6",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários compreendem as expectativas e prioridades de gestão em matéria de segurança"
+   },
+   {
+    "code": "E1.N2.7",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança e a gerência intermediária completaram um treinamento de liderança WISE"
+   },
+   {
+    "code": "E1.N2.8",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança e a gerência intermediária têm um entendimento comum dos princípios de gestão e sistema de segurança de sua organização"
+   },
+   {
+    "code": "E1.N2.9",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "A equipe de liderança tem um plano estruturado para melhorar o desempenho de segurança. O plano é apoiado por ações e recursos mais consistentes (treinamento, redução de risco, atualização de equipamentos, etc.)"
+   },
+   {
+    "code": "E1.N3.1",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança e a gestão intermediária se envolvem na definição de quais normas de trabalho são aceitáveis no site."
+   },
+   {
+    "code": "E1.N3.2",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança e a gestão intermediária monitoram os padrões através de observações/tours de segurança (semanais). Ocorrem discussões abertas para desenvolver a compreensão dos funcionários sobre as razões de observar os padrões e comportamentos"
+   },
+   {
+    "code": "E1.N3.3",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários compreendem a importância das normas de segurança no local de trabalho e as aplicam consistentemente em suas atividades"
+   },
+   {
+    "code": "E1.N3.4",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança e a gestão intermediária reconhecem e promovem práticas de trabalho e processos seguros"
+   },
+   {
+    "code": "E1.N3.5",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança e a gestão intermediária dedicar tempo e esforço regularmente (a cada semana) para reconhecer realizações, apoiar iniciativas e incentivar propostas de melhoria"
+   },
+   {
+    "code": "E1.N3.6",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários ficam orgulhosos em e são motivados a identificar riscos e propor melhorias relacionadas com suas práticas de trabalho e processos"
+   },
+   {
+    "code": "E1.N3.7",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Existem comunicações regulares (semanais, por exemplo) e sistemáticas sobre segurança (em reuniões, contatos de segurança, SIM, etc.), realizadas pela equipe de liderança e pela gestão intermediária do site"
+   },
+   {
+    "code": "E1.N3.8",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A comunicação é bilateral e sobre os temas apropriados (questões atuais, grandes eventos, riscos de segurança do site, etc.)"
+   },
+   {
+    "code": "E1.N3.9",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários compreendem as expectativas e percebem as conseqüências (disciplina, desempenho, etc.) de quebrar regras de segurança ou deixar de seguir os procedimentos"
+   },
+   {
+    "code": "E1.N3.10",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança e a gerência intermediária estão trabalhando em um plano sistemático para cumprir as metas de segurança e garantir que os recursos estejam disponíveis para implementar as atividades de segurança planejadas"
+   },
+   {
+    "code": "E1.N3.11",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "O plano tem objetivos claros, metas e recursos adequados (orçamentos para a formação de CAPEX, treinamentos e recursos). É cascateado de forma consistente em toda a organização"
+   },
+   {
+    "code": "E1.N3.12",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A conclusão de ações e projetos é monitorada. Os resultados são acompanhados mensalmente, compartilhados com as equipes e usados para reforçar o plano."
+   },
+   {
+    "code": "E1.N4.1",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Equipes, incluindo todos os níveis de gestão e liderados pela equipe de liderança, analisam a eficácia do sistema de saúde e segurança 1 ou 2 vezes por ano (processos, recursos)"
+   },
+   {
+    "code": "E1.N4.2",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Existem provas de que os elementos do sistema (auditorias, investigações, processos, treinamento, reconhecimento, comunicação) são melhorados com base em análises críticas"
+   },
+   {
+    "code": "E1.N4.3",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "A equipe de liderança compreende a conexão entre elementos de saúde e de segurança e tem uma visão sobre como adaptá-las ao longo do tempo para o contexto específico do site"
+   },
+   {
+    "code": "E1.N4.4",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "CBU Exco / Codi participam de atividades de saúde e segurança no site"
+   },
+   {
+    "code": "E1.N4.5",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Os membros da Exco/Codi participam das atividades de saúde e segurança pelo menos duas vezes por ano no site para reforçar o compromisso da gestão superior (Dia da Segurança, festas, diálogos, etc.)"
+   },
+   {
+    "code": "E1.N4.6",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários sentem o apoio da alta administração, e sentem que a saúde e a segurança são valores da empresa"
+   },
+   {
+    "code": "E1.N4.7",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Todos os níveis de gestão usam a política e os princípios de saúde e segurança como guias para decisões diárias de negócios"
+   },
+   {
+    "code": "E1.N4.8",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Princípios de saúde e segurança são impulsionadores de comportamento cruciais na ausência de procedimentos e regras específicos. Nenhum gestor aceita atos perigosos."
+   },
+   {
+    "code": "E1.N4.9",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Pensar em saúde e segurança está integrado na programação diária de todas as atividades"
+   },
+   {
+    "code": "E1.N4.10",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Todos os gerentes reconhecem e promovem práticas de trabalho e processos seguros para melhorar continuamente o desempenho de segurança"
+   },
+   {
+    "code": "E1.N4.11",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Equipes de melhoria da segurança envolvendpp muitos funcionários (50%) estão habilitadas (incluindo recursos) e em atividade"
+   },
+   {
+    "code": "E1.N4.12",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Ações abertas são resolvidas de forma eficiente, e a maioria das metas de segurança são atingidas. Há um nível de insatisfação, mesmo se não ocorrerem ferimentos ou se os objetivos do site sejam cumpridas"
+   },
+   {
+    "code": "E1.N4.13",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Os funcionários têm uma percepção de risco comum e um impulsionador uniforme para oferecer padrões de segurança elevados."
+   },
+   {
+    "code": "E1.N5.1",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Todos os níveis de gerência se comunicam com a convicção de que a saúde e a segurança estão entre os principais impulsionadores da excelência operacional para o site e que sustentam os negócios"
+   },
+   {
+    "code": "E1.N5.2",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Os gerentes treinam as equipes para integrarem sistematicamente a saúde e segurança com outros impulsionadores de desempenho, através de uma abordagem SQCDME"
+   },
+   {
+    "code": "E1.N5.3",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Todos os funcionários estão completamente cientes de que a saúde e a segurança são partes integrantes do site e do desempenho dos negócios"
+   },
+   {
+    "code": "E1.N5.4",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Todos os gerentes se certificam que as avaliações de saúde e segurança sejam sistematicamente parte de grandes mudanças (novo projeto, a introdução de novos produtos, novos processos, novas pessoas, novos equipamentos, etc.)"
+   },
+   {
+    "code": "E1.N5.5",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Para todas as alterações, as equipes estão habilitadas pela administração a realizar sua própria avaliação de risco, para tomar decisões e decidir sobre a alocação de recursos em seu nível"
+   },
+   {
+    "code": "E1.N5.6",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Saúde e Segurança são sempre consideradas nas decisões significativas da gestão como pré-requisitos antes das discussões sobre custos, qualidade, produção e lucratividade (SQCDME)"
+   },
+   {
+    "code": "E1.N5.7",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Os membros da equipe de liderança participam de comissões externas de saúde e segurança (grupos de trabalho em associações, câmaras, etc.)"
+   },
+   {
+    "code": "E1.N5.8",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Os membros da equipe de liderança comparam as melhores práticas de saúde e segurança com as suas e enriquecem através de experiência e discussões"
+   },
+   {
+    "code": "E1.N5.9",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Conhecimentos sobre as melhores práticas da indústria e incidentes são bem comunicados e as lições aprendidas são rapidamente integradas ao plano de segurança (menos de 3 meses)"
+   }
+  ]
+ },
+ {
+  "number": 2,
+  "title": "None",
+  "glossary": null,
+  "levelMax": {
+   "1": 6,
+   "2": 12,
+   "3": 18,
+   "4": 22,
+   "5": 12
+  },
+  "requirements": [
+   {
+    "code": "E2.N1.1",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "A política de segurança é comunicada de uma maneira geral"
+   },
+   {
+    "code": "E2.N1.2",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "A política de segurança é publicada nos quadros de avisos em cada edifício/entrada principal"
+   },
+   {
+    "code": "E2.N1.3",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "Alguns empregados (25%) sabem que existe uma política de segurança e sabem onde ela pode ser encontrada"
+   },
+   {
+    "code": "E2.N2.1",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A política de segurança é comunicada de um modo geral e pessoal"
+   },
+   {
+    "code": "E2.N2.2",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança e a gestão intermediária discutem a política para reforçar o entendimento (em reuniões de equipe, reuniões de segurança, revisão de desempenho individual, etc.)"
+   },
+   {
+    "code": "E2.N2.3",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Muitos funcionários (50%) lembram-se das principais mensagens da política e compreendem o significado da política de segurança para o site"
+   },
+   {
+    "code": "E2.N2.4",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "Todos os funcionários novos recebem uma cópia da política de segurança e regras de segurança do site com algumas explicações durante o processo de indução (integração)"
+   },
+   {
+    "code": "E2.N2.5",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A política de segurança é relevante para o contexto do site e está alinhada com a política de segurança corporativa"
+   },
+   {
+    "code": "E2.N2.6",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança e a equipe de segurança participaram da definição da política de segurança"
+   },
+   {
+    "code": "E2.N3.1",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança e a gestão intermediária garantem regularmente a apropriação da política de segurança pelos funcionários."
+   },
+   {
+    "code": "E2.N3.2",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Há um processo sistemático para verificar a compreensão e o cumprimento da política pelos funcionários."
+   },
+   {
+    "code": "E2.N3.3",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A maioria dos funcionários compreende o significado e o impacto da política em suas próprias atividades"
+   },
+   {
+    "code": "E2.N3.4",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança demonstra valor pela política de segurança e pelos princípios, fala sobre isso, reage aos desvios, etc."
+   },
+   {
+    "code": "E2.N3.5",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "A política de segurança é relevante para a atividade dos funcionários e fornece princípios-chave para guiar seu comportamento."
+   },
+   {
+    "code": "E2.N3.6",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança é eficaz em relacionar a política com o trabalho dos funcionários"
+   },
+   {
+    "code": "E2.N3.7",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A política é vista pela organização como a força motriz por trás dos sistemas e procedimentos para a gestão da segurança no site"
+   },
+   {
+    "code": "E2.N3.8",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A política de segurança esclarece responsabilidade organizacional, expectativas e cria metas"
+   },
+   {
+    "code": "E2.N3.9",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A política de segurança está incluída no e alinhada à visão do site"
+   },
+   {
+    "code": "E2.N4.1",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Os funcionários contribuem para a revisão da política de saúde e segurança"
+   },
+   {
+    "code": "E2.N4.2",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Há um processo estruturado para a coleta de sugestões e recomendações (sub-comitê dedicado, grupos de trabalho ad-hoc, coleta de feedback dos funcionários, etc.)"
+   },
+   {
+    "code": "E2.N4.3",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "A maioria dos funcionários (75%) compreende e aceita a responsabilidade e responsabilização pelo cumprimento política de saúde e segurança"
+   },
+   {
+    "code": "E2.N4.4",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Política escrita e assinada declara a segurança como uma prioridade alta para a organização e serve como guia para as decisões que envolvem a segurança."
+   },
+   {
+    "code": "E2.N4.5",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Saúde e bem-estar estão integrados na política de segurança"
+   },
+   {
+    "code": "E2.N4.6",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança e a gestão intermediária são eficazes em tornar visível e coerente a ligação entre saúde, bem estar e segurança dentro da política de saúde e segurança"
+   },
+   {
+    "code": "E2.N4.7",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "A maioria dos funcionários (75%) reconhece o compromisso da equipe de liderança em gerenciar, de forma consistente, a saúde, o bem estar e a segurança no site"
+   },
+   {
+    "code": "E2.N4.8",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança revisa e ajusta a política de segurança periodicamente"
+   },
+   {
+    "code": "E2.N4.9",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A revisão da política de segurança é baseada em sugestões de auditorias de segurança, avaliação de riscos, análise de acidentes. A política de segurança evolui com a evolução da cultura de segurança no site"
+   },
+   {
+    "code": "E2.N4.10",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "A política de segurança é vista por todos os gestores como uma alavanca de melhoria do desempenho do site"
+   },
+   {
+    "code": "E2.N4.11",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A política de segurança é ajustada para ser coerente com a maturidade de outros sistemas de gestão existentes no site (DaMaWay, Qualidade, RH, etc.)"
+   },
+   {
+    "code": "E2.N5.1",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "A política de saúde e segurança inspira os indivíduos, refletindo os princípios comuns, indicando prioridade à segurança e fornecendo uma base clara para decisões."
+   },
+   {
+    "code": "E2.N5.2",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Em todo o site, o comportamento dos funcionários (decisões, recursos, ações pessoais, etc.) demonstram ativamente a crença na política e nos princípios de saúde e segurança"
+   },
+   {
+    "code": "E2.N5.3",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Saúde e segurança se mantêm vivos como um valor fundamental em toda a organização."
+   },
+   {
+    "code": "E2.N5.4",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Todos os níveis de gestão usam a política de saúde e segurança como uma alavanca de transformação para alcançar a visão"
+   },
+   {
+    "code": "E2.N5.5",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "A política de saúde e segurança torna a visão social/societária dupla e a visão econômica da Danone claramente concreta e visível no site"
+   },
+   {
+    "code": "E2.N5.6",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "O site é referido como o melhor da classe em fazer da cultura de saúde e segurança uma alavanca de sustentabilidade e é regularmente solicitada para benchmarks"
+   }
+  ]
+ },
+ {
+  "number": 3,
+  "title": "None",
+  "glossary": null,
+  "levelMax": {
+   "1": 16,
+   "2": 18,
+   "3": 32,
+   "4": 34,
+   "5": 26
+  },
+  "requirements": [
+   {
+    "code": "E3.N1.1",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "As regras gerais de conduta segura do site são definidas e existem procedimentos de emergência"
+   },
+   {
+    "code": "E3.N1.2",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "Regras gerais para conduta segura são comunicadas a todos os funcionários"
+   },
+   {
+    "code": "E3.N1.3",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "As regras básicas para proteger as pessoas são claras para muitos funcionários do site (50%)"
+   },
+   {
+    "code": "E3.N1.4",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "Regras gerais de segurança e procedimentos de emergência são aprovados pelo gestor de segurança"
+   },
+   {
+    "code": "E3.N1.5",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "As pessoas sabem o que fazer fazer em caso de emergência"
+   },
+   {
+    "code": "E3.N1.6",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "Requisitos regulatórios aplicáveis são conhecidos e integrados às normas de segurança do site (ex: autorização de trabalho, isolamento, EPI, etc.)"
+   },
+   {
+    "code": "E3.N1.7",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "Os requisitos legais básicos são controlados e cumpridos"
+   },
+   {
+    "code": "E3.N1.8",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "Os principais riscos de segurança do site são identificados"
+   },
+   {
+    "code": "E3.N2.1",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "Existem procedimentos básicos de segurança para principais perigos do site (LOTO, trabalho em alturas, espaços confinados, empilhadeira, segurança elétrica, produtos químicos perigosos, etc.)"
+   },
+   {
+    "code": "E3.N2.2",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "Procedimentos básicos de segurança são agrupados em um manual. Eles são facilmente acessíveis"
+   },
+   {
+    "code": "E3.N2.3",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "A equipe de liderança e a gerência intermediária têm conhecimento para identificar situações de alto risco e para consultarem os procedimentos básicos de segurança"
+   },
+   {
+    "code": "E3.N2.4",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "Normas de segurança corporativas são incorporadas às regras e procedimentos do site"
+   },
+   {
+    "code": "E3.N2.5",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança e a gestão intermediária educam os funcionários regularmente sobre regras e procedimentos de segurança"
+   },
+   {
+    "code": "E3.N2.6",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários sabem as regras de segurança, procedimentos operacionais e principais riscos associados ao seu trabalho"
+   },
+   {
+    "code": "E3.N2.7",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "As regras de segurança, procedimentos operacionais e requisitos de EPI são definidos para a maioria dos cargos"
+   },
+   {
+    "code": "E3.N2.8",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "As regras de segurança, procedimentos operacionais e requisitos de EPI estão disponíveis no local de trabalho"
+   },
+   {
+    "code": "E3.N2.9",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os padrões de limpeza alcançados em oficinas, estoques, e/ou áreas operacionais são bons"
+   },
+   {
+    "code": "E3.N3.1",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança e a gestão intermediária comunicam sua expectativa de plena conformidade com os procedimentos e regras"
+   },
+   {
+    "code": "E3.N3.2",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Violações de uma regra não são toleradas e levam a ações corretivas (treinamento e aconselhamento, advertência formal, etc.)"
+   },
+   {
+    "code": "E3.N3.3",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários compreendem que o cumprimento das normas de segurança é uma obrigação para sua própria segurança"
+   },
+   {
+    "code": "E3.N3.4",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Procedimentos básicos de segurança e de emergência são sistematicamente controlados e aplicadas"
+   },
+   {
+    "code": "E3.N3.5",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Regras e procedimentos operacionais relacionadas ao trabalho são comunicados por meio de treinamentos, reuniões e contatos diários"
+   },
+   {
+    "code": "E3.N3.6",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Regras claras não deixam margem para interpretação e são consistentes no nível do site (para o mesmo risco)"
+   },
+   {
+    "code": "E3.N3.7",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários têm pleno conhecimento das as normas e procedimentos de segurança. Todos os funcionários aplicam as regras de segurança do site de forma consistente (incluindo requisitos de EPI)"
+   },
+   {
+    "code": "E3.N3.8",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Os procedimentos são claros, atendem aos padrões de gestão visual e refletem boas práticas de engenharia"
+   },
+   {
+    "code": "E3.N3.9",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Procedimentos de segurança e procedimentos operacionais são revisados regularmente (1-2 anos) e atualizado conforme necessário"
+   },
+   {
+    "code": "E3.N3.10",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Os procedimentos são desenvolvidos ou atualizados se houver um novo equipamento ou a alteração de um já existente"
+   },
+   {
+    "code": "E3.N3.11",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "As normas de segurança são atualizadas e refletem mudanças nos equipamentos"
+   },
+   {
+    "code": "E3.N3.12",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Procedimentos de segurança e procedimentos operacionais são revistos e atualizados, se necessário, sempre que houver um acidente"
+   },
+   {
+    "code": "E3.N3.13",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os procedimentos de segurança e procedimentos operacionais refletem aprendizagens dos acidentes e visam eliminar os riscos no local de trabalho"
+   },
+   {
+    "code": "E3.N3.14",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "O site tem um manual de segurança, incluindo a política de segurança, normas de segurança específicas e gerais (incluindo requisitos de EPI)"
+   },
+   {
+    "code": "E3.N3.15",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "O manual de segurança é estruturado, fácil de usar e de acessar"
+   },
+   {
+    "code": "E3.N3.16",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A equipe de liderança e a gerência intermediária têm acesso fácil a todas as normas de segurança aplicáveis no site"
+   },
+   {
+    "code": "E3.N4.1",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A segurança é integrada às outras normas do site (Q C D M E) em um sistema de gestão abrangente e consistente"
+   },
+   {
+    "code": "E3.N4.2",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Procedimentos Operacionais (procedimentos operacionais padrão (POP), recursos visuais, checklists, registros de indicadores-chave de desempenho, etc.) integram as dimensões S Q C D M E em um único conjunto de instruções para os operadores e os gestores de primeira linha"
+   },
+   {
+    "code": "E3.N4.3",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Os procedimentos operacionais são de alta qualidade: simples, claros, visíveis (por exemplo, anormalidades são imediatamente visíveis) evoluem como um único sistema de gestão"
+   },
+   {
+    "code": "E3.N4.4",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Um sistema de gestão da mudança (normas/regras/procedimentos operacionais) está implementado para reduzir os riscos associados às mudanças de pessoal, de equipamento, de tecnologia, etc."
+   },
+   {
+    "code": "E3.N4.5",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "O sistema de gerenciamento de mudança inclui: fazer ou refazer a avaliação de risco, abordar as necessidades de treinamento, mudanças nos procedimentos operacionais comunicados, etc."
+   },
+   {
+    "code": "E3.N4.6",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Nenhum projeto segue sem que a acessibilidade, qualidade, propriedade e cumprimento das normas e padrões seja assegurado"
+   },
+   {
+    "code": "E3.N4.7",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Representantes dos trabalhadores, quando for relevante, consideram as normas como um meio para melhorar a segurança no trabalho e estão envolvidos na atualização das normas de segurança"
+   },
+   {
+    "code": "E3.N4.8",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Todos os funcionários percebem que a aplicação de normas de segurança é uma condição de emprego"
+   },
+   {
+    "code": "E3.N4.9",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Revisões imediatas detalhadas dos procedimentos operacionais (verificações do ciclo de trabalho) são usadas para verificar a conformidade com as práticas seguras de trabalho e melhoria contínua."
+   },
+   {
+    "code": "E3.N4.10",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Equipes de funcionários (experientes e com conhecimento sobre os riscos) estão fortemente envolvidas na revisão de procedimentos para maior clareza e qualidade regularmente (1-2 anos)."
+   },
+   {
+    "code": "E3.N4.11",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Todos os funcionários aceitam que é um esforço contínuo manter o nível de segurança, considerando todas as mudanças de padrões, e vêem em cada mudança de uma oportunidade de melhorar"
+   },
+   {
+    "code": "E3.N4.12",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A atualização das normas de segurança é baseada na avaliação estruturada de risco no local de trabalho"
+   },
+   {
+    "code": "E3.N4.13",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Os procedimentos refletem com precisão as práticas de trabalho existentes e cobrem os riscos no local de trabalho"
+   },
+   {
+    "code": "E3.N4.14",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Existem procedimentos de segurança e procedimentos operacionais adequados para trabalhos fora da rotina"
+   },
+   {
+    "code": "E3.N4.15",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Os procedimentos de segurança e procedimentos operacionais para trabalhos fora da rotina são gerenciados (definidos, atualizados, comunicadoss, monitorados) da mesma forma que outras normas de segurança"
+   },
+   {
+    "code": "E3.N4.16",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "A conformidade com as normas de segurança corporativas é de 100% no nível certo"
+   },
+   {
+    "code": "E3.N4.17",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "100% dos colaboradores se empenham em aplicar as normas de segurança em seu trabalho"
+   },
+   {
+    "code": "E3.N5.1",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Normas de segurança são utilizadas efetivamente como instrumento de melhoria contínua do site"
+   },
+   {
+    "code": "E3.N5.2",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Atividades que merecem um padrão são monitoradas continuamente através da abordagem PDCA/SDCA. A acessibilidade, a relevância, a propriedade e o respeito aos padrões são sistematicamente monitorados (disciplina operativa)"
+   },
+   {
+    "code": "E3.N5.3",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Todas as atividades que merecem um padrão são executadas de forma eficiente (\"bom na primeira vez\") e sempre de forma segura"
+   },
+   {
+    "code": "E3.N5.4",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Todos os gerentes têm certeza de que as normas são a alavanca principal da excelência operacional, e pessoalmente usam PDCA/SDCA como uma ferramenta de gestão de desempenho"
+   },
+   {
+    "code": "E3.N5.5",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Nenhum incidente é causado pela falta de conhecimento sobre as normas e padrões"
+   },
+   {
+    "code": "E3.N5.6",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Os funcionários são proativos em questionar e atualizar as normas de segurança existentes e em participar ativamente nas avaliações de risco"
+   },
+   {
+    "code": "E3.N5.7",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Todos os funcionários apresentam padrões pessoais elevados de comportamento seguro e apoiam a resolução de questões de segurança e redução proativa de riscos"
+   },
+   {
+    "code": "E3.N5.8",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "As normas de segurança são documentadas de forma que garanta fácil acesso e atualização, apoiado por uma RACI clara e ferramentas de TI relevantes, e de forma que suporte rastreabilidade de cima para baixo e de baixo para cima (por exemplo, referências aos regulamentos aplicáveis, diretrizes do grupo, instruções WBU, etc.)"
+   },
+   {
+    "code": "E3.N5.9",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "A melhoria e atualização contínua das normas e padrões é suave. Os procedimentos operacionais são compatíveis com as exigências mais recentes e refletem com precisão as práticas de trabalho existentes e vice-versa"
+   },
+   {
+    "code": "E3.N5.10",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Todas as informações disponíveis, as tendências de indicadores principais e análise cuidadosa de incidentes são utilizados para atualizar os padrões e procedimentos de segurança continuamente."
+   },
+   {
+    "code": "E3.N5.11",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "O site está desenvolvendo melhores práticas internas e externas, patrocinado pela CBU e WWBU e representando pontos de referência na indústria"
+   },
+   {
+    "code": "E3.N5.12",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Representantes de diferentes setores do site participam de redes nacionais/regionais."
+   },
+   {
+    "code": "E3.N5.13",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Os diferentes setores do site estão atualizando suas normas e procedimentos para incluir as melhores práticas (boas práticas de engenharia, códigos da indústria, e as normas de consenso) e refletir as práticas de classe mundial"
+   }
+  ]
+ },
+ {
+  "number": 4,
+  "title": "None",
+  "glossary": null,
+  "levelMax": {
+   "1": 10,
+   "2": 18,
+   "3": 28,
+   "4": 28,
+   "5": 22
+  },
+  "requirements": [
+   {
+    "code": "E4.N1.1",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "O objetivo anual do site baseia-se na taxa de frequência de acidentes com perda de tempo freqüência (FR1)"
+   },
+   {
+    "code": "E4.N1.2",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "Requisitos de relatórios legais/corporativas são o principal impulsionados"
+   },
+   {
+    "code": "E4.N1.3",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "O senso comum, os hábitos e as reações a incidentes impulsionam atividades de segurança"
+   },
+   {
+    "code": "E4.N1.4",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "Acidentes com perda de tempo (LTA) e sem perda de tempo (Não-LTA) relativos a funcionários da Danone no site são documentados"
+   },
+   {
+    "code": "E4.N1.5",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "Estatísticas de acidentes com perda de tempo e sem perda de tempo são acumuladas para a organização, mas não podem ser compartilhadas"
+   },
+   {
+    "code": "E4.N2.1",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança e muitos gerentes intermediários (50%) têm objetivos individuais de segurança"
+   },
+   {
+    "code": "E4.N2.2",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "O site tem um plano baseado em uma meta de redução da taxa de frequência de acidentes com perda de tempo (FR1) para os próximos 2 a 3 anos"
+   },
+   {
+    "code": "E4.N2.3",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "A equipe de liderança e a gestão intermédia compreendem os principais riscos do site e potenciais lesões relacionadas e se empenham em implementar e monitorar planos de ação regularmente"
+   },
+   {
+    "code": "E4.N2.4",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "Os objetivos são baseados em indicadores de resultado (por exemplo, LTA, FR1) e atendem aos requisitos SMART (Específico, Mensurável, Realista, Alcançável, Em Pouco Tempo)"
+   },
+   {
+    "code": "E4.N2.5",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "Nas áreas referidas nos principais riscos de segurança do site, os gestores têm objetivos relacionados à prevenção de riscos e conformidade com os procedimentos básicos de segurança"
+   },
+   {
+    "code": "E4.N2.6",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "O site possui um processo estruturado para registrar, documentar e analisar todos os tipos de incidentes"
+   },
+   {
+    "code": "E4.N2.7",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "As estatísticas de todos os acidentes com perda de tempo, todos os acidentes sem perda de tempo, além de primeiros socorros/quase-acidentes, são analisados"
+   },
+   {
+    "code": "E4.N2.8",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "As metas de segurança do site são definidas com base em resultados"
+   },
+   {
+    "code": "E4.N2.9",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "São documentados dados relacionados a acidentes com perda de tempo relacionados a contratadas que trabalham no local"
+   },
+   {
+    "code": "E4.N3.1",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança do site definiu uma visão de 3 anos para melhorar o desempenho de segurança (incluindo contratadas)"
+   },
+   {
+    "code": "E4.N3.2",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A visão é baseada nas tendências de incidentes, resultados de auditorias e avaliações de risco, e apoiado por um roteiro claro a médio prazo."
+   },
+   {
+    "code": "E4.N3.3",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A ideia de acidentes zero é presente na mentalidade de muitos funcionários (50%)"
+   },
+   {
+    "code": "E4.N3.4",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Há um processo de animação regular (pelo menos mensal) e sistemático das metas e planos de segurança"
+   },
+   {
+    "code": "E4.N3.5",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança e a gestão intermediária compartilham regularmente a realização dos objetivos e planos (em reuniões, SIM, etc.)"
+   },
+   {
+    "code": "E4.N3.6",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A maioria dos funcionários (75%) conhece sua contribuição para melhorar a segurança e é motivada a implementar planos de ação preventivos e corretivos"
+   },
+   {
+    "code": "E4.N3.7",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Cada equipe tem um painel visivelmente mostrando atrasos e os principais indicadores, os indicadores-chave de desempenho acumulados do ano contra planos e objetivos"
+   },
+   {
+    "code": "E4.N3.8",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Metas a curto prazo ambiciosas e atingíveis, no nível do site, são consistentemente cascateadas para todos os níveis da organização"
+   },
+   {
+    "code": "E4.N3.9",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Todos os gestores têm objetivos de segurança individuais baseados em pelo menos 1 atraso e 1 indicador principal"
+   },
+   {
+    "code": "E4.N3.10",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Os objetivos e planos de segurança da equipe são comunicados e ficam visíveis a todos os funcionários"
+   },
+   {
+    "code": "E4.N3.11",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "As informações dos principais indicadores é usada para acionar objetivos de segurança e planos em todos os setores do site"
+   },
+   {
+    "code": "E4.N3.12",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Há um processo de quase-acidentes implementado e ativo. Estatísticas de acidentes são analisadas para determinar as tendências e desenvolver planos de ação de reparação"
+   },
+   {
+    "code": "E4.N3.13",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "As tendências de indicadores de atraso mostram a eficiência dos planos de ação"
+   },
+   {
+    "code": "E4.N3.14",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Existe uma avaliação de risco no local de trabalho estruturada. A cotação dos riscos é analisada para definir objetivos de redução de risco e planos de ação"
+   },
+   {
+    "code": "E4.N4.1",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A meta de acidentes zero é estabelecida dentro da visão a médio prazo do site"
+   },
+   {
+    "code": "E4.N4.2",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "As metas e planos de segurança abordam a meta de acidentes zero. Eles são apoiados pela coleta e análise dos principais indicadores (resultados da auditoria, quase-acidentes, avaliações de riscos e de mitigação, pesquisas com as pessoas, participação dos funcionários, etc.)"
+   },
+   {
+    "code": "E4.N4.3",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "A meta de acidentes zero é credível em toda a organização, a maioria dos funcionários (75%) acreditam nela"
+   },
+   {
+    "code": "E4.N4.4",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "O caminho para acidentes zero é consistente, com roteiros criados para outros objetivos de negócio (Qualidade, produtividade, RH, etc.)"
+   },
+   {
+    "code": "E4.N4.5",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A estrutura dos objetivos individuais e coletivos e os mecanismos de cascata de cima para baixo são revisados anualmente pela equipe de liderança. A mistura de atrasos contra indicadores-chave de desempenho, equipe contra objetivos individuais, empregados contra contratadas, é adaptada para cada setor do site para aumentar a motivação e eficiência"
+   },
+   {
+    "code": "E4.N4.6",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Todos os níveis de gestão analisam os progressos regularmente (por exemplo, durante reuniões de segurança) com suas equipes. Os principais indicadores são usados em treinamentos durante as avaliações de desempenho"
+   },
+   {
+    "code": "E4.N4.7",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Cada setor ou equipe de trabalho do site desenvolve e monitora seu próprio programa específico para atender aos objetivos do site"
+   },
+   {
+    "code": "E4.N4.8",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "O programa da equipe de trabalho inclui formação e desenvolvimento específicos, melhoria das condições de trabalho, comunicação, reconhecimento"
+   },
+   {
+    "code": "E4.N4.9",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "As equipes de trabalho apoiam coletivamente a execução do programa de segurança dentro do prazo e orçamento"
+   },
+   {
+    "code": "E4.N4.10",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "O plano de ação de segurança é monitorado por cada sector ou equipe através de um ciclo de melhoria contínua/PDCA"
+   },
+   {
+    "code": "E4.N4.11",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Saúde e bem-estar são integrados às metas e planos de segurança"
+   },
+   {
+    "code": "E4.N4.12",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Ações de saúde e bem estar (prioridades, comunicação, avaliações individuais de saúde, planos de ação) são monitorados de forma consistente com as ações de segurança"
+   },
+   {
+    "code": "E4.N4.13",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Muitos funcionários (50%) reconhecem que a saúde, bem estar e segurança são geridos de forma consistente"
+   },
+   {
+    "code": "E4.N4.14",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Existe uma abordagem estruturada para entender lesões do tipo ergonômicas (lombalgia, lesões por esforços repetitivos, etc.) e implementar metas e planos de ação"
+   },
+   {
+    "code": "E4.N5.1",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "A saúde e as metas, objetivos e planos de segurança apoiam visivelmente a transformação do site"
+   },
+   {
+    "code": "E4.N5.2",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "A saúde e a segurança estão ligados a objetivos de negócios mais amplos (por exemplo, contratação de pessoas, excelência no desempenho, redução de tempo do ciclo, pegada ambiental, etc.)"
+   },
+   {
+    "code": "E4.N5.3",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Saúde e segurança são vistas por todos na organização como vantagem competitiva e um ingrediente crucial da sustentabilidade empresarial"
+   },
+   {
+    "code": "E4.N5.4",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Objetivos e planos S Q C D M E são construídos e implementados constantemente; eles se reforçam mutuamente"
+   },
+   {
+    "code": "E4.N5.5",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "As metas S Q C D M E são ambiciosas. Elas são desenvolvidas e entregues pelas equipes locais (por exemplo, projetos de melhoria entregues, desenvolvimento individual)"
+   },
+   {
+    "code": "E4.N5.6",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Aprendizados externos (de fora do site ou de outras empresas) são usados para atualizar as metas e objetivos do site"
+   },
+   {
+    "code": "E4.N5.7",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "O planejamento de saúde e segurança a médio prazo é focado em melhorar, de forma eficaz, os processos de segurança (13 elementos), com base na aprendizagem contínua"
+   },
+   {
+    "code": "E4.N5.8",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Acidentes fora do trabalho são considerados e relatados voluntariamente, para que aprendizados possam ser compartilhados"
+   },
+   {
+    "code": "E4.N5.9",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Existe um sistema implementado para relatar e analisar os acidentes e riscos fora do trabalho. Indicadores de atraso fora do trabalho são usados para desenvolver programas de conscientização de segurança"
+   },
+   {
+    "code": "E4.N5.10",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "A maioria dos funcionários (75%) acredita que comportamentos de segurança são aplicáveis em todos os momentos, dentro e fora do trabalho."
+   },
+   {
+    "code": "E4.N5.11",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Funcionários participam (organizam, promovem para colegas e parentes) de eventos de segurança, tais como dias educativos, eventos familiares, eventos abertos, etc."
+   }
+  ]
+ },
+ {
+  "number": 5,
+  "title": "None",
+  "glossary": null,
+  "levelMax": {
+   "1": 12,
+   "2": 10,
+   "3": 24,
+   "4": 32,
+   "5": 16
+  },
+  "requirements": [
+   {
+    "code": "E5.N1.1",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "O site nomeou pelo menos uma pessoa como gerente de segurança, para coordenar a segurança (em período integral/meio período, no site ou compartilhada)"
+   },
+   {
+    "code": "E5.N1.2",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de segurança define as regras e procedimentos de segurança e reforça a conformidade"
+   },
+   {
+    "code": "E5.N1.3",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "Os requisitos legais básicos são cumpridos e segurança é percebida como uma questão de especialistas"
+   },
+   {
+    "code": "E5.N1.4",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de segurança é a única responsável pelas principais ações de segurança"
+   },
+   {
+    "code": "E5.N1.5",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "O treinamento da equipe de segurança é focada em exigências legais"
+   },
+   {
+    "code": "E5.N1.6",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de segurança reforça a conformidade com requisitos legais"
+   },
+   {
+    "code": "E5.N2.1",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "Os representantes dos funcionários contribuem para o programa de saúde e segurança"
+   },
+   {
+    "code": "E5.N2.2",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de segurança recebe apoio e recursos da equipe de liderança para liderar programa de segurança"
+   },
+   {
+    "code": "E5.N2.3",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "A equipe de segurança está aptos a realizar, autônomamente, a maioria das atividades de segurança, incluindo inspeções, auditorias, treinamentos, reuniões, relatórios de segurança, investigações de incidentes, etc."
+   },
+   {
+    "code": "E5.N2.4",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "As funções e responsabilidades da equipe de segurança são claramente definidos"
+   },
+   {
+    "code": "E5.N2.5",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de segurança recebeu treinamento básico de gerenciamento de segurança: treinamento de liderança WISE"
+   },
+   {
+    "code": "E5.N3.1",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "O gerente de segurança tem um canal de comunicação/acesso direto à equipe de liderança do site"
+   },
+   {
+    "code": "E5.N3.2",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "O gerente de segurança frequenta regularmente as reuniões da equipe de liderança do site e tem contactos regulares e diretos com a autoridade mais alta do site"
+   },
+   {
+    "code": "E5.N3.3",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "O gerente de segurança influencia as decisões sobre segurança da equipe de liderança do site"
+   },
+   {
+    "code": "E5.N3.4",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de segurança apoia a apropriação eficaz pela equipe de liderança do site do programa de segurança"
+   },
+   {
+    "code": "E5.N3.5",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A execução da maioria das atividades de segurança é compartilhada de forma equilibrada entre as equipes de gestão e de segurança. O gerente de segurança instrui a gestão sobre auditorias, reuniões, relatórios de segurança, investigações de incidentes"
+   },
+   {
+    "code": "E5.N3.6",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "O programa de segurança está ativamente em cada setor do site sob a responsabilidade dos gestores (objetivos, plano de ação, acompanhamento, treinamento, investigações de incidentes, etc.)"
+   },
+   {
+    "code": "E5.N3.7",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe da segurança mantém-se se atualizada com legislação e melhores práticas relacionadas a saúde e segurança"
+   },
+   {
+    "code": "E5.N3.8",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "O gerente de segurança está conectado a todos dentro da empresa e participa de eventos externos (exposições, visitas a fornecedores de serviços e equipamentos)"
+   },
+   {
+    "code": "E5.N3.9",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "As atividades de segurança estão atualizadas e alinhado com as técnicas e legislação mais recentes"
+   },
+   {
+    "code": "E5.N3.10",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de segurança recebe treinamento e desenvolvimento pessoal contínuos sobre os principais riscos à segurança do site e ferramentas de gestão de segurança. A avaliação dos riscos e a investigação de incidentes são estudados de forma específica"
+   },
+   {
+    "code": "E5.N3.11",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "O conteúdo de treinamento de segurança é relacionado às exigências do local e ao papel da equipe em procedimentos específicos (LOTO, trabalho em alturas, espaços confinados, segurança na direção, ergonomia, riscos ocupacionais, etc.)"
+   },
+   {
+    "code": "E5.N3.12",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A equipe de segurança são os multiplicadores internos do treinamento básico no sistema de gestão de segurança"
+   },
+   {
+    "code": "E5.N4.1",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de segurança cascateia o conhecimento de segurança através da organização de linha (gerentes de linha, funcionários com funções específicas de segurança, campeões do programa)"
+   },
+   {
+    "code": "E5.N4.2",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de segurança proporciona treinamento especializado e conhecimentos (como ergonomia, investigação, habilidades em treinamento, etc.) que a organização necessita"
+   },
+   {
+    "code": "E5.N4.3",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "A experiência da equipe de segurança está enraizada no seio da organização da gestão operacional"
+   },
+   {
+    "code": "E5.N4.4",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de segurança pertence a redes internas de segurança fora da CBU e a organizações profissionais fora da Danone"
+   },
+   {
+    "code": "E5.N4.5",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de segurança sabe quais conhecimentos relacionados à segurança existem externamente e como ela pode ser acessada rapidamente"
+   },
+   {
+    "code": "E5.N4.6",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Conhecimento útil é trazido para o site pela equipe de segurança"
+   },
+   {
+    "code": "E5.N4.7",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de segurança monitoria e impulsiona a arquitetura de auditorias do site arquitetura auditorias site (incluindo tipos de auditorias, meta, escopo, tempo, recursos, etc.) e monitora a qualidade"
+   },
+   {
+    "code": "E5.N4.8",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de segurança traz valor agregado ao sistema de auditoria ao treinar os auditores do site e motivar supervisores de campo, fazendo recomendações significativas baseadas nos resultados de auditorias. As recomendações são abordadas de forma eficaz e rápida"
+   },
+   {
+    "code": "E5.N4.9",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "As auditorias são vistas como oportunidades positivas para melhoria e uma parte integrante da caixa de ferramentas de gestão de desempenho"
+   },
+   {
+    "code": "E5.N4.10",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de segurança realiza auditorias de gestão para analisar as lacunas de segurança do sistema (exemplos: auditorias WISE interna, auditoria de processos de segurança, implementação de padrões, etc.)"
+   },
+   {
+    "code": "E5.N4.11",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "O gerente de Segurança faz parte da equipe de liderança do site e se reporta diretamente à autoridade máxima no site"
+   },
+   {
+    "code": "E5.N4.12",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A posição da gestão de segurança é respeitada e reconhecida como fundamental por todos os gestores e pela organização"
+   },
+   {
+    "code": "E5.N4.13",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "A função de gerente de segurança é um passo na carreira que leva a funções superiores de gestão"
+   },
+   {
+    "code": "E5.N4.14",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de segurança fornece informações importantes para o programa de segurança do site e sua evolução, enquanto as atividades de segurança são executadas pela gerência de linha"
+   },
+   {
+    "code": "E5.N4.15",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de segurança regularmente analisa as tendências globais de segurança (pelo menos auditorias, incidentes, riscos), as lacunas do sistema de segurança, ..., a fim de orientar o programa de segurança do site. Os principais indicadores são utilizados para compreender e melhorar o desempenho de segurança do site"
+   },
+   {
+    "code": "E5.N4.16",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "A equipe de segurança desempenha um papel proativo na identificação de pontos fracos e riscos no sistema e nas atividades de segurança. Alertas e recomendações significativos orientam as decisões da equipe de liderança"
+   },
+   {
+    "code": "E5.N5.1",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de segurança age como conselheiros de confiança para todos os níveis de gestão"
+   },
+   {
+    "code": "E5.N5.2",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de segurança fornece aconselhamento estratégico sobre assuntos gerais de gestão de desempenho (S Q C D M E) e gestão da mudança"
+   },
+   {
+    "code": "E5.N5.3",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "As sugestões da equipe de segurança tem tanto impacto sobre as decisões do site como as dos outros membros da equipe de liderança"
+   },
+   {
+    "code": "E5.N5.4",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de segurança circula conhecimentos de segurança ampla e rapidamente entre CBUs/sites. Lições são aprendidas em todos os CBUs/sites e medidas são tomadas"
+   },
+   {
+    "code": "E5.N5.5",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "As práticas de segurança em sites e CBUs são usadas para melhorar os padrões e procedimentos de segurança"
+   },
+   {
+    "code": "E5.N5.6",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "A equipe de segurança fornece experiência a fim de influenciar e moldar a transformação do sistema de gestão de segurança"
+   },
+   {
+    "code": "E5.N5.7",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de segurança são especialistas reconhecidos em seu campo e referidos externamente (nível dos CBUs, outros sites, externamente, etc.) para apoio, aconselhamento, definição de política, apoio à implementação"
+   },
+   {
+    "code": "E5.N5.8",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de segurança fornece acesso rápido e eficaz a conhecimentos de classe mundial fora do site"
+   }
+  ]
+ },
+ {
+  "number": 6,
+  "title": "None",
+  "glossary": null,
+  "levelMax": {
+   "1": 6,
+   "2": 12,
+   "3": 18,
+   "4": 20,
+   "5": 24
+  },
+  "requirements": [
+   {
+    "code": "E6.N1.1",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "A maioria dos membros da equipe de liderança conhecem sua responsabilidade para com a segurança, mas delegam a maior parte da execução para a equipe da segurança"
+   },
+   {
+    "code": "E6.N1.2",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "A segurança é informalmente reconhecida como parte fundamental do desempenho da equipe de liderança e da gestão intermediária, mas não existe um sistema formal"
+   },
+   {
+    "code": "E6.N1.3",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "A equipe de liderança e a gestão intermediária são as únicas envolvidas com a segurança quando ocorrem incidentes"
+   },
+   {
+    "code": "E6.N2.1",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança e alguns gerentes intermediários (25%) participam regularmente das principais atividades de segurança (no mínimo mensalmente), compartilhando o cumprimento e a execução com a equipe de segurança"
+   },
+   {
+    "code": "E6.N2.2",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança e muitos gerentes intermediários (50%) têm objetivos de segurança e são avaliados em comparação com estes objetivos como parte do desempenho global. Os objetivos são relacionados principalmente a acidentes com ou sem perda de tempo"
+   },
+   {
+    "code": "E6.N2.3",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "As atividades de segurança são motivadas por requisitos do sistema ao invés de crenças pessoais no assunto"
+   },
+   {
+    "code": "E6.N2.4",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança assume a responsabilidade de direcionar e corrigir riscos e deficiências de segurança graves"
+   },
+   {
+    "code": "E6.N2.5",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "Existe um sistema para compartilhar os riscos de segurança e deficiências com a equipe de liderança"
+   },
+   {
+    "code": "E6.N2.6",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários informam à gestão sempre que observam um risco à segurança ou deficiência de segurança"
+   },
+   {
+    "code": "E6.N3.1",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança, a gerência intermediária e alguns gerentes de primeira linha (25%) lideram as principais atividades de segurança, cumprimento e execução (mínimo semanalmente)"
+   },
+   {
+    "code": "E6.N3.2",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A responsabilização pela segurança e as responsabilidades (incluindo a aplicação de disciplina) são bem definidas, documentadas e comunicadas de forma clara"
+   },
+   {
+    "code": "E6.N3.3",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A equipe de liderança e a maioria dos gestores intermediários (75%) consideram a segurança como parte integrante de seu próprio desempenho/do desempenho de sua equipe e dedicam seu tempo e recursos para melhorar os padrões de segurança"
+   },
+   {
+    "code": "E6.N3.4",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança, a gerência intermediária e alguns gerentes de primeira linha conduzem pessoalmente as investigações de incidentes para entender as causas dos incidentes e tomar medidas para prevenir sua recorrência"
+   },
+   {
+    "code": "E6.N3.5",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Muitos gerentes (50%) sentem-se totalmente responsáveis pela segurança da sua equipe e não delegam qualquer investigação de incidente para a equipe de segurança"
+   },
+   {
+    "code": "E6.N3.6",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança e a gerência intermediária desenvolvem as capacidades e habilidades de segurança de seus subordinados diretos"
+   },
+   {
+    "code": "E6.N3.7",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança e a gerência intermediária treina/orienta seus subordinados diretos sobre atividades de segurança (no mínimo 2 vezes por mês), fornecendo feedback imediato para eles (exemplo: SIM-Gestão de curto intervalo de tempo, auditorias, diálogos de segurança, preparação de planos de ação, etc.)"
+   },
+   {
+    "code": "E6.N3.8",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Existe uma cascata clara de responsabilização através da organização de gerenciamento de linha"
+   },
+   {
+    "code": "E6.N3.9",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Muitos gerentes intermediários (50%) compreendem seu papel e suas responsabilidades em matéria de segurança e começam a comportar-se como líderes de segurança"
+   },
+   {
+    "code": "E6.N4.1",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Os gerentes demonstram compromisso pessoal com a segurança de maneira inspiradora, liderando as principais atividades de segurança, cumprimento e execução (diariamente)"
+   },
+   {
+    "code": "E6.N4.2",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Incidentes, auditorias e sugestões dos funcionários são utilizados para identificar tendências e direcionar o programa de segurança de forma apropriada"
+   },
+   {
+    "code": "E6.N4.3",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Muitos funcionários (50%) estão envolvidos contribuindo proativamente para melhorias na segurança"
+   },
+   {
+    "code": "E6.N4.4",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Reuniões de segurança regulares são realizadas na produção (no mínimo uma vez por semana) e há bastante comunicação bilateral durante estas reuniões"
+   },
+   {
+    "code": "E6.N4.5",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Todos os gerentes incentivam os funcionários a tomarem posse dos assuntos de segurança e a participarem ativamente nas reuniões e atividades de segurança"
+   },
+   {
+    "code": "E6.N4.6",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A maioria dos gestores (75%) e alguns funcionários (25%) desenvolver seu conhecimento e experiência em gestão de segurança de forma proativa e contínua sobre os principais riscos à segurança do site e ferramentas de gestão de segurança"
+   },
+   {
+    "code": "E6.N4.7",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Os gestores assumem um papel importante para orientar e sensibilizar todos os funcionários sobre a liderança de segurança e sobre os riscos de segurança de sites"
+   },
+   {
+    "code": "E6.N4.8",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "A organização desenvolveu grandes capacidades internas para desenvolver continuamente o sistema de segurança (com base nas competências e propriedade de pessoas, sistemas fortes, processos e padrões, etc.)"
+   },
+   {
+    "code": "E6.N4.9",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Todos os gestores são capazes de identificar e corrigir riscos de segurança"
+   },
+   {
+    "code": "E6.N4.10",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Não há risco óbvio ou questão ergonômica visível que não esteja coberto por um plano de medidas corretivas"
+   },
+   {
+    "code": "E6.N5.1",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "As equipes de trabalho aceitam totalmente e de forma proativa a responsabilização por todas as questões de segurança e as integram naturalmente a seu trabalho diário"
+   },
+   {
+    "code": "E6.N5.2",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Os resultados da equipe são medidos com ênfase em segurança, e levando em conta a qualidade, a produtividade e o desenvolvimento de pessoas"
+   },
+   {
+    "code": "E6.N5.3",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Segurança e saúde são ingredientes essenciais da cultura para sustentar a visão social/societária dupla e a visão econômica da Danone"
+   },
+   {
+    "code": "E6.N5.4",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Segurança é uma consideração fundamental em todas as decisões de gestão"
+   },
+   {
+    "code": "E6.N5.5",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "As equipes têm expectativas sobre si mesmas e sobre a organização para melhorar os padrões de segurança constantemente"
+   },
+   {
+    "code": "E6.N5.6",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Todos os funcionários (90%) desenvolvem seu conhecimento e experiência em gestão de segurança, de forma proativa e contínua, sobre os principais riscos à segurança do site e as ferramentas de gestão de segurança"
+   },
+   {
+    "code": "E6.N5.7",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "A capacidade de gerenciar a segurança é um requisito fundamental em todos os níveis da gestão"
+   },
+   {
+    "code": "E6.N5.8",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "A excelência em segurança é vista como um componente-chave de uma gestão de sucesso"
+   },
+   {
+    "code": "E6.N5.9",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "É inaceitável que um funcionário de qualquer nível demonstre pouca atenção à segurança (comportamento pessoal, nível de conhecimento, tempo de seguimento)"
+   },
+   {
+    "code": "E6.N5.10",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Os membros da equipe de liderança participam de comissões externas de segurança e saúde (grupos de trabalho em associações, câmaras, etc.)"
+   },
+   {
+    "code": "E6.N5.11",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Os membros da equipe de liderança comparam as melhores práticas de saúde e segurança com as suas e enriquecem através de experiência e discussões"
+   },
+   {
+    "code": "E6.N5.12",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "O conhecimento das melhores práticas da indústria e incidentes é bem comunicado e as lições aprendidas são rapidamente integradas ao plano de saúde e segurança (menos de 3 meses)"
+   }
+  ]
+ },
+ {
+  "number": 7,
+  "title": "None",
+  "glossary": null,
+  "levelMax": {
+   "1": 6,
+   "2": 14,
+   "3": 30,
+   "4": 18,
+   "5": 14
+  },
+  "requirements": [
+   {
+    "code": "E7.N1.1",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "A organização de segurança e a implicação de representantes dos funcionários são limitadas a requisitos legais mínimos"
+   },
+   {
+    "code": "E7.N1.2",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "O corpo de segurança orientado à legislação (se existir) é focado em assuntos legais. As atividades e responsabilidades de segurança são ad hoc, exercidas principalmente pela equipe de segurança."
+   },
+   {
+    "code": "E7.N1.3",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "Questões de segurança são consideradas uma questão de \"cumprimento legal\". Requisitos legais de segurança referentes à organização são cumpridos."
+   },
+   {
+    "code": "E7.N2.1",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A segurança é tratada pela equipe de liderança do site como um assunto em pauta"
+   },
+   {
+    "code": "E7.N2.2",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "Acidentes que aconteceram e problemas trazidos pela força de trabalho são abordados na agenda"
+   },
+   {
+    "code": "E7.N2.3",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "As decisões sobre temas de segurança do dia a dia são comunicadas às pessoas envolvidas e as ações de segurança são implementadas"
+   },
+   {
+    "code": "E7.N2.4",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "As decisões e atividades de segurança são realizadas no dia-a-dia."
+   },
+   {
+    "code": "E7.N2.5",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de segurança conduz atividades de segurança com o apoio efetivo da equipe de liderança e da gestão intermediária"
+   },
+   {
+    "code": "E7.N2.6",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A organização e as funções de segurança são descritas."
+   },
+   {
+    "code": "E7.N2.7",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "Os representantes dos funcionários participam das atividades e programas de segurança."
+   },
+   {
+    "code": "E7.N3.1",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Reuniões em cascata são realizadas em setores locais, presididas pelo gestor local, e promovem a comunicação em toda a organização"
+   },
+   {
+    "code": "E7.N3.2",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "As discussões com os funcionários ocorrem durante as reuniões de segurança locais. Os assuntos são relevantes às pessoas envolvidas e alinhados com as prioridades do comitê de segurança do site"
+   },
+   {
+    "code": "E7.N3.3",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A implementação das decisões de segurança é recomendada por muitos gerentes (50%)"
+   },
+   {
+    "code": "E7.N3.4",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "O feedback dos funcionários é incentivado e transmitida ao comitê de segurança do site"
+   },
+   {
+    "code": "E7.N3.5",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "As decisões de segurança são compreendidas pela maioria dos empregados (75%)"
+   },
+   {
+    "code": "E7.N3.6",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Grupos funcionais apoiam o comitê de segurança do site para tratar de questões de segurança permanentes ou ad-hoc. Os grupos de trabalho têm uma representação adequada (experiência e diferentes níveis)"
+   },
+   {
+    "code": "E7.N3.7",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Muitas decisões (50%) são feitas no nível apropriado (setor, departamento, site) da organização através de reuniões do setor de segurança e grupos de trabalho"
+   },
+   {
+    "code": "E7.N3.8",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Alguns empregados (25%) estão envolvidos em grupos de trabalho e contribuem para melhorias na segurança do site ou setor"
+   },
+   {
+    "code": "E7.N3.9",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "As principais atividades de segurança são apoiadas por uma RACI clara"
+   },
+   {
+    "code": "E7.N3.10",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A responsabilidade de segurança é visível, 100% dos setores do site estão sob a responsabilidade de segurança de um gerente identificado"
+   },
+   {
+    "code": "E7.N3.11",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Cada metro quadrado do site tem um dono"
+   },
+   {
+    "code": "E7.N3.12",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Um comitê de segurança local, presidido pelo responsável do site, atua como órgão operacional de gestão de segurança"
+   },
+   {
+    "code": "E7.N3.13",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança e a equipe de segurança do site são representadas. Reuniões do comitê de segurança do site acontecem mensalmente"
+   },
+   {
+    "code": "E7.N3.14",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "O comitê de segurança do site tem poder de decisão, seu papel é entendido por todos os gestores"
+   },
+   {
+    "code": "E7.N3.15",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "O progresso da segurança e o roteiro de segurança a médio prazo são discutidos"
+   },
+   {
+    "code": "E7.N4.1",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Todos os gerentes estão envolvidos no desenvolvimento de programas e atividades de segurança e aceitam a responsabilidade pelo desempenho de segurança"
+   },
+   {
+    "code": "E7.N4.2",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "As ferramentas de gestão de segurança (por exemplo, avaliação e mitigação dos riscos, investigações de incidentes, etc.) são integradas pelos gestores em suas atividades rotineiras de gerenciamento da equipe"
+   },
+   {
+    "code": "E7.N4.3",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Muitos funcionários (50%) estão envolvidos formalmente em alguma fase do processo de definição, implementação e execução de programas e atividades de segurança (além de seu trabalho de rotina)"
+   },
+   {
+    "code": "E7.N4.4",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Os campeões do programa (líderes especialistas em um tema específico, como processo de investigação, auditorias de segurança, treinamento, ergonomia, etc.) são identificados (extensão do comitê de segurança) e apoiados para as principais áreas de atividades de segurança"
+   },
+   {
+    "code": "E7.N4.5",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança do site desenvolveu um sistema estruturado de comitês e sub-comitês de segurança, cobrindo toda a organização"
+   },
+   {
+    "code": "E7.N4.6",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Representantes dos trabalhadores são representados no comitê de segurança do site"
+   },
+   {
+    "code": "E7.N4.7",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Os representantes dos trabalhadores são considerados parceiros para melhorar a segurança, com participação regular nas atividades de segurança/planos de ação"
+   },
+   {
+    "code": "E7.N4.8",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "As funções e responsabilidades de todos os comitês de segurança, bem como a complementaridade entre os sub-comitês e reuniões de segurança locais são bem definidas, claras e compreendidas por toda a organização (dependendo do tamanho do site, existem comissões específicas: investigação de incidentes, auditoria, gestão de riscos, etc.)"
+   },
+   {
+    "code": "E7.N4.9",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Decisões de segurança são tomadas no nível adequado (remanejadas para cima para desenvolver capacitação, remanejadas para baixo para aumentar o escopo) da organização"
+   },
+   {
+    "code": "E7.N5.1",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Todos os gestores são totalmente responsáveis por todos os aspectos de segurança, incluindo ambição, objetivos, planos, atividades e desempenho"
+   },
+   {
+    "code": "E7.N5.2",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Os gerentes analisam os indicadores de desempenho principais e de atraso para direcionar recursos e focar em áreas específicas de melhoria do site"
+   },
+   {
+    "code": "E7.N5.3",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "A segurança é usada para avaliar o nível de risco do negócio do site e é considerada impulsionadora de sustentabilidade do negócio pela gerência sênior"
+   },
+   {
+    "code": "E7.N5.4",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Os riscos de mudanças no site ou influências externas são analisados e tratados"
+   },
+   {
+    "code": "E7.N5.5",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "A organização de saúde e segurança se alinha com outras funções (qualidade, desempenho industrial, RH, etc.) para apoiar efetivamente os gestores e operadores de primeira linha"
+   },
+   {
+    "code": "E7.N5.6",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "A segurança é consistentemente integrada e gerida conjuntamente com a gestão de desempenho S Q C D M E (incluindo o compartilhamento de ferramentas comuns) e a gestão de novos projetos"
+   },
+   {
+    "code": "E7.N5.7",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Todos os funcionários apoiam a segurança como impulsionadora óbvia de excelência operacional"
+   }
+  ]
+ },
+ {
+  "number": 8,
+  "title": "None",
+  "glossary": null,
+  "levelMax": {
+   "1": 8,
+   "2": 24,
+   "3": 24,
+   "4": 30,
+   "5": 18
+  },
+  "requirements": [
+   {
+    "code": "E8.N1.1",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de segurança usa placas e cartazes de campanhas para promover a segurança"
+   },
+   {
+    "code": "E8.N1.2",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "Programas de conscientização de segurança estão limitados a campanhas de cartazes"
+   },
+   {
+    "code": "E8.N1.3",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "Alguns empregados (25%) lembram-se que as questões de segurança são anunciadas no site, o funcionário está ciente de que a segurança é um problema para a organização"
+   },
+   {
+    "code": "E8.N1.4",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "As pessoas têm comportamentos para evitarem sanções"
+   },
+   {
+    "code": "E8.N2.1",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança e alguns gerentes intermediários (25%) mostram consistentemente que a segurança é importante durante as atividades de trabalho e elogiam comportamentos seguros no trabalho"
+   },
+   {
+    "code": "E8.N2.2",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança e a gestão intermediária utiliza ferramentas de gestão de segurança: definição de objetivos, investigação de incidentes, diálogos de segurança"
+   },
+   {
+    "code": "E8.N2.3",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários sabem da existência de normas de segurança e muitos (50%) as respeitam"
+   },
+   {
+    "code": "E8.N2.4",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "Há medidas disciplinares claras pelo não cumprimento de regras relacionadas a riscos que ameaçam a vida"
+   },
+   {
+    "code": "E8.N2.5",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A aplicação de medidas disciplinares é tratada pelo RH"
+   },
+   {
+    "code": "E8.N2.6",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Sanções são aplicadas efetivamente"
+   },
+   {
+    "code": "E8.N2.7",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A organização utiliza treinamento e educação de segurança para motivar as pessoas"
+   },
+   {
+    "code": "E8.N2.8",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A supervisão faz uma ligação clara entre o treinamento recebido e a aplicação no trabalho"
+   },
+   {
+    "code": "E8.N2.9",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários são capazes de identificar os principais riscos em seu posto de trabalho"
+   },
+   {
+    "code": "E8.N2.10",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A organização estabelece programas de incentivo, eventos e concursos de segurança para gerar motivação"
+   },
+   {
+    "code": "E8.N2.11",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "Existe um programa de sensibilização de segurança estruturado com tópicos focados e uma variedade de meios de comunicação"
+   },
+   {
+    "code": "E8.N2.12",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "A motivação/participação dos funcionários depende de programas de animação de segurança"
+   },
+   {
+    "code": "E8.N3.1",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "A organização definiu suas próprias regras de segurança e medidas disciplinares relacionadas"
+   },
+   {
+    "code": "E8.N3.2",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "As pessoas que não estejam em conformidade podem ser sancionadas por seu supervisor, e este processo é formalizado"
+   },
+   {
+    "code": "E8.N3.3",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários entendem que recompensas e medidas disciplinares foram implementadas e em que contexto"
+   },
+   {
+    "code": "E8.N3.4",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Existe um desempenho de segurança estruturado e um sistema de recompensa para incentivar e reconhecer as realizações de segurança"
+   },
+   {
+    "code": "E8.N3.5",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "O desempenho de segurança e o sistema de recompensa estão implementados em todos os níveis de gestão. O sistema é revisto anualmente (por exemplo: definição de objetivos, PDR, etc.) e é explicado aos funcionários"
+   },
+   {
+    "code": "E8.N3.6",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários compreendem o sistema de desempenho de segurança, acham que é justo e sentem-se reconhecidos pelo bom desempenho"
+   },
+   {
+    "code": "E8.N3.7",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Ações de treinamento, educação, aconselhamento e corretivas são utilizadas pelos gestores como ferramentas importantes para influenciar o comportamento"
+   },
+   {
+    "code": "E8.N3.8",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Há discussões frequentes (semanais) sobre segurança entre o gestor e sua equipe. Os funcionários que não seguem as normas de segurança recebem treinamento pessoal"
+   },
+   {
+    "code": "E8.N3.9",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Muitos funcionários (50%) são proativos na identificação de problemas de segurança. Muitos gerentes (50%) estão empenhados em priorizar e implementar melhorias"
+   },
+   {
+    "code": "E8.N3.10",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Realizações de segurança são reconhecidas"
+   },
+   {
+    "code": "E8.N3.11",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Promover a segurança inclui comemorações no site para realizações de segurança (queda na taxa de frequência, treinamento completo, desempenho livre de lesões, etc.), prêmios de segurança, reconhecimento individual, etc."
+   },
+   {
+    "code": "E8.N3.12",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Alguns empregados (25%) em todos os níveis contribuem para as atividades de melhoria de segurança"
+   },
+   {
+    "code": "E8.N4.1",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A gestão usa reconhecimento não-monetário (por exemplo, papel visível em redes, treinamento, visitas, etc.) para incentivar o comportamento de segurança e reconhecer esforços"
+   },
+   {
+    "code": "E8.N4.2",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "O sistema de recompensa de segurança é enriquecido e melhorado constantemente com boas práticas"
+   },
+   {
+    "code": "E8.N4.3",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Um alto nível de participação voluntária dos empregados (50%) é visível em toda a organização"
+   },
+   {
+    "code": "E8.N4.4",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Os gerentes de primeira linha lideram e inspiram pelo exemplo que a segurança é um valor fundamental"
+   },
+   {
+    "code": "E8.N4.5",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A segurança é uma questão inegociável, mesmo sob condições muito difíceis (atrasos, custos, pressão)"
+   },
+   {
+    "code": "E8.N4.6",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Gerentes de primeira linha são credíveis sobre a segurança em toda a organização"
+   },
+   {
+    "code": "E8.N4.7",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "O desempenho de segurança é levado em consideração para a progressão na carreira e mudanças de carreira da gestão"
+   },
+   {
+    "code": "E8.N4.8",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A segurança está incluída na Revisão de Desenvolvimento Pessoal individual e é um parâmetro na avaliação de desempenho. Oportunidades de promoção serão claramente comprometidas se um gerente tiver baixo desempenho de lesões em seu setor"
+   },
+   {
+    "code": "E8.N4.9",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Através deste processo de progressão na carreira, os gestores estão mais motivados a aceitarem segurança como sua responsabilidade"
+   },
+   {
+    "code": "E8.N4.10",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "São estabelecidas diretrizes para níveis progressivos de disciplina para não-conformidades com normas e procedimentos, e as mesmas são acordados com os representantes dos funcionários"
+   },
+   {
+    "code": "E8.N4.11",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "As diretrizes são comunicadas de forma clara. A administração da disciplina é justa e coerente. Destina-se à motivação e ensino/aprendizagem em vez de punição"
+   },
+   {
+    "code": "E8.N4.12",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários compreendem que a segurança é uma condição de emprego"
+   },
+   {
+    "code": "E8.N4.13",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A gestão reconhece publicamente as realizações de segurança"
+   },
+   {
+    "code": "E8.N4.14",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A CBU Exco / Codi reconhece e comunica diretamente eventos de segurança importantes, conquistas, acidentes"
+   },
+   {
+    "code": "E8.N4.15",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários visivelmente entendem que a CBU Exco / Codi leva a segurança a sério e que a contribuição de todos é uma obrigação"
+   },
+   {
+    "code": "E8.N5.1",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Os empregados apresentam e discutem suas realizações de segurança de forma voluntária e compartilham experiências interna e externamente"
+   },
+   {
+    "code": "E8.N5.2",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "A maioria dos funcionários (50%) pode falar de sua contribuição para a melhoria da segurança"
+   },
+   {
+    "code": "E8.N5.3",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Existe orgulho evidente na organização no que diz respeito às realizações de segurança"
+   },
+   {
+    "code": "E8.N5.4",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "As práticas de segurança existentes são constantemente comparadas, reavaliadas e adaptadas com base nas melhores práticas internas/externas"
+   },
+   {
+    "code": "E8.N5.5",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "As equipes são habilitadas a melhorar constantemente o sistema de gestão de segurança. A adesão às normas de segurança é alta e autodesafiada"
+   },
+   {
+    "code": "E8.N5.6",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "A maioria dos funcionários está convencida de que a segurança é um dos principais impulsionadores da excelência operacional e sempre pode ser melhorada"
+   },
+   {
+    "code": "E8.N5.7",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Os gerentes e operadores de lideram e inspiram pelo exemplo que a segurança é um valor fundamental"
+   },
+   {
+    "code": "E8.N5.8",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "A maioria dos funcionários compartilha experiências e práticas espontaneamente e incentiva seus colegas a ensinarem uns aos outros"
+   },
+   {
+    "code": "E8.N5.9",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "A maioria os funcionários (75%) se sente responsável pela segurança de seus colegas de trabalho e agem de acordo"
+   }
+  ]
+ },
+ {
+  "number": 9,
+  "title": "None",
+  "glossary": null,
+  "levelMax": {
+   "1": 10,
+   "2": 12,
+   "3": 30,
+   "4": 24,
+   "5": 20
+  },
+  "requirements": [
+   {
+    "code": "E9.N1.1",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "A segurança é comunicada quando houver um incidente LTA/grave."
+   },
+   {
+    "code": "E9.N1.2",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "Regras de segurança/LTAs/problemas de segurança são compartilhados através de comunicações publicadas (placas, folhetos, etc.)"
+   },
+   {
+    "code": "E9.N1.3",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários estão conscientes sobre os problemas de segurança importantes e LTAs."
+   },
+   {
+    "code": "E9.N1.4",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "Regras básicas de segurança claramente definidas são comunicadas a todos os funcionários"
+   },
+   {
+    "code": "E9.N1.5",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários sabem as regras de segurança e expectativas de comportamento pessoal."
+   },
+   {
+    "code": "E9.N2.1",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A maioria dos funcionários participa de reuniões onde a segurança está na pauta"
+   },
+   {
+    "code": "E9.N2.2",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A comunicação é geralmente de cima para baixo - top down - (por exemplo, contatos de segurança, resultados de segurança, acidentes, etc.)"
+   },
+   {
+    "code": "E9.N2.3",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários sabem que a segurança no trabalho é importante"
+   },
+   {
+    "code": "E9.N2.4",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "Políticas, regras, procedimentos básicos de segurança e riscos associados ao local de trabalho são comunicados a todos os funcionários"
+   },
+   {
+    "code": "E9.N2.5",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "Regras e procedimentos estão disponíveis no local de trabalho e comunicada por meio de treinamento, reuniões e contactos diários"
+   },
+   {
+    "code": "E9.N2.6",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários sabem os principais riscos de segurança, normas de segurança e procedimentos básicos associados ao seu trabalho"
+   },
+   {
+    "code": "E9.N3.1",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "As boas práticas são compartilhadas entre sites através dos gerentes de segurança"
+   },
+   {
+    "code": "E9.N3.2",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "As boas práticas e aprendizados de outros sites são compartilhados com a gestão (normas, ferramentas, investigações de acidentes, etc.)"
+   },
+   {
+    "code": "E9.N3.3",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Algumas boas práticas de outros sites são implementadas e comunicadas aos funcionários"
+   },
+   {
+    "code": "E9.N3.4",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Um amplo trabalho de informações relacionadas a segurança (incidentes relevantes da indústria, avaliação de risco, treinamento, novos procedimentos) é comunicado freqüentemente (mensalmente) a todos os funcionários"
+   },
+   {
+    "code": "E9.N3.5",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "São usados meios diferentes, que são apropriadas para a organização (se forem baseados na fábrica ou geograficamente espalhados): quadros de avisos, boletins informativos, reuniões individuais, reuniões coletivas, e-mail/intranet, etc., para incentivar a participação dos empregados"
+   },
+   {
+    "code": "E9.N3.6",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários sabem dos últimos incidentes, resultados de investigação, áreas de risco e entendem como os padrões/procedimentos e oportunidades de melhoria poderiam protegê-los de incidentes"
+   },
+   {
+    "code": "E9.N3.7",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "O site possui um processo estruturado para captar as preocupações dos funcionários, riscos, sugestões, quase acidentes"
+   },
+   {
+    "code": "E9.N3.8",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Os funcionários são incentivados a identificarem riscos e proporem sugestões"
+   },
+   {
+    "code": "E9.N3.9",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A gestão aborda as preocupações dos funcionários. Ações são concluídas e comunicadas como forma de evitar a recorrência"
+   },
+   {
+    "code": "E9.N3.10",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança e a gerência intermediária organizam e lideram reuniões de segurança com sua equipe"
+   },
+   {
+    "code": "E9.N3.11",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A comunicação é bilateral e sobre os temas apropriados (questões atuais, grandes eventos, riscos de segurança do sites, etc.)"
+   },
+   {
+    "code": "E9.N3.12",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários entendam as prioridades de segurança e ações em curso e como ela envolvem seu trabalho"
+   },
+   {
+    "code": "E9.N3.13",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Eventos de segurança são organizados para todos os funcionários do site"
+   },
+   {
+    "code": "E9.N3.14",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Um evento de segurança (por exemplo, dias da segurança, festa,, etc.) é organizado pelo menos uma vez por ano com a participação da equipe de liderança e todos os gerentes intermediários"
+   },
+   {
+    "code": "E9.N3.15",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários entendam o alto nível de comprometimento da equipe de liderança e de todos os gerentes intermediários com a segurança"
+   },
+   {
+    "code": "E9.N4.1",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Gerentes de primeira linha discutem sistematicamente sobre a segurança com todos os funcionários e contratados permanentes nas reuniões de equipe e contatos diários"
+   },
+   {
+    "code": "E9.N4.2",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Há bastante comunicação de baixo para cima - Bottom up. Alguns funcionários lideram a comunicação de segurança e contatos de segurança"
+   },
+   {
+    "code": "E9.N4.3",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários participam de atividades de segurança e contribuem efetivamente para a melhoria da segurança"
+   },
+   {
+    "code": "E9.N4.4",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A segurança é integrada de forma proativa ao sistema visual de gestão implantado no local de trabalho"
+   },
+   {
+    "code": "E9.N4.5",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A segurança é integrada com as dimensões Q C D M E em um único conjunto de instruções para o operador e o gerente de primeira linha, compatíveis com as normas de gestão visual"
+   },
+   {
+    "code": "E9.N4.6",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Todos os funcionários consideram as normas de segurança tão importantes e óbvia como outras normas de gestão"
+   },
+   {
+    "code": "E9.N4.7",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Sub-comitês de segurança (por exemplo: comitê de auditoria, comitê de investigação de incidentes, treinamento, forças-tarefa ad-hoc, etc.) se comunicam em conjunto"
+   },
+   {
+    "code": "E9.N4.8",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Os sub-comitês coordenam as atividades de segurança juntos ao compartilharem suas experiências e boas práticas"
+   },
+   {
+    "code": "E9.N4.9",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "As atividades dos sub-comitês asseguram a coerência do programa de segurança"
+   },
+   {
+    "code": "E9.N4.10",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Um plano de comunicação de segurança estruturado (atividades, planejamento, mídia, público, etc.) é usado para gerenciar todas as atividades de segurança"
+   },
+   {
+    "code": "E9.N4.11",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "O plano apoia as prioridades do ano, as questões de segurança específicas do site (por exemplo: riscos, etc.) e é atualizado regularmente. O plano é supervisionado pela equipe de liderança"
+   },
+   {
+    "code": "E9.N4.12",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "A maioria dos funcionários (75%) são qualificados sobre os temas abordados no plano e sentem-se envolvidos pessoalmente"
+   },
+   {
+    "code": "E9.N5.1",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "A maioria dos funcionários (75%) utiliza atitudes de irmandade para cuidar da segurança de cada colega"
+   },
+   {
+    "code": "E9.N5.2",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Os canais de comunicação são completamente abertos, as discussões sobre potenciais problemas de segurança são vistas como oportunidades para melhorar, e todos os funcionários sentem que sua contribuição é bem-vinda pelo outro"
+   },
+   {
+    "code": "E9.N5.3",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários sentem que são parte de uma equipe com um interesse mútuo em atender a objetivos comuns e uma obrigação de apoiar os outros na equipe"
+   },
+   {
+    "code": "E9.N5.4",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Poucos funcionários (mais de 5%) estão ativamente envolvidos em comitês, redes ou associações externas na área da saúde e segurança fora da CBU"
+   },
+   {
+    "code": "E9.N5.5",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Os funcionários usam de networking para compartilhar novas idéias e boas práticas de e com partes interessadas externas (indústria, comunidades sociais, etc.)"
+   },
+   {
+    "code": "E9.N5.6",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários têm orgulho de ser embaixadores de segurança fora da CBU"
+   },
+   {
+    "code": "E9.N5.7",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Atividades de boas práticas estão espalhadas e implementadas de forma sistemática dentro e em diferentes sites"
+   },
+   {
+    "code": "E9.N5.8",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "A comunicação de segurança é visivelmente ligada a diferentes sistemas e ferramentas de gestão utilizados no site (por exemplo: gestão de desempenho, DaMaWay, processos de RH, gestão de risco, pesquisas de pessoas, Danoneway, etc.)"
+   },
+   {
+    "code": "E9.N5.9",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "A gestão ilustra sistematicamente, em todas as comunicações, o impacto positivo da segurança em todos os outros aspectos do negócio"
+   },
+   {
+    "code": "E9.N5.10",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Metas e programas de segurança, planos de ação, o desempenho atual e os problemas recentes são familiares e compreendidos por todos os funcionários como uma parte importante de seu negócio"
+   }
+  ]
+ },
+ {
+  "number": 10,
+  "title": "None",
+  "glossary": null,
+  "levelMax": {
+   "1": 10,
+   "2": 20,
+   "3": 32,
+   "4": 18,
+   "5": 12
+  },
+  "requirements": [
+   {
+    "code": "E10.N1.1",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "Existe treinamento (indução) para funcionários novos/transferidos"
+   },
+   {
+    "code": "E10.N1.2",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "O programa de indução inclui políticas de segurança, regras gerais de segurança do site e procedimentos de emergência"
+   },
+   {
+    "code": "E10.N1.3",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "Existe treinamento necessário para cumprir os regulamentos externos. Os funcionários estão familiarizados com os procedimentos de emergência (evacuação, uso de extintores de incêndio, etc.)"
+   },
+   {
+    "code": "E10.N1.4",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "Estão implementados treinamentos básicos focados em tarefas de trabalho específicas (por exemplo, operadores, mecânicos, motoristas, etc.) e a formação exigida pelos regulamentos locais"
+   },
+   {
+    "code": "E10.N1.5",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "Geralmente, os supervisores ou a equipe de segurança ministram o treinamento de segurança formal"
+   },
+   {
+    "code": "E10.N2.1",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "Existe um plano de treinamento de segurança que é integrado ao programa global de treinamento do site"
+   },
+   {
+    "code": "E10.N2.2",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "O plano de treinamento é apoiado pelos recursos necessários (orçamento, multiplicadores, etc.)"
+   },
+   {
+    "code": "E10.N2.3",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "O plano de treinamento é implementado conforme definido. Desvios no plano são monitorados e analisados"
+   },
+   {
+    "code": "E10.N2.4",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "A equipe de liderança e a gerência intermediária participam do treinamento de liderança WISE"
+   },
+   {
+    "code": "E10.N2.5",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "O treinamento de liderança WISE é apoiado por exercícios práticos no campo e ministrado por um multiplicador com qualificação necessária"
+   },
+   {
+    "code": "E10.N2.6",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "A equipe de liderança e toda a gestão intermediária conhece os princípios de gestão de segurança e aplicam as principais atividades de segurança"
+   },
+   {
+    "code": "E10.N2.7",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "90% da equipe de liderança e toda a gestão intermediária participaram do treinamento de liderança WISE"
+   },
+   {
+    "code": "E10.N2.8",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "Todos os funcionários envolvidos e seus supervisores recebem treinamento sobre procedimentos básicos de segurança, incluindo padrões corporativos aplicáveis (investigação de incidentes, LOTO, contratados, direção, etc.)"
+   },
+   {
+    "code": "E10.N2.9",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "As orientações sobre o conteúdo e ministração de treinamento de segurança são bem definidas. Um sistema de documentação de treinamento mantém registro as qualificações dos funcionários"
+   },
+   {
+    "code": "E10.N2.10",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários demonstram conhecimento dos procedimentos básicos de segurança e regras de segurança através de comportamentos no trabalho"
+   },
+   {
+    "code": "E10.N3.1",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Existe uma matriz de competências que define os requisitos de treinamento para cada função (incluindo frequência de reciclagem) e monitora a qualificação de todos os funcionários."
+   },
+   {
+    "code": "E10.N3.2",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Uma lista atualizada de pessoas qualificadas para realizar atividades com base nas funções e responsabilidades está disponível para todas as funções."
+   },
+   {
+    "code": "E10.N3.3",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários nunca são solicitados a realizar uma tarefa para a qual eles não são totalmente qualificado."
+   },
+   {
+    "code": "E10.N3.4",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Pessoas que mudam de cargo são treinadas de forma proativa. R:"
+   },
+   {
+    "code": "E10.N3.5",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Certificações específicas são reavaliado regularmente"
+   },
+   {
+    "code": "E10.N3.6",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Os planos e conteúdos do treinamento estão ligados à avaliação de risco no local de trabalho e são reforçados pela gerência de linha"
+   },
+   {
+    "code": "E10.N3.7",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "O treinamento para todos os funcionários inclui, pelo menos, o reconhecimento de perigos, prevenção de riscos, práticas seguras de trabalho, seleção e uso adequado de EPI."
+   },
+   {
+    "code": "E10.N3.8",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Muitos funcionários (50%) demonstram na prática seu profundo conhecimento e habilidades para identificar riscos no local de trabalho."
+   },
+   {
+    "code": "E10.N3.9",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Demonstrações da habilidade durante o trabalho são usadas pela gerência de linha para confirmar que o conteúdo do treinamento foi compreendido (testes, certificações, etc.)"
+   },
+   {
+    "code": "E10.N3.10",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Todos os gestores fazer o treinamento de liderança WISE, pouco depois de começarem sua tarefa (6 meses no máximo)"
+   },
+   {
+    "code": "E10.N3.11",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "O treinamento para todos os níveis de gestão inclui investigação de incidentes, técnicas de avaliação de risco no local de trabalho, diálogos de segurança"
+   },
+   {
+    "code": "E10.N3.12",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A maioria dos gestores (75%) têm conhecimento dos principais aspectos de segurança no trabalho. Eles são capazes de implementar o gerenciamento de segurança em seu setor ou equipe"
+   },
+   {
+    "code": "E10.N3.13",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Há uma lista de multiplicadores externos qualificados e multiplicadores internos qualificados para oferecer o treinamento necessário:"
+   },
+   {
+    "code": "E10.N3.14",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "O treinamento é ministrado por pessoas qualificadas para ministrá-lo (conhecimentos específicos, apresentação e habilidades interpessoais, conhecimento, comportamento, etc.) R."
+   },
+   {
+    "code": "E10.N3.15",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "O treinamento é percebido pelos funcionários como útil para seu trabalho.:"
+   },
+   {
+    "code": "E10.N3.16",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Os treinandos oferecem sistematicamente feedback formal sobre a adequação do conteúdo e a qualidade do treinamento. O feedback é utilizado para melhorar a qualidade do treinamento:"
+   },
+   {
+    "code": "E10.N4.1",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A eficácia do treinamento é auditada (relevância dos participantes, conteúdo, avaliações dos treinandos, lacunas de treinamento, percepção de campo, etc.) para garantir a conformidade e desenvolver melhorias (multiplicador, métodos e conteúdo) ao treinar uma gestão profissional ou certificada."
+   },
+   {
+    "code": "E10.N4.2",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Métodos pedagógicos adequados (por exemplo, estudos de caso, aprendizagem prática, e-learning, etc.) são introduzidos e regularmente revistos para assegurar a eficácia do treinamento"
+   },
+   {
+    "code": "E10.N4.3",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Incidentes e acidentes por falta de treinamento são muito baixos."
+   },
+   {
+    "code": "E10.N4.4",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Os membros da equipe de liderança reveem os programas de segurança de formação."
+   },
+   {
+    "code": "E10.N4.5",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "O gestor direto solicita feedback dos funcionários depois de cada treinamento e fornece suporte para implementar o aprendizado. Usa-se uma discussão anual (durante a avaliação de desempenho individual) para melhorar o processo e planejamento de treinamento."
+   },
+   {
+    "code": "E10.N4.6",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários sentem que o gestor direto está empenhado em fornecer suporte ao desenvolvimento de habilidades de segurança. O orçamento para treinamento de segurança não é cortado, mesmo quando há pressões de custos empresariais."
+   },
+   {
+    "code": "E10.N4.7",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "O plano, processo e conteúdo de treinamento são atualizados com base na avaliação contínua das necessidades de treinamento. Cursos de reciclagem e treinamento adicional são planejadas sistematicamente"
+   },
+   {
+    "code": "E10.N4.8",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "O programa de treinamento é revisto sempre que um processo novo ou modificado, atividade ou material perigoso, ..., é introduzido ou removido. Novas exigências legais ou padrões da indústria são integrados nos módulos de treinamento"
+   },
+   {
+    "code": "E10.N4.9",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Todos os funcionários são totalmente treinados para executar sua tarefa com segurança em todos os momentos, inclusive após qualquer mudança que acontece no site."
+   },
+   {
+    "code": "E10.N5.1",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "O treinamento de segurança é considerado uma alavanca de excelência operacional"
+   },
+   {
+    "code": "E10.N5.2",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Existe uma ligação e coerência visíveis entre o treinamento de segurança e outros programas de gestão (por exemplo, qualidade, DaMaWay, WISE, CODE, etc.)"
+   },
+   {
+    "code": "E10.N5.3",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "A cultura da excelência operacional é demonstrada de forma consistente em todos os tópicos/disciplinas. Não ocorrem lesões e incidentes por falta de conhecimento ou da aplicação das normas de segurança"
+   },
+   {
+    "code": "E10.N5.4",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Oportunidades de desenvolvimento de liderança de segurança estão sendo oferecidas aos funcionários. A organização incentiva os funcionários a participarem do desenvolvimento e ministração de cursos de segurança"
+   },
+   {
+    "code": "E10.N5.5",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "O auto-desenvolvimento em segurança é uma parte obrigatória do trabalho de cada funcionário. O desenvolvimento de liderança de segurança é considerado um elemento necessário da liderança geral"
+   },
+   {
+    "code": "E10.N5.6",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Os membros da equipe sentem-se responsáveis pelo desenvolvimento das competências dos outros membros da equipe e de si mesmos"
+   }
+  ]
+ },
+ {
+  "number": 11,
+  "title": "None",
+  "glossary": null,
+  "levelMax": {
+   "1": 6,
+   "2": 12,
+   "3": 20,
+   "4": 24,
+   "5": 14
+  },
+  "requirements": [
+   {
+    "code": "E11.N1.1",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "Existe um procedimento escrito, que atenda os requisitos mínimos regulatórios e de negócios, para notificação e investigação de todas as lesões registráveis (LTA e Não-LTA)"
+   },
+   {
+    "code": "E11.N1.2",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "Investigações de lesões são conduzidas primeiramente pela equipe de segurança"
+   },
+   {
+    "code": "E11.N1.3",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "Há um processo para gerenciar, armazenar e recuperar informações de lesões"
+   },
+   {
+    "code": "E11.N2.1",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "Os resultados das investigações de todos os graváveis são documentados e é atribuído um acompanhamento até seu encerramento"
+   },
+   {
+    "code": "E11.N2.2",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "Os líderes de equipes de investigação receberam treinamento de investigação, em conformidade com as Normas da Danone"
+   },
+   {
+    "code": "E11.N2.3",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os relatórios de acidentes e os resultados de investigação são compartilhados com todos os funcionários afetados"
+   },
+   {
+    "code": "E11.N2.4",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "Os dados do acidente (hora, tipo, causas, gravidade, processo, etc.) são coletados para todos os registráveis"
+   },
+   {
+    "code": "E11.N2.5",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de segurança ou supervisores dirigem a investigação com o envolvimento dos funcionários (com a pessoa lesionada e representantes dos funcionários, especialistas relevantes, etc.)"
+   },
+   {
+    "code": "E11.N2.6",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários compreendem e geralmente cumprem com o processo estabelecido para comunicar todos os registráveis e a maioria dos casos de primeiros socorros"
+   },
+   {
+    "code": "E11.N3.1",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Todos os incidentes do site são comunicados aos funcionários e discutidos (reuniões SIM, reuniões de segurança em pausas, mudanças de turno, etc.)"
+   },
+   {
+    "code": "E11.N3.2",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Existe um sistema em vigor para garantir que as recomendações de investigações de incidentes sejam aplicadas em todos os setores relevantes"
+   },
+   {
+    "code": "E11.N3.3",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Muitos funcionários (50%) têm um entendimento dos incidentes recentes e de como eles podem ser evitados"
+   },
+   {
+    "code": "E11.N3.4",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "O plano de ação combate as causas do incidente"
+   },
+   {
+    "code": "E11.N3.5",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Os gestores dirigem as investigações de incidentes, que incluem o funcionário lesionado e perícia técnica conforme necessário"
+   },
+   {
+    "code": "E11.N3.6",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A gestão é capaz de gerenciar o processo de investigação de forma eficiente: causas e fatores que contribuem para o incidente são procurados, incluindo os aspectos comportamentais e organizacionais"
+   },
+   {
+    "code": "E11.N3.7",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os gestores usam as investigações de incidentes para demonstrar seu compromisso com a segurança: resposta imediata, revisão de relatórios e ações contínuas"
+   },
+   {
+    "code": "E11.N3.8",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Os dados do incidente (hora, tipo, causas, gravidade, processo, etc.) são coletados e analisados para todos os incidentes: registráveis, primeiros socorros, quase-acidentes declarados com potencial para ferimentos graves"
+   },
+   {
+    "code": "E11.N3.9",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Os dados do incidente são analisados para determinar tendências e padrões, para definir e implementar medidas de prevenção"
+   },
+   {
+    "code": "E11.N3.10",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Um ambiente aberto e de confiança apoia os relatórios de quase acidentes com uma oportunidade para aprendizado"
+   },
+   {
+    "code": "E11.N4.1",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "As lesões registráveis de contratadas e visitantes do site (LTA e Não-LTA) são todas monitoradas e investigadas"
+   },
+   {
+    "code": "E11.N4.2",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Os relatórios de investigação de contratadas e visitantes do site têm qualidade igual aos dos funcionários"
+   },
+   {
+    "code": "E11.N4.3",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "As contratadas concluem ações corretivas"
+   },
+   {
+    "code": "E11.N4.4",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Conclusões de investigações e as lições aprendidas são compartilhadas com outros sites"
+   },
+   {
+    "code": "E11.N4.5",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Todos os aprendizados relevantes de outros sites são coletados, analisados e cascateados dentro da organização, se aplicável"
+   },
+   {
+    "code": "E11.N4.6",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Sempre que riscos semelhantes existem, é feita uma revisão e toma-se a ação apropriada"
+   },
+   {
+    "code": "E11.N4.7",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "A avaliação de riscos é utilizada para identificar o potencial de incidentes e para determinar o nível de investigação"
+   },
+   {
+    "code": "E11.N4.8",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Incidentes que não causaram nenhum dano, mas com potencial para ferimentos graves, são investigados com igual vigor"
+   },
+   {
+    "code": "E11.N4.9",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Os funcionários entendem que os incidentes que causaram nenhum dano, mas com potencial para ferimentos graves, devem ser investigados com igual vigor"
+   },
+   {
+    "code": "E11.N4.10",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Métricas de incidentes e resultados de investigação são usados para atualizar os processos de formação e auditoria"
+   },
+   {
+    "code": "E11.N4.11",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança do site realiza uma revisão anual de aprendizados e tendências adquiridos de incidentes a fim de verificar a eficácia do programa de segurança do site e do processo de investigação de incidentes"
+   },
+   {
+    "code": "E11.N4.12",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "O sistema de segurança do site é melhorado a partir dos resultados das investigações"
+   },
+   {
+    "code": "E11.N5.1",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Há um alto nível de notificação e investigação de incidentes: quase acidentes, acidentes fora do trabalho, incidentes de baixo potencial, ..., para os funcionários Danone e contratados"
+   },
+   {
+    "code": "E11.N5.2",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Todos os setores têm a mesma eficácia na comunicação de quase-acidentes e incidentes com baixo potencial"
+   },
+   {
+    "code": "E11.N5.3",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "O aprendizado adquirido de incidentes é altamente valorizado, e é sempre considerado como uma contribuição para o processo de aprendizagem contínua"
+   },
+   {
+    "code": "E11.N5.4",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Acidentes fora do trabalho são relatados e aprendizados relevantes são compartilhados com todos os funcionários"
+   },
+   {
+    "code": "E11.N5.5",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "O aprendizado adquirido de acidentes fora do trabalho são usados para reforçar a cultura de segurança"
+   },
+   {
+    "code": "E11.N5.6",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "A melhoria contínua é suportada por indicadores consistentes e revisados no nível do CODI (pelo menos 4 vezes por ano)"
+   },
+   {
+    "code": "E11.N5.7",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "Descobertas e percepções são efetivamente utilizadas para prevenir a recorrência e melhorar os sistemas"
+   }
+  ]
+ },
+ {
+  "number": 12,
+  "title": "None",
+  "glossary": null,
+  "levelMax": {
+   "1": 8,
+   "2": 20,
+   "3": 28,
+   "4": 34,
+   "5": 16
+  },
+  "requirements": [
+   {
+    "code": "E12.N1.1",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "Algumas observações de senso comum são realizadas"
+   },
+   {
+    "code": "E12.N1.2",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "Os recursos internos estão alocados para participarem de inspeções e acompanharem o progresso"
+   },
+   {
+    "code": "E12.N1.3",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "Os principais pontos de não-conformidade (em termos de conformidade legal ou riscos) são rastreados e resolvidos"
+   },
+   {
+    "code": "E12.N1.4",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "Existem inspeções implementadas, impulsionadas pela conformidade legal. As inspeções são focadas em equipamentos de segurança"
+   },
+   {
+    "code": "E12.N2.1",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "Os gestores participam ocasionalmente de inspeções e visitas de campo"
+   },
+   {
+    "code": "E12.N2.2",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "Os gestores se comprometem com a prevenção de riscos de segurança elevados e a resolução de lacunas de conformidade"
+   },
+   {
+    "code": "E12.N2.3",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os procedimentos básicos de segurança são seguidos de forma consistente"
+   },
+   {
+    "code": "E12.N2.4",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "A maioria dos funcionários (75%) cumprem plenamente os requisitos de EPI"
+   },
+   {
+    "code": "E12.N2.5",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "Inspeções básicas de segurança focadas em condições perigosas no ambiente de trabalho são realizadas pela equipe de segurança"
+   },
+   {
+    "code": "E12.N2.6",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "Existe um sistema para identificar e acompanhar condições perigosas (planejamentos de visitas de campo, checklists, alguns diálogos de segurança, etc.)"
+   },
+   {
+    "code": "E12.N2.7",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "As ações corretivas para condições perigosas são monitoradas. 50% são formalmente encerradas ou concluída"
+   },
+   {
+    "code": "E12.N2.8",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "São usados protocolos de controle especializados (proteção contra incêndio, limpeza, elétrica, equipamento de segurança e EPI)"
+   },
+   {
+    "code": "E12.N2.9",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "Os protocolos de auditoria tratam de todos os principais riscos à segurança do local (alta tensão, produtos químicos, direção de empilhadeira, trabalho em alturas, espaço confinado, etc.)"
+   },
+   {
+    "code": "E12.N2.10",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os equipamentos de segurança (duchas de segurança, extintores, equipamentos de incêndio) e estado de segurança dos equipamentos críticos (armários elétricos, empilhadeiras, caminhões, etc.) estão em bom estado"
+   },
+   {
+    "code": "E12.N3.1",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Informações de auditoria são coletadas e relatadas à equipe de liderança e funcionários"
+   },
+   {
+    "code": "E12.N3.2",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "O resultado do plano de auditoria é compartilhada com todos os níveis de gestão, representantes dos funcionários e operadores"
+   },
+   {
+    "code": "E12.N3.3",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A equipe de liderança usa informações de auditoria para dirigir o programa de segurança do site"
+   },
+   {
+    "code": "E12.N3.4",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Recomendações de melhoria são feitas para abordar questões específicas de segurança suscitadas pelo processo de auditoria"
+   },
+   {
+    "code": "E12.N3.5",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A gestão de linha está comprometida em implementar ações de melhoria rapidamente"
+   },
+   {
+    "code": "E12.N3.6",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Há um plano para a realização de diálogos de segurança (prioridades, planejamento, abordagem, objetivos)"
+   },
+   {
+    "code": "E12.N3.7",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Diálogos de segurança são realizados pela equipe de liderança, gerentes intermediários e equipe de segurança treinados"
+   },
+   {
+    "code": "E12.N3.8",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os diálogos se concentram no comportamento/ato perigoso e condições não seguras de forma a corrigir deficiências e motivar funcionários. A conformidade de EPI é 100%"
+   },
+   {
+    "code": "E12.N3.9",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "O plano de diálogos de segurança é adequado (para envolver a todos, pelo menos trimestralmente) e é seguido"
+   },
+   {
+    "code": "E12.N3.10",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "O conteúdo dos diálogos de segurança é consolidado e analisado"
+   },
+   {
+    "code": "E12.N3.11",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Há um plano de auditoria estruturado que abrange todos os tipos de avaliações (visitas de campo, inspeções, auditorias, autoavaliações), todos os tipos de riscos (equipamentos, condições perigosas, atos perigosos), todos os setores do site"
+   },
+   {
+    "code": "E12.N3.12",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "A equipe de liderança do site validou o plano de auditoria"
+   },
+   {
+    "code": "E12.N3.13",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "O plano de auditoria é efetivamente implementado e monitorado"
+   },
+   {
+    "code": "E12.N3.14",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Os resultados das investigações de incidentes são usados para projetar o plano de auditoria"
+   },
+   {
+    "code": "E12.N4.1",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "As pesquisas são usadas para compreender as percepções dos funcionários sobre a segurança"
+   },
+   {
+    "code": "E12.N4.2",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Saúde e bem-estar fazem parte das pesquisas desenvolvidas e utilizadas para promover a saúde e o bem-estar"
+   },
+   {
+    "code": "E12.N4.3",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Os resultados das pesquisas são usados para monitorar o progresso da cultura de saúde e segurança em todo o site"
+   },
+   {
+    "code": "E12.N4.4",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Os resultados de auditorias são comparados com dados de incidentes e resultados de avaliações de risco para focar, direcionar e melhorar o sistema de auditoria"
+   },
+   {
+    "code": "E12.N4.5",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Auditorias de segundos e terceiros são realizadas regularmente para melhorar o sistema de auditoria no local"
+   },
+   {
+    "code": "E12.N4.6",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "A equipe de liderança da fábrica apoia a melhoria contínua do sistema de auditoria de segurança como um fator crucial de desempenho"
+   },
+   {
+    "code": "E12.N4.7",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Existem métricas de auditoria para medir a eficácia e a consistência do sistema de auditoria ao longo do tempo"
+   },
+   {
+    "code": "E12.N4.8",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "Verificações de procedimentos de trabalho detalhados (controles de ciclo de trabalho) são realizados regularmente (por exemplo, uma ver por ano para o procedimento crítico de cada operador/funcionário em seu local de trabalho)"
+   },
+   {
+    "code": "E12.N4.9",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Os processos de trabalho são descritos com precisão em procedimentos operacionais padrão e desvios são corrigidos (ou procedimentos operacionais padrão são corrigidos)"
+   },
+   {
+    "code": "E12.N4.10",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Os operadores estão envolvidos em auditar processos de trabalho e fazer sugestões de melhoria"
+   },
+   {
+    "code": "E12.N4.11",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "São realizados diálogos e auditorias interdepartamentais de segurança"
+   },
+   {
+    "code": "E12.N4.12",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A aprendizagem e o apoio mútuos promove melhorias em todos os setores e equipes. O processo desenvolve a consistência da cultura de segurança entre os setores/equipes"
+   },
+   {
+    "code": "E12.N4.13",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Atos perigosos são abordados a qualquer momento"
+   },
+   {
+    "code": "E12.N4.14",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "É fornecido um treinamento em diálogo de segurança para todos os gestores, incluindo os novos funcionários"
+   },
+   {
+    "code": "E12.N4.15",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "O treinamento inclui observação e habilidades de comunicação, e treinamento/reciclagem subsequente"
+   },
+   {
+    "code": "E12.N4.16",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Todos os gerentes de primeira linha têm propriedade do processo de auditoria e não há envolvimento amplo dos funcionários"
+   },
+   {
+    "code": "E12.N4.17",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A qualidade dos diálogos de segurança é monitorada (auditorias emparelhadas, revisão de relatórios)"
+   },
+   {
+    "code": "E12.N5.1",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Os sistemas de segurança, saúde, meio ambiente, qualidade, desempenho, ..., estão alinhados e se reforçam mutuamente"
+   },
+   {
+    "code": "E12.N5.2",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "A coerência dos diferentes sistemas de auditoria é clara e facilmente gerida no nível dos operadores (por exemplo, integrado em um sistema comum de gestão visual)"
+   },
+   {
+    "code": "E12.N5.3",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "O sistema de auditoria é reconhecido e totalmente suportado por toda a organização como um elemento crucial para eliminar o potencial de lesões e melhorar a excelência operacional"
+   },
+   {
+    "code": "E12.N5.4",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Todos os funcionários/equipes de trabalho estão envolvidos na execução de auditorias interdepartamentais"
+   },
+   {
+    "code": "E12.N5.5",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Todos os funcionários realizam diálogos de segurança, com boa eficácia"
+   },
+   {
+    "code": "E12.N5.6",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "A cultura de segurança está presente entre os funcionários, mesmo quando o gerenciamento de linha não estiver presente no setor"
+   },
+   {
+    "code": "E12.N5.7",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Os funcionários participam de auditorias internas de outros sites/instalações"
+   },
+   {
+    "code": "E12.N5.8",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Aprendizados de outros sites são adotados em turnos pelas equipes para refrescar e renovar as práticas locais"
+   }
+  ]
+ },
+ {
+  "number": 13,
+  "title": "None",
+  "glossary": null,
+  "levelMax": {
+   "1": 18,
+   "2": 12,
+   "3": 24,
+   "4": 16,
+   "5": 24
+  },
+  "requirements": [
+   {
+    "code": "E13.N1.1",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "As regras de segurança do site são compartilhadas com as contratadas antes do início dos trabalhos. Há uma reunião pré-contratual para todos os contratos significativos (cuja produção seja superior à de 50 funcionários por dia) para discutir as regras de segurança e procedimentos de emergência do site"
+   },
+   {
+    "code": "E13.N1.2",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "Os gestores locais são informados sobre as atividades das contratadas na sua área (no mínimo em 90%)"
+   },
+   {
+    "code": "E13.N1.3",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "Os trabalhos dos funcionários das contratadas (> 50%) são feitos de forma segura e realizados de acordo com as regras e procedimentos de segurança do site"
+   },
+   {
+    "code": "E13.N1.4",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "As contratadas são auditadas pelo site com observância das normas de segurança do site"
+   },
+   {
+    "code": "E13.N1.5",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "Dados sobre acidentes das contratadas ocorridos no site são coletados e categorizados"
+   },
+   {
+    "code": "E13.N1.6",
+    "level": 1,
+    "dimension": "ATIVIDADE",
+    "text": "As contratadas são obrigadas a trabalhar de acordo com os regulamentos locais de segurança"
+   },
+   {
+    "code": "E13.N1.7",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "Álcool e drogas são terminantemente proibidos para contratadas com qualquer tipo de atividade"
+   },
+   {
+    "code": "E13.N1.8",
+    "level": 1,
+    "dimension": "IMPACTO",
+    "text": "Requisitos legais (por exemplo, seguro social) são cumpridos ou as condições de trabalho das contratadas são aprovadas formalmente"
+   },
+   {
+    "code": "E13.N1.9",
+    "level": 1,
+    "dimension": "QUALIDADE",
+    "text": "Há uma pessoa responsável no site/CBU para verificar a documentação regulatória da contratada antes do início dos trabalhos. No caso de a contratada não cumprir os requisitos regulamentares, é o gerente do site ou gerente de RH quem aprova as condições de trabalho das contratadas"
+   },
+   {
+    "code": "E13.N2.1",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "Há um processo de indução para todas as contratadas que é compreendida e posta em prática"
+   },
+   {
+    "code": "E13.N2.2",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "A responsabilização clara pelo comportamento seguro das contratadas é definida"
+   },
+   {
+    "code": "E13.N2.3",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "A responsabilização clara pelo comportamento seguro das contratadas é definida. Auditorias específicas estão sendo planejadas para garantir que todas as disposições da autorização de trabalho e procedimentos para o trabalho sejam cumpridos"
+   },
+   {
+    "code": "E13.N2.4",
+    "level": 2,
+    "dimension": "ATIVIDADE",
+    "text": "Os critérios de seleção incluem o desempenho e os programas de segurança da contratada"
+   },
+   {
+    "code": "E13.N2.5",
+    "level": 2,
+    "dimension": "QUALIDADE",
+    "text": "As contratadas têm seu desempenho de segurança avaliado, e esta avaliação é usada e considerada no momento do próximo contrato"
+   },
+   {
+    "code": "E13.N2.6",
+    "level": 2,
+    "dimension": "IMPACTO",
+    "text": "Os acidentes das contratadas e outros incidentes com potencial de alto risco são investigados pela contratada com a participação ativa do site"
+   },
+   {
+    "code": "E13.N3.1",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "As contratadas são frequentemente (semanalmente) auditadas para que se verifique o cumprimento das regras, procedimentos e padrões de segurança do site. As contratadas e suas oficinas/áreas de armazenamento são auditadas como parte do programa de auditoria do site"
+   },
+   {
+    "code": "E13.N3.2",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Há reuniões regulares (trimestrais) pré-acordadas entre o site e suas contratadas em tempo integral para examinar a implementação de programas de segurança e para comunicar os resultados e as ações decorrentes das auditorias (ou aprendizados/tendências sobre incidentes no site)"
+   },
+   {
+    "code": "E13.N3.3",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "As conclusões de auditorias, medições de incidentes e resultados de investigação são usados para atualizar os programas, treinamentos e processos de auditoria"
+   },
+   {
+    "code": "E13.N3.4",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "O comitê de segurança do site discute os acidentes, quase acidentes e primeiros socorros da contratada"
+   },
+   {
+    "code": "E13.N3.5",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Os dados do incidente são analisados para determinar as tendências e definir medidas de prevenção"
+   },
+   {
+    "code": "E13.N3.6",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "Os aprendizados sobre incidentes são compartilhados para melhorar o sistema de gestão de segurança das contratadas e para evitar incidentes semelhantes"
+   },
+   {
+    "code": "E13.N3.7",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "São definidos objetivos para medir o desempenho de segurança das contratadas e subcontratadas"
+   },
+   {
+    "code": "E13.N3.8",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Existem programas para atender aos objetivos de desempenho das contratadas"
+   },
+   {
+    "code": "E13.N3.9",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "As contratadas estão cientes dos objetivos e trabalham para alcançá-los"
+   },
+   {
+    "code": "E13.N3.10",
+    "level": 3,
+    "dimension": "ATIVIDADE",
+    "text": "Todas as regras e procedimentos de segurança do site que as contratadas devem respeitar são claramente definidas e comunicadas"
+   },
+   {
+    "code": "E13.N3.11",
+    "level": 3,
+    "dimension": "QUALIDADE",
+    "text": "Regras e procedimentos de segurança estão incluídos nas especificações do contrato/ordens de compra e são explicadas durante reuniões com as contratadas"
+   },
+   {
+    "code": "E13.N3.12",
+    "level": 3,
+    "dimension": "IMPACTO",
+    "text": "A maioria (75%) dos empregados das contratadas estão cientes das regras e procedimentos de segurança do site"
+   },
+   {
+    "code": "E13.N4.1",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "O processo completo de segurança da contratada (6 etapas), incluindo avaliação pós-contrato, é bem estabelecida e leva a melhorias"
+   },
+   {
+    "code": "E13.N4.2",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Gerentes com atividades que envolvam diferentes tipos de contratadas (contratadas em tempo integral, contratadas por projeto) estão envolvidos semanalmente na gestão de segurança das contratadas (reuniões, auditorias, realização de análises)"
+   },
+   {
+    "code": "E13.N4.3",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "A gestão e os funcionários da contratada estão plenamente conscientes de todos os padrões, procedimentos e regras de segurança do site. O nível de cumprimento é elevada (100%)"
+   },
+   {
+    "code": "E13.N4.4",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "São feitas reuniões de segurança regulares com a gestão de diferentes tipos de contratadas (contratadas em tempo integral, contratadas regulares, contratadas por projeto) para discutir as tendências, expectativas e ações de segurança"
+   },
+   {
+    "code": "E13.N4.5",
+    "level": 4,
+    "dimension": "ATIVIDADE",
+    "text": "O site tem um programa para garantir que os funcionários contratados estejam aptos para o serviço (fadiga, estresse). O método é definido no contrato, conforme apropriado ao risco"
+   },
+   {
+    "code": "E13.N4.6",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "Contratadas em tempo integral são integradas a auditorias, investigações e programas de melhoria do site"
+   },
+   {
+    "code": "E13.N4.7",
+    "level": 4,
+    "dimension": "IMPACTO",
+    "text": "Os planos de melhorias para reduzir incidentes nas contratadas são definidos e apoiados pela organização contratada. Os planos incluem ações para reduzir os riscos relacionados ao estresse e fadiga"
+   },
+   {
+    "code": "E13.N4.8",
+    "level": 4,
+    "dimension": "QUALIDADE",
+    "text": "A visão de \"zero lesões\" está claramente estabelecida e é aceita pelas contratadas. Todos os incidentes são relatados e investigados, a fim de que se aprenda com eles e de evitar recorrência"
+   },
+   {
+    "code": "E13.N5.1",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "A revisão de segurança anual é realizada com a gestão da contratada, que estabelece e executa um plano de ação com base em contribuições do site"
+   },
+   {
+    "code": "E13.N5.2",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Contratadas em tempo integral têm um papel importante nos programas de segurança do site e são proativos em impulsionar melhorias"
+   },
+   {
+    "code": "E13.N5.3",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "A estratégia para redução de acidentes e incidentes nas contratadas está definida e é comunicada através de negócios e sites da empresa. Os relatórios de segurança da contratada estão totalmente alinhados com o sistema de relatórios corporativos da empresa"
+   },
+   {
+    "code": "E13.N5.4",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Os sistemas de gestão de segurança da contratada estão alinhados com os da empresa/site"
+   },
+   {
+    "code": "E13.N5.5",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "A comunicação entre gestões a respeito de padrões de segurança e expectativas é bem estabelecida (acontece todo mês)"
+   },
+   {
+    "code": "E13.N5.6",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "As metas, objetivos e planos de segurança da contratada são parte importante de seu plano de negócios. As empresas usam seu desempenho de segurança nos sites da Danone como referência"
+   },
+   {
+    "code": "E13.N5.7",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "O site trabalha com a gestão de suas contratadas e garante que elas atualizem seus sistemas de gestão de segurança continuamente, com base no feedback do site e em seus próprios resultados de desempenho de segurança"
+   },
+   {
+    "code": "E13.N5.8",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "Os funcionários da contratada entendem o sistema de gestão de segurança, conhecem e utilizam as principais ferramentas, tais como relatórios de riscos e a realização de diálogos de segurança. A maioria deles (75%) participa ativamente do programa de segurança"
+   },
+   {
+    "code": "E13.N5.9",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "As contratadas compreendem que um excelente nível de desempenho de segurança é um pré-requisito para manter seus contratos e para a obtenção de trabalhos futuros"
+   },
+   {
+    "code": "E13.N5.10",
+    "level": 5,
+    "dimension": "ATIVIDADE",
+    "text": "Um sistema de classificação é utilizado para avaliar o desempenho de segurança, as atividades e o envolvimento da contratada"
+   },
+   {
+    "code": "E13.N5.11",
+    "level": 5,
+    "dimension": "QUALIDADE",
+    "text": "A avaliação de desempenho de segurança da contratada é feita pelo gestor do site que coordena as atividades da contratada e os gerentes locais relacionados à atividade da contratada"
+   },
+   {
+    "code": "E13.N5.12",
+    "level": 5,
+    "dimension": "IMPACTO",
+    "text": "O desempenho e a implicação de segurança da contratante é consistentemente de alto e comparável ao dos funcionários do site"
+   }
+  ]
+ }
+]
