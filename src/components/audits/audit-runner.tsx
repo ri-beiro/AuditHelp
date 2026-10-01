@@ -186,10 +186,10 @@ export function AuditRunner({
       </div>
 
       {/* Cabeçalho */}
-      <section className="rounded-2xl bg-gradient-to-br from-brand-950 via-brand-900 to-brand-700 p-6 text-white shadow-lg print:rounded-none">
+      <section className="rounded-2xl wise-hero p-6 text-white shadow-lg print:rounded-none">
         <div className="flex flex-col gap-6 md:flex-row md:items-center">
           <div className="min-w-0 flex-1">
-            <p className="text-xs font-semibold uppercase tracking-widest text-accent-500">{template.name}</p>
+            <p className="eyebrow">{template.name}</p>
             <h1 className="mt-1 text-2xl font-extrabold">{info.contractor}</h1>
             <p className="mt-1 text-sm text-brand-100/80">
               {info.unitName} · {fmtDate(info.auditDate)} · Auditor: {info.auditorName ?? "—"}

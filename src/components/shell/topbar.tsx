@@ -20,12 +20,12 @@ export function Topbar({ units, unitId, cycles, cycle, user }: Props) {
   const [menu, setMenu] = useState(false);
   return (
     <>
-      <header className="sticky top-0 z-30 flex print:hidden h-16 items-center gap-3 border-b border-slate-200 bg-white/90 px-4 backdrop-blur lg:px-8">
+      <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-slate-200/70 bg-white/75 px-4 backdrop-blur-xl backdrop-saturate-150 print:hidden lg:px-8">
         <button className="rounded-md p-2 text-slate-600 hover:bg-slate-100 lg:hidden" onClick={() => setMenu(true)} aria-label="Menu">
           <Menu className="size-5" />
         </button>
         <div className="flex min-w-0 flex-1 items-center gap-2">
-          <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white pl-2.5 text-sm">
+          <div className="flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white pl-3 text-sm shadow-soft">
             <Building2 className="size-4 text-brand-700" />
             <select
               aria-label="Unidade"
@@ -42,7 +42,7 @@ export function Topbar({ units, unitId, cycles, cycle, user }: Props) {
               ))}
             </select>
           </div>
-          <div className="hidden items-center gap-2 rounded-lg border border-slate-200 bg-white pl-2.5 text-sm sm:flex">
+          <div className="hidden items-center gap-2 rounded-xl border border-slate-200/80 bg-white pl-3 text-sm shadow-soft sm:flex">
             <CalendarRange className="size-4 text-brand-700" />
             <select
               aria-label="Ciclo"
@@ -66,7 +66,7 @@ export function Topbar({ units, unitId, cycles, cycle, user }: Props) {
           </div>
         </div>
         <div className="hidden items-center gap-3 border-l border-slate-200 pl-3 md:flex">
-          <div className="grid size-9 place-items-center rounded-full bg-brand-100 text-sm font-bold text-brand-800">
+          <div className="grid size-9 place-items-center rounded-full bg-gradient-to-br from-brand-600 to-brand-800 text-xs font-bold text-white ring-2 ring-white shadow-soft">
             {user.name
               .split(" ")
               .map((p) => p[0])

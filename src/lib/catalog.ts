@@ -16,9 +16,9 @@ export type ElementDef = {
 // Grupos WISE usados na reunião de fechamento da auditoria
 // (Treinamento Auditor Júnior WISE², slide 107): Liderança 1–4, Organização 5–8, Operação 9–13.
 export const WISE_PILLARS: PillarDef[] = [
-  { name: "Liderança", order: 1, color: "#1d4ed8" },
-  { name: "Organização", order: 2, color: "#0891b2" },
-  { name: "Operação", order: 3, color: "#7c3aed" },
+  { name: "Liderança", order: 1, color: "#13508a" },
+  { name: "Organização", order: 2, color: "#1a87c9" },
+  { name: "Operação", order: 3, color: "#cc7a2a" },
 ];
 
 export const WISE_ELEMENTS: ElementDef[] = [
@@ -169,10 +169,10 @@ export const WISE_ELEMENTS: ElementDef[] = [
 
 // Agrupamento dos 12 Básicos (a matriz original não define pilares para os Básicos).
 export const BASICS_PILLARS: PillarDef[] = [
-  { name: "Road Safety", order: 1, color: "#1d4ed8" },
-  { name: "Movimentação e Armazenagem", order: 2, color: "#0891b2" },
-  { name: "Riscos Críticos", order: 3, color: "#7c3aed" },
-  { name: "Pessoas e Emergência", order: 4, color: "#dc2626" },
+  { name: "Road Safety", order: 1, color: "#13508a" },
+  { name: "Movimentação e Armazenagem", order: 2, color: "#1a87c9" },
+  { name: "Riscos Críticos", order: 3, color: "#cc7a2a" },
+  { name: "Pessoas e Emergência", order: 4, color: "#7f9420" },
 ];
 
 export const BASICS_ELEMENTS: ElementDef[] = [

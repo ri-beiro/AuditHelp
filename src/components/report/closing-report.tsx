@@ -86,8 +86,8 @@ export function ClosingReportView(props: Props) {
     <div className="mx-auto max-w-5xl space-y-6 print:max-w-none print:space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3 print:hidden">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent-500">Auditoria WISE² · reunião de fechamento</p>
-          <h1 className="text-2xl font-extrabold tracking-tight text-slate-900">Relatório de fechamento</h1>
+          <p className="eyebrow">Auditoria WISE² · reunião de fechamento</p>
+          <h1 className="mt-1.5 text-[26px] font-extrabold leading-tight text-brand-950">Relatório de fechamento</h1>
           {r.updatedAt ? (
             <p className="text-xs text-slate-500">
               Atualizado em {fmtDateTime(r.updatedAt)}
@@ -114,8 +114,8 @@ export function ClosingReportView(props: Props) {
       </div>
 
       {/* Capa */}
-      <Section className="bg-gradient-to-br from-brand-950 via-brand-900 to-brand-700 text-white print:break-after-page">
-        <p className="text-xs font-semibold uppercase tracking-widest text-accent-500">Auditoria WISE² · Ciclo {props.cycle}</p>
+      <Section className="wise-hero print:break-after-page">
+        <p className="eyebrow">Auditoria WISE² · Ciclo {props.cycle}</p>
         <h2 className="mt-2 text-3xl font-extrabold">{props.unitName}</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <EditableLine label="Datas da auditoria" value={r.auditDates} editing={editing} onChange={(v) => setR({ ...r, auditDates: v })} light />

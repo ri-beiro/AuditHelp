@@ -94,8 +94,8 @@ export function ActionsView({
     <div className="mx-auto max-w-[1500px] space-y-5">
       <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent-500">Planos de ação · 5W2H</p>
-          <h1 className="text-2xl font-extrabold tracking-tight text-slate-900">{unit.name}</h1>
+          <p className="eyebrow">Planos de ação · 5W2H</p>
+          <h1 className="mt-1.5 text-[26px] font-extrabold leading-tight text-brand-950">{unit.name}</h1>
         </div>
         <div className="flex gap-2">
           <Button variant="outline" onClick={exportCsv}>

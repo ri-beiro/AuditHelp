@@ -76,13 +76,13 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
   return (
     <div className="mx-auto max-w-[1500px] space-y-6">
       {/* Cabeçalho */}
-      <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-950 via-brand-900 to-brand-700 p-6 text-white shadow-lg">
+      <section className="wise-hero rounded-3xl p-6 shadow-lift md:p-8">
         <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-accent-500">
+            <p className="eyebrow">
               Painel de gestão · Ciclo {cycle}
             </p>
-            <h1 className="mt-1 text-2xl font-extrabold tracking-tight md:text-3xl">{unit.name}</h1>
+            <h1 className="mt-2 text-3xl font-extrabold tracking-tight md:text-4xl">{unit.name}</h1>
             <p className="mt-1 max-w-xl text-sm text-brand-100/80">
               13 Elementos de cultura e gestão WISE² e 12 Básicos de segurança. Clique em um card para abrir a matriz
               completa com evidências, status e planos de ação.
@@ -113,7 +113,6 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
             />
           </div>
         </div>
-        <div className="pointer-events-none absolute -right-20 -top-28 size-80 rounded-full bg-brand-500/25 blur-3xl" />
       </section>
 
       {/* Indicadores rápidos */}
@@ -158,7 +157,7 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
 
       {/* Abas + filtros */}
       <section className="space-y-4">
-        <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
+        <div className="flex flex-col gap-3">
           <Tabs value={tab} onValueChange={(v) => { setFilters(EMPTY); setParams({ tab: v === "wise" ? null : v }); }}>
             <TabsList>
               <TabsTrigger value="wise">
@@ -169,14 +168,14 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
               </TabsTrigger>
             </TabsList>
           </Tabs>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="grid grid-cols-1 gap-2 rounded-2xl border border-slate-200/70 bg-white/70 p-2 shadow-soft backdrop-blur sm:grid-cols-2 lg:grid-cols-[1.2fr_repeat(4,1fr)_auto]">
             <Input
               value={filters.text}
               onChange={(e) => setFilters({ ...filters, text: e.target.value })}
               placeholder="Filtrar elemento…"
-              className="w-full sm:w-44"
+              className="w-full"
             />
-            <Select value={filters.pillar} onChange={(e) => setFilters({ ...filters, pillar: e.target.value })} className="w-full sm:w-auto sm:min-w-44">
+            <Select value={filters.pillar} onChange={(e) => setFilters({ ...filters, pillar: e.target.value })} className="w-full">
               <option value="">Todos os pilares</option>
               {ov.pillars.map((p) => (
                 <option key={p.id} value={p.id}>
@@ -184,7 +183,7 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
                 </option>
               ))}
             </Select>
-            <Select value={filters.status} onChange={(e) => setFilters({ ...filters, status: e.target.value })} className="w-full sm:w-auto sm:min-w-44">
+            <Select value={filters.status} onChange={(e) => setFilters({ ...filters, status: e.target.value })} className="w-full">
               <option value="">Todos os status</option>
               {Object.entries(STATUS_LABEL).map(([k, v]) => (
                 <option key={k} value={k}>
@@ -192,7 +191,7 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
                 </option>
               ))}
             </Select>
-            <Select value={filters.tone} onChange={(e) => setFilters({ ...filters, tone: e.target.value })} className="w-full sm:w-auto sm:min-w-44">
+            <Select value={filters.tone} onChange={(e) => setFilters({ ...filters, tone: e.target.value })} className="w-full">
               <option value="">Todas as situações</option>
               {(["critico", "atencao", "conforme", "neutro"] as Tone[]).map((t) => (
                 <option key={t} value={t}>
@@ -203,7 +202,7 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
             <Select
               value={filters.responsible}
               onChange={(e) => setFilters({ ...filters, responsible: e.target.value })}
-              className="w-full sm:w-auto sm:min-w-44"
+              className="w-full"
             >
               <option value="">Todos os responsáveis</option>
               <option value="none">Sem responsável</option>
@@ -214,30 +213,32 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
               ))}
             </Select>
             {hasFilters ? (
-              <Button variant="ghost" size="sm" onClick={() => setFilters(EMPTY)}>
+              <Button variant="ghost" onClick={() => setFilters(EMPTY)}>
                 <FilterX /> Limpar
               </Button>
-            ) : null}
+            ) : (
+              <span className="hidden lg:block" />
+            )}
           </div>
         </div>
 
         {/* Pilares */}
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <div className={cn("grid grid-cols-1 gap-3 sm:grid-cols-2", ov.pillars.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4")}>
           {ov.pillars.map((p) => (
             <button
               key={p.id}
               onClick={() => setFilters({ ...filters, pillar: filters.pillar === p.id ? "" : p.id })}
               className={cn(
-                "rounded-xl border bg-white p-3 text-left shadow-sm transition hover:shadow",
-                filters.pillar === p.id ? "border-brand-500 ring-2 ring-brand-500/20" : "border-slate-200",
+                "rounded-2xl border bg-white p-4 text-left shadow-soft transition hover:-translate-y-0.5 hover:shadow-lift",
+                filters.pillar === p.id ? "border-brand-500 ring-4 ring-brand-500/15" : "border-slate-200/70",
               )}
             >
               <div className="flex items-center justify-between">
-                <span className="flex items-center gap-2 text-sm font-semibold text-slate-800">
+                <span className="flex items-center gap-2 font-display text-[15px] font-bold text-brand-950">
                   <span className="size-2.5 rounded-full" style={{ background: p.color }} />
                   {p.name}
                 </span>
-                <span className="text-sm font-bold tabular-nums text-slate-900">
+                <span className="font-display text-lg font-extrabold tabular-nums text-brand-950">
                   {tab === "wise" ? fmtScore(p.score) : fmtPct(p.pct)}
                 </span>
               </div>
@@ -313,8 +314,10 @@ function HeroScore({
     <button
       onClick={onClick}
       className={cn(
-        "rounded-xl border p-4 text-left backdrop-blur transition",
-        active ? "border-white/40 bg-white/15" : "border-white/10 bg-white/5 hover:bg-white/10",
+        "rounded-2xl border p-4 text-left backdrop-blur-md transition",
+        active
+          ? "border-white/30 bg-white/[0.14] shadow-[inset_0_1px_0_rgb(255_255_255/0.15)]"
+          : "border-white/10 bg-white/[0.05] hover:bg-white/[0.09]",
       )}
     >
       <div className="flex items-center justify-between gap-2 text-xs font-medium text-brand-100/80">
@@ -322,7 +325,7 @@ function HeroScore({
         <GradeBadge grade={grade} size="sm" />
       </div>
       <div className="mt-1 flex items-baseline gap-1">
-        <span className="text-3xl font-extrabold tabular-nums">{value}</span>
+        <span className="font-display text-[32px] font-extrabold leading-none tabular-nums">{value}</span>
         {suffix ? <span className="text-sm text-brand-100/70">{suffix}</span> : null}
       </div>
       <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/15">
@@ -339,7 +342,7 @@ function HeroScore({
 function SiteGrade({ culture, compliance }: { culture: Grade | null; compliance: Grade | null }) {
   const g = siteGrade(culture, compliance);
   return (
-    <div className="col-span-2 flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 p-4 sm:col-span-1 sm:flex-col sm:justify-center sm:text-center">
+    <div className="col-span-2 flex items-center gap-3 rounded-2xl border border-white/15 bg-gradient-to-b from-white/[0.14] to-white/[0.04] p-4 shadow-[inset_0_1px_0_rgb(255_255_255/0.15)] backdrop-blur-md sm:col-span-1 sm:flex-col sm:justify-center sm:text-center">
       <GradeBadge grade={g} size="xl" />
       <div className="text-[11px] leading-tight text-brand-100/80">
         <div className="font-semibold text-white">Classe do site</div>

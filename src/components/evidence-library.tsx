@@ -54,8 +54,8 @@ export function EvidenceLibrary({ unitName, cycle, items }: { unitName: string; 
   return (
     <div className="mx-auto max-w-[1500px] space-y-5">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-widest text-accent-500">Biblioteca de evidências · Ciclo {cycle}</p>
-        <h1 className="text-2xl font-extrabold tracking-tight text-slate-900">{unitName}</h1>
+        <p className="eyebrow">Biblioteca de evidências · Ciclo {cycle}</p>
+        <h1 className="mt-1.5 text-[26px] font-extrabold leading-tight text-brand-950">{unitName}</h1>
       </div>
       <div className="grid grid-cols-2 gap-2 rounded-xl border border-slate-200 bg-white p-3 md:grid-cols-6">
         <Input className="col-span-2" placeholder="Buscar evidência…" value={f.q} onChange={set("q")} />

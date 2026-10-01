@@ -29,7 +29,7 @@ import { Kpi } from "@/components/dashboard/kpi";
 import { GradeBadge } from "@/components/grade-badge";
 
 // Séries categóricas validadas (scripts/validate_palette.js do guia de dataviz)
-const SERIES = { wise: "#1560d4", basics: "#e07a12" };
+const SERIES = { wise: "#1a64a8", basics: "#cc7a2a" };
 const INK = { primary: "#0f172a", secondary: "#475569", muted: "#94a3b8", grid: "#e2e8f0" };
 
 type Props = {
@@ -108,8 +108,8 @@ export function IndicatorsView({ unitName, cycle, wise, basics, evolution, actio
     <div className="mx-auto max-w-[1500px] space-y-6">
       <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent-500">Indicadores · Ciclo {cycle}</p>
-          <h1 className="text-2xl font-extrabold tracking-tight text-slate-900">{unitName}</h1>
+          <p className="eyebrow">Indicadores · Ciclo {cycle}</p>
+          <h1 className="mt-1.5 text-[26px] font-extrabold leading-tight text-brand-950">{unitName}</h1>
         </div>
         <Tabs value={fw} onValueChange={(v) => setFw(v as "wise" | "basicos")}>
           <TabsList>
@@ -123,7 +123,16 @@ export function IndicatorsView({ unitName, cycle, wise, basics, evolution, actio
         <Kpi
           icon={Gauge}
           label={isWise ? "Score geral WISE" : "Compliance 12 Básicos"}
-          value={isWise ? `${fmtScore(wise.overall.score)} / 65` : fmtPct(basics.overall.pct)}
+          value={
+            isWise ? (
+              <>
+                {fmtScore(wise.overall.score)}
+                <span className="ml-1 text-sm font-semibold text-slate-400">/ 65</span>
+              </>
+            ) : (
+              fmtPct(basics.overall.pct)
+            )
+          }
           hint={
             isWise
               ? `Classe ${wise.overall.grade ?? "–"} · ${wise.overall.stage}`

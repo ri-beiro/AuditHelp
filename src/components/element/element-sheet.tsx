@@ -21,6 +21,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ElementIcon } from "@/components/element-icon";
+import { GradeBadge } from "@/components/grade-badge";
+import type { Grade } from "@/lib/scoring";
 import type { Perms } from "@/components/dashboard/dashboard";
 import { MatrixWise } from "./matrix-wise";
 import { MatrixBasics } from "./matrix-basics";
@@ -158,7 +160,7 @@ function SheetBody({
   return (
     <>
       {/* Cabeçalho */}
-      <header className="shrink-0 bg-gradient-to-br from-brand-950 via-brand-900 to-brand-800 px-6 pb-5 pt-5 text-white">
+      <header className="shrink-0 wise-hero px-6 pb-5 pt-5 text-white">
         <div className="flex items-center gap-2 pr-10 text-xs text-brand-100/70">
           <button disabled={!onPrev} onClick={onPrev} className="rounded p-1 hover:bg-white/10 disabled:opacity-30" title="Anterior">
             <ChevronLeft className="size-4" />
@@ -190,7 +192,8 @@ function SheetBody({
               value={isWise ? fmtScore(result.score) : fmtPct(result.pct)}
               suffix={isWise ? "/ 5" : undefined}
               sub={isWise ? result.stage : result.capped ? "Limitado a 50% (risco 1)" : `${result.applicable} itens aplicáveis`}
-              toneLabel={result.grade ? `Classe ${result.grade} · ${TONE_LABEL[result.tone]}` : TONE_LABEL[result.tone]}
+              toneLabel={TONE_LABEL[result.tone]}
+              grade={result.grade}
               barClass={tone.bar}
               pct={isWise ? result.pct : result.pct}
             />
@@ -266,6 +269,7 @@ function ScoreTile({
   suffix,
   sub,
   toneLabel,
+  grade,
   barClass,
   pct,
 }: {
@@ -274,17 +278,21 @@ function ScoreTile({
   suffix?: string;
   sub?: string;
   toneLabel: string;
+  grade: Grade | null;
   barClass: string;
   pct: number | null;
 }) {
   return (
-    <div className="w-56 rounded-xl border border-white/15 bg-white/10 p-3.5">
+    <div className="w-60 rounded-2xl border border-white/15 bg-gradient-to-b from-white/[0.14] to-white/[0.04] p-4 shadow-[inset_0_1px_0_rgb(255_255_255/0.15)] backdrop-blur-md">
       <div className="flex items-center justify-between text-xs text-brand-100/80">
         <span>{label}</span>
-        <span className="font-semibold text-white">{toneLabel}</span>
+        <span className="flex items-center gap-1.5 font-semibold text-white">
+          {toneLabel}
+          <GradeBadge grade={grade} size="sm" />
+        </span>
       </div>
       <div className="mt-1 flex items-baseline gap-1">
-        <span className="text-3xl font-extrabold tabular-nums">{value}</span>
+        <span className="font-display text-[32px] font-extrabold leading-none tabular-nums">{value}</span>
         {suffix ? <span className="text-sm text-brand-100/70">{suffix}</span> : null}
       </div>
       <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/15">

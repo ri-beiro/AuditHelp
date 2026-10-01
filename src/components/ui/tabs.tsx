@@ -8,14 +8,14 @@ export const Tabs = T.Root;
 export const TabsContent = T.Content;
 
 export function TabsList({ className, ...props }: React.ComponentProps<typeof T.List>) {
-  return <T.List className={cn("inline-flex items-center gap-1 rounded-lg bg-slate-100 p-1", className)} {...props} />;
+  return <T.List className={cn("inline-flex items-center gap-1 rounded-xl border border-slate-200/70 bg-white/70 p-1 shadow-soft backdrop-blur", className)} {...props} />;
 }
 
 export function TabsTrigger({ className, ...props }: React.ComponentProps<typeof T.Trigger>) {
   return (
     <T.Trigger
       className={cn(
-        "inline-flex items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 data-[state=active]:bg-white data-[state=active]:text-brand-800 data-[state=active]:shadow-sm [&_svg]:size-4",
+        "inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg px-3.5 py-1.5 text-sm font-semibold text-slate-500 transition-all hover:text-brand-800 data-[state=active]:bg-brand-700 data-[state=active]:text-white data-[state=active]:shadow-soft [&_svg]:size-4",
         className,
       )}
       {...props}

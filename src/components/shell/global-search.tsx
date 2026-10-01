@@ -77,13 +77,13 @@ export function GlobalSearch() {
           if (e.key === "Escape") setOpen(false);
         }}
         placeholder="Buscar elementos, requisitos, evidências, ações…"
-        className="h-9 w-full rounded-lg border border-slate-200 bg-slate-50 pl-9 pr-14 text-sm outline-none focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-500/20"
+        className="h-9 w-full rounded-xl border border-slate-200/80 bg-slate-100/70 pl-9 pr-14 text-sm outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-500/15"
       />
       <kbd className="pointer-events-none absolute right-2.5 top-1/2 hidden -translate-y-1/2 rounded border border-slate-200 bg-white px-1.5 text-[10px] text-slate-400 sm:block">
         Ctrl K
       </kbd>
       {open && q.trim().length >= 2 ? (
-        <div className="absolute left-0 right-0 top-11 z-50 max-h-[60vh] overflow-y-auto rounded-xl border border-slate-200 bg-white p-1.5 shadow-xl scrollbar-thin">
+        <div className="absolute left-0 right-0 top-11 z-50 max-h-[60vh] overflow-y-auto rounded-2xl border border-slate-200/70 bg-white/95 p-1.5 shadow-lift backdrop-blur scrollbar-thin">
           {loading && !results.length ? (
             <div className="flex items-center gap-2 p-3 text-sm text-slate-500">
               <Loader2 className="size-4 animate-spin" /> Buscando…

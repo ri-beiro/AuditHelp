@@ -14,24 +14,24 @@ export function ElementCard({ el, onOpen }: { el: ElementSummary; onOpen: () => 
   return (
     <button
       onClick={onOpen}
-      className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-0.5 hover:border-brand-500/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/70 bg-white text-left shadow-soft transition duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lift focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/25"
     >
-      <span className={cn("absolute inset-x-0 top-0 h-1", t.bar)} />
+      <span className={cn("absolute inset-x-0 top-0 h-[3px]", t.bar)} />
       <div className="flex items-start gap-3 p-4 pb-3">
         <div
-          className="relative grid size-11 shrink-0 place-items-center rounded-xl text-white shadow-sm"
-          style={{ background: el.pillar.color }}
+          className="relative grid size-12 shrink-0 place-items-center rounded-2xl text-white shadow-soft ring-1 ring-inset ring-white/20"
+          style={{ background: `linear-gradient(140deg, ${el.pillar.color}, color-mix(in oklab, ${el.pillar.color} 70%, #061d38))` }}
         >
           <ElementIcon name={el.icon} className="size-5" />
-          <span className="absolute -right-1.5 -top-1.5 grid size-5 place-items-center rounded-full bg-white text-[10px] font-bold text-slate-700 ring-1 ring-slate-200">
+          <span className="absolute -right-1.5 -top-1.5 grid size-5 place-items-center rounded-full bg-white font-display text-[10px] font-extrabold text-brand-800 shadow-soft ring-1 ring-slate-200">
             {el.number}
           </span>
         </div>
         <div className="min-w-0 flex-1">
-          <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
+          <div className="text-[10.5px] font-bold uppercase tracking-[0.12em] text-slate-400">
             {el.code} · {el.pillar.name}
           </div>
-          <h3 className="line-clamp-1 text-sm font-semibold text-slate-900 group-hover:text-brand-800">{el.shortName}</h3>
+          <h3 className="line-clamp-2 min-h-[2.5em] text-[15px] font-bold leading-tight text-brand-950 group-hover:text-brand-700">{el.shortName}</h3>
           <p className="line-clamp-1 text-xs text-slate-500">{el.name}</p>
         </div>
       </div>
@@ -39,7 +39,7 @@ export function ElementCard({ el, onOpen }: { el: ElementSummary; onOpen: () => 
       <div className="flex items-end justify-between gap-3 px-4">
         <div>
           <div className="text-[11px] text-slate-500">{isWise ? "Nota (0–5)" : "Atendimento"}</div>
-          <div className={cn("text-2xl font-bold tabular-nums", el.score === null ? "text-slate-300" : "text-slate-900")}>
+          <div className={cn("font-display text-[28px] font-extrabold leading-tight tabular-nums", el.score === null ? "text-slate-300" : "text-brand-950")}>
             {isWise ? fmtScore(el.score) : fmtPct(el.pct)}
           </div>
         </div>
@@ -69,7 +69,7 @@ export function ElementCard({ el, onOpen }: { el: ElementSummary; onOpen: () => 
         </div>
       </div>
 
-      <div className="mt-auto flex items-center gap-3 border-t border-slate-100 bg-slate-50/60 px-4 py-2.5 text-[11px] text-slate-500">
+      <div className="mt-auto flex items-center gap-3 border-t border-slate-100 bg-gradient-to-b from-slate-50/40 to-slate-50 px-4 py-2.5 text-[11px] text-slate-500">
         <span
           className={cn(
             "rounded-full px-2 py-0.5 font-medium",

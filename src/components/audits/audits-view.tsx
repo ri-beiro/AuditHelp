@@ -74,8 +74,8 @@ export function AuditsView({
   return (
     <div className="mx-auto max-w-[1500px] space-y-6">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-widest text-accent-500">Auditorias · Elemento 13 e Básico 11</p>
-        <h1 className="text-2xl font-extrabold tracking-tight text-slate-900">Auditoria de empresas contratadas</h1>
+        <p className="eyebrow">Auditorias · Elemento 13 e Básico 11</p>
+        <h1 className="mt-1.5 text-[26px] font-extrabold leading-tight text-brand-950">Auditoria de empresas contratadas</h1>
         <p className="mt-1 max-w-3xl text-sm text-slate-500">
           Checklists para o auditor avaliar terceiros em campo: gestão da contratada (seleção, treinamento, contrato,
           preparação, auditoria e avaliação), requisitos dos 12 Básicos aplicáveis à atividade e entrevistas de cultura.
@@ -115,7 +115,7 @@ export function AuditsView({
         <div className="flex flex-wrap items-center gap-2">
           <h3 className="mr-auto text-sm font-semibold text-slate-800">Auditorias realizadas · {unit.name}</h3>
           <Input className="w-56" placeholder="Buscar contratada…" value={f.q} onChange={(e) => setF({ ...f, q: e.target.value })} />
-          <Select className="w-44" value={f.template} onChange={(e) => setF({ ...f, template: e.target.value })}>
+          <Select className="w-52" value={f.template} onChange={(e) => setF({ ...f, template: e.target.value })}>
             <option value="">Todos os checklists</option>
             {templates.map((t) => (
               <option key={t.code} value={t.code}>
@@ -123,7 +123,7 @@ export function AuditsView({
               </option>
             ))}
           </Select>
-          <Select className="w-44" value={f.status} onChange={(e) => setF({ ...f, status: e.target.value })}>
+          <Select className="w-48" value={f.status} onChange={(e) => setF({ ...f, status: e.target.value })}>
             <option value="">Todos os status</option>
             <option value="EM_ANDAMENTO">Em andamento</option>
             <option value="CONCLUIDA">Concluída</option>

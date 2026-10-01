@@ -23,8 +23,8 @@ export function AdminView({ units, users, currentUserId }: { units: UnitRow[]; u
   return (
     <div className="mx-auto max-w-6xl space-y-6">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-widest text-accent-500">Administração</p>
-        <h1 className="text-2xl font-extrabold tracking-tight text-slate-900">Unidades e usuários</h1>
+        <p className="eyebrow">Administração</p>
+        <h1 className="mt-1.5 text-[26px] font-extrabold leading-tight text-brand-950">Unidades e usuários</h1>
       </div>
 
       <Card>

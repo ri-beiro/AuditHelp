@@ -22,15 +22,15 @@ export function DialogContent({
 }) {
   return (
     <D.Portal>
-      <D.Overlay className="fixed inset-0 z-[60] bg-slate-950/50 data-[state=open]:animate-fade-in" />
+      <D.Overlay className="fixed inset-0 z-[60] bg-brand-950/50 backdrop-blur-[2px] data-[state=open]:animate-fade-in" />
       <D.Content
         className={cn(
-          "fixed left-1/2 top-1/2 z-[70] max-h-[92vh] w-[calc(100vw-2rem)] max-w-2xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-xl bg-white p-6 shadow-2xl outline-none scrollbar-thin",
+          "fixed left-1/2 top-1/2 z-[70] max-h-[92vh] w-[calc(100vw-2rem)] max-w-2xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-slate-900/5 outline-none scrollbar-thin",
           className,
         )}
       >
         <div className="mb-5 pr-8">
-          <D.Title className="text-base font-semibold text-slate-900">{title}</D.Title>
+          <D.Title className="font-display text-lg font-bold text-brand-950">{title}</D.Title>
           {description ? <D.Description className="mt-1 text-sm text-slate-500">{description}</D.Description> : <D.Description className="sr-only">{title}</D.Description>}
         </div>
         {children}
