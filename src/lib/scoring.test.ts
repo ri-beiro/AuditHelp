@@ -1,5 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { roundWiseScore, scoreBasicsElement, scoreBasicsOverall, scoreWiseElement } from "./scoring";
+import {
+  complianceGrade,
+  cultureGrade,
+  roundWiseScore,
+  scoreBasicsElement,
+  scoreBasicsOverall,
+  scoreWiseElement,
+  scoreWiseOverall,
+  siteGrade,
+} from "./scoring";
 
 const wise = (level: number, values: (string | null)[]) => values.map((value) => ({ level, value }));
 
@@ -16,6 +25,7 @@ describe("WISE — curva de Bradley", () => {
     expect(r.levels.map((l) => l.pct)).toEqual([0.67, 0.89, 0.96, 0, 0]);
     expect(r.raw).toBe(2.52);
     expect(r.score).toBe(2.5);
+    expect(r.grade).toBe("B"); // 2,5 × 13 = 32,5 → Independente
     expect(r.tone).toBe("atencao");
     expect(r.levels[1].gateWarning).toBe(true); // nível 1 < 75%
   });
@@ -46,7 +56,8 @@ describe("12 Básicos — compliance", () => {
     ]);
     expect(r.pct).toBeCloseTo(0.625);
     expect(r.applicable).toBe(2);
-    expect(r.tone).toBe("atencao");
+    expect(r.grade).toBe("C"); // 40%–65%
+    expect(r.tone).toBe("critico");
   });
 
   it("limita a 50% quando um item de risco 1 está em Básico", () => {
@@ -73,5 +84,35 @@ describe("12 Básicos — compliance", () => {
     );
     expect(o.pct).toBe(0.75);
     expect(o.level1Pct).toBeCloseTo(0.625);
+  });
+});
+
+describe("Classificação oficial A/B/C/D (slide 129)", () => {
+  it("faixas de cultura", () => {
+    expect(cultureGrade(65)).toBe("A");
+    expect(cultureGrade(48.75)).toBe("A");
+    expect(cultureGrade(37.5)).toBe("B"); // exemplo do treinamento
+    expect(cultureGrade(16.25)).toBe("C");
+    expect(cultureGrade(16)).toBe("D");
+  });
+
+  it("faixas de compliance", () => {
+    expect(complianceGrade(0.8)).toBe("A");
+    expect(complianceGrade(0.67)).toBe("B"); // exemplo do treinamento (12 Básicos = 67%)
+    expect(complianceGrade(0.4)).toBe("C");
+    expect(complianceGrade(0.39)).toBe("D");
+  });
+
+  it("classe do site é a pior entre cultura e compliance", () => {
+    expect(siteGrade("A", "B")).toBe("B");
+    expect(siteGrade("C", "A")).toBe("C");
+    expect(siteGrade("B", null)).toBeNull();
+  });
+
+  it("pontuação geral WISE recebe estágio de Bradley", () => {
+    const o = scoreWiseOverall(Array(13).fill(2.5), true);
+    expect(o.total).toBe(32.5);
+    expect(o.grade).toBe("B");
+    expect(o.stage).toBe("Independente");
   });
 });

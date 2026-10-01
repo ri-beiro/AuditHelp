@@ -116,6 +116,9 @@ async function main() {
     );
   }
 
+  // Remove pilares que deixaram de existir no catálogo (ex.: troca de agrupamento)
+  await prisma.pillar.deleteMany({ where: { elements: { none: {} } } });
+
   console.log("Unidade e administrador…");
   const unit = await prisma.unit.upsert({
     where: { code: "CD-GRU" },

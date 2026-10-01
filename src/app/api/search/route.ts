@@ -10,7 +10,7 @@ export async function GET(request: Request) {
   const { unit, cycle } = await getWorkspace();
   const contains = { contains: q, mode: "insensitive" as const };
 
-  const [elements, requirements, evidences, actions] = await Promise.all([
+  const [elements, requirements, evidences, actions, audits] = await Promise.all([
     db.element.findMany({
       where: { OR: [{ name: contains }, { shortName: contains }, { code: contains }, { description: contains }] },
       take: 8,
@@ -30,10 +30,13 @@ export async function GET(request: Request) {
       : [],
     unit
       ? db.actionPlan.findMany({
-          where: { unitId: unit.id, OR: [{ what: contains }, { why: contains }, { how: contains }] },
+          where: { unitId: unit.id, OR: [{ what: contains }, { why: contains }, { how: contains }, { spheraId: contains }] },
           include: { element: true },
           take: 8,
         })
+      : [],
+    unit
+      ? db.audit.findMany({ where: { unitId: unit.id, contractor: contains }, take: 6, orderBy: { auditDate: "desc" } })
       : [],
   ]);
 
@@ -63,6 +66,12 @@ export async function GET(request: Request) {
         title: a.what,
         subtitle: `${a.element.code} · ${a.element.shortName}`,
         href: `/acoes?q=${encodeURIComponent(a.what.slice(0, 40))}`,
+      })),
+      ...audits.map((a) => ({
+        type: "Auditoria",
+        title: a.contractor,
+        subtitle: `${a.template === "CONTRATADA_PORTARIA" ? "Portaria" : "Limpeza"} · ${a.auditDate.toLocaleDateString("pt-BR")}`,
+        href: `/auditorias/${a.id}`,
       })),
     ],
   });

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import {
   BarChart3,
   ClipboardList,
+  FileBarChart,
   FolderOpen,
   GitBranch,
   LayoutDashboard,
@@ -21,6 +22,7 @@ import { Logo } from "@/components/logo";
 const ICONS: Record<string, LucideIcon> = {
   BarChart3,
   ClipboardList,
+  FileBarChart,
   FolderOpen,
   GitBranch,
   LayoutDashboard,
@@ -32,7 +34,7 @@ const ICONS: Record<string, LucideIcon> = {
 
 export function Sidebar({ isAdmin, onNavigate }: { isAdmin: boolean; onNavigate?: () => void }) {
   const pathname = usePathname();
-  const groups = ["Gestão WISE", "Próximos módulos", "Administração"] as const;
+  const groups = ["Gestão WISE", "Auditorias", "Próximos módulos", "Administração"] as const;
   return (
     <div className="flex h-full flex-col bg-brand-950 text-brand-100">
       <div className="px-5 py-5">

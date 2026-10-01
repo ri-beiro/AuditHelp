@@ -13,20 +13,20 @@ export type ElementDef = {
   objective: string;
 };
 
-// Pilares WISE conforme a aba "Planilha1" da matriz.
+// Grupos WISE usados na reunião de fechamento da auditoria
+// (Treinamento Auditor Júnior WISE², slide 107): Liderança 1–4, Organização 5–8, Operação 9–13.
 export const WISE_PILLARS: PillarDef[] = [
-  { name: "Gerenciamento", order: 1, color: "#1d4ed8" },
-  { name: "Pessoas", order: 2, color: "#0891b2" },
-  { name: "Técnico", order: 3, color: "#7c3aed" },
-  { name: "Organizacional", order: 4, color: "#ea580c" },
+  { name: "Liderança", order: 1, color: "#1d4ed8" },
+  { name: "Organização", order: 2, color: "#0891b2" },
+  { name: "Operação", order: 3, color: "#7c3aed" },
 ];
 
 export const WISE_ELEMENTS: ElementDef[] = [
   {
     number: 1,
     name: "Forte Compromisso Demonstrado pela Gestão",
-    shortName: "Compromisso da Gerência",
-    pillar: "Gerenciamento",
+    shortName: "Compromisso Visível da Liderança",
+    pillar: "Liderança",
     icon: "Handshake",
     description:
       "Avalia como a liderança demonstra, por atitudes e recursos, que saúde e segurança são valores inegociáveis e impulsionadores da excelência operacional.",
@@ -37,7 +37,7 @@ export const WISE_ELEMENTS: ElementDef[] = [
     number: 2,
     name: "Políticas e Princípios de Saúde e Segurança",
     shortName: "Política",
-    pillar: "Pessoas",
+    pillar: "Liderança",
     icon: "ScrollText",
     description:
       "Avalia a existência, comunicação, compreensão e aplicação da política e dos princípios de saúde e segurança do site.",
@@ -48,7 +48,7 @@ export const WISE_ELEMENTS: ElementDef[] = [
     number: 3,
     name: "Altos Padrões de Desempenho",
     shortName: "Normas",
-    pillar: "Técnico",
+    pillar: "Liderança",
     icon: "Gauge",
     description:
       "Avalia regras, normas e procedimentos de segurança: definição, comunicação, acessibilidade, revisão e cumprimento.",
@@ -59,7 +59,7 @@ export const WISE_ELEMENTS: ElementDef[] = [
     number: 4,
     name: "Metas, Objetivos e Planos Desafiadores",
     shortName: "Metas Desafiadoras",
-    pillar: "Organizacional",
+    pillar: "Liderança",
     icon: "Target",
     description:
       "Avalia a definição de metas e objetivos de segurança baseados em indicadores reativos e proativos, e seu desdobramento em planos.",
@@ -70,7 +70,7 @@ export const WISE_ELEMENTS: ElementDef[] = [
     number: 5,
     name: "Pessoal de Segurança de Apoio",
     shortName: "Equipe de Segurança",
-    pillar: "Gerenciamento",
+    pillar: "Organização",
     icon: "ShieldCheck",
     description:
       "Avalia o papel, a capacitação e a atuação da equipe de segurança como apoio técnico à linha de gestão.",
@@ -81,7 +81,7 @@ export const WISE_ELEMENTS: ElementDef[] = [
     number: 6,
     name: "Responsabilidade da Gestão de Linha",
     shortName: "Resp. Gerência de Linha",
-    pillar: "Gerenciamento",
+    pillar: "Organização",
     icon: "Users",
     description:
       "Avalia se a gestão de linha assume, de forma clara e documentada, a responsabilidade pela segurança de suas áreas e equipes.",
@@ -92,7 +92,7 @@ export const WISE_ELEMENTS: ElementDef[] = [
     number: 7,
     name: "Organização Integrada de Saúde e Segurança",
     shortName: "Organização",
-    pillar: "Pessoas",
+    pillar: "Organização",
     icon: "Network",
     description:
       "Avalia a estrutura de comitês, subcomitês e grupos de trabalho que integram saúde e segurança à organização do site.",
@@ -103,7 +103,7 @@ export const WISE_ELEMENTS: ElementDef[] = [
     number: 8,
     name: "Motivação Progressiva",
     shortName: "Motivação",
-    pillar: "Pessoas",
+    pillar: "Organização",
     icon: "Sparkles",
     description:
       "Avalia reconhecimento, consequências e programas que motivam comportamentos seguros e a participação dos colaboradores.",
@@ -114,7 +114,7 @@ export const WISE_ELEMENTS: ElementDef[] = [
     number: 9,
     name: "Comunicação Eficaz",
     shortName: "Comunicação",
-    pillar: "Pessoas",
+    pillar: "Operação",
     icon: "MessagesSquare",
     description:
       "Avalia canais, frequência, conteúdo e bilateralidade da comunicação sobre saúde e segurança.",
@@ -125,7 +125,7 @@ export const WISE_ELEMENTS: ElementDef[] = [
     number: 10,
     name: "Treinamento e Desenvolvimento Contínuo em Segurança",
     shortName: "Treinamento",
-    pillar: "Pessoas",
+    pillar: "Operação",
     icon: "GraduationCap",
     description:
       "Avalia a matriz de treinamentos, a qualidade, a verificação da eficácia e o desenvolvimento de competências em segurança.",
@@ -136,7 +136,7 @@ export const WISE_ELEMENTS: ElementDef[] = [
     number: 11,
     name: "Investigações e Relatórios de Lesões e Incidentes",
     shortName: "Invest. de Acidentes",
-    pillar: "Técnico",
+    pillar: "Operação",
     icon: "Search",
     description:
       "Avalia o reporte, a investigação de causa raiz e o compartilhamento de aprendizados de acidentes e incidentes.",
@@ -147,7 +147,7 @@ export const WISE_ELEMENTS: ElementDef[] = [
     number: 12,
     name: "Auditorias e Reavaliações Eficazes",
     shortName: "Auditorias",
-    pillar: "Técnico",
+    pillar: "Operação",
     icon: "ClipboardCheck",
     description:
       "Avalia o sistema de auditorias, inspeções e diálogos de segurança e o acompanhamento das ações corretivas.",
@@ -158,7 +158,7 @@ export const WISE_ELEMENTS: ElementDef[] = [
     number: 13,
     name: "Gestão de Segurança do Contratado",
     shortName: "Contratadas",
-    pillar: "Organizacional",
+    pillar: "Operação",
     icon: "HardHat",
     description:
       "Avalia seleção, integração, acompanhamento e avaliação de desempenho em segurança das empresas contratadas.",

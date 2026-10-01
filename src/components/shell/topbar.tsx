@@ -20,7 +20,7 @@ export function Topbar({ units, unitId, cycles, cycle, user }: Props) {
   const [menu, setMenu] = useState(false);
   return (
     <>
-      <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-slate-200 bg-white/90 px-4 backdrop-blur lg:px-8">
+      <header className="sticky top-0 z-30 flex print:hidden h-16 items-center gap-3 border-b border-slate-200 bg-white/90 px-4 backdrop-blur lg:px-8">
         <button className="rounded-md p-2 text-slate-600 hover:bg-slate-100 lg:hidden" onClick={() => setMenu(true)} aria-label="Menu">
           <Menu className="size-5" />
         </button>

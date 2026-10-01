@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState, useTransition } from "react";
-import { upload } from "@vercel/blob/client";
 import {
   ExternalLink,
   FileImage,
@@ -16,6 +15,7 @@ import { toast } from "sonner";
 import { createEvidence, deleteEvidence } from "@/server/actions";
 import { cn, fmtDateTime } from "@/lib/utils";
 import { MAX_UPLOAD_MB, UPLOAD_ACCEPT } from "@/lib/uploads";
+import { uploadFile } from "@/lib/upload-client";
 import { Button } from "@/components/ui/button";
 import { Field, Input, Select } from "@/components/ui/input";
 import type { SheetCtx } from "./element-sheet";
@@ -66,26 +66,7 @@ export function EvidencePanel({
     setBusy(true);
     try {
       for (const file of Array.from(files)) {
-        if (file.size > MAX_UPLOAD_MB * 1024 * 1024) {
-          toast.error(`${file.name}: limite de ${MAX_UPLOAD_MB} MB`);
-          continue;
-        }
-        let url: string;
-        if (ctx.blobEnabled) {
-          const safe = file.name.replace(/[^\w.\-]+/g, "_");
-          const blob = await upload(`evidencias/${ctx.unitId}/${detail.element.code}/${safe}`, file, {
-            access: "public",
-            handleUploadUrl: "/api/upload",
-          });
-          url = blob.url;
-        } else {
-          const fd = new FormData();
-          fd.append("file", file);
-          const res = await fetch("/api/upload/local", { method: "POST", body: fd });
-          const json = await res.json();
-          if (!res.ok) throw new Error(json.error ?? "Falha no upload");
-          url = json.url;
-        }
+        const url = await uploadFile(file, `${ctx.unitId}/${detail.element.code}`, ctx.blobEnabled);
         const res = await createEvidence({
           assessmentId: detail.assessmentId,
           elementId: detail.element.id,

@@ -14,12 +14,21 @@ const OPTIONS: ScaleOption[] = [
   { value: "2", short: "2", label: "2 — 100% implementado (>90%)", className: "bg-conforme text-white" },
 ];
 
+// Níveis de performance WISE — Treinamento Auditor Júnior WISE², slide 108.
+const LEVEL_NAME: Record<number, string> = {
+  1: "Nível Básico",
+  2: "Nível Aceitável",
+  3: "Bom Nível",
+  4: "Excelente Nível",
+  5: "World Class",
+};
+
 const LEVEL_TEXT: Record<number, string> = {
-  1: "O elemento é reconhecido e existe um sistema básico, parcialmente implementado.",
-  2: "Bons sistemas que desencadeiam os comportamentos corretos, implementados em sua maioria.",
-  3: "A maioria entende o que deve ser alcançado e os sistemas são usados de forma eficaz.",
-  4: "Propriedade no nível da equipe; a inovação vem das equipes para melhorar os sistemas.",
-  5: "Plena abertura e confiança; equipes usam as forças umas das outras para um resultado claro.",
+  1: "Baixa compreensão de um sistema de segurança. Reativo a todo evento, com baixo cumprimento de padrões e normas. Os elementos básicos são conhecidos e parcialmente implementados. Reativo e liderado pelo profissional de SST ou pessoa designada.",
+  2: "O sistema de segurança é direcionado e em sua maioria está sendo implementado, mas não alinhado dentro da organização. Reativo e liderado pelo profissional de SST.",
+  3: "Bom entendimento entre a maioria sobre o que deve ser alcançado; o sistema de segurança é utilizado de forma eficaz e compartilhado com a liderança. Direcionado e monitorado como processo-chave. O profissional de SST é assessor.",
+  4: "Conceito de dono enraizado: o sistema de segurança é compartilhado entre as pessoas, que contribuem para as mudanças. A inovação vem das equipes para melhorar o sistema. Profissionais de SST são conselheiros.",
+  5: "As equipes se desenvolvem entre si. O sistema de segurança é integrado a cada operação da unidade, aberto e confiável.",
 };
 
 const DIM: Record<string, { label: string; cls: string }> = {
@@ -77,7 +86,11 @@ export function MatrixWise({ ctx, focusRequirement }: { ctx: SheetCtx; focusRequ
                   style={{ height: `${l.pct * 100}%` }}
                 />
               </div>
-              <span className="text-[11px] font-medium text-slate-500 group-hover:text-brand-700">Nível {l.level}</span>
+              <span className="text-center text-[11px] font-medium leading-tight text-slate-500 group-hover:text-brand-700">
+                Nível {l.level}
+                <br />
+                <span className="text-[10px] text-slate-400">{LEVEL_NAME[l.level]}</span>
+              </span>
             </a>
           ))}
         </div>
@@ -94,7 +107,9 @@ export function MatrixWise({ ctx, focusRequirement }: { ctx: SheetCtx; focusRequ
             <div className="flex flex-wrap items-center gap-3 rounded-lg bg-brand-900 px-4 py-2.5 text-white">
               <span className="grid size-7 place-items-center rounded-full bg-white/15 text-sm font-bold">{level}</span>
               <div className="min-w-0 flex-1">
-                <div className="text-sm font-semibold">Nível {level}</div>
+                <div className="text-sm font-semibold">
+                  Nível {level} · {LEVEL_NAME[level]}
+                </div>
                 <div className="text-[11px] text-brand-100/80">{LEVEL_TEXT[level]}</div>
               </div>
               <div className="flex w-44 flex-col gap-1">

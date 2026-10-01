@@ -18,6 +18,17 @@ export type ActionFormContext = {
   members: { id: string; name: string }[];
 };
 
+export type ActionPreset = {
+  elementId?: string;
+  requirementId?: string | null;
+  what?: string;
+  why?: string;
+  where?: string;
+  priority?: string;
+  auditId?: string | null;
+  auditItemCode?: string | null;
+};
+
 export function ActionFormDialog({
   open,
   onOpenChange,
@@ -30,7 +41,7 @@ export function ActionFormDialog({
   onOpenChange: (o: boolean) => void;
   context: ActionFormContext;
   initial?: ActionDTO | null;
-  preset?: { elementId?: string; requirementId?: string | null; what?: string; why?: string };
+  preset?: ActionPreset;
   onSaved?: () => void;
 }) {
   return (
@@ -64,7 +75,7 @@ function ActionForm({
 }: {
   context: ActionFormContext;
   initial?: ActionDTO | null;
-  preset?: { elementId?: string; requirementId?: string | null; what?: string; why?: string };
+  preset?: ActionPreset;
   onDone: () => void;
 }) {
   const [pending, start] = useTransition();
@@ -75,10 +86,11 @@ function ActionForm({
     why: initial?.why ?? preset?.why ?? "",
     ownerId: initial?.ownerId ?? "",
     dueDate: initial?.dueDate?.slice(0, 10) ?? "",
-    where: initial?.where ?? "",
+    where: initial?.where ?? preset?.where ?? "",
     how: initial?.how ?? "",
     cost: initial?.cost != null ? String(initial.cost) : "",
-    priority: initial?.priority ?? "MEDIA",
+    spheraId: initial?.spheraId ?? "",
+    priority: initial?.priority ?? preset?.priority ?? "MEDIA",
     status: initial?.status ?? "ABERTA",
   });
   const set = (k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
@@ -101,6 +113,9 @@ function ActionForm({
         where: f.where,
         how: f.how,
         cost: f.cost ? Number(f.cost.replace(",", ".")) : null,
+        spheraId: f.spheraId,
+        auditId: initial?.auditId ?? preset?.auditId ?? null,
+        auditItemCode: initial?.auditItemCode ?? preset?.auditItemCode ?? null,
         priority: f.priority as ActionInput["priority"],
         status: f.status as ActionInput["status"],
       };
@@ -162,6 +177,9 @@ function ActionForm({
       </Field>
       <Field label="Como?" className="sm:col-span-2">
         <Textarea rows={3} value={f.how} onChange={set("how")} placeholder="Etapas / método de execução" />
+      </Field>
+      <Field label="ID Sphera (finding / evento)" className="sm:col-span-2">
+        <Input value={f.spheraId} onChange={set("spheraId")} placeholder="Ex.: 28126781" />
       </Field>
       <Field label="Prioridade">
         <Select value={f.priority} onChange={set("priority")}>

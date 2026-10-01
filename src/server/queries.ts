@@ -2,6 +2,7 @@ import "server-only";
 import type { ElementStatus, Framework } from "@prisma/client";
 import { db } from "@/lib/db";
 import {
+  type Grade,
   WISE_MAX_TOTAL,
   isDeviation,
   scoreBasicsElement,
@@ -27,6 +28,7 @@ export type ElementSummary = {
   score: number | null;
   pct: number | null;
   tone: Tone;
+  grade: Grade | null;
   stage?: string;
   capped?: boolean;
   answered: number;
@@ -39,6 +41,7 @@ export type ElementSummary = {
 
 export type PillarSummary = {
   id: string;
+  order: number;
   name: string;
   color: string;
   pct: number | null;
@@ -56,6 +59,7 @@ export type FrameworkOverview = {
     score: number | null; // WISE: pontos (0–65); Básicos: %
     pct: number | null;
     tone: Tone;
+    grade: Grade | null;
     stage?: string;
     level1Pct?: number | null;
     maxScore?: number;
@@ -128,6 +132,7 @@ export async function loadOverview(assessmentId: string, framework: Framework): 
         score: r.answered ? r.score : null,
         pct: r.answered ? r.pct : null,
         tone: r.tone,
+        grade: r.grade,
         stage: r.stage,
         answered: r.answered,
         total: r.total,
@@ -142,6 +147,7 @@ export async function loadOverview(assessmentId: string, framework: Framework): 
       score: r.pct,
       pct: r.pct,
       tone: r.tone,
+      grade: r.grade,
       capped: r.capped,
       answered: r.answered,
       total: r.total,
@@ -151,12 +157,14 @@ export async function loadOverview(assessmentId: string, framework: Framework): 
   });
 
   // Pilares
+  const pillarOrder = new Map(elements.map((e) => [e.pillar.id, e.pillar.order]));
   const pillarMap = new Map<string, PillarSummary>();
   for (const s of summaries) {
     const p =
       pillarMap.get(s.pillar.id) ??
       ({
         ...s.pillar,
+        order: pillarOrder.get(s.pillar.id) ?? 0,
         pct: null,
         score: null,
         elements: 0,
@@ -188,6 +196,7 @@ export async function loadOverview(assessmentId: string, framework: Framework): 
       score: anyAnswered ? o.total : null,
       pct: anyAnswered ? o.pct : null,
       tone: o.tone,
+      grade: o.grade,
       stage: o.stage,
       maxScore: WISE_MAX_TOTAL,
     };
@@ -199,14 +208,14 @@ export async function loadOverview(assessmentId: string, framework: Framework): 
       summaries.map((s) => s.pct),
       allReqs,
     );
-    overall = { score: o.pct, pct: o.pct, tone: o.tone, level1Pct: o.level1Pct };
+    overall = { score: o.pct, pct: o.pct, tone: o.tone, grade: o.grade, stage: o.risk ?? undefined, level1Pct: o.level1Pct };
   }
 
   return {
     framework,
     assessmentId,
     elements: summaries,
-    pillars: [...pillarMap.values()].sort((a, b) => a.name.localeCompare(b.name)),
+    pillars: [...pillarMap.values()].sort((a, b) => a.order - b.order),
     overall,
     totals: {
       conformes: summaries.reduce((s, e) => s + e.conformes, 0),
@@ -345,6 +354,9 @@ export function serializeAction(a: {
   where: string | null;
   how: string | null;
   cost: { toString(): string } | null;
+  spheraId?: string | null;
+  auditId?: string | null;
+  auditItemCode?: string | null;
   priority: string;
   status: string;
   elementId: string;
@@ -362,6 +374,9 @@ export function serializeAction(a: {
     where: a.where ?? "",
     how: a.how ?? "",
     cost: a.cost ? Number(a.cost.toString()) : null,
+    spheraId: a.spheraId ?? "",
+    auditId: a.auditId ?? null,
+    auditItemCode: a.auditItemCode ?? null,
     priority: a.priority,
     status: a.status,
     elementId: a.elementId,

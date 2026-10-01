@@ -220,6 +220,9 @@ const actionSchema = z.object({
   where: z.string().max(500).optional(),
   how: z.string().max(4000).optional(),
   cost: z.number().nonnegative().nullable().optional(),
+  spheraId: z.string().trim().max(60).optional(),
+  auditId: z.string().nullable().optional(),
+  auditItemCode: z.string().max(20).nullable().optional(),
   priority: z.enum(["BAIXA", "MEDIA", "ALTA", "CRITICA"]),
   status: z.enum(["ABERTA", "EM_ANDAMENTO", "CONCLUIDA", "CANCELADA"]),
 });
@@ -246,6 +249,9 @@ export async function saveActionPlan(input: ActionInput) {
       where: data.where || null,
       how: data.how || null,
       cost: data.cost ?? null,
+      spheraId: data.spheraId || null,
+      auditId: data.auditId ?? existing?.auditId ?? null,
+      auditItemCode: data.auditItemCode ?? existing?.auditItemCode ?? null,
       priority: data.priority as ActionPriority,
       status: data.status as ActionStatus,
       completedAt:
@@ -336,4 +342,35 @@ export async function saveUser(input: {
 export async function workspaceInfo() {
   const { unit, cycle } = await getWorkspace();
   return { unitId: unit?.id ?? null, cycle };
+}
+
+// ---------------------------------------------------------------------------
+// Relatório de fechamento da auditoria WISE²
+// ---------------------------------------------------------------------------
+
+const reportSchema = z.object({
+  assessmentId: z.string(),
+  auditDates: z.string().max(200).optional(),
+  auditors: z.string().max(1000).optional(),
+  format: z.string().max(4000).optional(),
+  highlights: z.string().max(8000).optional(),
+  quotes: z.string().max(8000).optional(),
+  conclusion: z.string().max(8000).optional(),
+  groups: z.record(z.object({ strengths: z.string().max(8000), opportunities: z.string().max(8000) })).optional(),
+});
+
+export async function saveClosingReport(input: z.infer<typeof reportSchema>) {
+  return run(async () => {
+    const data = reportSchema.parse(input);
+    const { user, assessment } = await assessmentForUser(data.assessmentId);
+    await requirePermission("editElement");
+    if (assessment.framework !== "WISE") throw new Error("O relatório pertence à avaliação WISE.");
+    const { assessmentId, ...fields } = data;
+    await db.closingReport.upsert({
+      where: { assessmentId },
+      update: { ...fields, updatedById: user.id },
+      create: { assessmentId, ...fields, updatedById: user.id },
+    });
+    revalidatePath("/relatorio");
+  });
 }

@@ -8,6 +8,7 @@ import {
   FileText,
   ListTodo,
   Loader2,
+  MessageCircleQuestion,
   NotebookPen,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -25,6 +26,7 @@ import { MatrixWise } from "./matrix-wise";
 import { MatrixBasics } from "./matrix-basics";
 import { EvidencePanel } from "./evidence-panel";
 import { ActionsPanel } from "./actions-panel";
+import { InterviewPanel } from "./interview-panel";
 
 type Props = {
   code: string | null;
@@ -188,7 +190,7 @@ function SheetBody({
               value={isWise ? fmtScore(result.score) : fmtPct(result.pct)}
               suffix={isWise ? "/ 5" : undefined}
               sub={isWise ? result.stage : result.capped ? "Limitado a 50% (risco 1)" : `${result.applicable} itens aplicáveis`}
-              toneLabel={TONE_LABEL[result.tone]}
+              toneLabel={result.grade ? `Classe ${result.grade} · ${TONE_LABEL[result.tone]}` : TONE_LABEL[result.tone]}
               barClass={tone.bar}
               pct={isWise ? result.pct : result.pct}
             />
@@ -201,7 +203,7 @@ function SheetBody({
 
         <Tabs value={view} onValueChange={setView} className="px-6 pb-10">
           <div className="sticky top-0 z-10 -mx-6 border-b border-slate-200 bg-slate-50/95 px-6 py-3 backdrop-blur">
-            <TabsList>
+            <TabsList className="max-w-full overflow-x-auto">
               <TabsTrigger value="matriz">
                 <ClipboardList /> Matriz
                 <span className="text-xs text-slate-400">
@@ -217,6 +219,11 @@ function SheetBody({
                   {pendingActions}
                 </span>
               </TabsTrigger>
+              {isWise ? (
+                <TabsTrigger value="roteiro">
+                  <MessageCircleQuestion /> Roteiro do auditor
+                </TabsTrigger>
+              ) : null}
               <TabsTrigger value="parecer">
                 <NotebookPen /> Parecer
               </TabsTrigger>
@@ -235,6 +242,11 @@ function SheetBody({
           <TabsContent value="acoes" className="pt-4">
             <ActionsPanel ctx={ctx} presetRequirement={actionReq} onPresetUsed={clearActionReq} onSaved={reload} />
           </TabsContent>
+          {isWise ? (
+            <TabsContent value="roteiro" className="pt-4">
+              <InterviewPanel elementNumber={element.number} storageKey={`${detail.assessmentId}:${element.code}`} />
+            </TabsContent>
+          ) : null}
           <TabsContent value="parecer" className="pt-4">
             <OpinionPanel ctx={ctx} />
           </TabsContent>

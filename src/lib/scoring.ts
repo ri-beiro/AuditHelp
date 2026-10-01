@@ -46,33 +46,83 @@ export const WISE_MAX_ELEMENT = 5;
 export const WISE_MAX_TOTAL = 65;
 export const WISE_GATE = 0.75;
 
-/** Limiares de cor. WISE usa a nota do elemento (0–5); Básicos usam % (0–1). */
-export const THRESHOLDS = {
-  WISE: { atencao: 2, conforme: 3 },
-  BASICS: { atencao: 0.5, conforme: 0.8 },
+// ---------------------------------------------------------------------------
+// Classificação oficial da auditoria WISE² (Treinamento Auditor Júnior, slide 129)
+//   Cultura (0–65 pts)        Compliance dos Básicos
+//   A  48,75 – 65  Interdependente   80% – 100%  Managed Risk
+//   B  32,5 – 48,75 Independente     65% – 80%
+//   C  16,25 – 32,5 Dependente       40% – 65%
+//   D  0 – 16,25   Reativo           0% – 40%
+// Por elemento (0–5) os mesmos quartos: 3,75 / 2,5 / 1,25.
+// Classe do site = a pior entre cultura e compliance.
+// ---------------------------------------------------------------------------
+
+export type Grade = "A" | "B" | "C" | "D";
+
+export const GRADE_BANDS = {
+  /** limites inferiores de A, B e C para a pontuação de cultura (0–65) */
+  CULTURE: { A: 48.75, B: 32.5, C: 16.25 },
+  /** limites inferiores de A, B e C para o compliance (0–1) */
+  COMPLIANCE: { A: 0.8, B: 0.65, C: 0.4 },
 };
 
+export const GRADE_STAGE: Record<Grade, string> = {
+  A: "Interdependente",
+  B: "Independente",
+  C: "Dependente",
+  D: "Reativo",
+};
+
+export const GRADE_RISK: Record<Grade, string> = {
+  A: "Managed Risk",
+  B: "Medium Risk",
+  C: "Medium Risk",
+  D: "Medium Risk",
+};
+
+const GRADE_ORDER: Grade[] = ["A", "B", "C", "D"];
+
+export function cultureGrade(total: number | null): Grade | null {
+  if (total === null) return null;
+  const b = GRADE_BANDS.CULTURE;
+  return total >= b.A ? "A" : total >= b.B ? "B" : total >= b.C ? "C" : "D";
+}
+
+/** Classe de um elemento WISE (nota 0–5) — equivale à pontuação × 13 nas faixas de cultura. */
+export function elementGrade(score: number | null): Grade | null {
+  return score === null ? null : cultureGrade(score * 13);
+}
+
+export function complianceGrade(pct: number | null): Grade | null {
+  if (pct === null) return null;
+  const b = GRADE_BANDS.COMPLIANCE;
+  const v = Math.round(pct * 10000) / 10000;
+  return v >= b.A ? "A" : v >= b.B ? "B" : v >= b.C ? "C" : "D";
+}
+
+export function siteGrade(culture: Grade | null, compliance: Grade | null): Grade | null {
+  if (!culture || !compliance) return null;
+  return GRADE_ORDER[Math.max(GRADE_ORDER.indexOf(culture), GRADE_ORDER.indexOf(compliance))];
+}
+
+/** Semáforo: A = conforme (verde), B = atenção (amarelo), C/D = crítico (vermelho). */
+export function gradeTone(g: Grade | null): Tone {
+  if (!g) return "neutro";
+  return g === "A" ? "conforme" : g === "B" ? "atencao" : "critico";
+}
+
 export function wiseTone(score: number | null): Tone {
-  if (score === null) return "neutro";
-  if (score >= THRESHOLDS.WISE.conforme) return "conforme";
-  if (score >= THRESHOLDS.WISE.atencao) return "atencao";
-  return "critico";
+  return gradeTone(elementGrade(score));
 }
 
 export function basicsTone(pct: number | null): Tone {
-  if (pct === null) return "neutro";
-  if (pct >= THRESHOLDS.BASICS.conforme) return "conforme";
-  if (pct > THRESHOLDS.BASICS.atencao) return "atencao";
-  return "critico";
+  return gradeTone(complianceGrade(pct));
 }
 
 /** Estágio da curva de Bradley correspondente à nota do elemento (0–5). */
 export function bradleyStage(score: number | null): string {
-  if (score === null) return "Não avaliado";
-  if (score < 2) return "Reativo";
-  if (score < 3) return "Dependente";
-  if (score < 4) return "Independente";
-  return "Interdependente";
+  const g = elementGrade(score);
+  return g ? GRADE_STAGE[g] : "Não avaliado";
 }
 
 const round2 = (n: number) => Math.round(n * 100) / 100;
@@ -105,6 +155,7 @@ export type WiseElementResult = {
   desvios: number;
   tone: Tone;
   stage: string;
+  grade: Grade | null;
 };
 
 /** Arredondamento da planilha: parte inteira + fração em quartos (B2). */
@@ -156,6 +207,7 @@ export function scoreWiseElement(reqs: ScoredRequirement[]): WiseElementResult {
     desvios: reqs.filter((r) => r.value === "0" || r.value === "1").length,
     tone: answered ? wiseTone(score) : "neutro",
     stage: answered ? bradleyStage(score) : "Não avaliado",
+    grade: answered ? elementGrade(score) : null,
   };
 }
 
@@ -171,6 +223,7 @@ export type BasicsElementResult = {
   desvios: number;
   criticalGaps: number;
   tone: Tone;
+  grade: Grade | null;
 };
 
 export function scoreBasicsElement(reqs: ScoredRequirement[]): BasicsElementResult {
@@ -192,6 +245,7 @@ export function scoreBasicsElement(reqs: ScoredRequirement[]): BasicsElementResu
     desvios: applicable.filter((r) => r.value !== "COMPLIANT").length,
     criticalGaps,
     tone: basicsTone(pct),
+    grade: complianceGrade(pct),
   };
 }
 
@@ -204,17 +258,19 @@ export function scoreBasicsOverall(elementPcts: (number | null)[], allReqs: Scor
   const level1Pct = level1.length
     ? level1.reduce((s, r) => s + (BASICS_POINTS[r.value as string] ?? 0), 0) / level1.length
     : null;
-  return { pct, level1Pct, tone: basicsTone(pct) };
+  const grade = complianceGrade(pct);
+  return { pct, level1Pct, tone: gradeTone(grade), grade, risk: grade ? GRADE_RISK[grade] : null };
 }
 
 export function scoreWiseOverall(elementScores: number[], anyAnswered: boolean) {
   const total = elementScores.reduce((a, b) => a + b, 0);
-  const avg = elementScores.length ? total / elementScores.length : 0;
+  const grade = anyAnswered ? cultureGrade(total) : null;
   return {
     total,
     pct: total / WISE_MAX_TOTAL,
-    tone: anyAnswered ? wiseTone(avg) : ("neutro" as Tone),
-    stage: anyAnswered ? bradleyStage(avg) : "Não avaliado",
+    grade,
+    tone: gradeTone(grade),
+    stage: grade ? GRADE_STAGE[grade] : "Não avaliado",
   };
 }
 

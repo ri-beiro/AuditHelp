@@ -49,6 +49,11 @@ enum ActionStatus {
   CANCELADA
 }
 
+enum AuditStatus {
+  EM_ANDAMENTO
+  CONCLUIDA
+}
+
 // ---------------------------------------------------------------------------
 // Organização e usuários
 // ---------------------------------------------------------------------------
@@ -65,6 +70,7 @@ model Unit {
   assessments Assessment[]
   actionPlans ActionPlan[]
   snapshots   ScoreSnapshot[]
+  audits      Audit[]
 }
 
 model User {
@@ -84,6 +90,10 @@ model User {
   ownedActions        ActionPlan[]        @relation("ActionOwner")
   createdActions      ActionPlan[]        @relation("ActionCreator")
   assessments         Assessment[]
+  closingReports      ClosingReport[]
+  audits              Audit[]             @relation("AuditAuditor")
+  auditAnswers        AuditAnswer[]
+  auditAttachments    AuditAttachment[]
 }
 
 model UnitMember {
@@ -176,6 +186,7 @@ model Assessment {
   scores      RequirementScore[]
   evidences   Evidence[]
   actionPlans ActionPlan[]
+  report      ClosingReport?
 
   @@unique([unitId, framework, cycle])
 }
@@ -256,6 +267,11 @@ model ActionPlan {
   how      String? // Como?
   cost     Decimal?  @db.Decimal(12, 2) // Quanto?
 
+  spheraId      String? // ID do finding / evento no Sphera
+  auditId       String?
+  audit         Audit?   @relation(fields: [auditId], references: [id], onDelete: SetNull)
+  auditItemCode String?
+
   priority    ActionPriority @default(MEDIA)
   status      ActionStatus   @default(ABERTA)
   completedAt DateTime?
@@ -281,4 +297,80 @@ model ScoreSnapshot {
   updatedAt DateTime  @updatedAt
 
   @@unique([unitId, framework, scope, month])
+}
+
+// Relatório da reunião de fechamento da auditoria WISE² (um por avaliação WISE da unidade/ciclo).
+// Estrutura conforme o Treinamento de Auditor Júnior (slides 104–129).
+model ClosingReport {
+  id           String     @id @default(cuid())
+  assessmentId String     @unique
+  assessment   Assessment @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  auditDates   String?
+  auditors     String?
+  format       String?
+  highlights   String?
+  quotes       String?
+  // { "Liderança": { "strengths": "...", "opportunities": "..." }, ... }
+  groups       Json?
+  conclusion   String?
+  updatedAt    DateTime   @updatedAt
+  updatedById  String?
+  updatedBy    User?      @relation(fields: [updatedById], references: [id], onDelete: SetNull)
+}
+
+// ---------------------------------------------------------------------------
+// Módulo Auditorias — checklists de empresas contratadas (Portaria, Limpeza...)
+// Os itens do checklist ficam em src/lib/audit-templates.ts (template + itemCode).
+// ---------------------------------------------------------------------------
+
+model Audit {
+  id            String      @id @default(cuid())
+  unitId        String
+  unit          Unit        @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  template      String
+  contractor    String
+  auditDate     DateTime
+  auditorId     String?
+  auditor       User?       @relation("AuditAuditor", fields: [auditorId], references: [id], onDelete: SetNull)
+  accompaniedBy String?
+  status        AuditStatus @default(EM_ANDAMENTO)
+  strengths     String?
+  opportunities String?
+  conclusion    String?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  answers     AuditAnswer[]
+  attachments AuditAttachment[]
+  actionPlans ActionPlan[]
+
+  @@index([unitId, template])
+}
+
+model AuditAnswer {
+  id          String   @id @default(cuid())
+  auditId     String
+  audit       Audit    @relation(fields: [auditId], references: [id], onDelete: Cascade)
+  itemCode    String
+  value       String? // "C" | "NC" | "NA"
+  observation String?
+  updatedAt   DateTime @updatedAt
+  updatedById String?
+  updatedBy   User?    @relation(fields: [updatedById], references: [id], onDelete: SetNull)
+
+  @@unique([auditId, itemCode])
+}
+
+model AuditAttachment {
+  id           String   @id @default(cuid())
+  auditId      String
+  audit        Audit    @relation(fields: [auditId], references: [id], onDelete: Cascade)
+  itemCode     String?
+  name         String
+  url          String
+  mimeType     String?
+  size         Int?
+  uploadedById String?
+  uploadedBy   User?    @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+  createdAt    DateTime @default(now())
 }

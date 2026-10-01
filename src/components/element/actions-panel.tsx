@@ -125,6 +125,7 @@ export function ActionsPanel({
               <div className="mt-2 flex flex-wrap gap-4 text-xs text-slate-500">
                 <span className="flex items-center gap-1"><UserRound className="size-3.5" /> {a.ownerName ?? "A definir"}</span>
                 <span className="flex items-center gap-1"><CalendarDays className="size-3.5" /> {fmtDate(a.dueDate)}</span>
+                {a.spheraId ? <span className="font-medium text-slate-600">Sphera {a.spheraId}</span> : null}
                 {a.where ? <span className="flex items-center gap-1"><MapPin className="size-3.5" /> {a.where}</span> : null}
                 {a.cost != null ? <span className="flex items-center gap-1"><Wallet className="size-3.5" /> {fmtMoney(a.cost)}</span> : null}
               </div>

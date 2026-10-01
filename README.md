@@ -35,7 +35,18 @@ Investigação de Incidentes e Excelência Operacional.
   vencimento e controle de atraso. Há filtros por elemento, pilar, status, responsável, prioridade e data, e exportação CSV.
 - **Indicadores**: KPIs, radar por elemento, barras de pontuação, evolução mensal
   (fotografia automática a cada avaliação), status por pilar e tabela de dados.
-- **Busca global** (Ctrl + K) em elementos, requisitos, evidências e planos de ação.
+- **Classificação oficial A/B/C/D** (Treinamento Auditor Júnior, slide 129). Cultura (0–65): A ≥ 48,75 · B ≥ 32,5 ·
+  C ≥ 16,25 · D. Compliance: A ≥ 80% · B ≥ 65% · C ≥ 40% · D. A classe do site é a pior entre as duas.
+- **Roteiro do auditor**: 251 perguntas "O que perguntar?" por elemento (slides 132–148), na aba do card.
+- **Relatório de fechamento** imprimível em PDF: formato, destaques, citações, pontos fortes e oportunidades por
+  grupo (Liderança 1–4 · Organização 5–8 · Operação 9–13), compliance dos 12 Básicos, classificação, pareceres e
+  pós-auditoria.
+- **ID Sphera** nos planos de ação.
+- **Auditorias de contratadas** com checklists de **Portaria** (39 itens) e **Limpeza** (43 itens), montados a
+  partir do Elemento 13, do Básico 11, dos Básicos aplicáveis, das Regras de Ouro e do Safety Alert de Poços.
+  Cada item permite foto ou anexo, observação e plano de ação para a não conformidade. Itens críticos não conformes
+  limitam a nota a 50%, e o resultado recebe classe A–D. Os checklists ficam em `src/lib/audit-templates.ts`.
+- **Busca global** (Ctrl + K) em elementos, requisitos, evidências, planos de ação e auditorias.
 - **Ciclos** (ano) e **unidades** selecionáveis no topo.
 
 ## Rodando localmente
@@ -91,10 +102,11 @@ src/
 
 ## Premissas adotadas
 
-- Pilares WISE conforme a aba "Planilha1" da matriz: Gerenciamento, Pessoas, Técnico e Organizacional.
+- Grupos WISE conforme a reunião de fechamento (slide 107): Liderança, Organização e Operação.
   Os 12 Básicos não têm pilares na planilha. Eles foram agrupados em *Road Safety*,
   *Movimentação e Armazenagem*, *Riscos Críticos* e *Pessoas e Emergência*, e esse agrupamento pode ser editado em `src/lib/catalog.ts`.
-- Faixas de cor WISE: < 2,0 crítico · 2,0 a 2,99 atenção · ≥ 3,0 conforme. Básicos: ≤ 50% · 51–79% · ≥ 80%,
-  como na aba "Compliance Score". Os limites podem ser ajustados em `THRESHOLDS` (`src/lib/scoring.ts`).
+- Semáforo derivado da classe oficial: A = verde (conforme), B = amarelo (atenção), C/D = vermelho (crítico).
+  As faixas ficam em `GRADE_BANDS` (`src/lib/scoring.ts`). LOTO e Road Safety não entram no compliance: o
+  sistema considera apenas os 12 Básicos.
 - As respostas do site que estavam escritas dentro das afirmações da matriz WISE foram removidas
   para gerar a matriz em branco.

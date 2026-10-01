@@ -42,7 +42,7 @@ export function ActionsView({
     const el = elById.get(a.elementId);
     const q = f.q.trim().toLowerCase();
     return (
-      (!q || `${a.what} ${a.why} ${a.how} ${a.where} ${el?.label}`.toLowerCase().includes(q)) &&
+      (!q || `${a.what} ${a.why} ${a.how} ${a.where} ${a.spheraId} ${el?.label}`.toLowerCase().includes(q)) &&
       (!f.framework || el?.framework === f.framework) &&
       (!f.element || a.elementId === f.element) &&
       (!f.pillar || el?.pillarId === f.pillar) &&
@@ -60,9 +60,10 @@ export function ActionsView({
   });
 
   const exportCsv = () => {
-    const head = ["Elemento", "Requisito", "O quê", "Por quê", "Quem", "Quando", "Onde", "Como", "Quanto", "Prioridade", "Status"];
+    const head = ["ID Sphera", "Elemento", "Requisito", "O quê", "Por quê", "Quem", "Quando", "Onde", "Como", "Quanto", "Prioridade", "Status"];
     const lines = rows.map((a) =>
       [
+        a.spheraId,
         elById.get(a.elementId)?.label,
         a.requirementLabel ?? "",
         a.what,
@@ -206,6 +207,11 @@ export function ActionsView({
                     <td className="max-w-md px-4 py-3">
                       <div className="font-medium text-slate-800">{a.what}</div>
                       {a.why ? <div className="line-clamp-2 text-xs text-slate-500">{a.why}</div> : null}
+                      {a.spheraId ? (
+                        <span className="mt-1 inline-block rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-semibold text-slate-600">
+                          Sphera {a.spheraId}
+                        </span>
+                      ) : null}
                       {a.requirementLabel ? (
                         <div className="mt-0.5 line-clamp-1 text-[11px] text-slate-400">{a.requirementLabel}</div>
                       ) : null}

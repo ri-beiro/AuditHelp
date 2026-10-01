@@ -7,7 +7,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   const cycles = unit ? await getCycles(unit.id) : [cycle];
   return (
     <div className="flex min-h-screen">
-      <aside className="sticky top-0 hidden h-screen w-64 shrink-0 lg:block">
+      <aside className="sticky top-0 hidden h-screen w-64 shrink-0 lg:block print:hidden">
         <Sidebar isAdmin={user.role === "ADMIN"} />
       </aside>
       <div className="flex min-w-0 flex-1 flex-col">
@@ -18,7 +18,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
           cycle={cycle}
           user={{ name: user.name, role: user.role }}
         />
-        <main className="flex-1 px-4 py-6 lg:px-8">{children}</main>
+        <main className="flex-1 px-4 py-6 lg:px-8 print:p-0">{children}</main>
       </div>
     </div>
   );

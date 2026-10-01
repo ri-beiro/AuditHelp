@@ -26,6 +26,7 @@ import { ACTION_STATUS_LABEL, cn, fmtPct, fmtScore, TONE_HEX, TONE_LABEL } from 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Kpi } from "@/components/dashboard/kpi";
+import { GradeBadge } from "@/components/grade-badge";
 
 // Séries categóricas validadas (scripts/validate_palette.js do guia de dataviz)
 const SERIES = { wise: "#1560d4", basics: "#e07a12" };
@@ -123,7 +124,11 @@ export function IndicatorsView({ unitName, cycle, wise, basics, evolution, actio
           icon={Gauge}
           label={isWise ? "Score geral WISE" : "Compliance 12 Básicos"}
           value={isWise ? `${fmtScore(wise.overall.score)} / 65` : fmtPct(basics.overall.pct)}
-          hint={isWise ? `${fmtPct(wise.overall.pct)} · ${wise.overall.stage}` : `Risco nível 1: ${fmtPct(basics.overall.level1Pct)}`}
+          hint={
+            isWise
+              ? `Classe ${wise.overall.grade ?? "–"} · ${wise.overall.stage}`
+              : `Classe ${basics.overall.grade ?? "–"} · risco nível 1: ${fmtPct(basics.overall.level1Pct)}`
+          }
         />
         <Kpi icon={CheckCircle2} label="Itens conformes" value={ov.totals.conformes} accent="bg-conforme-bg text-conforme" hint={`${ov.totals.answered}/${ov.totals.total} avaliados`} />
         <Kpi icon={XCircle} label="Desvios" value={ov.totals.desvios} accent="bg-critico-bg text-critico" />
@@ -368,6 +373,7 @@ export function IndicatorsView({ unitName, cycle, wise, basics, evolution, actio
                   <th className="py-2 pr-3 text-right font-medium">{isWise ? "Nota" : "Atendimento"}</th>
                   <th className="py-2 pr-3 text-right font-medium">Avaliados</th>
                   <th className="py-2 pr-3 text-right font-medium">Desvios</th>
+                  <th className="py-2 pr-3 font-medium">Classe</th>
                   <th className="py-2 font-medium">Situação</th>
                 </tr>
               </thead>
@@ -383,6 +389,9 @@ export function IndicatorsView({ unitName, cycle, wise, basics, evolution, actio
                       {e.answered}/{e.total}
                     </td>
                     <td className="py-2 pr-3 text-right tabular-nums text-slate-600">{e.desvios}</td>
+                    <td className="py-2 pr-3">
+                      <GradeBadge grade={e.grade} size="sm" />
+                    </td>
                     <td className="py-2">
                       <span className="flex items-center gap-1.5 text-xs text-slate-700">
                         <span className="size-2 rounded-full" style={{ background: TONE_HEX[e.tone] }} />

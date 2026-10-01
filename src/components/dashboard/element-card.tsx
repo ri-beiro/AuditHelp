@@ -6,6 +6,7 @@ import { cn, fmtDate, fmtPct, fmtScore, STATUS_LABEL, TONE_CLASSES, TONE_LABEL }
 import { ElementIcon } from "@/components/element-icon";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { GradeBadge } from "@/components/grade-badge";
 
 export function ElementCard({ el, onOpen }: { el: ElementSummary; onOpen: () => void }) {
   const t = TONE_CLASSES[el.tone];
@@ -43,10 +44,13 @@ export function ElementCard({ el, onOpen }: { el: ElementSummary; onOpen: () => 
           </div>
         </div>
         <div className="flex flex-col items-end gap-1">
-          <Badge tone={el.tone}>
-            <span className={cn("size-1.5 rounded-full", t.dot)} />
-            {TONE_LABEL[el.tone]}
-          </Badge>
+          <span className="flex items-center gap-1.5">
+            <Badge tone={el.tone}>
+              <span className={cn("size-1.5 rounded-full", t.dot)} />
+              {TONE_LABEL[el.tone]}
+            </Badge>
+            <GradeBadge grade={el.grade} size="sm" />
+          </span>
           {isWise && el.stage && el.score !== null ? (
             <span className="text-[11px] text-slate-500">{el.stage}</span>
           ) : el.capped ? (

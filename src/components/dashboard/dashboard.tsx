@@ -13,7 +13,8 @@ import {
   XCircle,
 } from "lucide-react";
 import type { FrameworkOverview } from "@/server/queries";
-import type { Tone } from "@/lib/scoring";
+import { GRADE_STAGE, siteGrade, type Grade, type Tone } from "@/lib/scoring";
+import { GradeBadge } from "@/components/grade-badge";
 import { cn, fmtPct, fmtScore, STATUS_LABEL, TONE_CLASSES, TONE_LABEL } from "@/lib/utils";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input, Select } from "@/components/ui/input";
@@ -87,13 +88,15 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
               completa com evidências, status e planos de ação.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-3 sm:min-w-[440px]">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-[auto_1fr_1fr] sm:min-w-[620px]">
+            <SiteGrade culture={wise.overall.grade} compliance={basics.overall.grade} />
             <HeroScore
               title="Score WISE (cultura)"
               value={wise.overall.score === null ? "—" : `${fmtScore(wise.overall.score)}`}
               suffix="/ 65"
               pct={wise.overall.pct}
               tone={wise.overall.tone}
+              grade={wise.overall.grade}
               hint={wise.overall.stage}
               active={tab === "wise"}
               onClick={() => setParams({ tab: null })}
@@ -103,6 +106,7 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
               value={fmtPct(basics.overall.pct)}
               pct={basics.overall.pct}
               tone={basics.overall.tone}
+              grade={basics.overall.grade}
               hint={`Score risco nível 1: ${fmtPct(basics.overall.level1Pct)}`}
               active={tab === "basicos"}
               onClick={() => setParams({ tab: "basicos" })}
@@ -140,7 +144,7 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
           icon={ShieldAlert}
           label="Elementos críticos"
           value={ov.totals.criticalElements}
-          hint={tab === "wise" ? "Nota abaixo de 2,0" : "Atendimento ≤ 50%"}
+          hint={tab === "wise" ? "Classe C ou D (nota < 2,5)" : "Classe C ou D (< 65%)"}
           accent="bg-critico-bg text-critico"
           onClick={() => setFilters({ ...EMPTY, tone: "critico" })}
         />
@@ -290,6 +294,7 @@ function HeroScore({
   suffix,
   pct,
   tone,
+  grade,
   hint,
   active,
   onClick,
@@ -299,6 +304,7 @@ function HeroScore({
   suffix?: string;
   pct: number | null;
   tone: Tone;
+  grade: Grade | null;
   hint?: string;
   active: boolean;
   onClick: () => void;
@@ -311,7 +317,10 @@ function HeroScore({
         active ? "border-white/40 bg-white/15" : "border-white/10 bg-white/5 hover:bg-white/10",
       )}
     >
-      <div className="text-xs font-medium text-brand-100/80">{title}</div>
+      <div className="flex items-center justify-between gap-2 text-xs font-medium text-brand-100/80">
+        {title}
+        <GradeBadge grade={grade} size="sm" />
+      </div>
       <div className="mt-1 flex items-baseline gap-1">
         <span className="text-3xl font-extrabold tabular-nums">{value}</span>
         {suffix ? <span className="text-sm text-brand-100/70">{suffix}</span> : null}
@@ -327,18 +336,39 @@ function HeroScore({
   );
 }
 
+function SiteGrade({ culture, compliance }: { culture: Grade | null; compliance: Grade | null }) {
+  const g = siteGrade(culture, compliance);
+  return (
+    <div className="col-span-2 flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 p-4 sm:col-span-1 sm:flex-col sm:justify-center sm:text-center">
+      <GradeBadge grade={g} size="xl" />
+      <div className="text-[11px] leading-tight text-brand-100/80">
+        <div className="font-semibold text-white">Classe do site</div>
+        {g ? (
+          <>
+            {GRADE_STAGE[g]}
+            <br />
+            Cultura {culture} · Compliance {compliance}
+          </>
+        ) : (
+          "Avalie WISE e 12 Básicos"
+        )}
+      </div>
+    </div>
+  );
+}
+
 function Legend({ tab }: { tab: string }) {
   const items =
     tab === "wise"
       ? [
-          ["critico", "Crítico: nota < 2,0 (reativo)"],
-          ["atencao", "Atenção: 2,0 a 2,99 (dependente)"],
-          ["conforme", "Conforme: ≥ 3,0 (independente / interdependente)"],
+          ["conforme", "A · Interdependente: nota ≥ 3,75 (≥ 48,75 pts no site)"],
+          ["atencao", "B · Independente: 2,5 a 3,74 (32,5 – 48,75)"],
+          ["critico", "C · Dependente: 1,25 a 2,49 · D · Reativo: < 1,25"],
         ]
       : [
-          ["critico", "Crítico: ≤ 50% (ou item de risco 1 em Básico)"],
-          ["atencao", "Atenção: 51% a 79%"],
-          ["conforme", "Conforme: ≥ 80%"],
+          ["conforme", "A · Managed Risk: ≥ 80%"],
+          ["atencao", "B: 65% a 79%"],
+          ["critico", "C: 40% a 64% · D: < 40% (item de risco 1 em Básico limita a 50%)"],
         ];
   return (
     <div className="flex flex-wrap gap-4 text-xs text-slate-500">
