@@ -52,7 +52,7 @@ Investigação de Incidentes e Excelência Operacional.
 ## Rodando localmente
 
 ```bash
-cp .env.example .env          # ajuste DATABASE_URL / DIRECT_URL e AUTH_SECRET
+cp .env.example .env          # ajuste DATABASE_URL / DATABASE_URL_UNPOOLED e AUTH_SECRET
 npm install
 npx prisma migrate deploy     # cria as tabelas
 npm run db:seed               # carrega as matrizes em branco, a unidade CD Guarulhos e o admin
@@ -67,13 +67,15 @@ Testes do motor de pontuação: `npm test`.
 
 ## Deploy na Vercel
 
-1. Importe o repositório na Vercel (framework Next.js detectado automaticamente).
-2. Em **Storage**, conecte um banco **Postgres** (Neon) e um **Blob Store** ao projeto. Isso cria
-   `DATABASE_URL` e `BLOB_READ_WRITE_TOKEN`. Defina também `DIRECT_URL` com a URL
-   *sem pooling* e crie `AUTH_SECRET` (`openssl rand -base64 32`).
-3. O deploy executa `vercel-build`, que roda `prisma generate`, `prisma migrate deploy` e `next build`.
-4. Rode o seed uma única vez apontando para o banco de produção:
-   `DATABASE_URL=... DIRECT_URL=... npm run db:seed`.
+1. Importe o repositório na Vercel. O framework Next.js é detectado automaticamente.
+2. No projeto, abra **Storage** e conecte:
+   - um banco **Neon (Postgres)**, que cria `DATABASE_URL` e `DATABASE_URL_UNPOOLED`;
+   - um **Blob Store**, que cria `BLOB_READ_WRITE_TOKEN`.
+3. Em **Settings → Environment Variables**, crie:
+   - `AUTH_SECRET` (gerado com `openssl rand -base64 32` ou em https://generate-secret.vercel.app/32);
+   - `SEED_ADMIN_EMAIL` e `SEED_ADMIN_PASSWORD`, com o login do primeiro administrador.
+4. Faça um **Redeploy**. O script `vercel-build` executa `prisma generate`, `prisma migrate deploy`,
+   o seed (idempotente: atualiza a matriz e cria o admin só se ele não existir) e `next build`.
 
 ## Estrutura
 
