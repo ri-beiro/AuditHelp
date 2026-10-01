@@ -29,8 +29,8 @@ import { Kpi } from "@/components/dashboard/kpi";
 import { GradeBadge } from "@/components/grade-badge";
 
 // Séries categóricas validadas (scripts/validate_palette.js do guia de dataviz)
-// Laranja WISE (cobre) e azul de apoio — par validado para daltonismo e contraste.
-const SERIES = { wise: "#cc7a2a", basics: "#1a64a8" };
+// Azul WISE (primária) e laranja WISE (secundária) — par validado para daltonismo e contraste.
+const SERIES = { wise: "#1a64a8", basics: "#cc7a2a" };
 const INK = { primary: "#0f172a", secondary: "#475569", muted: "#94a3b8", grid: "#e2e8f0" };
 
 type Props = {
@@ -146,7 +146,7 @@ export function IndicatorsView({ unitName, cycle, wise, basics, evolution, actio
           icon={ListTodo}
           label="Ações pendentes"
           value={ov.totals.pendingActions}
-          accent="bg-atencao-bg text-atencao-ink"
+          accent="bg-accent-50 text-accent-700"
           hint={`${ov.totals.overdueActions} em atraso`}
         />
         <Kpi icon={ShieldAlert} label="Elementos críticos" value={ov.totals.criticalElements} accent="bg-critico-bg text-critico" />

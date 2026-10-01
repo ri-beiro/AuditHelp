@@ -19,7 +19,6 @@ import { cn, fmtPct, fmtScore, STATUS_LABEL, TONE_CLASSES, TONE_LABEL } from "@/
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input, Select } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
 import { ElementCard } from "./element-card";
 import { Kpi } from "./kpi";
 import { ElementSheet } from "@/components/element/element-sheet";
@@ -136,7 +135,7 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
           label="Ações pendentes"
           value={ov.totals.pendingActions}
           hint={ov.totals.overdueActions ? `${ov.totals.overdueActions} em atraso` : "Nenhuma em atraso"}
-          accent="bg-atencao-bg text-atencao-ink"
+          accent="bg-accent-50 text-accent-700"
           onClick={() => router.push("/acoes")}
         />
         <Kpi
@@ -229,20 +228,29 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
               key={p.id}
               onClick={() => setFilters({ ...filters, pillar: filters.pillar === p.id ? "" : p.id })}
               className={cn(
-                "rounded-2xl border bg-white p-4 text-left shadow-soft transition hover:-translate-y-0.5 hover:shadow-lift",
-                filters.pillar === p.id ? "border-brand-500 ring-4 ring-brand-500/15" : "border-slate-200/70",
+                "relative overflow-hidden rounded-2xl border bg-white p-4 pt-5 text-left shadow-soft transition hover:-translate-y-0.5 hover:shadow-lift",
+                filters.pillar === p.id ? "border-transparent ring-4" : "border-slate-200/70",
               )}
+              style={{
+                backgroundImage: `linear-gradient(160deg, ${p.color}14, transparent 55%)`,
+                ...(filters.pillar === p.id ? { boxShadow: `0 0 0 3px ${p.color}55` } : {}),
+              }}
             >
+              <span className="absolute inset-x-0 top-0 h-1" style={{ background: p.color }} />
               <div className="flex items-center justify-between">
                 <span className="flex items-center gap-2 font-display text-[15px] font-bold text-brand-950">
-                  <span className="size-2.5 rounded-full" style={{ background: p.color }} />
+                  <span className="grid size-6 place-items-center rounded-lg text-[11px] font-extrabold text-white shadow-soft" style={{ background: p.color }}>
+                    {p.name[0]}
+                  </span>
                   {p.name}
                 </span>
                 <span className="font-display text-lg font-extrabold tabular-nums text-brand-950">
                   {tab === "wise" ? fmtScore(p.score) : fmtPct(p.pct)}
                 </span>
               </div>
-              <Progress value={p.pct} className="mt-2 h-1.5" barClassName="bg-brand-600" />
+              <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-slate-100">
+                <div className="h-full rounded-full transition-all" style={{ width: `${(p.pct ?? 0) * 100}%`, background: p.color }} />
+              </div>
               <div className="mt-1.5 flex gap-2 text-[11px] text-slate-500">
                 <span>{p.elements} elementos</span>
                 {(["critico", "atencao", "conforme"] as Tone[]).map((t) =>

@@ -162,7 +162,7 @@ export function RequirementRow({
                 className={cn(
                   "inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1.5 text-xs font-medium",
                   req.deviation
-                    ? "border-brand-500/40 bg-brand-50 text-brand-700 hover:bg-brand-100"
+                    ? "border-accent-500/40 bg-accent-50 text-accent-700 hover:bg-accent-100"
                     : "border-slate-200 bg-white text-slate-700 hover:bg-slate-50",
                 )}
               >

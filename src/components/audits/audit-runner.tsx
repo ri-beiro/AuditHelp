@@ -153,7 +153,7 @@ export function AuditRunner({
               </Button>
             ) : (
               <Button
-                variant="accent"
+                variant="green"
                 disabled={pending}
                 onClick={() => {
                   if (score.answered < score.total && !confirm(`Ainda há ${score.total - score.answered} item(ns) sem avaliação. Concluir mesmo assim?`)) return;
@@ -508,7 +508,7 @@ function AuditItemRow({
                 onClick={onCreateAction}
                 className={cn(
                   "inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1.5 text-xs font-medium",
-                  nc ? "border-brand-500/40 bg-brand-50 text-brand-700" : "border-slate-200 bg-white text-slate-700 hover:bg-slate-50",
+                  nc ? "border-accent-500/40 bg-accent-50 text-accent-700" : "border-slate-200 bg-white text-slate-700 hover:bg-slate-50",
                 )}
               >
                 <ListPlus className="size-3.5" /> Criar plano de ação
