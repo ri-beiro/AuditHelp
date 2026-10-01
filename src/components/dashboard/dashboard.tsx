@@ -313,8 +313,9 @@ function HeroScore({
   return (
     <button
       onClick={onClick}
+      data-active={active}
       className={cn(
-        "rounded-2xl border p-4 text-left backdrop-blur-md transition",
+        "glass rounded-2xl border p-4 text-left backdrop-blur-md transition",
         active
           ? "border-white/30 bg-white/[0.14] shadow-[inset_0_1px_0_rgb(255_255_255/0.15)]"
           : "border-white/10 bg-white/[0.05] hover:bg-white/[0.09]",
@@ -342,7 +343,7 @@ function HeroScore({
 function SiteGrade({ culture, compliance }: { culture: Grade | null; compliance: Grade | null }) {
   const g = siteGrade(culture, compliance);
   return (
-    <div className="col-span-2 flex items-center gap-3 rounded-2xl border border-white/15 bg-gradient-to-b from-white/[0.14] to-white/[0.04] p-4 shadow-[inset_0_1px_0_rgb(255_255_255/0.15)] backdrop-blur-md sm:col-span-1 sm:flex-col sm:justify-center sm:text-center">
+    <div className="glass col-span-2 flex items-center gap-3 rounded-2xl border border-white/15 bg-gradient-to-b from-white/[0.14] to-white/[0.04] p-4 shadow-[inset_0_1px_0_rgb(255_255_255/0.15)] backdrop-blur-md sm:col-span-1 sm:flex-col sm:justify-center sm:text-center">
       <GradeBadge grade={g} size="xl" />
       <div className="text-[11px] leading-tight text-brand-100/80">
         <div className="font-semibold text-white">Classe do site</div>

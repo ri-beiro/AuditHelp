@@ -22,7 +22,7 @@ export function Logo({ className, light = false }: { className?: string; light?:
           wise<sup className="text-[10px] text-lime-500">2</sup>
           <span className={cn("ml-1.5 font-semibold", light ? "text-white/70" : "text-slate-500")}>Excelência</span>
         </div>
-        <div className={cn("text-[10.5px] font-medium tracking-wide", light ? "text-accent-400" : "text-accent-700")}>
+        <div className={cn("text-[10.5px] font-medium tracking-wide", light ? "text-cream" : "text-brand-700")}>
           Somente um já é demais
         </div>
       </div>

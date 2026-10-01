@@ -22,25 +22,25 @@ export default async function LoginPage() {
           <h1 className="mt-3 text-[44px] font-extrabold leading-[1.08]">
             Cultura de segurança medida, evidenciada e em melhoria contínua.
           </h1>
-          <p className="mt-5 text-[15px] leading-relaxed text-brand-100/75">
+          <p className="mt-5 text-[15px] leading-relaxed text-white/80">
             Plataforma de auditoria e excelência operacional do programa WISE² — da matriz de cultura aos 12 Básicos e
             às auditorias de contratadas.
           </p>
           <div className="mt-10 grid gap-3 sm:grid-cols-3">
             {PILLARS.map(({ icon: Icon, title, text }) => (
-              <div key={title} className="rounded-2xl border border-white/10 bg-white/[0.06] p-4 backdrop-blur-md">
-                <Icon className="size-5 text-accent-400" />
+              <div key={title} className="glass rounded-2xl border p-4 backdrop-blur-md">
+                <Icon className="size-5 text-cream" />
                 <div className="mt-3 font-display text-sm font-bold">{title}</div>
-                <div className="mt-0.5 text-xs leading-snug text-brand-100/65">{text}</div>
+                <div className="mt-0.5 text-xs leading-snug text-white/75">{text}</div>
               </div>
             ))}
           </div>
         </div>
-        <p className="flex items-center gap-3 text-xs text-brand-100/55">
+        <p className="flex items-center gap-3 text-xs text-white/70">
           <span className="flex gap-1">
-            <span className="h-1 w-6 rounded-full bg-accent-500" />
+            <span className="h-1 w-6 rounded-full bg-cream" />
             <span className="h-1 w-3 rounded-full bg-lime-500" />
-            <span className="h-1 w-2 rounded-full bg-cream" />
+            <span className="h-1 w-2 rounded-full bg-white/70" />
           </span>
           Segurança é valor e escolha · Pare · Pense · Aja
         </p>

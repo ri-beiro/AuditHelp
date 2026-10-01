@@ -68,7 +68,7 @@ export function ActionsPanel({
       </div>
 
       {withoutAction.length > 0 && ctx.perms.action ? (
-        <div className="rounded-xl border border-accent-500/30 bg-accent-100/50 p-3">
+        <div className="rounded-xl border border-brand-500/30 bg-brand-50 p-3">
           <p className="mb-2 text-xs font-semibold text-slate-700">Desvios sem plano de ação</p>
           <ul className="space-y-1">
             {withoutAction.slice(0, 8).map((r) => (

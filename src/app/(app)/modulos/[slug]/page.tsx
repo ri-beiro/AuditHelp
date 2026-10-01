@@ -42,7 +42,7 @@ export default async function ModulePage({ params }: { params: Promise<{ slug: s
       <ul className="mt-6 space-y-2">
         {(ROADMAP[slug] ?? []).map((item) => (
           <li key={item} className="flex gap-2 text-sm text-slate-700">
-            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent-500" />
+            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-500" />
             {item}
           </li>
         ))}

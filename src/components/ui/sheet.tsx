@@ -19,7 +19,7 @@ export function SheetContent({
       <Dialog.Overlay className="fixed inset-0 z-40 bg-brand-950/45 backdrop-blur-[2px] data-[state=open]:animate-fade-in" />
       <Dialog.Content
         className={cn(
-          "fixed inset-y-0 right-0 z-50 flex w-full flex-col bg-[#f5f6f8] shadow-2xl outline-none data-[state=open]:animate-slide-in sm:max-w-[min(1120px,94vw)]",
+          "fixed inset-y-0 right-0 z-50 flex w-full flex-col bg-[#f8f6f3] shadow-2xl outline-none data-[state=open]:animate-slide-in sm:max-w-[min(1120px,94vw)]",
           className,
         )}
         {...props}

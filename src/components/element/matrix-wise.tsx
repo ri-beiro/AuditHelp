@@ -104,16 +104,16 @@ export function MatrixWise({ ctx, focusRequirement }: { ctx: SheetCtx; focusRequ
         const locked = level > 1 && result.levels.slice(0, level - 1).some((p) => p.pct < WISE_GATE);
         return (
           <section key={level} id={`nivel-${level}`} className="scroll-mt-16 space-y-2">
-            <div className="flex flex-wrap items-center gap-3 rounded-lg bg-brand-900 px-4 py-2.5 text-white">
+            <div className="flex flex-wrap items-center gap-3 rounded-xl bg-gradient-to-r from-brand-700 via-brand-600 to-brand-500 px-4 py-2.5 text-white shadow-soft">
               <span className="grid size-7 place-items-center rounded-full bg-white/15 text-sm font-bold">{level}</span>
               <div className="min-w-0 flex-1">
                 <div className="text-sm font-semibold">
                   Nível {level} · {LEVEL_NAME[level]}
                 </div>
-                <div className="text-[11px] text-brand-100/80">{LEVEL_TEXT[level]}</div>
+                <div className="text-[11px] text-white/90">{LEVEL_TEXT[level]}</div>
               </div>
               <div className="flex w-44 flex-col gap-1">
-                <div className="flex justify-between text-[11px] text-brand-100/80">
+                <div className="flex justify-between text-[11px] text-white/90">
                   <span>
                     {l.points}/{l.maxPoints} pts · {l.answered}/{l.statements}
                   </span>
@@ -121,7 +121,7 @@ export function MatrixWise({ ctx, focusRequirement }: { ctx: SheetCtx; focusRequ
                 </div>
                 <Progress
                   value={l.pct}
-                  className="h-1.5 bg-white/15"
+                  className="h-1.5 bg-black/20"
                   barClassName={l.pct >= WISE_GATE ? "bg-conforme" : l.pct > 0.4 ? "bg-atencao" : "bg-critico"}
                 />
               </div>

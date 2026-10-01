@@ -156,7 +156,7 @@ export function ClosingReportView(props: Props) {
             render={(items) => (
               <ul className="space-y-2">
                 {items.map((q, i) => (
-                  <li key={i} className="border-l-4 border-accent-500 pl-3 text-sm italic text-slate-700">
+                  <li key={i} className="border-l-4 border-brand-500 pl-3 text-sm italic text-slate-700">
                     “{q.replace(/^["“]|["”;]+$/g, "")}”
                   </li>
                 ))}
@@ -373,7 +373,7 @@ function order(name: string) {
 function Section({ title, children, className }: { title?: string; children: React.ReactNode; className?: string }) {
   return (
     <section className={cn("rounded-2xl border border-slate-200 bg-white p-6 shadow-sm print:rounded-none print:shadow-none", className)}>
-      {title ? <h3 className="mb-4 border-b-2 border-accent-500 pb-1 text-lg font-bold text-brand-900">{title}</h3> : null}
+      {title ? <h3 className="mb-4 border-b-2 border-brand-500 pb-1 text-lg font-bold text-brand-900">{title}</h3> : null}
       {children}
     </section>
   );

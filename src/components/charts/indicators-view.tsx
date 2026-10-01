@@ -29,7 +29,8 @@ import { Kpi } from "@/components/dashboard/kpi";
 import { GradeBadge } from "@/components/grade-badge";
 
 // Séries categóricas validadas (scripts/validate_palette.js do guia de dataviz)
-const SERIES = { wise: "#1a64a8", basics: "#cc7a2a" };
+// Laranja WISE (cobre) e azul de apoio — par validado para daltonismo e contraste.
+const SERIES = { wise: "#cc7a2a", basics: "#1a64a8" };
 const INK = { primary: "#0f172a", secondary: "#475569", muted: "#94a3b8", grid: "#e2e8f0" };
 
 type Props = {

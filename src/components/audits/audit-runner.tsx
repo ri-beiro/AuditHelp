@@ -210,7 +210,7 @@ export function AuditRunner({
               ) : null}
             </div>
           </div>
-          <div className="flex items-center gap-4 rounded-xl border border-white/15 bg-white/10 p-4">
+          <div className="glass flex items-center gap-4 rounded-2xl border p-4 backdrop-blur-md">
             <GradeBadge grade={grade} size="xl" />
             <div>
               <div className="text-xs text-brand-100/80">Conformidade</div>
@@ -270,11 +270,11 @@ export function AuditRunner({
         if (!items.length) return null;
         return (
           <section key={sec.code} id={`sec-${sec.code}`} className="scroll-mt-20 space-y-2">
-            <div className="rounded-lg bg-brand-900 px-4 py-2.5 text-white">
+            <div className="rounded-xl bg-gradient-to-r from-brand-700 via-brand-600 to-brand-500 px-4 py-2.5 text-white shadow-soft">
               <div className="text-sm font-semibold">
                 {sec.code} · {sec.title}
               </div>
-              {sec.description ? <div className="text-[11px] text-brand-100/80">{sec.description}</div> : null}
+              {sec.description ? <div className="text-[11px] text-white/90">{sec.description}</div> : null}
             </div>
             {items.map((item) => (
               <AuditItemRow
@@ -508,7 +508,7 @@ function AuditItemRow({
                 onClick={onCreateAction}
                 className={cn(
                   "inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1.5 text-xs font-medium",
-                  nc ? "border-accent-500/40 bg-accent-100 text-accent-500" : "border-slate-200 bg-white text-slate-700 hover:bg-slate-50",
+                  nc ? "border-brand-500/40 bg-brand-50 text-brand-700" : "border-slate-200 bg-white text-slate-700 hover:bg-slate-50",
                 )}
               >
                 <ListPlus className="size-3.5" /> Criar plano de ação
