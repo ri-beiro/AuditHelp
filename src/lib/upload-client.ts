@@ -8,7 +8,7 @@ export async function uploadFile(file: File, folder: string, blobEnabled: boolea
   if (file.size > MAX_UPLOAD_MB * 1024 * 1024) throw new Error(`${file.name}: limite de ${MAX_UPLOAD_MB} MB`);
   if (blobEnabled) {
     const safe = file.name.replace(/[^\w.\-]+/g, "_");
-    const blob = await upload(`evidencias/${folder}/${safe}`, file, { access: "public", handleUploadUrl: "/api/upload" });
+    const blob = await upload(`evidencias/${folder}/${safe}`, file, { access: "private", handleUploadUrl: "/api/upload" });
     return blob.url;
   }
   const fd = new FormData();

@@ -33,6 +33,7 @@ import { complianceGrade } from "@/lib/scoring";
 import { uploadFile } from "@/lib/upload-client";
 import { UPLOAD_ACCEPT } from "@/lib/uploads";
 import { ACTION_STATUS_LABEL, cn, fmtDate, fmtDateTime, fmtPct } from "@/lib/utils";
+import { fileHref } from "@/lib/file-url";
 import { Button } from "@/components/ui/button";
 import { Field, Input, Select, Textarea } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
@@ -449,13 +450,13 @@ function AuditItemRow({
               {attachments.map((a) => (
                 <li key={a.id} className="group relative">
                   {a.mimeType?.startsWith("image/") ? (
-                    <a href={a.url} target="_blank" rel="noreferrer">
+                    <a href={fileHref(a.url)} target="_blank" rel="noreferrer">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={a.url} alt={a.name} className="size-20 rounded-lg object-cover ring-1 ring-slate-200" />
+                      <img src={fileHref(a.url)} alt={a.name} className="size-20 rounded-lg object-cover ring-1 ring-slate-200" />
                     </a>
                   ) : (
                     <a
-                      href={a.url}
+                      href={fileHref(a.url)}
                       target="_blank"
                       rel="noreferrer"
                       className="flex h-20 w-36 items-center gap-1 rounded-lg bg-white p-2 text-xs text-brand-700 ring-1 ring-slate-200"

@@ -14,6 +14,7 @@ import {
 import { toast } from "sonner";
 import { createEvidence, deleteEvidence } from "@/server/actions";
 import { cn, fmtDateTime } from "@/lib/utils";
+import { fileHref } from "@/lib/file-url";
 import { MAX_UPLOAD_MB, UPLOAD_ACCEPT } from "@/lib/uploads";
 import { uploadFile } from "@/lib/upload-client";
 import { Button } from "@/components/ui/button";
@@ -215,7 +216,7 @@ export function EvidencePanel({
                 <li key={e.id} className="group flex gap-3 rounded-xl border border-slate-200 bg-white p-3">
                   {isImage ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={e.url} alt={e.name} className="size-14 shrink-0 rounded-lg object-cover" />
+                    <img src={fileHref(e.url)} alt={e.name} className="size-14 shrink-0 rounded-lg object-cover" />
                   ) : (
                     <div className="grid size-14 shrink-0 place-items-center rounded-lg bg-brand-50 text-brand-700">
                       <Icon className="size-6" />
@@ -223,7 +224,7 @@ export function EvidencePanel({
                   )}
                   <div className="min-w-0 flex-1">
                     <a
-                      href={e.url}
+                      href={fileHref(e.url)}
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center gap-1 text-sm font-medium text-slate-800 hover:text-brand-700"

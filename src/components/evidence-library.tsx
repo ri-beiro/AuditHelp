@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ExternalLink, FileImage, FileSpreadsheet, FileText, Link2 } from "lucide-react";
 import { fmtDateTime } from "@/lib/utils";
+import { fileHref } from "@/lib/file-url";
 import { Input, Select } from "@/components/ui/input";
 
 type Item = {
@@ -98,14 +99,14 @@ export function EvidenceLibrary({ unitName, cycle, items }: { unitName: string; 
               <li key={i.id} className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white">
                 {k === "foto" ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={i.url} alt={i.name} className="h-36 w-full object-cover" />
+                  <img src={fileHref(i.url)} alt={i.name} className="h-36 w-full object-cover" />
                 ) : (
                   <div className="grid h-36 place-items-center bg-brand-50 text-brand-700">
                     <Icon className="size-10" />
                   </div>
                 )}
                 <div className="flex flex-1 flex-col gap-1 p-3">
-                  <a href={i.url} target="_blank" rel="noreferrer" className="flex items-center gap-1 text-sm font-medium text-slate-800 hover:text-brand-700">
+                  <a href={fileHref(i.url)} target="_blank" rel="noreferrer" className="flex items-center gap-1 text-sm font-medium text-slate-800 hover:text-brand-700">
                     <span className="truncate">{i.name}</span>
                     <ExternalLink className="size-3 shrink-0" />
                   </a>
