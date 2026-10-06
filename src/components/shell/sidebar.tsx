@@ -8,6 +8,7 @@ import {
   FileBarChart,
   FolderOpen,
   GitBranch,
+  GraduationCap,
   History,
   LayoutDashboard,
   Lightbulb,
@@ -15,6 +16,7 @@ import {
   Settings,
   Siren,
   Trophy,
+  Truck,
   type LucideIcon,
 } from "lucide-react";
 import { MODULES } from "@/lib/modules";
@@ -27,6 +29,7 @@ const ICONS: Record<string, LucideIcon> = {
   FileBarChart,
   FolderOpen,
   GitBranch,
+  GraduationCap,
   History,
   LayoutDashboard,
   Lightbulb,
@@ -34,6 +37,7 @@ const ICONS: Record<string, LucideIcon> = {
   Settings,
   Siren,
   Trophy,
+  Truck,
 };
 
 export function Sidebar({ isAdmin, onNavigate }: { isAdmin: boolean; onNavigate?: () => void }) {

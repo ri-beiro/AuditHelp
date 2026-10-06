@@ -18,6 +18,11 @@ const ROADMAP: Record<string, string[]> = {
     "Safety Alert (Stop · Think · Act) e análise de causa raiz",
     "Integração com o elemento 11 e com o Básico relacionado",
   ],
+  treinamentos: [
+    "Matriz de treinamentos por função (WISE, 12 Básicos, NRs, integração)",
+    "Controle de realizados, pendentes e vencimentos com alertas",
+    "Integração com o Road Safety (Onboarding e Direção Defensiva) e com o elemento 10",
+  ],
   excelencia: [
     "Painel consolidado de todas as unidades",
     "Benchmark entre CDs e ranking de maturidade",

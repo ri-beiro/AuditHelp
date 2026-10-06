@@ -45,14 +45,14 @@ function WiseWaves() {
 /** Emblema com anel tricolor. */
 function TriRing() {
   return (
-    <div className="relative grid size-28 place-items-center">
+    <div className="relative grid size-44 place-items-center">
       <div
         className="absolute inset-0 rounded-full p-[5px] shadow-lift"
         style={{ background: "conic-gradient(from 200deg, #1a9ae0, #13508a, #c3d23f, #6f9a22, #ec9631, #cc6c1e, #1a9ae0)" }}
       >
-        <div className="size-full rounded-full bg-brand-950/70 backdrop-blur" />
+        <div className="size-full rounded-full bg-white" />
       </div>
-      <WiseMark className="relative size-20 drop-shadow-lg" />
+      <WiseMark className="relative h-32" />
     </div>
   );
 }
@@ -63,9 +63,7 @@ export default async function LoginPage() {
     <main className="grid min-h-screen bg-white lg:grid-cols-[1.15fr_1fr]">
       <section className="relative hidden overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-brand-700 p-12 text-white lg:flex lg:flex-col lg:justify-between xl:p-16">
         <WiseWaves />
-        <div className="relative">
-          <Logo light />
-        </div>
+        <div />
         <div className="relative max-w-lg">
           <TriRing />
           <p className="mt-8 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em]">

@@ -91,6 +91,7 @@ model Unit {
   audits      Audit[]
   incidents   Incident[]
   auditRecords AuditRecord[]
+  drivers      Driver[]
 
   // Data base do contador "Dias sem acidentes" quando ainda não há acidente registrável
   safetyStartDate DateTime?
@@ -498,4 +499,34 @@ model AuditRecord {
   actionPlans ActionPlan[]
 
   @@index([unitId, date])
+}
+
+enum TrainingStatus {
+  REALIZADO
+  PENDENTE
+}
+
+/// Registro de motoristas (Road Safety) com os treinamentos obrigatórios.
+model Driver {
+  id                  String         @id @default(cuid())
+  unitId              String
+  unit                Unit           @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  name                String
+  cpf                 String?
+  cpfKey              String?
+  plate               String?
+  carrier             String
+  active              Boolean        @default(true)
+  notes               String?
+  onboardingStatus    TrainingStatus @default(PENDENTE)
+  onboardingAt        DateTime?
+  onboardingValid     DateTime?
+  defensiveStatus     TrainingStatus @default(PENDENTE)
+  defensiveAt         DateTime?
+  defensiveValid      DateTime?
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+
+  @@unique([unitId, cpfKey])
+  @@index([unitId, carrier])
 }
