@@ -41,14 +41,18 @@ export const INCIDENT_TYPE_SHORT: Record<IncidentTypeKey, string> = {
  */
 export const LOST_TIME: IncidentTypeKey[] = ["FATALIDADE", "LTA"];
 
-/** Níveis da pirâmide (topo → base). */
-export const PYRAMID_LEVELS: { key: string; label: string; types: IncidentTypeKey[]; color: string }[] = [
-  { key: "ACIDENTE", label: "Acidente", types: ["FATALIDADE", "LTA", "NLTA", "FAC"], color: "#c9281f" },
-  { key: "INCIDENTE", label: "Incidente", types: ["INCIDENTE"], color: "#ec9631" },
-  { key: "NEAR_MISS", label: "Near Miss", types: ["NEAR_MISS"], color: "#e8a600" },
-  { key: "CONDICAO_INSEGURA", label: "Condição Insegura", types: ["CONDICAO_INSEGURA"], color: "#8db52f" },
-  { key: "OBSERVACAO", label: "Observação de Segurança", types: ["OBSERVACAO"], color: "#1a9ae0" },
+/** Níveis da pirâmide (topo → base), no modelo corporativo — rótulos mantidos em inglês. */
+export const PYRAMID_LEVELS: { key: string; label: string; types: IncidentTypeKey[]; color: string; ink: string }[] = [
+  { key: "FATALITIES", label: "FATALITIES", types: ["FATALIDADE"], color: "#d7262e", ink: "#ffffff" },
+  { key: "LTC", label: "LTC", types: ["LTA"], color: "#f1a36b", ink: "#ffffff" },
+  { key: "NLTC", label: "NLTC", types: ["NLTA"], color: "#bdbdbd", ink: "#ffffff" },
+  { key: "FIRST_AID", label: "FIRST AID", types: ["FAC"], color: "#f07a1f", ink: "#ffffff" },
+  { key: "INCIDENTS", label: "INCIDENTS & ASSET DAMAGE", types: ["INCIDENTE"], color: "#f2d417", ink: "#ffffff" },
+  { key: "OFS_BOS", label: "OFS + BOS", types: ["NEAR_MISS", "CONDICAO_INSEGURA", "OBSERVACAO"], color: "#1fa24a", ink: "#ffffff" },
 ];
+
+/** Início da contagem de dias sem acidentes com afastamento quando a unidade não define outra data. */
+export const DEFAULT_SAFETY_START = "2019-10-28";
 
 /** Ordem de criticidade: HIPO primeiro, depois a gravidade do tipo. */
 const TYPE_RANK: Record<IncidentTypeKey, number> = {

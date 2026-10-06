@@ -1,6 +1,8 @@
 "use client";
 
 import { Bar, BarChart, CartesianGrid, LabelList, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { SafetyOverview } from "@/server/incident-queries";
 import { PYRAMID_LEVELS } from "@/lib/incidents";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,7 +13,7 @@ import { IncidentExplorer } from "./incident-explorer";
 const INK = { secondary: "#475569", grid: "#e2e8f0" };
 
 /** Aba "Segurança" dos indicadores: pirâmide, dias sem acidentes, evolução mensal, áreas e linha do tempo. */
-export function SafetyIndicators({ overview }: { overview: SafetyOverview }) {
+export function SafetyIndicators({ overview, audits }: { overview: SafetyOverview; audits: { year: string; value: number; n: number }[] }) {
   const { incidents } = overview;
   const months: string[] = [];
   const now = new Date();
@@ -28,12 +30,6 @@ export function SafetyIndicators({ overview }: { overview: SafetyOverview }) {
       HIPO: list.filter((i) => i.hipo).length,
     };
   });
-  const areaMap = new Map<string, number>();
-  for (const i of incidents) areaMap.set(i.area, (areaMap.get(i.area) ?? 0) + 1);
-  const byArea = [...areaMap.entries()]
-    .map(([area, n]) => ({ area, n }))
-    .sort((a, b) => b.n - a.n)
-    .slice(0, 10);
   const closed = incidents.filter((i) => i.closed).length;
   const actions = incidents.reduce(
     (s, i) => ({ total: s.total + i.actions.total, open: s.open + i.actions.open, overdue: s.overdue + i.actions.overdue }),
@@ -49,7 +45,7 @@ export function SafetyIndicators({ overview }: { overview: SafetyOverview }) {
             <CardDescription>Quantidade por nível, atualizada a cada registro. Clique para abrir as ocorrências.</CardDescription>
           </CardHeader>
           <CardContent>
-            <SafetyPyramid counts={overview.counts} hipo={overview.hipo} />
+            <SafetyPyramid incidents={overview.incidents} />
           </CardContent>
         </Card>
         <div className="space-y-4">
@@ -91,24 +87,34 @@ export function SafetyIndicators({ overview }: { overview: SafetyOverview }) {
           </CardContent>
         </Card>
         <Card>
-          <CardHeader>
-            <CardTitle>Ocorrências por área</CardTitle>
-            <CardDescription>As 10 áreas com mais registros.</CardDescription>
+          <CardHeader className="flex flex-row items-start justify-between gap-2">
+            <div>
+              <CardTitle>Histórico de auditorias</CardTitle>
+              <CardDescription>Nota média por ano (% da nota máxima).</CardDescription>
+            </div>
+            <Link href="/auditorias/historico" className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-brand-700 hover:underline">
+              Ver histórico <ArrowRight className="size-3.5" />
+            </Link>
           </CardHeader>
           <CardContent className="h-72">
-            {byArea.length ? (
+            {audits.length ? (
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={byArea} layout="vertical" margin={{ top: 0, right: 28, left: 0, bottom: 0 }}>
-                  <XAxis type="number" hide allowDecimals={false} />
-                  <YAxis type="category" dataKey="area" width={130} tick={{ fontSize: 11, fill: INK.secondary }} tickLine={false} axisLine={false} />
-                  <Tooltip cursor={{ fill: "rgb(19 80 138 / 0.06)" }} contentStyle={{ borderRadius: 10, fontSize: 12 }} formatter={(v) => [v, "Ocorrências"]} />
-                  <Bar dataKey="n" fill="#1a64a8" radius={[0, 4, 4, 0]} barSize={14}>
-                    <LabelList dataKey="n" position="right" style={{ fontSize: 11, fill: INK.secondary, fontWeight: 600 }} />
+                <BarChart data={audits} margin={{ top: 22, right: 8, left: -18, bottom: 0 }}>
+                  <CartesianGrid vertical={false} stroke={INK.grid} />
+                  <XAxis dataKey="year" tick={{ fontSize: 11, fill: INK.secondary }} tickLine={false} axisLine={false} />
+                  <YAxis domain={[0, 100]} tick={{ fontSize: 11, fill: INK.secondary }} tickLine={false} axisLine={false} />
+                  <Tooltip
+                    cursor={{ fill: "rgb(19 80 138 / 0.06)" }}
+                    contentStyle={{ borderRadius: 10, fontSize: 12 }}
+                    formatter={(v, _n, item) => [`${String(v).replace(".", ",")}% · ${(item.payload as { n: number }).n} auditoria(s)`, "Média"]}
+                  />
+                  <Bar dataKey="value" fill="#1a64a8" radius={[6, 6, 0, 0]} maxBarSize={52}>
+                    <LabelList dataKey="value" position="top" formatter={(v) => String(v).replace(".", ",")} style={{ fontSize: 11, fontWeight: 700, fill: "#0f172a" }} />
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
             ) : (
-              <p className="grid h-full place-items-center text-sm text-slate-400">Sem ocorrências registradas.</p>
+              <p className="grid h-full place-items-center text-sm text-slate-400">Nenhuma auditoria registrada.</p>
             )}
           </CardContent>
         </Card>

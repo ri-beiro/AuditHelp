@@ -19,7 +19,7 @@ export function DashboardSafetyStrip({ overview, overdueActions }: { overview: S
             Indicadores <ArrowRight className="size-3.5" />
           </Link>
         </div>
-        <div className="grid grid-cols-5 gap-1.5">
+        <div className="grid grid-cols-3 gap-1.5 sm:grid-cols-6">
           {PYRAMID_LEVELS.map((l) => (
             <Link
               key={l.key}

@@ -54,7 +54,7 @@ Investigação de Incidentes e Excelência Operacional.
 - **Lições aprendidas** (`/incidentes/licoes`): banco pesquisável com as lições aprovadas.
 - **Indicadores de segurança** (Indicadores → Segurança) e faixa no Dashboard: pirâmide de Heinrich/Bird clicável
   com HIPO em destaque, **Dias sem acidentes com afastamento** (só LTA zera o contador; NLTA e FAC não) com recorde e histórico,
-  ocorrências por mês e por área. A data inicial da contagem é definida por unidade em Administração.
+  ocorrências por mês e histórico de auditorias. A contagem começa em 28/10/2019 (ajustável por unidade em Administração).
 - **Histórico de auditorias** (`/auditorias/historico`): as auditorias de contratadas entram automaticamente e as
   demais são registradas manualmente (nota e nota máxima, relatório, plano de ação). Mostra médias mensal e anual,
   melhor e pior nota, evolução, comparativo e ranking de áreas, com exportação para Excel e PDF (impressão).

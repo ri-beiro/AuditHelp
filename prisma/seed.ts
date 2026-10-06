@@ -125,6 +125,8 @@ async function main() {
     update: {},
     create: { code: "CD-GRU", name: "CD Guarulhos", city: "Guarulhos - SP" },
   });
+  // Início oficial da contagem de dias sem acidentes com afastamento (só preenche se ainda não definido).
+  await prisma.unit.updateMany({ where: { safetyStartDate: null }, data: { safetyStartDate: new Date("2019-10-28T00:00:00Z") } });
   const email = (process.env.SEED_ADMIN_EMAIL ?? "admin@wise.local").toLowerCase();
   const password = process.env.SEED_ADMIN_PASSWORD ?? "Wise@2026";
   const admin = await prisma.user.upsert({

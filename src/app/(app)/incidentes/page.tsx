@@ -70,7 +70,7 @@ export default async function IncidentsPage({ searchParams }: { searchParams: Pr
               <Lightbulb className="size-3.5" /> Lições aprendidas
             </Link>
           </div>
-          <SafetyPyramid counts={overview.counts} hipo={overview.hipo} />
+          <SafetyPyramid incidents={overview.incidents} />
         </div>
         <DaysWithoutAccidentsPanel days={days} baseDate={overview.unit.safetyStartDate} />
       </div>

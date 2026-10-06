@@ -4,6 +4,7 @@ import { loadOverview } from "@/server/queries";
 import { NoUnit } from "@/components/no-unit";
 import { IndicatorsView } from "@/components/charts/indicators-view";
 import { loadSafetyOverview } from "@/server/incident-queries";
+import { loadAuditHistory } from "@/server/audit-history-queries";
 import { SafetyIndicators } from "@/components/safety/safety-indicators";
 import { IndicatorTabs } from "@/components/safety/indicator-tabs";
 
@@ -16,11 +17,16 @@ export default async function IndicatorsPage({
   if (!unit) return <NoUnit />;
   const { aba } = await searchParams;
   if (aba === "seguranca") {
-    const overview = await loadSafetyOverview(unit.id);
+    const [overview, history] = await Promise.all([loadSafetyOverview(unit.id), loadAuditHistory(unit.id)]);
+    const years = [...new Set(history.filter((h) => h.pct !== null).map((h) => h.date.slice(0, 4)))].sort();
+    const audits = years.map((year) => {
+      const list = history.filter((h) => h.pct !== null && h.date.startsWith(year));
+      return { year, n: list.length, value: Math.round((list.reduce((s, h) => s + h.pct!, 0) / list.length) * 1000) / 10 };
+    });
     return (
       <div className="mx-auto max-w-[1500px] space-y-6">
         <IndicatorTabs active="seguranca" unitName={unit.name} />
-        <SafetyIndicators overview={overview} />
+        <SafetyIndicators overview={overview} audits={audits} />
       </div>
     );
   }

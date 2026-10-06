@@ -2,6 +2,7 @@ import "server-only";
 import type { IncidentType, Prisma } from "@prisma/client";
 import { db } from "@/lib/db";
 import {
+  DEFAULT_SAFETY_START,
   daysWithoutAccidents,
   investigationProgress,
   planStepStatus,
@@ -70,14 +71,15 @@ export async function loadSafetyOverview(unitId: string) {
     listIncidents(unitId),
   ]);
   const accidents = incidents.filter((i) => LOST_TIME.includes(i.type)).map((i) => new Date(i.occurredAt));
-  const days = daysWithoutAccidents(accidents, unit.safetyStartDate ?? unit.createdAt);
+  const base = unit.safetyStartDate ?? new Date(`${DEFAULT_SAFETY_START}T00:00:00Z`);
+  const days = daysWithoutAccidents(accidents, base);
   const counts = Object.fromEntries(
     (["FATALIDADE", "LTA", "NLTA", "FAC", "INCIDENTE", "NEAR_MISS", "CONDICAO_INSEGURA", "OBSERVACAO"] as IncidentTypeKey[]).map(
       (t) => [t, incidents.filter((i) => i.type === t).length],
     ),
   ) as Record<IncidentTypeKey, number>;
   return {
-    unit: { id: unit.id, name: unit.name, safetyStartDate: (unit.safetyStartDate ?? unit.createdAt).toISOString() },
+    unit: { id: unit.id, name: unit.name, safetyStartDate: base.toISOString() },
     days,
     counts,
     hipo: incidents.filter((i) => i.hipo).length,
