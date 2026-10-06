@@ -1,7 +1,8 @@
 "use client";
 
 import { useTransition, useState } from "react";
-import { Building2, CalendarRange, LogOut, Menu } from "lucide-react";
+import Link from "next/link";
+import { BellRing, Building2, CalendarRange, LogOut, Menu } from "lucide-react";
 import { selectCycle, selectUnit, logoutAction } from "@/server/actions";
 import { ROLE_LABEL } from "@/lib/utils";
 import { GlobalSearch } from "./global-search";
@@ -13,9 +14,10 @@ type Props = {
   cycles: string[];
   cycle: string;
   user: { name: string; role: string };
+  overdue?: number;
 };
 
-export function Topbar({ units, unitId, cycles, cycle, user }: Props) {
+export function Topbar({ units, unitId, cycles, cycle, user, overdue = 0 }: Props) {
   const [pending, start] = useTransition();
   const [menu, setMenu] = useState(false);
   return (
@@ -65,6 +67,18 @@ export function Topbar({ units, unitId, cycles, cycle, user }: Props) {
             <GlobalSearch />
           </div>
         </div>
+        {overdue > 0 ? (
+          <Link
+            href="/acoes?status=atrasadas"
+            className="relative grid size-9 shrink-0 place-items-center rounded-xl border border-critico/30 bg-critico-bg text-critico shadow-soft transition-colors hover:bg-critico hover:text-white"
+            title={`${overdue} ação(ões) vencida(s)`}
+          >
+            <BellRing className="size-4" />
+            <span className="absolute -right-1.5 -top-1.5 grid min-w-5 place-items-center rounded-full bg-critico px-1 text-[10px] font-bold text-white ring-2 ring-white">
+              {overdue > 99 ? "99+" : overdue}
+            </span>
+          </Link>
+        ) : null}
         <div className="hidden items-center gap-3 border-l border-slate-200 pl-3 md:flex">
           <div className="grid size-9 place-items-center rounded-full bg-gradient-to-br from-brand-600 to-brand-800 text-xs font-bold text-white ring-2 ring-white shadow-soft">
             {user.name

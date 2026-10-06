@@ -46,6 +46,19 @@ Investigação de Incidentes e Excelência Operacional.
   partir do Elemento 13, do Básico 11, dos Básicos aplicáveis, das Regras de Ouro e do Safety Alert de Poços.
   Cada item permite foto ou anexo, observação e plano de ação para a não conformidade. Itens críticos não conformes
   limitam a nota a 50%, e o resultado recebe classe A–D. Os checklists ficam em `src/lib/audit-templates.ts`.
+- **Investigação de incidentes** (`/incidentes`): reporte manual ou importação/exportação em Excel (modelo em
+  `/api/incidentes/excel?modelo=1`), lista por criticidade (HIPO, FAT, LTA, NLTA, FAC, Incidente, Near Miss,
+  Condição insegura, Observação), linha do tempo mensal e agenda. Cada ocorrência segue o fluxo
+  Reporte → Investigação (agenda, participantes, ata) → Plano de Ação (as ações são as mesmas da aba Planos de Ação)
+  → Lições Aprendidas (com aprovação) → Encerramento, com progresso de 0 a 100%.
+- **Lições aprendidas** (`/incidentes/licoes`): banco pesquisável com as lições aprovadas.
+- **Indicadores de segurança** (Indicadores → Segurança) e faixa no Dashboard: pirâmide de Heinrich/Bird clicável
+  com HIPO em destaque, **Dias sem acidentes** (FAT/LTA/NLTA zeram o contador; FAC não) com recorde e histórico,
+  ocorrências por mês e por área. A data inicial da contagem é definida por unidade em Administração.
+- **Histórico de auditorias** (`/auditorias/historico`): as auditorias de contratadas entram automaticamente e as
+  demais são registradas manualmente (nota e nota máxima, relatório, plano de ação). Mostra médias mensal e anual,
+  melhor e pior nota, evolução, comparativo e ranking de áreas, com exportação para Excel e PDF (impressão).
+- **Alerta de ações vencidas** no topo (sino), com link para `/acoes?status=atrasadas`.
 - **Busca global** (Ctrl + K) em elementos, requisitos, evidências, planos de ação e auditorias.
 - **Ciclos** (ano) e **unidades** selecionáveis no topo.
 

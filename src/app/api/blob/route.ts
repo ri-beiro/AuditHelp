@@ -11,11 +11,13 @@ export async function GET(request: Request) {
   if (!isBlobUrl(url)) return new Response("Arquivo inválido", { status: 400 });
 
   // O arquivo precisa estar registrado como evidência ou anexo de auditoria de uma unidade do usuário.
-  const [evidence, attachment] = await Promise.all([
+  const [evidence, attachment, incidentFile, auditReport] = await Promise.all([
     db.evidence.findFirst({ where: { url }, select: { assessment: { select: { unitId: true } } } }),
     db.auditAttachment.findFirst({ where: { url }, select: { audit: { select: { unitId: true } } } }),
+    db.incidentAttachment.findFirst({ where: { url }, select: { incident: { select: { unitId: true } } } }),
+    db.auditRecord.findFirst({ where: { reportUrl: url }, select: { unitId: true } }),
   ]);
-  const unitId = evidence?.assessment.unitId ?? attachment?.audit.unitId;
+  const unitId = evidence?.assessment.unitId ?? attachment?.audit.unitId ?? incidentFile?.incident.unitId ?? auditReport?.unitId;
   if (!unitId) return new Response("Arquivo não encontrado", { status: 404 });
   const units = await getAllowedUnits(user);
   if (!units.some((u) => u.id === unitId)) return new Response("Sem acesso", { status: 403 });

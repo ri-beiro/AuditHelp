@@ -49,6 +49,24 @@ enum ActionStatus {
   CANCELADA
 }
 
+enum IncidentType {
+  FATALIDADE
+  LTA
+  NLTA
+  FAC
+  INCIDENTE
+  NEAR_MISS
+  CONDICAO_INSEGURA
+  OBSERVACAO
+}
+
+enum StepStatus {
+  NAO_INICIADO
+  EM_ANDAMENTO
+  AGENDADO
+  CONCLUIDO
+}
+
 enum AuditStatus {
   EM_ANDAMENTO
   CONCLUIDA
@@ -71,6 +89,11 @@ model Unit {
   actionPlans ActionPlan[]
   snapshots   ScoreSnapshot[]
   audits      Audit[]
+  incidents   Incident[]
+  auditRecords AuditRecord[]
+
+  // Data base do contador "Dias sem acidentes" quando ainda não há acidente registrável
+  safetyStartDate DateTime?
 }
 
 model User {
@@ -94,6 +117,11 @@ model User {
   audits              Audit[]             @relation("AuditAuditor")
   auditAnswers        AuditAnswer[]
   auditAttachments    AuditAttachment[]
+  responsibleIncidents Incident[]         @relation("IncidentResponsible")
+  reportedIncidents    Incident[]         @relation("IncidentReporter")
+  approvedIncidents    Incident[]         @relation("IncidentApprover")
+  incidentAttachments  IncidentAttachment[]
+  auditRecords         AuditRecord[]
 }
 
 model UnitMember {
@@ -271,6 +299,11 @@ model ActionPlan {
   auditId       String?
   audit         Audit?   @relation(fields: [auditId], references: [id], onDelete: SetNull)
   auditItemCode String?
+  incidentId    String?
+  incident      Incident?    @relation(fields: [incidentId], references: [id], onDelete: SetNull)
+  auditRecordId String?
+  auditRecord   AuditRecord? @relation(fields: [auditRecordId], references: [id], onDelete: SetNull)
+  evidence      String? // evidência de conclusão (texto ou link)
 
   priority    ActionPriority @default(MEDIA)
   status      ActionStatus   @default(ABERTA)
@@ -373,4 +406,96 @@ model AuditAttachment {
   uploadedById String?
   uploadedBy   User?    @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
   createdAt    DateTime @default(now())
+}
+
+// ---------------------------------------------------------------------------
+// Ocorrências de segurança e investigação (pirâmide de Heinrich/Bird)
+// Fluxo: Reporte → Investigação (agenda) → Plano de ação → Lições aprendidas → Encerramento
+// ---------------------------------------------------------------------------
+
+model Incident {
+  id          String       @id @default(cuid())
+  unitId      String
+  unit        Unit         @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  number      String       @unique // OC-2026-0001
+  occurredAt  DateTime
+  area        String
+  type        IncidentType
+  hipo        Boolean      @default(false)
+  title       String
+  description String
+  spheraId    String?
+  responsibleId String?
+  responsible   User?      @relation("IncidentResponsible", fields: [responsibleId], references: [id], onDelete: SetNull)
+  reportedById  String?
+  reportedBy    User?      @relation("IncidentReporter", fields: [reportedById], references: [id], onDelete: SetNull)
+
+  // Etapa 1 — Reporte
+  reportStatus StepStatus @default(EM_ANDAMENTO)
+
+  // Etapa 2 — Agenda de investigação
+  investigationStatus StepStatus @default(NAO_INICIADO)
+  meetingAt           DateTime?
+  participants        String?
+  meetingNotes        String? // ata
+
+  // Etapa 3 — Plano de ação (ações em ActionPlan.incidentId)
+  planStatus StepStatus @default(NAO_INICIADO)
+
+  // Etapa 4 — Lições aprendidas
+  lessonsStatus  StepStatus @default(NAO_INICIADO)
+  rootCause      String?
+  whatHappened   String?
+  howToPrevent   String?
+  goodPractices  String?
+  sharedWith     String?
+  approvedById   String?
+  approvedBy     User?      @relation("IncidentApprover", fields: [approvedById], references: [id], onDelete: SetNull)
+  approvedAt     DateTime?
+
+  closedAt  DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  attachments IncidentAttachment[]
+  actionPlans ActionPlan[]
+
+  @@index([unitId, occurredAt])
+}
+
+model IncidentAttachment {
+  id           String   @id @default(cuid())
+  incidentId   String
+  incident     Incident @relation(fields: [incidentId], references: [id], onDelete: Cascade)
+  name         String
+  url          String
+  mimeType     String?
+  size         Int?
+  uploadedById String?
+  uploadedBy   User?    @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+  createdAt    DateTime @default(now())
+}
+
+// Histórico de auditorias registradas manualmente (WISE, 12 Básicos, internas, externas...).
+// As auditorias de contratadas feitas no sistema entram no histórico automaticamente.
+model AuditRecord {
+  id          String   @id @default(cuid())
+  unitId      String
+  unit        Unit     @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  date        DateTime
+  type        String
+  area        String
+  auditor     String
+  score       Float
+  maxScore    Float    @default(100)
+  result      String?
+  reportUrl   String?
+  notes       String?
+  createdById String?
+  createdBy   User?    @relation(fields: [createdById], references: [id], onDelete: SetNull)
+  createdAt   DateTime @default(now())
+
+  actionPlans ActionPlan[]
+
+  @@index([unitId, date])
 }

@@ -357,6 +357,9 @@ export function serializeAction(a: {
   spheraId?: string | null;
   auditId?: string | null;
   auditItemCode?: string | null;
+  incidentId?: string | null;
+  auditRecordId?: string | null;
+  evidence?: string | null;
   priority: string;
   status: string;
   elementId: string;
@@ -377,6 +380,9 @@ export function serializeAction(a: {
     spheraId: a.spheraId ?? "",
     auditId: a.auditId ?? null,
     auditItemCode: a.auditItemCode ?? null,
+    incidentId: a.incidentId ?? null,
+    auditRecordId: a.auditRecordId ?? null,
+    evidence: a.evidence ?? "",
     priority: a.priority,
     status: a.status,
     elementId: a.elementId,

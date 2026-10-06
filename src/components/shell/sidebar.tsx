@@ -8,7 +8,9 @@ import {
   FileBarChart,
   FolderOpen,
   GitBranch,
+  History,
   LayoutDashboard,
+  Lightbulb,
   ListChecks,
   Settings,
   Siren,
@@ -25,7 +27,9 @@ const ICONS: Record<string, LucideIcon> = {
   FileBarChart,
   FolderOpen,
   GitBranch,
+  History,
   LayoutDashboard,
+  Lightbulb,
   ListChecks,
   Settings,
   Siren,
@@ -34,7 +38,10 @@ const ICONS: Record<string, LucideIcon> = {
 
 export function Sidebar({ isAdmin, onNavigate }: { isAdmin: boolean; onNavigate?: () => void }) {
   const pathname = usePathname();
-  const groups = ["Gestão WISE", "Auditorias", "Próximos módulos", "Administração"] as const;
+  const groups = ["Gestão WISE", "Segurança", "Auditorias", "Próximos módulos", "Administração"] as const;
+  // O item ativo é o de rota mais específica (ex.: /auditorias/historico não ativa /auditorias).
+  const activeHref = MODULES.filter((m) => (m.href === "/" ? pathname === "/" : pathname === m.href || pathname.startsWith(m.href + "/")))
+    .sort((a, b) => b.href.length - a.href.length)[0]?.href;
   return (
     <div className="relative flex h-full flex-col overflow-hidden bg-gradient-to-b from-brand-800 via-brand-900 to-brand-950 text-white">
       <div className="wise-stripe absolute inset-x-0 top-0 h-1" />
@@ -54,7 +61,7 @@ export function Sidebar({ isAdmin, onNavigate }: { isAdmin: boolean; onNavigate?
               <ul className="space-y-0.5">
                 {items.map((m) => {
                   const Icon = ICONS[m.icon];
-                  const active = m.href === "/" ? pathname === "/" : pathname.startsWith(m.href);
+                  const active = m.href === activeHref;
                   return (
                     <li key={m.slug}>
                       <Link

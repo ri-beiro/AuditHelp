@@ -13,7 +13,7 @@ export default async function AdminPage() {
   return (
     <AdminView
       currentUserId={user.id}
-      units={units.map((u) => ({ id: u.id, name: u.name, code: u.code, city: u.city ?? "", active: u.active }))}
+      units={units.map((u) => ({ id: u.id, name: u.name, code: u.code, city: u.city ?? "", active: u.active, safetyStartDate: u.safetyStartDate?.toISOString().slice(0, 10) ?? "" }))}
       users={users.map((u) => ({
         id: u.id,
         name: u.name,

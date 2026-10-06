@@ -11,7 +11,7 @@ import { Input, Select } from "@/components/ui/input";
 import { ActionFormDialog } from "./action-form";
 import { ActionStatusBadge, PriorityBadge, isOverdue } from "./action-badges";
 
-type Row = ActionDTO & { requirementLabel: string | null };
+type Row = ActionDTO & { requirementLabel: string | null; origin?: { label: string; href: string } | null };
 type El = { id: string; code: string; framework: string; label: string; pillarId: string; pillarName: string };
 
 const EMPTY = { q: "", framework: "", element: "", pillar: "", status: "pendentes", owner: "", priority: "", from: "", to: "" };
@@ -23,6 +23,7 @@ export function ActionsView({
   members,
   canEdit,
   initialQuery,
+  initialStatus,
 }: {
   unit: { id: string; name: string };
   actions: Row[];
@@ -30,9 +31,10 @@ export function ActionsView({
   members: { id: string; name: string }[];
   canEdit: boolean;
   initialQuery: string;
+  initialStatus?: string;
 }) {
   const router = useRouter();
-  const [f, setF] = useState({ ...EMPTY, q: initialQuery, status: initialQuery ? "" : "pendentes" });
+  const [f, setF] = useState({ ...EMPTY, q: initialQuery, status: initialStatus ?? (initialQuery ? "" : "pendentes") });
   const [open, setOpen] = useState(false);
   const [editing, setEditing] = useState<Row | null>(null);
   const elById = useMemo(() => new Map(elements.map((e) => [e.id, e])), [elements]);
@@ -42,7 +44,7 @@ export function ActionsView({
     const el = elById.get(a.elementId);
     const q = f.q.trim().toLowerCase();
     return (
-      (!q || `${a.what} ${a.why} ${a.how} ${a.where} ${a.spheraId} ${el?.label}`.toLowerCase().includes(q)) &&
+      (!q || `${a.what} ${a.why} ${a.how} ${a.where} ${a.spheraId} ${el?.label} ${a.origin?.label ?? ""}`.toLowerCase().includes(q)) &&
       (!f.framework || el?.framework === f.framework) &&
       (!f.element || a.elementId === f.element) &&
       (!f.pillar || el?.pillarId === f.pillar) &&
@@ -211,6 +213,14 @@ export function ActionsView({
                         <span className="mt-1 inline-block rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-semibold text-slate-600">
                           Sphera {a.spheraId}
                         </span>
+                      ) : null}
+                      {a.origin ? (
+                        <Link
+                          href={a.origin.href}
+                          className="ml-1 mt-1 inline-block rounded bg-accent-50 px-1.5 py-0.5 text-[10px] font-semibold text-accent-700 hover:underline"
+                        >
+                          {a.origin.label}
+                        </Link>
                       ) : null}
                       {a.requirementLabel ? (
                         <div className="mt-0.5 line-clamp-1 text-[11px] text-slate-400">{a.requirementLabel}</div>

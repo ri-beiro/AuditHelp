@@ -12,7 +12,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Field, Input, Select } from "@/components/ui/input";
 
-type UnitRow = { id: string; name: string; code: string; city: string; active: boolean };
+type UnitRow = { id: string; name: string; code: string; city: string; active: boolean; safetyStartDate: string };
 type UserRow = { id: string; name: string; email: string; role: Role; active: boolean; unitIds: string[] };
 
 export function AdminView({ units, users, currentUserId }: { units: UnitRow[]; users: UserRow[]; currentUserId: string }) {
@@ -136,7 +136,7 @@ export function AdminView({ units, users, currentUserId }: { units: UnitRow[]; u
 }
 
 function UnitForm({ initial, onDone }: { initial: UnitRow | null; onDone: () => void }) {
-  const [f, setF] = useState(initial ?? { id: "", name: "", code: "", city: "", active: true });
+  const [f, setF] = useState(initial ?? { id: "", name: "", code: "", city: "", active: true, safetyStartDate: "" });
   const [pending, start] = useTransition();
   return (
     <form
@@ -160,6 +160,9 @@ function UnitForm({ initial, onDone }: { initial: UnitRow | null; onDone: () => 
       </Field>
       <Field label="Cidade">
         <Input value={f.city} onChange={(e) => setF({ ...f, city: e.target.value })} />
+      </Field>
+      <Field label="Início da contagem de dias sem acidentes" className="sm:col-span-2">
+        <Input type="date" value={f.safetyStartDate} onChange={(e) => setF({ ...f, safetyStartDate: e.target.value })} />
       </Field>
       <label className="flex items-center gap-2 text-sm text-slate-700">
         <input type="checkbox" checked={f.active} onChange={(e) => setF({ ...f, active: e.target.checked })} /> Ativa

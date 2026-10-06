@@ -223,6 +223,9 @@ const actionSchema = z.object({
   spheraId: z.string().trim().max(60).optional(),
   auditId: z.string().nullable().optional(),
   auditItemCode: z.string().max(20).nullable().optional(),
+  incidentId: z.string().nullable().optional(),
+  auditRecordId: z.string().nullable().optional(),
+  evidence: z.string().max(2000).optional(),
   priority: z.enum(["BAIXA", "MEDIA", "ALTA", "CRITICA"]),
   status: z.enum(["ABERTA", "EM_ANDAMENTO", "CONCLUIDA", "CANCELADA"]),
 });
@@ -252,6 +255,9 @@ export async function saveActionPlan(input: ActionInput) {
       spheraId: data.spheraId || null,
       auditId: data.auditId ?? existing?.auditId ?? null,
       auditItemCode: data.auditItemCode ?? existing?.auditItemCode ?? null,
+      incidentId: data.incidentId ?? existing?.incidentId ?? null,
+      auditRecordId: data.auditRecordId ?? existing?.auditRecordId ?? null,
+      evidence: data.evidence === undefined ? (existing?.evidence ?? null) : data.evidence || null,
       priority: data.priority as ActionPriority,
       status: data.status as ActionStatus,
       completedAt:
@@ -279,7 +285,7 @@ export async function deleteActionPlan(id: string) {
 // Administração
 // ---------------------------------------------------------------------------
 
-export async function saveUnit(input: { id?: string; name: string; code: string; city?: string; active?: boolean }) {
+export async function saveUnit(input: { id?: string; name: string; code: string; city?: string; active?: boolean; safetyStartDate?: string }) {
   return run(async () => {
     await requirePermission("admin");
     const data = z
@@ -288,6 +294,10 @@ export async function saveUnit(input: { id?: string; name: string; code: string;
         code: z.string().trim().min(2).max(20).toUpperCase(),
         city: z.string().trim().max(120).optional(),
         active: z.boolean().optional(),
+        safetyStartDate: z
+          .string()
+          .optional()
+          .transform((v) => (v ? new Date(`${v}T00:00:00Z`) : null)),
       })
       .parse(input);
     if (input.id) await db.unit.update({ where: { id: input.id }, data });

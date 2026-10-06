@@ -33,11 +33,13 @@ type Props = {
   members: { id: string; name: string }[];
   perms: Perms;
   blobEnabled: boolean;
+  /** Faixa de segurança (dias sem acidentes, pirâmide) renderizada no servidor. */
+  safety?: React.ReactNode;
 };
 
 const EMPTY = { pillar: "", status: "", tone: "", responsible: "", text: "" };
 
-export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabled }: Props) {
+export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabled, safety }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
@@ -113,6 +115,8 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
           </div>
         </div>
       </section>
+
+      {safety}
 
       {/* Indicadores rápidos */}
       <section className="grid grid-cols-2 gap-3 lg:grid-cols-5">

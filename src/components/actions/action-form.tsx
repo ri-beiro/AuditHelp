@@ -27,6 +27,8 @@ export type ActionPreset = {
   priority?: string;
   auditId?: string | null;
   auditItemCode?: string | null;
+  incidentId?: string | null;
+  auditRecordId?: string | null;
 };
 
 export function ActionFormDialog({
@@ -90,6 +92,7 @@ function ActionForm({
     how: initial?.how ?? "",
     cost: initial?.cost != null ? String(initial.cost) : "",
     spheraId: initial?.spheraId ?? "",
+    evidence: initial?.evidence ?? "",
     priority: initial?.priority ?? preset?.priority ?? "MEDIA",
     status: initial?.status ?? "ABERTA",
   });
@@ -116,6 +119,9 @@ function ActionForm({
         spheraId: f.spheraId,
         auditId: initial?.auditId ?? preset?.auditId ?? null,
         auditItemCode: initial?.auditItemCode ?? preset?.auditItemCode ?? null,
+        incidentId: initial?.incidentId ?? preset?.incidentId ?? null,
+        auditRecordId: initial?.auditRecordId ?? preset?.auditRecordId ?? null,
+        evidence: f.evidence,
         priority: f.priority as ActionInput["priority"],
         status: f.status as ActionInput["status"],
       };
@@ -177,6 +183,9 @@ function ActionForm({
       </Field>
       <Field label="Como?" className="sm:col-span-2">
         <Textarea rows={3} value={f.how} onChange={set("how")} placeholder="Etapas / método de execução" />
+      </Field>
+      <Field label="Evidência de conclusão (texto ou link)" className="sm:col-span-2">
+        <Input value={f.evidence} onChange={set("evidence")} placeholder="Ex.: foto do isolamento instalado, link do treinamento…" />
       </Field>
       <Field label="ID Sphera (finding / evento)" className="sm:col-span-2">
         <Input value={f.spheraId} onChange={set("spheraId")} placeholder="Ex.: 28126781" />
