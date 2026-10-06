@@ -35,8 +35,11 @@ export const INCIDENT_TYPE_SHORT: Record<IncidentTypeKey, string> = {
   OBSERVACAO: "Observação",
 };
 
-/** Acidentes registráveis: zeram o contador "Dias sem acidentes". */
-export const REGISTRABLE: IncidentTypeKey[] = ["FATALIDADE", "LTA", "NLTA"];
+/**
+ * Acidentes com afastamento: são os únicos que zeram o contador "Dias sem acidentes".
+ * NLTA (sem afastamento) e FAC não zeram. Fatalidade conta como afastamento.
+ */
+export const LOST_TIME: IncidentTypeKey[] = ["FATALIDADE", "LTA"];
 
 /** Níveis da pirâmide (topo → base). */
 export const PYRAMID_LEVELS: { key: string; label: string; types: IncidentTypeKey[]; color: string }[] = [

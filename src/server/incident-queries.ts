@@ -5,7 +5,7 @@ import {
   daysWithoutAccidents,
   investigationProgress,
   planStepStatus,
-  REGISTRABLE,
+  LOST_TIME,
   type IncidentTypeKey,
   type Step,
 } from "@/lib/incidents";
@@ -69,7 +69,7 @@ export async function loadSafetyOverview(unitId: string) {
     db.unit.findUniqueOrThrow({ where: { id: unitId } }),
     listIncidents(unitId),
   ]);
-  const accidents = incidents.filter((i) => REGISTRABLE.includes(i.type)).map((i) => new Date(i.occurredAt));
+  const accidents = incidents.filter((i) => LOST_TIME.includes(i.type)).map((i) => new Date(i.occurredAt));
   const days = daysWithoutAccidents(accidents, unit.safetyStartDate ?? unit.createdAt);
   const counts = Object.fromEntries(
     (["FATALIDADE", "LTA", "NLTA", "FAC", "INCIDENTE", "NEAR_MISS", "CONDICAO_INSEGURA", "OBSERVACAO"] as IncidentTypeKey[]).map(

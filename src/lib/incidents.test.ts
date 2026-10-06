@@ -43,3 +43,12 @@ describe("Criticidade e investigação", () => {
     expect(planStepStatus("NAO_INICIADO", [{ status: "CANCELADA" }, { status: "CONCLUIDA" }])).toBe("CONCLUIDO");
   });
 });
+
+describe("Regra de zeragem", () => {
+  it("somente acidentes com afastamento zeram o contador", async () => {
+    const { LOST_TIME } = await import("./incidents");
+    expect(LOST_TIME).toContain("LTA");
+    expect(LOST_TIME).not.toContain("NLTA");
+    expect(LOST_TIME).not.toContain("FAC");
+  });
+});

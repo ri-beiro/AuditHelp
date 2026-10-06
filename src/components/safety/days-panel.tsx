@@ -41,12 +41,12 @@ export function DaysWithoutAccidentsPanel({
       <div className="relative flex flex-wrap items-start justify-between gap-4">
         <div>
           <p className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">
-            <ShieldCheck className="size-4 text-wgreen-400" /> Dias sem acidentes
+            <ShieldCheck className="size-4 text-wgreen-400" /> Dias sem acidentes com afastamento
           </p>
           <div className="mt-3">
             <Digits value={days.current} />
           </div>
-          <p className="mt-2 text-[11px] text-white/55">Acidentes registráveis (FAT, LTA, NLTA) zeram o contador.</p>
+          <p className="mt-2 text-[11px] text-white/55">Só acidentes com afastamento (LTA) zeram o contador.</p>
         </div>
         <div className="grid min-w-[150px] gap-3 text-sm">
           <div>
