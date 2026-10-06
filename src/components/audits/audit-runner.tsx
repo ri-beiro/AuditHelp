@@ -47,6 +47,14 @@ const OPTIONS: ScaleOption[] = [
   { value: "NA", short: "N/A", label: "Não aplicável", className: "bg-slate-500 text-white" },
 ];
 
+// Checklist simplificado: perguntas que agrupam vários pontos aceitam "Parcial".
+const OPTIONS_PARTIAL: ScaleOption[] = [
+  { value: "C", short: "Sim", label: "Sim — todos os pontos atendidos", className: "bg-conforme text-white" },
+  { value: "P", short: "Parcial", label: "Parcial — algum ponto não atendido", className: "bg-atencao text-white" },
+  { value: "NC", short: "Não", label: "Não — pontos principais não atendidos", className: "bg-critico text-white" },
+  { value: "NA", short: "N/A", label: "Não aplicável", className: "bg-slate-500 text-white" },
+];
+
 type AuditInfo = {
   id: string;
   unitId: string;
@@ -137,7 +145,7 @@ export function AuditRunner({
 
   const matches = (i: AuditItem) => {
     const v = answers[i.code];
-    return filter === "pendentes" ? !v : filter === "nc" ? v === "NC" : filter === "criticos" ? !!i.critical : true;
+    return filter === "pendentes" ? !v : filter === "nc" ? v === "NC" || v === "P" : filter === "criticos" ? !!i.critical : true;
   };
 
   return (
@@ -204,6 +212,7 @@ export function AuditRunner({
                 {score.answered}/{score.total} itens avaliados
               </span>
               <span className="rounded-full bg-white/15 px-2.5 py-1">{score.naoConformes} não conformes</span>
+              {score.parciais ? <span className="rounded-full bg-white/15 px-2.5 py-1">{score.parciais} parciais</span> : null}
               {score.criticalNc ? (
                 <span className="flex items-center gap-1 rounded-full bg-critico px-2.5 py-1 font-semibold">
                   <AlertOctagon className="size-3" /> {score.criticalNc} crítico(s) · nota limitada a 50%
@@ -240,7 +249,7 @@ export function AuditRunner({
             </div>
             <Progress value={s.pct} className="mt-2 h-1.5" barClassName={s.nc ? "bg-atencao" : "bg-conforme"} />
             <div className="mt-1 text-[11px] text-slate-500">
-              {s.answered}/{s.total} · {s.nc} NC
+              {s.answered}/{s.total} · {s.nc} desvio(s)
             </div>
           </a>
         ))}
@@ -251,7 +260,7 @@ export function AuditRunner({
           [
             ["", "Todos"],
             ["pendentes", "Não avaliados"],
-            ["nc", "Não conformes"],
+            ["nc", template.partial ? "Com desvio (Parcial/Não)" : "Não conformes"],
             ["criticos", "Somente críticos"],
           ] as const
         ).map(([k, label]) => (
@@ -263,7 +272,11 @@ export function AuditRunner({
             {label}
           </button>
         ))}
-        <span className="ml-auto text-slate-500">C = Conforme · NC = Não conforme · N/A = Não aplicável</span>
+        <span className="ml-auto text-slate-500">
+          {template.partial
+            ? "Sim = todos os pontos atendidos (1) · Parcial = algum ponto falha (0,5) · Não = 0 · N/A fora do cálculo"
+            : "C = Conforme · NC = Não conforme · N/A = Não aplicável"}
+        </span>
       </div>
 
       {template.sections.map((sec) => {
@@ -399,11 +412,12 @@ function AuditItemRow({
   const [busy, setBusy] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
   const nc = answer?.value === "NC";
+  const partial = answer?.value === "P";
   return (
     <div
       className={cn(
         "rounded-lg border bg-white print:break-inside-avoid",
-        nc ? "border-l-4 border-critico/50 border-l-critico" : "border-slate-200",
+        nc ? "border-l-4 border-critico/50 border-l-critico" : partial ? "border-l-4 border-atencao/50 border-l-atencao" : "border-slate-200",
       )}
     >
       <div className="flex flex-col gap-3 p-3 sm:flex-row sm:items-start">
@@ -417,7 +431,17 @@ function AuditItemRow({
               ) : null}
               <span className="rounded border border-slate-200 bg-slate-50 px-1.5 py-px text-[10px] text-slate-500">{item.ref}</span>
             </div>
-            <p className="text-sm leading-snug text-slate-800">{item.text}</p>
+            <p className={cn("leading-snug text-slate-800", item.checks ? "text-[15px] font-semibold" : "text-sm")}>{item.text}</p>
+            {item.checks ? (
+              <ul className="mt-2 grid gap-1 sm:grid-cols-2">
+                {item.checks.map((c) => (
+                  <li key={c} className="flex gap-1.5 text-[12.5px] leading-snug text-slate-600">
+                    <CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-brand-500" />
+                    <span>{c}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
             {item.hint ? <p className="mt-1 text-[11px] italic text-slate-500">{item.hint}</p> : null}
             <div className="mt-1.5 flex flex-wrap gap-3 text-[11px] text-slate-400">
               {answer?.observation ? <span className="text-slate-500">Observação registrada</span> : null}
@@ -432,7 +456,7 @@ function AuditItemRow({
           </div>
         </button>
         <div className="self-end sm:self-start">
-          <ScoreScale options={OPTIONS} value={answer?.value ?? null} disabled={!canScore} onChange={(v) => onAnswer({ value: v })} />
+          <ScoreScale options={item.checks ? OPTIONS_PARTIAL : OPTIONS} value={answer?.value ?? null} disabled={!canScore} onChange={(v) => onAnswer({ value: v })} />
         </div>
       </div>
       {open ? (

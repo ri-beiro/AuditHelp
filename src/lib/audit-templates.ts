@@ -8,7 +8,15 @@
 // Pontuação: Conforme = 1, Não conforme = 0, N/A fora do cálculo. Itens críticos (Regras de Ouro
 // e requisitos de risco nível 1) em "Não conforme" limitam a nota a 50%, como nos 12 Básicos.
 
-export type AuditItem = { code: string; text: string; ref: string; critical?: boolean; hint?: string };
+export type AuditItem = {
+  code: string;
+  text: string;
+  ref: string;
+  critical?: boolean;
+  hint?: string;
+  /** Pontos verificados por uma pergunta objetiva (checklist simplificado). */
+  checks?: string[];
+};
 export type AuditSection = { code: string; title: string; description?: string; items: AuditItem[] };
 export type AuditTemplate = {
   code: string;
@@ -17,6 +25,10 @@ export type AuditTemplate = {
   description: string;
   icon: "DoorOpen" | "SprayCan";
   sections: AuditSection[];
+  /** Aceita resposta "Parcial" (vale 0,5): usada nas perguntas que agrupam vários pontos. */
+  partial?: boolean;
+  /** Versão anterior: continua abrindo as auditorias antigas, mas não é oferecida para novas. */
+  legacy?: boolean;
 };
 
 const GESTAO: AuditSection = {
@@ -142,11 +154,12 @@ const CULTURA: AuditSection = {
   ],
 };
 
-export const AUDIT_TEMPLATES: AuditTemplate[] = [
+const LEGACY_TEMPLATES: AuditTemplate[] = [
   {
     code: "CONTRATADA_PORTARIA",
+    legacy: true,
     name: "Auditoria de Contratada — Portaria",
-    shortName: "Portaria",
+    shortName: "Portaria (versão completa)",
     description:
       "Controle de acesso de pessoas e veículos, segregação pedestre × veículo, posto de trabalho da guarita, emergência e segurança pessoal.",
     icon: "DoorOpen",
@@ -282,8 +295,9 @@ export const AUDIT_TEMPLATES: AuditTemplate[] = [
   },
   {
     code: "CONTRATADA_LIMPEZA",
+    legacy: true,
     name: "Auditoria de Contratada — Limpeza",
-    shortName: "Limpeza",
+    shortName: "Limpeza (versão completa)",
     description:
       "Produtos químicos, interação com empilhadeiras nas ruas, piso molhado, equipamentos, trabalho em altura, ergonomia e câmara fria.",
     icon: "SprayCan",
@@ -454,12 +468,245 @@ export const AUDIT_TEMPLATES: AuditTemplate[] = [
   },
 ];
 
+// ---------------------------------------------------------------------------
+// Checklist simplificado (v2): perguntas objetivas, cada uma cobrindo vários pontos da matriz.
+// Resposta: Sim (todos os pontos atendidos) · Parcial (algum ponto falha) · Não · N/A.
+// ---------------------------------------------------------------------------
+
+const GESTAO_V2: AuditSection = {
+  code: "G",
+  title: "Gestão da contratada",
+  description: "Elemento 13 (6 passos) · Básico 11 — conferir com o gestor do contrato",
+  items: [
+    {
+      code: "G1",
+      text: "A contratada e todos os seus colaboradores estão formalmente aptos a trabalhar no site?",
+      ref: "E13 passos 2–3 · B11.1 · B11.3 · B11.9 · B11.10",
+      critical: true,
+      checks: [
+        "Contrato vigente com cláusulas de SST e gestor Danone designado",
+        "PGR/PCMSO, ASO válido e ficha de EPI de todos",
+        "Integração de segurança do site registrada para todos",
+        "Treinamentos da função válidos e controle de efetivo atualizado",
+      ],
+    },
+    {
+      code: "G2",
+      text: "O desempenho de segurança da contratada é acompanhado e cobrado pela Danone?",
+      ref: "E13 passos 1, 5 e 6 · B11.4 · B11.6 · B11.7",
+      checks: [
+        "Seleção considerou o desempenho de segurança",
+        "Indicadores acompanhados e reuniões periódicas (≥ trimestral)",
+        "Auditorias anteriores com plano de ação em dia",
+        "Avaliação de desempenho enviada a Compras",
+      ],
+    },
+    {
+      code: "G3",
+      text: "Incidentes e desvios da contratada são tratados como os dos Danoners?",
+      ref: "B11.11 · E8 · E9 · Manual WISE²",
+      critical: true,
+      checks: [
+        "Acidentes e incidentes comunicados na hora, registrados no Sphera e investigados",
+        "Política de consequências para Regras de Ouro e reconhecimento do comportamento seguro",
+        "Participação no DDS / contato de segurança e nos programas WISE",
+      ],
+    },
+  ],
+};
+
+const CULTURA_V2: AuditSection = {
+  code: "C",
+  title: "Cultura (entrevista em campo)",
+  description: "Entrevistar 2 a 3 colaboradores de turnos diferentes com perguntas abertas",
+  items: [
+    {
+      code: "C1",
+      text: "O colaborador conhece as Regras de Ouro, os riscos da sua atividade e como se proteger?",
+      ref: "Regras de Ouro · E3 · B11.8 · Pare Pense Aja",
+      critical: true,
+      hint: "Atenção a respostas como “não vejo risco na minha atividade”.",
+      checks: [
+        "Cita as Regras de Ouro e sabe da política de consequências",
+        "Cita os riscos da tarefa e as proteções (APR)",
+        "Sabe que pode parar uma atividade insegura e a quem recorrer",
+      ],
+    },
+    {
+      code: "C2",
+      text: "O colaborador sabe reportar e agir em incidente ou emergência?",
+      ref: "B12.12 · Manual WISE² (Incidentes, Emergência, Sphera) · E9",
+      critical: true,
+      checks: [
+        "Sabe reportar condição ou ato inseguro e dá um exemplo",
+        "Em acidente: comunica o gestor e aciona o brigadista",
+        "Alarme contínuo > 5 s = abandono; conhece rota de fuga e ponto de encontro",
+        "Lembra o tema do último DDS",
+      ],
+    },
+  ],
+};
+
+const SIMPLE_TEMPLATES: AuditTemplate[] = [
+  {
+    code: "CONTRATADA_PORTARIA_V2",
+    name: "Auditoria de Contratada — Portaria",
+    shortName: "Portaria",
+    description: "9 perguntas objetivas: acesso, pátio, posto de trabalho, emergência, gestão e cultura.",
+    icon: "DoorOpen",
+    partial: true,
+    sections: [
+      {
+        code: "P",
+        title: "Operação da portaria",
+        description: "Observação em campo · B4 Pedestres · B10 · B12 · Road Safety",
+        items: [
+          {
+            code: "P1",
+            text: "O controle de acesso garante que só entra quem está liberado, orientado e com EPI?",
+            ref: "B11 · B4 · Road Safety",
+            critical: true,
+            checks: [
+              "Registro de visitantes e motoristas com crachá",
+              "Orientação de segurança antes do acesso (rotas, áreas proibidas, chave e calço na doca)",
+              "EPI mínimo exigido para a área operacional",
+              "Prestadores conferidos: integração, documentos e permissão de trabalho",
+              "Conduta definida para álcool/drogas e caronas não autorizadas",
+            ],
+          },
+          {
+            code: "P2",
+            text: "Portaria e pátio protegem os pedestres do tráfego de veículos?",
+            ref: "B4 Pedestres · Road Safety · Regras de Ouro",
+            critical: true,
+            checks: [
+              "Segregação pedestre × veículo com faixas e travessias respeitadas",
+              "Limite ≤ 20 km/h sinalizado e violações registradas",
+              "Porteiros e vigilantes com colete, só nas rotas de pedestres e sem celular ao caminhar",
+              "Iluminação adequada à noite em guarita, acessos e pátio",
+            ],
+          },
+          {
+            code: "P3",
+            text: "O posto de trabalho e as rondas são seguros?",
+            ref: "B10 Instalações Gerais · Ergonomia · B9",
+            checks: [
+              "Guarita ergonômica (cadeira, monitor, conforto térmico)",
+              "Portões e cancelas com sensores / parada de emergência e inspeção registrada",
+              "Instalações elétricas sem improvisos",
+              "Rondas com roteiro e rádio, sem acesso a telhados e áreas restritas",
+            ],
+          },
+          {
+            code: "P4",
+            text: "A portaria está pronta para responder a uma emergência?",
+            ref: "B12 Incêndio e Evacuação · Segurança pessoal",
+            critical: true,
+            checks: [
+              "Contatos de emergência atualizados e visíveis (192, 193, 199, 190, brigada)",
+              "Porteiros treinados no plano: acionar, liberar acesso ao socorro, contar no ponto de encontro",
+              "Extintor e kit de primeiros socorros acessíveis e inspecionados",
+              "Conhecem a conduta em caso de assalto",
+            ],
+          },
+        ],
+      },
+      GESTAO_V2,
+      CULTURA_V2,
+    ],
+  },
+  {
+    code: "CONTRATADA_LIMPEZA_V2",
+    name: "Auditoria de Contratada — Limpeza",
+    shortName: "Limpeza",
+    description: "10 perguntas objetivas: químicos, áreas operacionais, equipamentos e trabalhos especiais, gestão e cultura.",
+    icon: "SprayCan",
+    partial: true,
+    sections: [
+      {
+        code: "L",
+        title: "Operação da limpeza",
+        description: "Observação em campo · B8 Químicos · B4 · B7 · B9 · B10",
+        items: [
+          {
+            code: "L1",
+            text: "Os produtos químicos estão controlados do armazenamento ao descarte?",
+            ref: "B8 Produtos Químicos",
+            critical: true,
+            checks: [
+              "FISPQ no local de uso e produto no inventário do site",
+              "Embalagem original ou identificada — nunca em garrafa de alimento",
+              "Armazenamento segregado, ventilado, com contenção e acesso restrito",
+              "Resíduos e embalagens vazias segregados e destinados corretamente",
+            ],
+          },
+          {
+            code: "L2",
+            text: "A equipe usa os químicos com segurança e sabe responder a um derramamento?",
+            ref: "B8 Produtos Químicos",
+            critical: true,
+            checks: [
+              "Treinada em riscos, diluição e incompatibilidades (ex.: cloro + amônia)",
+              "EPI conforme FISPQ em uso (luvas, óculos, botas, avental)",
+              "Kit de derramamento e lava-olhos acessíveis e inspecionados",
+            ],
+          },
+          {
+            code: "L3",
+            text: "A limpeza nas áreas operacionais é feita sem expor a equipe ao tráfego?",
+            ref: "B4 Pedestres · B7 Empilhadeiras · Regras de Ouro",
+            critical: true,
+            checks: [
+              "Área isolada e sinalizada (cones, correntes) antes de limpar ruas e docas",
+              "Líder de turno avisado e regra “ver e ser visto” aplicada",
+              "Colete refletivo, só rotas de pedestres e sem celular ou fones",
+              "Piso molhado sinalizado com rota alternativa",
+            ],
+          },
+          {
+            code: "L4",
+            text: "Equipamentos e trabalhos especiais estão sob controle?",
+            ref: "B9 Trabalho em Altura · B10 · NR 33 · NR 35",
+            critical: true,
+            checks: [
+              "Equipamentos elétricos inspecionados e máquinas motorizadas só com operador treinado",
+              "Acima de 2 m só com permissão de trabalho, NR 35 e EPI contra quedas",
+              "Escadas íntegras, uso com 3 pontos de contato; proibido escalar racks",
+              "Espaço confinado só com NR 33, avaliação prévia e PET",
+            ],
+          },
+          {
+            code: "L5",
+            text: "As condições de trabalho e a organização da área estão adequadas?",
+            ref: "Ergonomia · Câmara fria · B10",
+            checks: [
+              "Cargas dentro do limite (20 kg mulheres / 25 kg homens) e carrinhos em bom estado",
+              "EPI térmico e pausas na câmara fria",
+              "Calçado de segurança fechado e antiderrapante",
+              "Inspeções de housekeeping com ações corretivas",
+            ],
+          },
+        ],
+      },
+      GESTAO_V2,
+      CULTURA_V2,
+    ],
+  },
+];
+
+/** Todos os checklists (inclui versões anteriores para abrir auditorias antigas). */
+export const AUDIT_TEMPLATES: AuditTemplate[] = [...SIMPLE_TEMPLATES, ...LEGACY_TEMPLATES];
+/** Checklists oferecidos para novas auditorias. */
+export const ACTIVE_TEMPLATES = AUDIT_TEMPLATES.filter((t) => !t.legacy);
+
 export function getTemplate(code: string) {
   return AUDIT_TEMPLATES.find((t) => t.code === code) ?? null;
 }
 
-export const AUDIT_VALUES = ["C", "NC", "NA"] as const;
-export const AUDIT_LABELS: Record<string, string> = { C: "Conforme", NC: "Não conforme", NA: "N/A" };
+export const AUDIT_VALUES = ["C", "P", "NC", "NA"] as const;
+export const AUDIT_LABELS: Record<string, string> = { C: "Conforme", P: "Parcial", NC: "Não conforme", NA: "N/A" };
+
+const POINTS: Record<string, number> = { C: 1, P: 0.5, NC: 0 };
 
 export type AuditScore = {
   pct: number | null;
@@ -469,6 +716,7 @@ export type AuditScore = {
   total: number;
   conformes: number;
   naoConformes: number;
+  parciais: number;
   criticalNc: number;
   sections: { code: string; title: string; pct: number | null; answered: number; total: number; nc: number }[];
 };
@@ -477,8 +725,8 @@ export function scoreAudit(template: AuditTemplate, answers: Record<string, stri
   const all = template.sections.flatMap((s) => s.items);
   const val = (i: AuditItem) => answers[i.code] ?? null;
   const pctOf = (items: AuditItem[]) => {
-    const applicable = items.filter((i) => val(i) === "C" || val(i) === "NC");
-    return applicable.length ? applicable.filter((i) => val(i) === "C").length / applicable.length : null;
+    const applicable = items.filter((i) => (val(i) ?? "") in POINTS);
+    return applicable.length ? applicable.reduce((s, i) => s + POINTS[val(i)!], 0) / applicable.length : null;
   };
   const rawPct = pctOf(all);
   const criticalNc = all.filter((i) => i.critical && val(i) === "NC").length;
@@ -491,6 +739,7 @@ export function scoreAudit(template: AuditTemplate, answers: Record<string, stri
     total: all.length,
     conformes: all.filter((i) => val(i) === "C").length,
     naoConformes: all.filter((i) => val(i) === "NC").length,
+    parciais: all.filter((i) => val(i) === "P").length,
     criticalNc,
     sections: template.sections.map((s) => ({
       code: s.code,
@@ -498,7 +747,7 @@ export function scoreAudit(template: AuditTemplate, answers: Record<string, stri
       pct: pctOf(s.items),
       answered: s.items.filter((i) => val(i)).length,
       total: s.items.length,
-      nc: s.items.filter((i) => val(i) === "NC").length,
+      nc: s.items.filter((i) => val(i) === "NC" || val(i) === "P").length,
     })),
   };
 }

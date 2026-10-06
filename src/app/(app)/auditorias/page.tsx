@@ -1,7 +1,7 @@
 import { db } from "@/lib/db";
 import { can, getWorkspace } from "@/server/context";
 import { unitMembers } from "@/server/queries";
-import { AUDIT_TEMPLATES, getTemplate, scoreAudit } from "@/lib/audit-templates";
+import { ACTIVE_TEMPLATES, getTemplate, scoreAudit } from "@/lib/audit-templates";
 import { complianceGrade } from "@/lib/scoring";
 import { NoUnit } from "@/components/no-unit";
 import { AuditsView } from "@/components/audits/audits-view";
@@ -27,7 +27,7 @@ export default async function AuditsPage() {
       canCreate={can(user.role, "score")}
       currentUserId={user.id}
       members={members}
-      templates={AUDIT_TEMPLATES.map((t) => ({
+      templates={ACTIVE_TEMPLATES.map((t) => ({
         code: t.code,
         name: t.name,
         shortName: t.shortName,

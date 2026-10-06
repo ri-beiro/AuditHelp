@@ -28,3 +28,26 @@ describe("Checklists de contratadas", () => {
     expect(r2.pct).toBe(0.5);
   });
 });
+
+describe("Checklist simplificado (v2)", () => {
+  it("oferece só as versões simplificadas para novas auditorias", async () => {
+    const { ACTIVE_TEMPLATES } = await import("./audit-templates");
+    expect(ACTIVE_TEMPLATES.map((t) => t.code)).toEqual(["CONTRATADA_PORTARIA_V2", "CONTRATADA_LIMPEZA_V2"]);
+    for (const t of ACTIVE_TEMPLATES) {
+      const items = t.sections.flatMap((s) => s.items);
+      expect(items.length).toBeLessThanOrEqual(10);
+      expect(items.every((i) => (i.checks?.length ?? 0) >= 3)).toBe(true);
+    }
+  });
+
+  it("Parcial vale meio ponto", () => {
+    const t = getTemplate("CONTRATADA_PORTARIA_V2")!;
+    const all = t.sections.flatMap((s) => s.items);
+    const answers: Record<string, string> = Object.fromEntries(all.map((i) => [i.code, "C"]));
+    answers["P3"] = "P"; // não crítica
+    const r = scoreAudit(t, answers);
+    expect(r.pct).toBeCloseTo((all.length - 0.5) / all.length);
+    expect(r.parciais).toBe(1);
+    expect(r.capped).toBe(false);
+  });
+});
