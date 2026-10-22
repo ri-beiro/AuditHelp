@@ -4,7 +4,9 @@
 // avaliação, evidência e plano de ação são genéricas por requisito.
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  // Relações (include) carregadas com JOIN em uma única consulta: menos idas ao banco por tela.
+  previewFeatures = ["relationJoins"]
 }
 
 datasource db {

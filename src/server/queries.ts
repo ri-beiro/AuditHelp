@@ -81,8 +81,9 @@ function deriveStatus(stored: ElementStatus | null | undefined, answered: number
   return answered > 0 ? "EM_ANDAMENTO" : "NAO_INICIADO";
 }
 
-export async function loadOverview(assessmentId: string, framework: Framework): Promise<FrameworkOverview> {
-  const assessment = await db.assessment.findUniqueOrThrow({ where: { id: assessmentId } });
+export async function loadOverview(assessmentId: string, framework: Framework, unitId?: string): Promise<FrameworkOverview> {
+  // Quem já tem a unidade evita uma ida extra ao banco antes das consultas em paralelo.
+  const assessment = unitId ? { unitId } : await db.assessment.findUniqueOrThrow({ where: { id: assessmentId }, select: { unitId: true } });
   const [elements, scores, elementAssessments, evidenceCounts, actions] = await Promise.all([
     db.element.findMany({
       where: { framework },

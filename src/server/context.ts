@@ -69,11 +69,12 @@ export const getWorkspace = cache(async () => {
 });
 
 export async function getOrCreateAssessment(unitId: string, framework: Framework, cycle: string, userId?: string) {
-  return db.assessment.upsert({
-    where: { unitId_framework_cycle: { unitId, framework, cycle } },
-    update: {},
-    create: { unitId, framework, cycle, createdById: userId },
-  });
+  // Caminho rápido: a avaliação quase sempre já existe (uma consulta, sem transação do upsert).
+  const where = { unitId_framework_cycle: { unitId, framework, cycle } };
+  return (
+    (await db.assessment.findUnique({ where })) ??
+    db.assessment.upsert({ where, update: {}, create: { unitId, framework, cycle, createdById: userId } })
+  );
 }
 
 export async function getCycles(unitId: string) {

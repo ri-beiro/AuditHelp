@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 
 const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
 
-export const db = globalForPrisma.prisma ?? new PrismaClient();
+// PRISMA_QUERY_LOG=1 mostra cada consulta no log (diagnóstico de desempenho).
+export const db = globalForPrisma.prisma ?? new PrismaClient(process.env.PRISMA_QUERY_LOG === "1" ? { log: ["query"] } : undefined);
 
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = db;
+globalForPrisma.prisma = db;

@@ -35,8 +35,8 @@ export default async function IndicatorsPage({
     getOrCreateAssessment(unit.id, "BASICS", cycle, user.id),
   ]);
   const [wise, basics, snapshots, actions] = await Promise.all([
-    loadOverview(wiseA.id, "WISE"),
-    loadOverview(basicsA.id, "BASICS"),
+    loadOverview(wiseA.id, "WISE", unit.id),
+    loadOverview(basicsA.id, "BASICS", unit.id),
     db.scoreSnapshot.findMany({
       where: { unitId: unit.id, scope: "OVERALL" },
       orderBy: { month: "asc" },

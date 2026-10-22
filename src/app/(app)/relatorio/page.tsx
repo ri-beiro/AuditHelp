@@ -12,8 +12,8 @@ export default async function ReportPage() {
     getOrCreateAssessment(unit.id, "BASICS", cycle, user.id),
   ]);
   const [wise, basics, report, opinions, n1Actions, level1Gaps] = await Promise.all([
-    loadOverview(wiseA.id, "WISE"),
-    loadOverview(basicsA.id, "BASICS"),
+    loadOverview(wiseA.id, "WISE", unit.id),
+    loadOverview(basicsA.id, "BASICS", unit.id),
     db.closingReport.findUnique({ where: { assessmentId: wiseA.id }, include: { updatedBy: { select: { name: true } } } }),
     db.elementAssessment.findMany({
       where: { assessmentId: wiseA.id },

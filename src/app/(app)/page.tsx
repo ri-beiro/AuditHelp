@@ -9,14 +9,12 @@ import { DashboardSafetyStrip } from "@/components/safety/dashboard-strip";
 export default async function DashboardPage() {
   const { user, unit, cycle } = await getWorkspace();
   if (!unit) return <NoUnit />;
-  const [wiseA, basicsA] = await Promise.all([
-    getOrCreateAssessment(unit.id, "WISE", cycle, user.id),
-    getOrCreateAssessment(unit.id, "BASICS", cycle, user.id),
-  ]);
   const today = new Date(new Date().toISOString().slice(0, 10));
+  // Tudo em paralelo: cada avaliação é criada (se preciso) e carregada na sequência, sem esperar as demais.
+  const overview = (fw: "WISE" | "BASICS") => getOrCreateAssessment(unit.id, fw, cycle, user.id).then((a) => loadOverview(a.id, fw, unit.id));
   const [wise, basics, members, safety, overdue] = await Promise.all([
-    loadOverview(wiseA.id, "WISE"),
-    loadOverview(basicsA.id, "BASICS"),
+    overview("WISE"),
+    overview("BASICS"),
     unitMembers(unit.id),
     loadSafetyOverview(unit.id),
     db.actionPlan.count({ where: { unitId: unit.id, status: { in: ["ABERTA", "EM_ANDAMENTO"] }, dueDate: { lt: today } } }),
