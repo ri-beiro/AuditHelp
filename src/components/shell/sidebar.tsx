@@ -59,7 +59,7 @@ export function Sidebar({ isAdmin, onNavigate }: { isAdmin: boolean; onNavigate?
       <div className="relative px-5 pb-6 pt-6">
         <Logo light />
       </div>
-      <nav className="relative flex-1 space-y-6 overflow-y-auto px-3 pb-6 scrollbar-thin">
+      <nav className="relative flex-1 space-y-6 overflow-y-auto px-3 pb-6 scrollbar-dark">
         {groups.map((g) => {
           const items = MODULES.filter((m) => m.group === g && (!m.adminOnly || isAdmin));
           if (!items.length) return null;

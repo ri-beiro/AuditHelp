@@ -164,5 +164,18 @@ h1, h2, h3, .font-display {
   .wise-hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 
+.scrollbar-thin { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
 .scrollbar-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+.scrollbar-thin::-webkit-scrollbar-button { display: none; height: 0; width: 0; }
 .scrollbar-thin::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+
+/* Menu lateral (fundo azul escuro): barra discreta e translúcida, mais visível ao passar o mouse. */
+.scrollbar-dark { scrollbar-width: thin; scrollbar-color: rgb(255 255 255 / 0.14) transparent; }
+.scrollbar-dark:hover { scrollbar-color: rgb(255 255 255 / 0.3) transparent; }
+.scrollbar-dark::-webkit-scrollbar { width: 6px; }
+.scrollbar-dark::-webkit-scrollbar-track { background: transparent; }
+.scrollbar-dark::-webkit-scrollbar-button { display: none; height: 0; width: 0; }
+.scrollbar-dark::-webkit-scrollbar-thumb { background: rgb(255 255 255 / 0.14); border-radius: 999px; }
+.scrollbar-dark:hover::-webkit-scrollbar-thumb { background: rgb(255 255 255 / 0.3); }
+.scrollbar-dark::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #1a9ae0, #8db52f, #ec9631); }
