@@ -20,7 +20,8 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { deleteJobRole, deleteTraining, saveJobRole, saveTraining, setMhcCell } from "@/server/trainings";
-import { cn } from "@/lib/utils";
+import { cn, fmtDate } from "@/lib/utils";
+import { situation, SITUATION_LABEL, type TrainingSituation } from "@/lib/employees";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Field, Input, Select } from "@/components/ui/input";
@@ -36,6 +37,38 @@ export type TrainingRow = {
   passingScore: number | null;
 };
 export type RoleRow = { id: string; name: string; values: Record<string, Value> };
+export type EmployeeRow = { id: string; name: string; roleId: string | null; records: Record<string, { doneAt: string; validUntil: string | null }> };
+
+const CHIP: Record<TrainingSituation, string> = {
+  REALIZADO: "border-conforme/30 bg-conforme-bg text-conforme",
+  A_VENCER: "border-amber-300 bg-amber-50 text-amber-800",
+  VENCIDO: "border-critico bg-critico text-white",
+  PENDENTE: "border-slate-200 bg-white text-slate-600",
+};
+
+/** Nomes dos colaboradores que precisam do treinamento, com a situação de cada um. */
+function People({ people }: { people: { id: string; name: string; st: TrainingSituation; validUntil: string | null }[] }) {
+  if (!people.length) return null;
+  const ok = people.filter((p) => p.st === "REALIZADO" || p.st === "A_VENCER").length;
+  return (
+    <div className="mt-1.5">
+      <p className="mb-1 text-[11px] font-semibold text-slate-500">
+        Colaboradores · {ok}/{people.length} em dia
+      </p>
+      <div className="flex flex-wrap gap-1">
+        {people.map((p) => (
+          <span
+            key={p.id}
+            title={`${SITUATION_LABEL[p.st]}${p.validUntil ? ` · vence ${fmtDate(p.validUntil)}` : ""}`}
+            className={cn("rounded-full border px-2 py-0.5 text-[11px] font-medium", CHIP[p.st])}
+          >
+            {p.name.split(" ").slice(0, 2).join(" ")}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 const NEXT: Record<string, Value | null> = { "": "S", S: "N", N: "NA", NA: null };
 
@@ -70,7 +103,17 @@ function Cell({ v }: { v?: Value }) {
   return null;
 }
 
-export function MhcView({ trainings, roles, canEdit }: { trainings: TrainingRow[]; roles: RoleRow[]; canEdit: boolean }) {
+export function MhcView({
+  trainings,
+  roles,
+  canEdit,
+  employees = [],
+}: {
+  trainings: TrainingRow[];
+  roles: RoleRow[];
+  canEdit: boolean;
+  employees?: EmployeeRow[];
+}) {
   const router = useRouter();
   const [tab, setTab] = useState<"matriz" | "cargo" | "treinamentos">("matriz");
   const [values, setValues] = useState(() => Object.fromEntries(roles.map((r) => [r.id, r.values])) as Record<string, Record<string, Value>>);
@@ -87,6 +130,14 @@ export function MhcView({ trainings, roles, canEdit }: { trainings: TrainingRow[
 
   const required = (rid: string) => trainings.filter((t) => values[rid]?.[t.id] === "S").length;
   const byTraining = (tid: string) => roles.filter((r) => values[r.id]?.[tid] === "S").length;
+  const peopleFor = (tid: string, onlyRole?: string) =>
+    employees
+      .filter((e) => e.roleId && values[e.roleId]?.[tid] === "S" && (!onlyRole || e.roleId === onlyRole))
+      .map((e) => {
+        const rec = e.records[tid];
+        return { id: e.id, name: e.name, st: situation(rec), validUntil: rec?.validUntil ?? null };
+      })
+      .sort((a, b) => a.name.localeCompare(b.name));
   const totalS = roles.reduce((s, r) => s + required(r.id), 0);
   const defined = trainings.filter((t) => t.noExpiry || t.validityDays).length;
 
@@ -363,6 +414,7 @@ export function MhcView({ trainings, roles, canEdit }: { trainings: TrainingRow[
                         {t.passingScore ? <span className="rounded-full bg-accent-50 px-2 py-0.5 font-semibold text-accent-700">Nota de corte {t.passingScore}</span> : null}
                         {t.effectiveness ? <span className="rounded-full bg-brand-50 px-2 py-0.5 font-semibold text-brand-700">Avaliação de eficácia</span> : null}
                       </div>
+                      <People people={peopleFor(t.id, role.id)} />
                     </div>
                   </div>
                 ))}
@@ -403,7 +455,10 @@ export function MhcView({ trainings, roles, canEdit }: { trainings: TrainingRow[
                 const n = byTraining(t.id);
                 return (
                   <tr key={t.id} className="border-t border-slate-100 hover:bg-slate-50/60">
-                    <td className="px-4 py-2.5 font-medium text-slate-800">{t.name}</td>
+                    <td className="max-w-xl px-4 py-2.5">
+                      <span className="font-medium text-slate-800">{t.name}</span>
+                      <People people={peopleFor(t.id)} />
+                    </td>
                     <td className="px-3 py-2.5">
                       <ValidityBadge t={t} />
                       {t.validityDays ? <span className="ml-1 text-[11px] text-slate-400">{t.validityDays} dias</span> : null}

@@ -14,7 +14,7 @@ export function PageHeader({
   className?: string;
 }) {
   return (
-    <div className={cn("flex flex-col gap-4 md:flex-row md:items-end md:justify-between", className)}>
+    <div className={cn("flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between", className)}>
       <div className="min-w-0">
         {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
         <h1 className="mt-1.5 text-[26px] font-extrabold leading-tight text-brand-950">{title}</h1>

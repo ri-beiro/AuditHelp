@@ -134,6 +134,8 @@ export function IncidentWorkflow({ initial, ctx, initialStep }: { initial: Incid
               <TypeBadge type={inc.type} />
               {inc.hipo ? <HipoBadge /> : null}
               {inc.spheraId ? <span className="rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-600">Sphera {inc.spheraId}</span> : null}
+              {inc.subtype ? <span className="rounded-md bg-brand-50 px-2 py-0.5 text-[11px] font-semibold text-brand-700">{inc.subtype}</span> : null}
+              {inc.basicRef ? <span className="rounded-md bg-wgreen-100 px-2 py-0.5 text-[11px] font-semibold text-wgreen-700">Básico: {inc.basicRef}</span> : null}
               {inc.closed ? (
                 <span className="inline-flex items-center gap-1 rounded-full bg-conforme-bg px-2 py-0.5 text-[11px] font-semibold text-conforme">
                   <Lock className="size-3" /> Encerrada em {fmtDate(inc.closedAt)}
@@ -142,8 +144,8 @@ export function IncidentWorkflow({ initial, ctx, initialStep }: { initial: Incid
             </div>
             <h1 className="mt-2 text-2xl font-extrabold leading-tight text-brand-950">{inc.title}</h1>
             <p className="mt-1 text-sm text-slate-500">
-              {fmtDateTime(inc.occurredAt)} · {inc.area} · Responsável: {inc.responsible?.name ?? "a definir"}
-              {inc.reportedBy ? ` · Reportado por ${inc.reportedBy}` : ""}
+              {fmtDateTime(inc.occurredAt)} · {inc.area} · Responsável: {inc.responsible?.name ?? inc.ownerName ?? "a definir"}
+              {inc.reportedByName || inc.reportedBy ? ` · Reportado por ${inc.reportedByName ?? inc.reportedBy}` : ""}
             </p>
           </div>
           <div className="w-full shrink-0 lg:w-72">

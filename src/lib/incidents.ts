@@ -189,4 +189,3 @@ export function parseIncidentType(raw: unknown): IncidentTypeKey | null {
   return null;
 }
 
-export const INCIDENT_EXCEL_COLUMNS = ["Data", "Hora", "Área", "Tipo", "HIPO", "Título", "Descrição", "Responsável (e-mail)", "ID Sphera"];

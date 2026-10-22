@@ -1,16 +1,25 @@
 import { db } from "@/lib/db";
-import { can, requireUser } from "@/server/context";
+import { can, getWorkspace } from "@/server/context";
 import { MhcView } from "@/components/trainings/mhc-view";
 
 export default async function TrainingsPage() {
-  const user = await requireUser();
-  const [trainings, roles] = await Promise.all([
+  const { user, unit } = await getWorkspace();
+  const [trainings, roles, employees] = await Promise.all([
     db.training.findMany({ orderBy: { order: "asc" } }),
     db.jobRole.findMany({ orderBy: { order: "asc" }, include: { trainings: { select: { trainingId: true, value: true } } } }),
+    unit
+      ? db.employee.findMany({ where: { unitId: unit.id, active: true }, include: { trainings: true }, orderBy: { name: "asc" } })
+      : Promise.resolve([]),
   ]);
   return (
     <MhcView
       canEdit={can(user.role, "admin")}
+      employees={employees.map((e) => ({
+        id: e.id,
+        name: e.name,
+        roleId: e.roleId,
+        records: Object.fromEntries(e.trainings.map((r) => [r.trainingId, { doneAt: r.doneAt.toISOString(), validUntil: r.validUntil?.toISOString() ?? null }])),
+      }))}
       trainings={trainings.map((t) => ({
         id: t.id,
         name: t.name,

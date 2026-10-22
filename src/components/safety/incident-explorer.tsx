@@ -89,7 +89,7 @@ export function IncidentExplorer({
     const q = f.q.trim().toLowerCase();
     const day = i.occurredAt.slice(0, 10);
     return (
-      (!q || `${i.number} ${i.title} ${i.description} ${i.area} ${i.responsible?.name ?? ""} ${i.spheraId ?? ""}`.toLowerCase().includes(q)) &&
+      (!q || `${i.number} ${i.title} ${i.description} ${i.area} ${i.responsible?.name ?? ""} ${i.ownerName ?? ""} ${i.basicRef ?? ""} ${i.spheraId ?? ""}`.toLowerCase().includes(q)) &&
       (!f.from || day >= f.from) &&
       (!f.to || day <= f.to) &&
       (!f.area || i.area === f.area) &&
@@ -318,7 +318,7 @@ export function CriticalityTable({ rows }: { rows: IncidentListItem[] }) {
                 </Link>
                 <div className="line-clamp-2 text-xs text-slate-500">{i.description}</div>
               </td>
-              <td className="px-3 py-3 text-slate-700">{i.responsible?.name ?? <span className="text-slate-400">A definir</span>}</td>
+              <td className="px-3 py-3 text-slate-700">{i.responsible?.name ?? i.ownerName ?? <span className="text-slate-400">A definir</span>}</td>
               <td className="px-3 py-3">
                 <div className="flex flex-wrap gap-1">
                   {i.hipo ? <HipoBadge /> : null}

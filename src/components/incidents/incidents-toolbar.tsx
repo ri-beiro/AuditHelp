@@ -34,9 +34,12 @@ export function IncidentsToolbar({
         return;
       }
       const errors: string[] = json.errors ?? [];
-      toast.success(`${json.created} ocorrência(s) importada(s)`, {
-        description: errors.length ? `${errors.length} linha(s) ignorada(s): ${errors.slice(0, 3).join(" · ")}` : undefined,
-      });
+      const parts = [
+        json.updated ? `${json.updated} atualizada(s)` : "",
+        json.skipped ? `${json.skipped} inválida(s) do Sphera ignorada(s)` : "",
+        errors.length ? `${errors.length} linha(s) com erro: ${errors.slice(0, 3).join(" · ")}` : "",
+      ].filter(Boolean);
+      toast.success(`${json.created} ocorrência(s) importada(s)`, { description: parts.join(" · ") || undefined });
       router.refresh();
     });
     if (fileRef.current) fileRef.current.value = "";
@@ -46,11 +49,11 @@ export function IncidentsToolbar({
     <>
       <Button variant="outline" asChild>
         <a href="/api/incidentes/excel?modelo=1">
-          <FileSpreadsheet /> Modelo
+          <FileSpreadsheet /> Modelo Sphera
         </a>
       </Button>
       <Button variant="outline" disabled={pending} onClick={() => fileRef.current?.click()}>
-        {pending ? <Loader2 className="animate-spin" /> : <Upload />} Importar Excel
+        {pending ? <Loader2 className="animate-spin" /> : <Upload />} Importar lista do Sphera
       </Button>
       <input ref={fileRef} type="file" accept=".xlsx" className="hidden" onChange={(e) => importFile(e.target.files?.[0])} />
       <Button variant="outline" asChild>

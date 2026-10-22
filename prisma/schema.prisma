@@ -93,6 +93,7 @@ model Unit {
   auditRecords AuditRecord[]
   drivers      Driver[]
   safetyContentUnits SafetyContentUnit[]
+  employees          Employee[]
 
   // Data base do contador "Dias sem acidentes" quando ainda não há acidente registrável
   safetyStartDate DateTime?
@@ -464,6 +465,11 @@ model Incident {
   actionPlans ActionPlan[]
 
   @@index([unitId, occurredAt])
+  /// Campos vindos do Sphera quando a pessoa não é usuária do sistema.
+  reportedByName String?
+  ownerName      String?
+  basicRef       String?
+  subtype        String?
 }
 
 model IncidentAttachment {
@@ -592,7 +598,8 @@ model Training {
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
-  roles RoleTraining[]
+  roles     RoleTraining[]
+  employees EmployeeTraining[]
 }
 
 /// Cargos da MHC.
@@ -603,6 +610,7 @@ model JobRole {
   createdAt DateTime @default(now())
 
   trainings RoleTraining[]
+  employees Employee[]
 }
 
 /// Célula da MHC: S (obrigatório), N (não obrigatório) ou NA.
@@ -614,5 +622,39 @@ model RoleTraining {
   value      String
 
   @@id([roleId, trainingId])
+  @@index([trainingId])
+}
+
+/// Colaboradores da unidade, com o cargo da MHC que define os treinamentos obrigatórios.
+model Employee {
+  id        String   @id @default(cuid())
+  unitId    String
+  unit      Unit     @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  name      String
+  team      String?
+  roleId    String?
+  role      JobRole? @relation(fields: [roleId], references: [id], onDelete: SetNull)
+  roleLabel String?
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  trainings EmployeeTraining[]
+
+  @@unique([unitId, name])
+  @@index([roleId])
+}
+
+/// Realização de um treinamento por um colaborador.
+model EmployeeTraining {
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+  trainingId String
+  training   Training @relation(fields: [trainingId], references: [id], onDelete: Cascade)
+  doneAt     DateTime
+  validUntil DateTime?
+  updatedAt  DateTime @updatedAt
+
+  @@id([employeeId, trainingId])
   @@index([trainingId])
 }

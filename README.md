@@ -61,6 +61,12 @@ Investigação de Incidentes e Excelência Operacional.
 - **Treinamentos (MHC)** (`/treinamentos`): matriz de treinamentos por cargo importada da aba MHC (S / N / NA), com
   validade (anual, bienal, sem vencimento), método, avaliação de eficácia e nota de corte. Visões Matriz, Por cargo e
   Treinamentos; administradores editam células, cargos e treinamentos, importam a planilha (.xlsx/.xlsm) e exportam.
+- **Colaboradores** (`/colaboradores`): cadastro por unidade com time e cargo da MHC; importação da planilha de times
+  (blocos "Time | CARGO", com associação automática do cargo informado ao cargo da MHC); para cada colaborador, a lista
+  dos treinamentos obrigatórios do cargo com data de realização, validade calculada pela MHC e situação (Realizado,
+  A vencer, Vencido, Pendente). Na MHC, cada treinamento mostra os nomes dos colaboradores que precisam dele.
+- **Importação do Sphera**: a Investigação de Incidentes importa a "Página da lista de eventos — Resumo" exportada do
+  Sphera (atualiza pelo ID do evento; relatórios inválidos são ignorados) e o modelo/exportação seguem as mesmas colunas.
 - **Contatos de Segurança** (`/contatos-seguranca`): biblioteca em cards de DDS, Safety Alerts, campanhas e treinamentos.
   Cada card reúne PDFs (apresentados como slides), fotos, vídeos MP4 (até 100 MB), vídeos do YouTube e links, com
   visualização ampliada e tela cheia. Administradores criam e escolhem quem vê: CDs selecionados ou somente o autor.

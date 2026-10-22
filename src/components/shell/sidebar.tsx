@@ -18,6 +18,7 @@ import {
   Siren,
   Trophy,
   Truck,
+  Users,
   type LucideIcon,
 } from "lucide-react";
 import { MODULES } from "@/lib/modules";
@@ -40,6 +41,7 @@ const ICONS: Record<string, LucideIcon> = {
   Siren,
   Trophy,
   Truck,
+  Users,
 };
 
 export function Sidebar({ isAdmin, onNavigate }: { isAdmin: boolean; onNavigate?: () => void }) {

@@ -1,80 +1,67 @@
-// Exportação (GET), modelo (GET ?modelo=1) e importação (POST) de ocorrências em Excel.
+// Ocorrências em Excel no modelo da "Página da lista de eventos — Resumo" do Sphera:
+// exportação (GET), modelo em branco (GET ?modelo=1) e importação (POST).
 import ExcelJS from "exceljs";
 import { NextResponse } from "next/server";
+import type { IncidentType, StepStatus } from "@prisma/client";
 import { db } from "@/lib/db";
 import { getCurrentUser, getWorkspace } from "@/server/context";
-import { INCIDENT_EXCEL_COLUMNS, INCIDENT_TYPE_LABEL, parseIncidentType, STEP_LABEL, type Step } from "@/lib/incidents";
+import { parseIncidentType, type IncidentTypeKey } from "@/lib/incidents";
+import { isSpheraHeader, parseSpheraRows, SPHERA_COLUMNS } from "@/lib/sphera";
+import { readSheetRows, sheetDate } from "@/lib/xlsx-rows";
 import { listIncidents, nextIncidentNumber } from "@/server/incident-queries";
 
 const XLSX = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
-function styleHeader(ws: ExcelJS.Worksheet) {
-  const row = ws.getRow(1);
-  row.font = { bold: true, color: { argb: "FFFFFFFF" } };
-  row.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FF13508A" } };
-  ws.columns.forEach((c) => (c.width = Math.max(14, String(c.header ?? "").length + 4)));
-}
+/** Tipo de incidente e subtipo no vocabulário do Sphera (para exportar). */
+const SPHERA_TYPE: Record<IncidentTypeKey, [string, string]> = {
+  FATALIDADE: ["Caso com lesão", "Fatalidade"],
+  LTA: ["Caso com lesão", "Com afastamento"],
+  NLTA: ["Caso com lesão", "Sem afastamento"],
+  FAC: ["Caso com lesão", "Primeiros socorros"],
+  INCIDENTE: ["Caso sem lesão", "Incidente apenas com danos a ativos"],
+  NEAR_MISS: ["Caso sem lesão", "Quase acidente"],
+  CONDICAO_INSEGURA: ["Observação", "Condição insegura"],
+  OBSERVACAO: ["Observação", "Ato inseguro"],
+};
 
 export async function GET(request: Request) {
   if (!(await getCurrentUser())) return new Response("Não autorizado", { status: 401 });
   const { unit } = await getWorkspace();
   if (!unit) return new Response("Sem unidade", { status: 400 });
-  const wb = new ExcelJS.Workbook();
   const template = new URL(request.url).searchParams.get("modelo") === "1";
-  const ws = wb.addWorksheet(template ? "Ocorrências (modelo)" : "Ocorrências");
+  const wb = new ExcelJS.Workbook();
+  const ws = wb.addWorksheet(template ? "Modelo Sphera" : "Eventos");
+  ws.addRow(SPHERA_COLUMNS);
   if (template) {
-    ws.columns = INCIDENT_EXCEL_COLUMNS.map((h) => ({ header: h }));
-    ws.addRow(["15/08/2026", "14:30", "Pátio Inbound", "Near miss", "Sim", "Conferente quase atingido por empilhadeira", "Descrição do ocorrido…", "", "28126781"]);
-    const help = wb.addWorksheet("Tipos aceitos");
-    help.columns = [{ header: "Tipo", width: 40 }];
-    Object.values(INCIDENT_TYPE_LABEL).forEach((l) => help.addRow([l]));
+    ws.addRow([
+      "28126781", "Observação", unit.name, "", "13/10/2026", "Pedestre fora da faixa na doca 3",
+      "Durante a manobra na doca 3, colaborador atravessou fora da faixa de pedestres.", "Nome de quem reportou",
+      "Nome do proprietário", "Ato Inseguro", "Não", "Nome do responsável", "Em andamento", "", "-", "Armazém", "-", "Pedestrians",
+    ]);
   } else {
-    ws.columns = [
-      "Número", "Data", "Área", "Tipo", "HIPO", "Título", "Descrição", "Responsável", "Reporte", "Investigação",
-      "Plano de ação", "Lições aprendidas", "Progresso", "Ações (abertas/total)", "Encerrada", "ID Sphera",
-    ].map((h) => ({ header: h }));
     for (const i of await listIncidents(unit.id)) {
+      const [tipo, sub] = SPHERA_TYPE[i.type];
       ws.addRow([
-        i.number, new Date(i.occurredAt), i.area, INCIDENT_TYPE_LABEL[i.type], i.hipo ? "Sim" : "Não", i.title, i.description,
-        i.responsible?.name ?? "", STEP_LABEL[i.steps.report as Step], STEP_LABEL[i.steps.investigation as Step],
-        STEP_LABEL[i.steps.plan as Step], STEP_LABEL[i.steps.lessons as Step], `${i.progress}%`,
-        `${i.actions.open}/${i.actions.total}`, i.closed ? "Sim" : "Não", i.spheraId ?? "",
+        i.spheraId ?? i.number, tipo, unit.name, "", new Date(i.occurredAt), i.title, i.description, i.reportedByName ?? "",
+        i.ownerName ?? i.responsible?.name ?? "", i.subtype?.split(" · ").slice(1).join(" · ") || sub, i.hipo ? "Sim" : "Não",
+        i.responsible?.name ?? i.ownerName ?? "", i.closed ? "Fechado" : "Em andamento",
+        i.steps.investigation === "CONCLUIDO" ? "Fechado" : i.steps.investigation === "NAO_INICIADO" ? "" : "Abrir",
+        i.actions.total ? `${i.actions.total - i.actions.open} de ${i.actions.total}` : "-", i.area, "-", i.basicRef ?? "",
       ]);
     }
-    ws.getColumn(2).numFmt = "dd/mm/yyyy hh:mm";
+    ws.getColumn(5).numFmt = "dd/mm/yyyy";
   }
-  styleHeader(ws);
-  const buf = await wb.xlsx.writeBuffer();
-  const name = template ? "modelo-ocorrencias.xlsx" : `ocorrencias-${unit.code}.xlsx`;
-  return new Response(buf, { headers: { "Content-Type": XLSX, "Content-Disposition": `attachment; filename="${name}"` } });
+  const head = ws.getRow(1);
+  head.font = { bold: true, color: { argb: "FFFFFFFF" } };
+  head.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FF13508A" } };
+  ws.columns.forEach((c) => (c.width = 25));
+  ws.views = [{ state: "frozen", ySplit: 1 }];
+  const name = template ? "modelo-lista-de-eventos-sphera.xlsx" : `lista-de-eventos-${unit.code}.xlsx`;
+  return new Response(await wb.xlsx.writeBuffer(), { headers: { "Content-Type": XLSX, "Content-Disposition": `attachment; filename="${name}"` } });
 }
 
-function cellText(v: ExcelJS.CellValue): string {
-  if (v == null) return "";
-  if (v instanceof Date) return v.toISOString();
-  if (typeof v === "object") {
-    if ("text" in v && v.text) return String(v.text);
-    if ("result" in v && v.result != null) return String(v.result);
-    if ("richText" in v) return v.richText.map((r) => r.text).join("");
-  }
-  return String(v);
-}
-
-function parseDate(dateCell: ExcelJS.CellValue, timeCell: ExcelJS.CellValue): Date | null {
-  let d: Date | null = null;
-  if (dateCell instanceof Date) d = new Date(dateCell);
-  else {
-    const s = cellText(dateCell).trim();
-    const br = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2,4})/);
-    if (br) d = new Date(Date.UTC(Number(br[3].length === 2 ? `20${br[3]}` : br[3]), Number(br[2]) - 1, Number(br[1]), 12));
-    else if (s) d = new Date(s);
-  }
-  if (!d || Number.isNaN(+d)) return null;
-  const t = timeCell instanceof Date ? timeCell.toISOString().slice(11, 16) : cellText(timeCell).trim();
-  const tm = t.match(/^(\d{1,2}):(\d{2})/);
-  if (tm) d.setUTCHours(Number(tm[1]) + 3, Number(tm[2])); // horário de Brasília → UTC
-  return d;
-}
+const norm = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/\s+/g, " ").trim();
+const text = (v: unknown) => String(v ?? "").replace(/\s+/g, " ").trim();
 
 export async function POST(request: Request) {
   const user = await getCurrentUser();
@@ -85,53 +72,96 @@ export async function POST(request: Request) {
   if (!(file instanceof File)) return NextResponse.json({ error: "Envie um arquivo .xlsx" }, { status: 400 });
   if (file.size > 5 * 1024 * 1024) return NextResponse.json({ error: "Limite de 5 MB" }, { status: 400 });
 
-  const wb = new ExcelJS.Workbook();
-  await wb.xlsx.load(await file.arrayBuffer());
-  const ws = wb.worksheets[0];
-  // row.values é esparso (índice 0 vazio): Array.from preenche os buracos antes de normalizar.
-  const header = Array.from(ws.getRow(1).values as ExcelJS.CellValue[], (v) =>
-    cellText(v ?? null).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(),
-  );
-  const col = (name: string) => header.findIndex((h) => h.startsWith(name));
-  const idx = {
-    date: col("data"), time: col("hora"), area: col("area"), type: col("tipo"), hipo: col("hipo"),
-    title: col("titulo"), desc: col("descri"), resp: col("respons"), sphera: col("id sphera"),
-  };
-  if (idx.date < 0 || idx.type < 0 || idx.title < 0)
-    return NextResponse.json({ error: "Planilha sem as colunas obrigatórias (Data, Tipo, Título). Use o modelo." }, { status: 400 });
+  let rows: unknown[][];
+  try {
+    rows = await readSheetRows(await file.arrayBuffer());
+  } catch {
+    return NextResponse.json({ error: "Não consegui ler a planilha." }, { status: 400 });
+  }
+  if (!rows.length) return NextResponse.json({ error: "Planilha vazia." }, { status: 400 });
+  const users = await db.user.findMany({ select: { id: true, name: true, email: true } });
+  const userByName = (name: string | null) => (name ? (users.find((u) => norm(u.name) === norm(name))?.id ?? null) : null);
 
-  const users = await db.user.findMany({ select: { id: true, email: true } });
+  if (isSpheraHeader(rows[0])) {
+    const { events, errors, skipped } = parseSpheraRows(rows);
+    const existing = new Map(
+      (await db.incident.findMany({ where: { unitId: unit.id, spheraId: { not: null } }, select: { id: true, spheraId: true, closedAt: true } })).map(
+        (i) => [i.spheraId!, i],
+      ),
+    );
+    let created = 0;
+    let updated = 0;
+    const done = "CONCLUIDO" as StepStatus;
+    for (const e of events) {
+      const data = {
+        occurredAt: e.occurredAt,
+        area: e.area,
+        type: e.type as IncidentType,
+        hipo: e.hipo,
+        title: e.title.slice(0, 200),
+        description: e.description,
+        reportedByName: e.reportedByName,
+        ownerName: e.ownerName,
+        basicRef: e.basicRef,
+        subtype: e.subtype,
+        responsibleId: userByName(e.ownerName),
+      };
+      // Evento fechado no Sphera entra com as etapas concluídas e encerrado.
+      const closing = e.closed
+        ? { reportStatus: done, investigationStatus: done, planStatus: done, lessonsStatus: done, closedAt: new Date() }
+        : { reportStatus: done, investigationStatus: (e.investigationStatus === "fechado" ? "CONCLUIDO" : "NAO_INICIADO") as StepStatus };
+      const cur = existing.get(e.spheraId);
+      if (cur) {
+        await db.incident.update({ where: { id: cur.id }, data: { ...data, ...(e.closed && !cur.closedAt ? closing : {}) } });
+        updated++;
+      } else {
+        await db.incident.create({
+          data: { ...data, ...closing, unitId: unit.id, spheraId: e.spheraId, number: await nextIncidentNumber(unit.id, e.occurredAt), reportedById: user.id },
+        });
+        created++;
+      }
+    }
+    return NextResponse.json({ created, updated, skipped, errors });
+  }
+
+  // Modelo anterior do sistema (Data, Hora, Área, Tipo, HIPO, Título, Descrição, Responsável, ID Sphera).
+  const header = rows[0].map((h) => norm(text(h)));
+  const col = (name: string) => header.findIndex((h) => h.startsWith(name));
+  const idx = { date: col("data"), time: col("hora"), area: col("area"), type: col("tipo"), hipo: col("hipo"), title: col("titulo"), desc: col("descri"), resp: col("respons"), sphera: col("id sphera") };
+  if (idx.date < 0 || idx.type < 0 || idx.title < 0)
+    return NextResponse.json({ error: "Use o modelo da lista de eventos do Sphera (botão Modelo)." }, { status: 400 });
   const errors: string[] = [];
   let created = 0;
-  for (let r = 2; r <= ws.rowCount; r++) {
-    const row = ws.getRow(r);
-    const get = (i: number) => (i > 0 ? row.getCell(i).value : null);
-    const title = cellText(get(idx.title)).trim();
+  for (let r = 1; r < rows.length; r++) {
+    const get = (i: number) => (i >= 0 ? rows[r][i] : "");
+    const title = text(get(idx.title));
     if (!title) continue;
-    const occurredAt = parseDate(get(idx.date), get(idx.time));
-    const type = parseIncidentType(cellText(get(idx.type)));
+    const occurredAt = sheetDate(get(idx.date));
+    const type = parseIncidentType(text(get(idx.type)));
     if (!occurredAt || !type) {
-      errors.push(`Linha ${r}: ${!occurredAt ? "data inválida" : "tipo não reconhecido"}`);
+      errors.push(`Linha ${r + 1}: ${!occurredAt ? "data inválida" : "tipo não reconhecido"}`);
       continue;
     }
-    const email = cellText(get(idx.resp)).trim().toLowerCase();
+    const tm = text(get(idx.time)).match(/^(\d{1,2}):(\d{2})/);
+    if (tm) occurredAt.setUTCHours(Number(tm[1]) + 3, Number(tm[2]));
+    const email = text(get(idx.resp)).toLowerCase();
     await db.incident.create({
       data: {
         unitId: unit.id,
         number: await nextIncidentNumber(unit.id, occurredAt),
         occurredAt,
-        area: cellText(get(idx.area)).trim() || "Não informada",
+        area: text(get(idx.area)) || "Não informada",
         type,
-        hipo: /^s|^y|^1|true/i.test(cellText(get(idx.hipo)).trim()),
+        hipo: /^s|^y|^1|true/i.test(text(get(idx.hipo))),
         title: title.slice(0, 200),
-        description: cellText(get(idx.desc)).trim() || title,
+        description: text(get(idx.desc)) || title,
         responsibleId: users.find((u) => u.email === email)?.id ?? null,
-        spheraId: cellText(get(idx.sphera)).trim() || null,
+        spheraId: text(get(idx.sphera)) || null,
         reportedById: user.id,
         reportStatus: "CONCLUIDO",
       },
     });
     created++;
   }
-  return NextResponse.json({ created, errors });
+  return NextResponse.json({ created, updated: 0, skipped: 0, errors });
 }
