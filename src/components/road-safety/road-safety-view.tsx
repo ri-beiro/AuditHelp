@@ -91,7 +91,7 @@ export function RoadSafetyView({
   canDelete: boolean;
 }) {
   const router = useRouter();
-  const [f, setF] = useState({ q: "", carrier: "", status: "" });
+  const [f, setF] = useState({ q: "", carrier: "", training: "", status: "" });
   const [dlg, setDlg] = useState<DriverRow | "new" | null>(null);
   const [pending, start] = useTransition();
   const [showAll, setShowAll] = useState(false);
@@ -101,13 +101,19 @@ export function RoadSafetyView({
   const carriers = useMemo(() => [...new Set(drivers.map((d) => d.carrier))].sort(), [drivers]);
   const scoped = active.filter((d) => !f.carrier || d.carrier === f.carrier);
 
+  // Treinamentos considerados: o escolhido no filtro ou os dois.
+  const keys = (f.training ? [f.training] : TRAININGS.map((t) => t.key)) as ("onboarding" | "defensive")[];
+  const okAll = (d: DriverRow) => keys.every((k) => isDone(statusOf(d)[k]));
+
   // Indicadores por treinamento
-  const byTraining = TRAININGS.map((t) => {
+  const allTrainings = TRAININGS.map((t) => {
     const counts: Record<EffectiveStatus, number> = { REALIZADO: 0, A_VENCER: 0, VENCIDO: 0, PENDENTE: 0 };
     for (const d of scoped) counts[statusOf(d)[t.key]]++;
     const done = counts.REALIZADO + counts.A_VENCER;
     return { ...t, counts, done, pendentes: scoped.length - done, pct: pct(done, scoped.length) };
   });
+  // Os cards do topo mostram os dois treinamentos; o gráfico segue o filtro.
+  const byTraining = allTrainings.filter((t) => keys.includes(t.key));
   const aptos = scoped.filter((d) => {
     const s = statusOf(d);
     return isDone(s.onboarding) && isDone(s.defensive);
@@ -134,10 +140,7 @@ export function RoadSafetyView({
     })
     .filter((c) => c.total > 0);
 
-  const pendList = scoped.filter((d) => {
-    const s = statusOf(d);
-    return !isDone(s.onboarding) || !isDone(s.defensive);
-  });
+  const pendList = scoped.filter((d) => !okAll(d));
 
   const rows = drivers.filter((d) => {
     const q = f.q.trim().toLowerCase();
@@ -146,9 +149,9 @@ export function RoadSafetyView({
       (!q || `${d.name} ${d.cpf} ${d.plate} ${d.carrier}`.toLowerCase().includes(q)) &&
       (!f.carrier || d.carrier === f.carrier) &&
       (!f.status ||
-        (f.status === "aptos" && isDone(s.onboarding) && isDone(s.defensive)) ||
-        (f.status === "pendentes" && (!isDone(s.onboarding) || !isDone(s.defensive))) ||
-        (f.status === "vencidos" && (s.onboarding === "VENCIDO" || s.defensive === "VENCIDO")) ||
+        (f.status === "aptos" && okAll(d)) ||
+        (f.status === "pendentes" && !okAll(d)) ||
+        (f.status === "vencidos" && keys.some((k) => s[k] === "VENCIDO")) ||
         (f.status === "inativos" && !d.active))
     );
   });
@@ -220,8 +223,8 @@ export function RoadSafetyView({
       {/* KPIs */}
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-5">
         <Kpi icon={Users} label="Motoristas ativos" value={String(scoped.length)} tone="text-brand-950" />
-        <Kpi icon={GraduationCap} label="Onboarding realizado" value={pctTxt(byTraining[0].pct)} sub={`${byTraining[0].pendentes} pendente(s)`} tone="text-brand-700" />
-        <Kpi icon={ShieldCheck} label="Direção Defensiva realizada" value={pctTxt(byTraining[1].pct)} sub={`${byTraining[1].pendentes} pendente(s)`} tone="text-accent-700" />
+        <Kpi icon={GraduationCap} label="Onboarding realizado" value={pctTxt(allTrainings[0].pct)} sub={`${allTrainings[0].pendentes} pendente(s)`} tone="text-brand-700" />
+        <Kpi icon={ShieldCheck} label="Direção Defensiva realizada" value={pctTxt(allTrainings[1].pct)} sub={`${allTrainings[1].pendentes} pendente(s)`} tone="text-accent-700" />
         <Kpi icon={BadgeCheck} label="Aptos (2 treinamentos)" value={pctTxt(pct(aptos, scoped.length))} sub={`${aptos} de ${scoped.length}`} tone="text-conforme" />
         <Kpi icon={AlertTriangle} label="Treinamentos vencidos" value={String(vencidos)} tone={vencidos ? "text-critico" : "text-slate-400"} />
       </div>
@@ -354,12 +357,12 @@ export function RoadSafetyView({
                         {d.plate ? ` · ${d.plate}` : ""}
                       </span>
                       <span className="mt-1 flex flex-wrap gap-1">
-                        {!isDone(s.onboarding) ? (
+                        {keys.includes("onboarding") && !isDone(s.onboarding) ? (
                           <span className={cn("rounded px-1.5 py-0.5 text-[10px] font-semibold", STATUS_CLS[s.onboarding])}>
                             Onboarding · {EFFECTIVE_LABEL[s.onboarding]}
                           </span>
                         ) : null}
-                        {!isDone(s.defensive) ? (
+                        {keys.includes("defensive") && !isDone(s.defensive) ? (
                           <span className={cn("rounded px-1.5 py-0.5 text-[10px] font-semibold", STATUS_CLS[s.defensive])}>
                             Dir. Defensiva · {EFFECTIVE_LABEL[s.defensive]}
                           </span>
@@ -393,7 +396,7 @@ export function RoadSafetyView({
       </Card>
 
       {/* Registro */}
-      <div className="grid grid-cols-2 gap-2 rounded-xl border border-slate-200 bg-white p-3 md:grid-cols-[2fr_1fr_1fr_auto]">
+      <div className="grid grid-cols-2 gap-2 rounded-xl border border-slate-200 bg-white p-3 md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)_minmax(0,1.25fr)_minmax(0,1fr)_auto]">
         <div className="relative col-span-2 md:col-span-1">
           <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-slate-400" />
           <Input className="pl-9" placeholder="Buscar nome, CPF, placa…" value={f.q} onChange={(e) => setF({ ...f, q: e.target.value })} />
@@ -406,14 +409,22 @@ export function RoadSafetyView({
             </option>
           ))}
         </Select>
+        <Select value={f.training} onChange={(e) => setF({ ...f, training: e.target.value })} aria-label="Tipo de treinamento">
+          <option value="">Todos os treinamentos</option>
+          {TRAININGS.map((t) => (
+            <option key={t.key} value={t.key}>
+              {t.label}
+            </option>
+          ))}
+        </Select>
         <Select value={f.status} onChange={(e) => setF({ ...f, status: e.target.value })}>
           <option value="">Todos os status</option>
-          <option value="aptos">Aptos</option>
+          <option value="aptos">{f.training ? "Realizado" : "Aptos"}</option>
           <option value="pendentes">Com pendência</option>
           <option value="vencidos">Com treinamento vencido</option>
           <option value="inativos">Inativos</option>
         </Select>
-        <Button variant="ghost" onClick={() => setF({ q: "", carrier: "", status: "" })}>
+        <Button variant="ghost" onClick={() => setF({ q: "", carrier: "", training: "", status: "" })}>
           <FilterX /> Limpar
         </Button>
       </div>
