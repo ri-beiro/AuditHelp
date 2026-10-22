@@ -4,6 +4,9 @@ import { PrismaClient, Framework, Role } from "@prisma/client";
 import bcrypt from "bcryptjs";
 import wiseMatrix from "./data/wise-matrix.json";
 import basicsChecklist from "./data/basics-checklist.json";
+import mhcData from "./data/mhc.json";
+import { applyMhc } from "../src/lib/mhc-apply";
+import type { MhcData } from "../src/lib/mhc";
 import {
   BASICS_ELEMENTS,
   BASICS_PILLARS,
@@ -144,6 +147,12 @@ async function main() {
     update: {},
     create: { userId: admin.id, unitId: unit.id },
   });
+
+  // MHC (matriz de treinamentos por cargo): carga inicial só quando ainda não há treinamentos cadastrados.
+  if ((await prisma.training.count()) === 0) {
+    const r = await applyMhc(prisma, mhcData as MhcData);
+    console.log(`MHC — ${r.trainings} treinamentos, ${r.roles} cargos.`);
+  }
 
   const counts = await prisma.requirement.groupBy({ by: ["elementId"], _count: true });
   console.log(`OK — ${counts.length} elementos, ${counts.reduce((s, c) => s + c._count, 0)} requisitos.`);

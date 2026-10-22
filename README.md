@@ -58,6 +58,9 @@ Investigação de Incidentes e Excelência Operacional.
 - **Histórico de auditorias** (`/auditorias/historico`): as auditorias de contratadas entram automaticamente e as
   demais são registradas manualmente (nota e nota máxima, relatório, plano de ação). Mostra médias mensal e anual,
   melhor e pior nota, evolução, comparativo e ranking de áreas, com exportação para Excel e PDF (impressão).
+- **Treinamentos (MHC)** (`/treinamentos`): matriz de treinamentos por cargo importada da aba MHC (S / N / NA), com
+  validade (anual, bienal, sem vencimento), método, avaliação de eficácia e nota de corte. Visões Matriz, Por cargo e
+  Treinamentos; administradores editam células, cargos e treinamentos, importam a planilha (.xlsx/.xlsm) e exportam.
 - **Contatos de Segurança** (`/contatos-seguranca`): biblioteca em cards de DDS, Safety Alerts, campanhas e treinamentos.
   Cada card reúne PDFs (apresentados como slides), fotos, vídeos MP4 (até 100 MB), vídeos do YouTube e links, com
   visualização ampliada e tela cheia. Administradores criam e escolhem quem vê: CDs selecionados ou somente o autor.
