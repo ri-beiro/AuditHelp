@@ -4,7 +4,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import { can, getCurrentUser } from "@/server/context";
-import { ALLOWED_UPLOAD_TYPES, MAX_UPLOAD_MB } from "@/lib/uploads";
+import { ALLOWED_UPLOAD_TYPES, maxUploadMb } from "@/lib/uploads";
 
 const LOCAL_UPLOAD_DIR = path.join(process.cwd(), ".uploads");
 
@@ -17,8 +17,8 @@ export async function POST(request: Request) {
   const form = await request.formData();
   const file = form.get("file");
   if (!(file instanceof File)) return NextResponse.json({ error: "Arquivo ausente" }, { status: 400 });
-  if (file.size > MAX_UPLOAD_MB * 1024 * 1024)
-    return NextResponse.json({ error: `Limite de ${MAX_UPLOAD_MB} MB` }, { status: 400 });
+  if (file.size > maxUploadMb(file.type) * 1024 * 1024)
+    return NextResponse.json({ error: `Limite de ${maxUploadMb(file.type)} MB` }, { status: 400 });
   if (file.type && !ALLOWED_UPLOAD_TYPES.includes(file.type))
     return NextResponse.json({ error: "Tipo de arquivo não permitido" }, { status: 400 });
   const safe = file.name.replace(/[^\w.\-]+/g, "_").slice(-80);

@@ -1,11 +1,12 @@
 "use client";
 
 import { upload } from "@vercel/blob/client";
-import { MAX_UPLOAD_MB } from "./uploads";
+import { maxUploadMb } from "./uploads";
 
 /** Envia um arquivo para o Vercel Blob (produção) ou para o armazenamento local (desenvolvimento). */
 export async function uploadFile(file: File, folder: string, blobEnabled: boolean): Promise<string> {
-  if (file.size > MAX_UPLOAD_MB * 1024 * 1024) throw new Error(`${file.name}: limite de ${MAX_UPLOAD_MB} MB`);
+  const limit = maxUploadMb(file.type);
+  if (file.size > limit * 1024 * 1024) throw new Error(`${file.name}: limite de ${limit} MB`);
   if (blobEnabled) {
     const safe = file.name.replace(/[^\w.\-]+/g, "_");
     const blob = await upload(`evidencias/${folder}/${safe}`, file, { access: "private", handleUploadUrl: "/api/upload" });

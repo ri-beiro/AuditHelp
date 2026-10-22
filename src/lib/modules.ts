@@ -18,6 +18,7 @@ export const MODULES: ModuleDef[] = [
   { slug: "evidencias", href: "/evidencias", label: "Evidências", icon: "FolderOpen", group: "Gestão WISE", status: "ativo" },
   { slug: "relatorio", href: "/relatorio", label: "Relatório de Fechamento", icon: "FileBarChart", group: "Gestão WISE", status: "ativo" },
   { slug: "incidentes", href: "/incidentes", label: "Investigação de Incidentes", icon: "Siren", group: "Segurança", status: "ativo" },
+  { slug: "contatos", href: "/contatos-seguranca", label: "Contatos de Segurança", icon: "Presentation", group: "Segurança", status: "ativo" },
   { slug: "licoes", href: "/incidentes/licoes", label: "Lições Aprendidas", icon: "Lightbulb", group: "Segurança", status: "ativo" },
   { slug: "auditorias", href: "/auditorias", label: "Auditorias de Contratadas", icon: "ClipboardList", group: "Auditorias", status: "ativo" },
   { slug: "historico", href: "/auditorias/historico", label: "Histórico de Auditorias", icon: "History", group: "Auditorias", status: "ativo" },

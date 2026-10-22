@@ -92,6 +92,7 @@ model Unit {
   incidents   Incident[]
   auditRecords AuditRecord[]
   drivers      Driver[]
+  safetyContentUnits SafetyContentUnit[]
 
   // Data base do contador "Dias sem acidentes" quando ainda não há acidente registrável
   safetyStartDate DateTime?
@@ -123,6 +124,7 @@ model User {
   approvedIncidents    Incident[]         @relation("IncidentApprover")
   incidentAttachments  IncidentAttachment[]
   auditRecords         AuditRecord[]
+  safetyContents SafetyContent[]
 }
 
 model UnitMember {
@@ -529,4 +531,50 @@ model Driver {
 
   @@unique([unitId, cpfKey])
   @@index([unitId, carrier])
+}
+
+enum ContentVisibility {
+  PRIVATE
+  UNITS
+}
+
+/// Contatos de Segurança: pacote de conteúdos (DDS, Safety Alert, campanhas) com arquivos, vídeos e links.
+model SafetyContent {
+  id          String            @id @default(cuid())
+  title       String
+  description String?
+  category    String
+  visibility  ContentVisibility @default(UNITS)
+  createdById String?
+  createdBy   User?             @relation(fields: [createdById], references: [id], onDelete: SetNull)
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  units SafetyContentUnit[]
+  items SafetyContentItem[]
+}
+
+model SafetyContentUnit {
+  contentId String
+  content   SafetyContent @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  unitId    String
+  unit      Unit          @relation(fields: [unitId], references: [id], onDelete: Cascade)
+
+  @@id([contentId, unitId])
+  @@index([unitId])
+}
+
+model SafetyContentItem {
+  id        String        @id @default(cuid())
+  contentId String
+  content   SafetyContent @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  kind      String // FILE | YOUTUBE | LINK
+  name      String
+  url       String
+  mimeType  String?
+  size      Int?
+  order     Int           @default(0)
+  createdAt DateTime      @default(now())
+
+  @@index([contentId])
 }

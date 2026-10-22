@@ -58,6 +58,9 @@ Investigação de Incidentes e Excelência Operacional.
 - **Histórico de auditorias** (`/auditorias/historico`): as auditorias de contratadas entram automaticamente e as
   demais são registradas manualmente (nota e nota máxima, relatório, plano de ação). Mostra médias mensal e anual,
   melhor e pior nota, evolução, comparativo e ranking de áreas, com exportação para Excel e PDF (impressão).
+- **Contatos de Segurança** (`/contatos-seguranca`): biblioteca em cards de DDS, Safety Alerts, campanhas e treinamentos.
+  Cada card reúne PDFs (apresentados como slides), fotos, vídeos MP4 (até 100 MB), vídeos do YouTube e links, com
+  visualização ampliada e tela cheia. Administradores criam e escolhem quem vê: CDs selecionados ou somente o autor.
 - **Alerta de ações vencidas** no topo (sino), com link para `/acoes?status=atrasadas`.
 - **Busca global** (Ctrl + K) em elementos, requisitos, evidências, planos de ação e auditorias.
 - **Ciclos** (ano) e **unidades** selecionáveis no topo.
