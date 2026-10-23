@@ -1086,7 +1086,7 @@
     }
    },
    {
-    "text": "Os Produtos Químicos utilizados fora de salas dedicadas são usados em volume mínimo e transportados em contêineres de derramamento especiais, com uma pessoa clara responsável, devidamente identificada e com o FISPQ (ficha de segurança) são colocados no local de trabalho onde produtos químicos perigosos são usados.",
+    "text": "Os Produtos Químicos utilizados fora de salas dedicadas são usados em volume mínimo e transportados em contêineres de derramamento especiais, com uma pessoa clara responsável, devidamente identificada e com o FDS (ficha de segurança) são colocados no local de trabalho onde produtos químicos perigosos são usados.",
     "risk": 2,
     "code": "8.10",
     "criteria": {
@@ -1106,7 +1106,7 @@
     }
    },
    {
-    "text": "Existe um procedimento para gerenciar produtos químicos, incluindo a especificação de todos os produtos e a ficha de dados de segurança do material (FISPQ). Abrange a introdução de novos produtos químicos (processo de validação, armazenamento, uso, tratamento de emergência).",
+    "text": "Existe um procedimento para gerenciar produtos químicos, incluindo a especificação de todos os produtos e a ficha de dados de segurança do material (FDS). Abrange a introdução de novos produtos químicos (processo de validação, armazenamento, uso, tratamento de emergência).",
     "risk": 3,
     "code": "8.12",
     "criteria": {

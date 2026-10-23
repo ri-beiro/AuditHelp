@@ -245,7 +245,7 @@ export const BASICS_ELEMENTS: ElementDef[] = [
     shortName: "Produtos Químicos",
     pillar: "Riscos Críticos",
     icon: "FlaskConical",
-    description: "Armazenamento, FISPQ, EPI e treinamento para manuseio de produtos químicos.",
+    description: "Armazenamento, FDS, EPI e treinamento para manuseio de produtos químicos.",
     objective: "Controlar a exposição e os riscos de produtos químicos em todas as etapas.",
   },
   {

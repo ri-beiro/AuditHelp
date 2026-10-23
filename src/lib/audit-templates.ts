@@ -310,7 +310,7 @@ const LEGACY_TEMPLATES: AuditTemplate[] = [
         items: [
           {
             code: "L1.1",
-            text: "Todos os produtos têm FISPQ disponível no local de uso e constam do inventário de químicos do site.",
+            text: "Todos os produtos têm FDS disponível no local de uso e constam do inventário de químicos do site.",
             ref: "B8.12 · B8.13",
           },
           {
@@ -333,7 +333,7 @@ const LEGACY_TEMPLATES: AuditTemplate[] = [
           },
           {
             code: "L1.5",
-            text: "EPI para químicos disponível e em uso (luvas, óculos, botas e avental conforme a FISPQ).",
+            text: "EPI para químicos disponível e em uso (luvas, óculos, botas e avental conforme a FDS).",
             ref: "Regra de Ouro 4",
             critical: true,
           },
@@ -634,7 +634,7 @@ const SIMPLE_TEMPLATES: AuditTemplate[] = [
             ref: "B8 Produtos Químicos",
             critical: true,
             checks: [
-              "FISPQ no local de uso e produto no inventário do site",
+              "FDS no local de uso e produto no inventário do site",
               "Embalagem original ou identificada — nunca em garrafa de alimento",
               "Armazenamento segregado, ventilado, com contenção e acesso restrito",
               "Resíduos e embalagens vazias segregados e destinados corretamente",
@@ -647,7 +647,7 @@ const SIMPLE_TEMPLATES: AuditTemplate[] = [
             critical: true,
             checks: [
               "Treinada em riscos, diluição e incompatibilidades (ex.: cloro + amônia)",
-              "EPI conforme FISPQ em uso (luvas, óculos, botas, avental)",
+              "EPI conforme FDS em uso (luvas, óculos, botas, avental)",
               "Kit de derramamento e lava-olhos acessíveis e inspecionados",
             ],
           },
