@@ -88,7 +88,7 @@ export function EvidenceLibrary({ unitName, cycle, items }: { unitName: string; 
       </div>
       {rows.length === 0 ? (
         <div className="rounded-xl border border-dashed border-slate-300 bg-white p-12 text-center text-sm text-slate-500">
-          Nenhuma evidência encontrada. Anexe evidências abrindo um elemento no Dashboard.
+          Nenhuma evidência encontrada. Anexe evidências abrindo um elemento na Auditoria Wise.
         </div>
       ) : (
         <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">

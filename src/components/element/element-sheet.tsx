@@ -247,7 +247,7 @@ function SheetBody({
           </TabsContent>
           {isWise ? (
             <TabsContent value="roteiro" className="pt-4">
-              <InterviewPanel elementNumber={element.number} storageKey={`${detail.assessmentId}:${element.code}`} />
+              <InterviewPanel detail={detail} canEdit={ctx.perms.score} onSaved={ctx.setDetail} />
             </TabsContent>
           ) : null}
           <TabsContent value="parecer" className="pt-4">
@@ -405,6 +405,31 @@ function OpinionPanel({ ctx }: { ctx: SheetCtx }) {
           disabled={!ctx.perms.editElement}
           placeholder="Ex.: Formalizar a RACI de segurança por setor…"
         />
+      </div>
+      <div className="rounded-xl border border-slate-200 bg-white p-4 lg:col-span-2">
+        <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
+          <h4 className="text-sm font-semibold text-slate-800">Respostas da entrevista (roteiro do auditor)</h4>
+          <span className="text-xs text-slate-500">
+            {detail.interview.length} resposta(s) · preenchidas na aba Roteiro
+          </span>
+        </div>
+        {detail.interview.length ? (
+          <ol className="space-y-2.5">
+            {detail.interview.map((a) => (
+              <li key={a.index} className="text-sm">
+                <p className="font-medium text-slate-700">
+                  {a.index + 1}. {a.question}
+                </p>
+                <p className="mt-0.5 border-l-2 border-brand-200 pl-3 text-slate-600">
+                  {a.answer}
+                  {a.interviewee ? <span className="text-slate-400"> — {a.interviewee}</span> : null}
+                </p>
+              </li>
+            ))}
+          </ol>
+        ) : (
+          <p className="text-sm text-slate-400">Nenhuma resposta registrada ainda. Responda as perguntas na aba Roteiro.</p>
+        )}
       </div>
       {ctx.perms.editElement ? (
         <div className="lg:col-span-2">

@@ -6,6 +6,7 @@ import bcrypt from "bcryptjs";
 import { z } from "zod";
 import type { ActionPriority, ActionStatus, ElementStatus, Role } from "@prisma/client";
 import { db } from "@/lib/db";
+import { INTERVIEW_GUIDE } from "@/lib/interview-guide";
 import { BASICS_VALUES, WISE_VALUES } from "@/lib/scoring";
 import { signIn, signOut } from "@/auth";
 import {
@@ -152,6 +153,32 @@ export async function updateElementInfo(input: {
       create: { assessmentId: assessment.id, elementId: element.id, ...data },
     });
     revalidatePath("/", "layout");
+    return loadElementDetail(assessment.id, element.code);
+  });
+}
+
+/** Resposta do roteiro de entrevista: texto vazio apaga; o texto vai para o bloco do parecer. */
+export async function saveInterviewAnswer(input: {
+  assessmentId: string;
+  elementId: string;
+  questionIndex: number;
+  answer: string;
+  interviewee?: string;
+}) {
+  return run(async () => {
+    const { user, assessment } = await assessmentForUser(input.assessmentId);
+    await requirePermission("score");
+    const element = await db.element.findUniqueOrThrow({ where: { id: input.elementId } });
+    const question = INTERVIEW_GUIDE[element.number]?.[input.questionIndex];
+    if (element.framework !== "WISE" || !question) throw new Error("Pergunta do roteiro não encontrada.");
+    const key = { assessmentId_elementId_questionIndex: { assessmentId: assessment.id, elementId: element.id, questionIndex: input.questionIndex } };
+    const answer = input.answer.trim().slice(0, 4000);
+    if (!answer) await db.interviewAnswer.deleteMany({ where: key.assessmentId_elementId_questionIndex });
+    else {
+      const data = { answer, question, interviewee: input.interviewee?.trim().slice(0, 200) || null, updatedById: user.id };
+      await db.interviewAnswer.upsert({ where: key, update: data, create: { ...key.assessmentId_elementId_questionIndex, ...data } });
+    }
+    revalidatePath("/relatorio");
     return loadElementDetail(assessment.id, element.code);
   });
 }

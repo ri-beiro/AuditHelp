@@ -32,6 +32,7 @@ type Props = {
   basics: FrameworkOverview;
   report: Report;
   opinions: Record<string, { summary: string; recommendations: string }>;
+  interviews?: Record<string, { index: number; question: string; answer: string; interviewee: string }[]>;
   level1Gaps: { code: string; text: string }[];
   actions: {
     id: string;
@@ -302,8 +303,9 @@ export function ClosingReportView(props: Props) {
       <Section title="Avaliação e recomendações por elemento">
         <div className="space-y-3">
           {wise.elements.map((e) => {
-            const o = props.opinions[e.id];
-            if (!o || (!o.summary && !o.recommendations)) return null;
+            const o = props.opinions[e.id] ?? { summary: "", recommendations: "" };
+            const iv = props.interviews?.[e.id] ?? [];
+            if (!o.summary && !o.recommendations && !iv.length) return null;
             return (
               <div key={e.id} className="rounded-lg border border-slate-200 p-3 print:break-inside-avoid">
                 <div className="mb-1 flex items-center gap-2 text-sm font-semibold text-slate-800">
@@ -315,11 +317,24 @@ export function ClosingReportView(props: Props) {
                     <strong>Recomendações:</strong> {o.recommendations}
                   </p>
                 ) : null}
+                {iv.length ? (
+                  <div className="mt-2 border-t border-slate-100 pt-2">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Respostas da entrevista</p>
+                    <ol className="mt-1 space-y-1">
+                      {iv.map((a) => (
+                        <li key={a.index} className="text-sm text-slate-700">
+                          <span className="font-medium">{a.question}</span> — {a.answer}
+                          {a.interviewee ? <span className="text-slate-500"> ({a.interviewee})</span> : null}
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                ) : null}
               </div>
             );
           })}
-          {wise.elements.every((e) => !props.opinions[e.id]?.summary && !props.opinions[e.id]?.recommendations) ? (
-            <p className="text-sm text-slate-500">Preencha a aba “Parecer” de cada elemento no Dashboard para compor esta seção.</p>
+          {wise.elements.every((e) => !props.opinions[e.id]?.summary && !props.opinions[e.id]?.recommendations && !props.interviews?.[e.id]?.length) ? (
+            <p className="text-sm text-slate-500">Preencha o Roteiro e o Parecer de cada elemento na Auditoria Wise para compor esta seção.</p>
           ) : null}
         </div>
       </Section>

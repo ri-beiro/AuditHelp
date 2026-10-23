@@ -240,7 +240,7 @@ export async function loadElementDetail(assessmentId: string, code: string) {
       requirements: { orderBy: [{ level: "asc" }, { order: "asc" }] },
     },
   });
-  const [scores, ea, evidences, actions, members] = await Promise.all([
+  const [scores, ea, evidences, actions, members, interview] = await Promise.all([
     db.requirementScore.findMany({
       where: { assessmentId, requirement: { elementId: element.id } },
       include: { updatedBy: { select: { name: true } } },
@@ -260,6 +260,7 @@ export async function loadElementDetail(assessmentId: string, code: string) {
       orderBy: [{ status: "asc" }, { dueDate: "asc" }],
     }),
     unitMembers(assessment.unitId),
+    db.interviewAnswer.findMany({ where: { assessmentId, elementId: element.id }, orderBy: { questionIndex: "asc" } }),
   ]);
   const byReq = new Map(scores.map((s) => [s.requirementId, s]));
   const requirements = element.requirements.map((r) => {
@@ -326,6 +327,13 @@ export async function loadElementDetail(assessmentId: string, code: string) {
     })),
     actions: actions.map(serializeAction),
     members,
+    interview: interview.map((a) => ({
+      index: a.questionIndex,
+      question: a.question,
+      answer: a.answer,
+      interviewee: a.interviewee ?? "",
+      updatedAt: a.updatedAt.toISOString(),
+    })),
   };
 }
 

@@ -223,6 +223,7 @@ model Assessment {
   report      ClosingReport?
 
   @@unique([unitId, framework, cycle])
+  interviewAnswers InterviewAnswer[]
 }
 
 model ElementAssessment {
@@ -659,4 +660,20 @@ model EmployeeTraining {
 
   @@id([employeeId, trainingId])
   @@index([trainingId])
+}
+
+/// Resposta escrita pelo auditor a uma pergunta do roteiro de entrevista (vai para o parecer do elemento).
+model InterviewAnswer {
+  id            String   @id @default(cuid())
+  assessmentId  String
+  assessment    Assessment @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  elementId     String
+  questionIndex Int
+  question      String
+  answer        String
+  interviewee   String?
+  updatedAt     DateTime @updatedAt
+  updatedById   String?
+
+  @@unique([assessmentId, elementId, questionIndex])
 }

@@ -11,7 +11,7 @@ export default async function ReportPage() {
     getOrCreateAssessment(unit.id, "WISE", cycle, user.id),
     getOrCreateAssessment(unit.id, "BASICS", cycle, user.id),
   ]);
-  const [wise, basics, report, opinions, n1Actions, level1Gaps] = await Promise.all([
+  const [wise, basics, report, opinions, n1Actions, level1Gaps, interviews] = await Promise.all([
     loadOverview(wiseA.id, "WISE", unit.id),
     loadOverview(basicsA.id, "BASICS", unit.id),
     db.closingReport.findUnique({ where: { assessmentId: wiseA.id }, include: { updatedBy: { select: { name: true } } } }),
@@ -29,6 +29,7 @@ export default async function ReportPage() {
       where: { assessmentId: basicsA.id, value: "BASIC", requirement: { riskLevel: 1 } },
       include: { requirement: { select: { code: true, text: true } } },
     }),
+    db.interviewAnswer.findMany({ where: { assessmentId: wiseA.id }, orderBy: [{ elementId: "asc" }, { questionIndex: "asc" }] }),
   ]);
   return (
     <ClosingReportView
@@ -49,6 +50,10 @@ export default async function ReportPage() {
         updatedAt: report?.updatedAt?.toISOString() ?? null,
         updatedBy: report?.updatedBy?.name ?? null,
       }}
+      interviews={interviews.reduce<Record<string, { index: number; question: string; answer: string; interviewee: string }[]>>((acc, a) => {
+        (acc[a.elementId] ??= []).push({ index: a.questionIndex, question: a.question, answer: a.answer, interviewee: a.interviewee ?? "" });
+        return acc;
+      }, {})}
       opinions={Object.fromEntries(opinions.map((o) => [o.elementId, { summary: o.summary ?? "", recommendations: o.recommendations ?? "" }]))}
       level1Gaps={level1Gaps.map((g) => ({ code: g.requirement.code, text: g.requirement.text }))}
       actions={n1Actions.map((a) => ({

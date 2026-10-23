@@ -11,7 +11,7 @@ export type ModuleDef = {
 };
 
 export const MODULES: ModuleDef[] = [
-  { slug: "dashboard", href: "/", label: "Dashboard", icon: "LayoutDashboard", group: "Gestão WISE", status: "ativo" },
+  { slug: "dashboard", href: "/", label: "Auditoria Wise", icon: "LayoutDashboard", group: "Gestão WISE", status: "ativo" },
   { slug: "indicadores", href: "/indicadores", label: "Indicadores", icon: "BarChart3", group: "Gestão WISE", status: "ativo" },
   { slug: "acoes", href: "/acoes", label: "Planos de Ação", icon: "ListChecks", group: "Gestão WISE", status: "ativo" },
   { slug: "road-safety", href: "/road-safety", label: "Road Safety", icon: "Truck", group: "Gestão WISE", status: "ativo" },

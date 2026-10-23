@@ -81,7 +81,7 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
         <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="eyebrow">
-              Painel de gestão · Ciclo {cycle}
+              Auditoria Wise · Ciclo {cycle}
             </p>
             <h1 className="mt-2 text-3xl font-extrabold tracking-tight md:text-4xl">{unit.name}</h1>
             <p className="mt-1 max-w-xl text-sm text-brand-100/80">
