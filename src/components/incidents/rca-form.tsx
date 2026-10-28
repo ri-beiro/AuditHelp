@@ -390,6 +390,12 @@ function Section({ n, title, icon: Icon, children }: { n: number; title: string;
 const MAX_BOXES = 12;
 
 /** Diagrama de Ishikawa no modelo do formulário: 3 espinhas em cima, 3 embaixo, quadradinhos editáveis. */
+const FISH = "#7aa5b3";
+
+/**
+ * Diagrama de Ishikawa desenhado como um peixe: cauda, espinha central, 3 espinhas em cima e 3 embaixo
+ * (com os quadradinhos editáveis), cabeça e o círculo do efeito (problema).
+ */
 function Fishbone({
   value,
   head,
@@ -409,25 +415,55 @@ function Fishbone({
   return (
     <>
       {/* Desktop: desenho do peixe */}
-      <div className="hidden overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(180deg,#f8fafc,#ffffff_50%,#f8fafc)] p-4 lg:flex">
-        <div className="flex min-w-0 flex-1 flex-col">
-          <div className="grid grid-cols-3 gap-2">{top.map((x) => bone(x, "top"))}</div>
-          <div className="relative h-0">
-            <div className="absolute inset-x-0 right-3 -top-[2.5px] h-[5px] rounded-l-full bg-brand-800" />
-            <div className="absolute -top-[10px] right-0 size-0 border-y-[10px] border-l-[16px] border-y-transparent border-l-brand-800" />
+      <div className="hidden rounded-2xl border border-slate-200 bg-white p-4 lg:block">
+        <div className="grid grid-cols-[72px_1fr_84px_190px] grid-rows-[auto_0_auto]">
+          <div className="col-start-2 row-start-1 grid grid-cols-3 gap-3">{top.map((x) => bone(x, "top"))}</div>
+          {/* Cauda */}
+          <div className="relative col-start-1 row-start-2">
+            <svg className="absolute -top-[58px] left-0 h-[116px] w-[76px]" viewBox="0 0 76 116" aria-hidden>
+              <path d="M2 2 C 30 18, 52 38, 62 52 L 76 56 L 76 60 L 62 64 C 52 78, 30 98, 2 114 C 14 92, 20 74, 30 58 C 20 42, 14 24, 2 2 Z" fill={FISH} />
+            </svg>
           </div>
-          <div className="grid grid-cols-3 gap-2">{bottom.map((x) => bone(x, "bottom"))}</div>
-        </div>
-        <div className="flex w-56 shrink-0 items-center">
-          <div className="w-full rounded-r-[48px] rounded-l-xl bg-gradient-to-br from-critico to-accent-600 p-4 pr-6 text-sm font-medium text-white shadow-soft">
-            <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-white/80">Problema</p>
-            <p className="line-clamp-[9] leading-snug">{head}</p>
+          {/* Espinha central */}
+          <div className="relative col-start-2 row-start-2">
+            <div className="absolute inset-x-0 -top-[2px] h-1 rounded-full" style={{ background: FISH }} />
           </div>
+          {/* Cabeça */}
+          <div className="relative col-start-3 row-start-2">
+            <svg className="absolute -top-[56px] left-0 h-[112px] w-[84px]" viewBox="0 0 84 112" aria-hidden>
+              <path d="M0 4 C 34 6, 66 26, 82 56 C 66 86, 34 106, 0 108 C 10 76, 10 36, 0 4 Z" fill={FISH} />
+              <path d="M0 4 C 10 36, 10 76, 0 108" fill="none" stroke="#5f8b99" strokeWidth="2" />
+              <ellipse cx="46" cy="44" rx="6" ry="8" fill="#ffffff" />
+            </svg>
+          </div>
+          {/* Efeito */}
+          <div className="relative col-start-4 row-start-2">
+            <div
+              className="absolute -top-[88px] left-4 grid size-[176px] place-items-center rounded-full border-[3px] bg-white p-5 text-center"
+              style={{ borderColor: FISH }}
+            >
+              <div>
+                <p className="mb-1 text-[11px] font-bold uppercase tracking-wider" style={{ color: FISH }}>
+                  Efeito
+                </p>
+                <p className="line-clamp-5 text-[12px] font-medium leading-snug text-slate-700" title={head}>
+                  {head}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-start-2 row-start-3 grid grid-cols-3 gap-3">{bottom.map((x) => bone(x, "bottom"))}</div>
         </div>
       </div>
 
       {/* Celular / tela estreita: listas por categoria */}
       <div className="grid gap-3 sm:grid-cols-2 lg:hidden">
+        <div className="rounded-xl border-2 p-3 text-sm sm:col-span-2" style={{ borderColor: FISH }}>
+          <p className="text-[11px] font-bold uppercase tracking-wider" style={{ color: FISH }}>
+            Efeito
+          </p>
+          <p className="text-slate-700">{head}</p>
+        </div>
         {FISHBONE.map((x) => (
           <div key={x.k} className="rounded-xl border border-slate-200 p-3">
             <BoxList label={x.label} boxes={value[x.k]} editable={editable} onChange={(list) => onChange(x.k, list)} />
@@ -454,14 +490,16 @@ function BoneColumn({
   const isTop = side === "top";
   const n = boxes.length;
   const header = (
-    <div className={cn("relative z-10 flex items-center gap-1.5", isTop ? "mb-2" : "mt-2")}>
-      <span className="rounded-md bg-brand-800 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white shadow-soft">{label}</span>
+    <div className={cn("relative z-10 flex items-center justify-center gap-1.5", isTop ? "mb-2" : "mt-2")}>
+      <span className="text-sm font-bold lowercase tracking-wide" style={{ color: "#5f8b99" }}>
+        {label}
+      </span>
       {editable && n < MAX_BOXES ? (
         <button
           type="button"
           title="Acrescentar quadradinho"
           onClick={() => onChange([...boxes, ""])}
-          className="grid size-6 place-items-center rounded-full border border-brand-200 bg-white text-brand-700 shadow-soft transition hover:bg-brand-600 hover:text-white"
+          className="grid size-6 place-items-center rounded-full border border-[#7aa5b3] bg-white text-[#5f8b99] shadow-soft transition hover:bg-[#7aa5b3] hover:text-white"
         >
           <Plus className="size-3.5" />
         </button>
@@ -469,25 +507,26 @@ function BoneColumn({
     </div>
   );
   return (
-    <div className={cn("relative flex min-h-[210px] flex-col", isTop ? "justify-start" : "justify-end")}>
-      {/* Espinha diagonal até a coluna central */}
+    <div className={cn("relative flex min-h-[190px] flex-col", isTop ? "justify-start pb-1" : "justify-end pt-1")}>
+      {/* Espinha diagonal: sai da espinha central (canto direito) em direção ao rótulo */}
       <svg className="pointer-events-none absolute inset-0 size-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden>
         <line
-          x1={isTop ? 6 : 98}
-          y1={isTop ? 8 : 0}
-          x2={isTop ? 98 : 6}
-          y2={isTop ? 100 : 92}
-          stroke="#0b2e5c"
-          strokeWidth={3}
+          x1={isTop ? 50 : 98}
+          y1={isTop ? 12 : 0}
+          x2={isTop ? 98 : 50}
+          y2={isTop ? 100 : 88}
+          stroke={FISH}
+          strokeWidth={5}
+          strokeLinecap="round"
           vectorEffect="non-scaling-stroke"
         />
       </svg>
       {isTop ? header : null}
-      <div className={cn("relative z-10 flex flex-col gap-2", isTop ? "pb-3" : "pt-3")}>
+      <div className={cn("relative z-10 flex flex-col gap-2", isTop ? "pb-4" : "pt-4")}>
         {boxes.map((text, i) => {
           // Os quadradinhos acompanham a inclinação da espinha.
           const t = n === 1 ? 0.5 : i / (n - 1);
-          const offset = 4 + (isTop ? t : 1 - t) * 40;
+          const offset = 2 + (isTop ? t : 1 - t) * 30;
           return (
             <FishBox
               key={i}
@@ -509,7 +548,9 @@ function BoxList({ label, boxes, editable, onChange }: { label: string; boxes: s
   return (
     <>
       <div className="mb-2 flex items-center justify-between">
-        <span className="rounded-md bg-brand-800 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-white">{label}</span>
+        <span className="text-sm font-bold lowercase" style={{ color: "#5f8b99" }}>
+          {label}
+        </span>
         {editable && boxes.length < MAX_BOXES ? (
           <button type="button" onClick={() => onChange([...boxes, ""])} className="flex items-center gap-1 text-xs font-semibold text-brand-700">
             <Plus className="size-3.5" /> Quadradinho
@@ -552,7 +593,7 @@ function FishBox({
         readOnly={!editable}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Causa…"
-        className="block w-full resize-none rounded-md border-2 border-brand-700/80 bg-white px-2 py-1.5 text-[12px] leading-snug text-slate-800 shadow-soft outline-none placeholder:text-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
+        className="block w-full resize-none rounded-md border-2 border-[#7aa5b3] bg-white px-2 py-1.5 text-[12px] leading-snug text-slate-800 shadow-soft outline-none placeholder:text-slate-300 focus:border-[#5f8b99] focus:ring-2 focus:ring-[#7aa5b3]/30"
         style={{ fieldSizing: "content", minHeight: "2.6rem" } as React.CSSProperties}
       />
       {editable && onRemove ? (

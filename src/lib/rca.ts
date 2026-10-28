@@ -94,15 +94,18 @@ export const SIX_W_TWO_H = [
 ] as const;
 export type SixWKey = (typeof SIX_W_TWO_H)[number]["k"];
 
-/** Seção 3 — Espinha de peixe, com as categorias do formulário (3 em cima, 3 embaixo). */
+/** Seção 3 — Espinha de peixe (6M): 3 espinhas em cima e 3 embaixo, da cauda para a cabeça. */
 export const FISHBONE = [
-  { k: "material", label: "Materiais" },
-  { k: "maquina", label: "Máquina" },
-  { k: "gestao", label: "Organização / Gestão" },
   { k: "maoDeObra", label: "Mão de obra" },
-  { k: "metodo", label: "Método" },
   { k: "meioAmbiente", label: "Meio ambiente" },
+  { k: "material", label: "Materiais" },
+  { k: "maquina", label: "Máquinas" },
+  { k: "medicao", label: "Medição" },
+  { k: "metodo", label: "Métodos" },
 ] as const;
+
+/** Rótulos antigos de categoria nos 5 porquês → rótulos atuais. */
+const OLD_CATEGORY: Record<string, string> = { Material: "Materiais", Máquina: "Máquinas", Método: "Métodos", Medida: "Medição" };
 export type FishKey = (typeof FISHBONE)[number]["k"];
 
 export const CAUSE_TYPES = [
@@ -189,8 +192,8 @@ export function parseRca(raw: unknown): RcaData {
     solvedByBasics: yn(r.solvedByBasics),
     fishbone: Object.fromEntries(
       FISHBONE.map((x) => {
-        // Versão anterior guardava texto com uma causa por linha (e "medida" no lugar de "gestao").
-        const v = fish[x.k] ?? (x.k === "gestao" ? fish.medida : undefined);
+        // Versão anterior guardava texto com uma causa por linha (e "medida" no lugar de "medicao").
+        const v = fish[x.k] ?? (x.k === "medicao" ? fish.medida : undefined);
         const list = Array.isArray(v) ? v.map((s) => str(s, 1000)) : str(v, 4000).split("\n").filter((s) => s.trim());
         return [x.k, list.length ? list.slice(0, 12) : [""]];
       }),
@@ -201,7 +204,7 @@ export function parseRca(raw: unknown): RcaData {
           const o = obj(w);
           const list = Array.isArray(o.whys) ? o.whys : [];
           return {
-            category: str(o.category, 100) === "Material" ? "Materiais" : str(o.category, 100),
+            category: OLD_CATEGORY[str(o.category, 100)] ?? str(o.category, 100),
             factor: str(o.factor, 2000),
             whys: [0, 1, 2, 3, 4].map((i) => str(list[i], 4000)),
             rootCause: str(o.rootCause, 4000),
