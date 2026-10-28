@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AlertTriangle, ArrowRight, CheckCircle2, Download, Fish, HelpCircle, ListChecks, Plus, Save, Search, Trash2, Zap } from "lucide-react";
+import { AlertTriangle, CheckCircle2, Download, Fish, HelpCircle, ListChecks, Plus, Save, Search, Trash2, X, Zap } from "lucide-react";
 import type { IncidentDetail } from "@/server/incident-queries";
 import {
   CAUSE_TYPES,
@@ -12,6 +12,7 @@ import {
   emptyWhy,
   rcaMissing,
   rcaSections,
+  type FishKey,
   type RcaData,
   type YesNo,
 } from "@/lib/rca";
@@ -198,25 +199,15 @@ export function RcaForm({
 
         {/* 3. Espinha de peixe */}
         <Section n={3} title="Espinha de peixe (Ishikawa)" icon={Fish}>
-          <p className="mb-3 text-xs text-slate-500">Liste as causas potenciais em cada categoria (uma por linha). A cabeça do peixe é a declaração do problema refocalizada.</p>
-          <div className="relative grid gap-3 lg:grid-cols-[repeat(3,1fr)_220px]">
-            {FISHBONE.slice(0, 3).map((x) => (
-              <Bone key={x.k} label={x.label} value={r.fishbone[x.k]} onChange={(v) => set("fishbone", { ...r.fishbone, [x.k]: v })} />
-            ))}
-            <div className="row-span-3 hidden items-center lg:flex">
-              <div className="w-full rounded-2xl bg-gradient-to-br from-critico to-accent-600 p-4 text-sm font-medium text-white shadow-soft">
-                <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-white/80">Problema</p>
-                <p className="line-clamp-[8]">{r.problemStatement || inc.title}</p>
-              </div>
-            </div>
-            <div className="col-span-3 hidden items-center lg:flex">
-              <div className="h-1.5 flex-1 rounded-full bg-brand-800" />
-              <ArrowRight className="-ml-1 size-6 text-brand-800" />
-            </div>
-            {FISHBONE.slice(3).map((x) => (
-              <Bone key={x.k} label={x.label} value={r.fishbone[x.k]} onChange={(v) => set("fishbone", { ...r.fishbone, [x.k]: v })} bottom />
-            ))}
-          </div>
+          <p className="mb-3 text-xs text-slate-500">
+            Escreva uma causa potencial em cada quadradinho. Use <b>+</b> para acrescentar mais quadradinhos na espinha. A cabeça do peixe é a declaração do problema refocalizada.
+          </p>
+          <Fishbone
+            value={r.fishbone}
+            head={r.problemStatement || inc.title}
+            editable={editable}
+            onChange={(k, list) => set("fishbone", { ...r.fishbone, [k]: list })}
+          />
           <div className="mt-4">
             <Field label="Fatores essenciais (2 a 3) — se não tivessem ocorrido, o acidente não teria acontecido">
               <Textarea
@@ -396,11 +387,184 @@ function Section({ n, title, icon: Icon, children }: { n: number; title: string;
   );
 }
 
-function Bone({ label, value, onChange, bottom }: { label: string; value: string; onChange: (v: string) => void; bottom?: boolean }) {
+const MAX_BOXES = 12;
+
+/** Diagrama de Ishikawa no modelo do formulário: 3 espinhas em cima, 3 embaixo, quadradinhos editáveis. */
+function Fishbone({
+  value,
+  head,
+  editable,
+  onChange,
+}: {
+  value: RcaData["fishbone"];
+  head: string;
+  editable: boolean;
+  onChange: (k: FishKey, list: string[]) => void;
+}) {
+  const top = FISHBONE.slice(0, 3);
+  const bottom = FISHBONE.slice(3);
+  const bone = (x: (typeof FISHBONE)[number], side: "top" | "bottom") => (
+    <BoneColumn key={x.k} label={x.label} side={side} boxes={value[x.k]} editable={editable} onChange={(list) => onChange(x.k, list)} />
+  );
   return (
-    <div className={cn("relative rounded-xl border border-slate-200 bg-white p-3", bottom ? "lg:border-t-4 lg:border-t-brand-700" : "lg:border-b-4 lg:border-b-brand-700")}>
-      <p className="mb-1.5 text-xs font-bold uppercase tracking-wide text-brand-700">{label}</p>
-      <Textarea rows={3} value={value} onChange={(e) => onChange(e.target.value)} placeholder="Uma causa por linha" className="text-[13px]" />
+    <>
+      {/* Desktop: desenho do peixe */}
+      <div className="hidden overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(180deg,#f8fafc,#ffffff_50%,#f8fafc)] p-4 lg:flex">
+        <div className="flex min-w-0 flex-1 flex-col">
+          <div className="grid grid-cols-3 gap-2">{top.map((x) => bone(x, "top"))}</div>
+          <div className="relative h-0">
+            <div className="absolute inset-x-0 right-3 -top-[2.5px] h-[5px] rounded-l-full bg-brand-800" />
+            <div className="absolute -top-[10px] right-0 size-0 border-y-[10px] border-l-[16px] border-y-transparent border-l-brand-800" />
+          </div>
+          <div className="grid grid-cols-3 gap-2">{bottom.map((x) => bone(x, "bottom"))}</div>
+        </div>
+        <div className="flex w-56 shrink-0 items-center">
+          <div className="w-full rounded-r-[48px] rounded-l-xl bg-gradient-to-br from-critico to-accent-600 p-4 pr-6 text-sm font-medium text-white shadow-soft">
+            <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-white/80">Problema</p>
+            <p className="line-clamp-[9] leading-snug">{head}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Celular / tela estreita: listas por categoria */}
+      <div className="grid gap-3 sm:grid-cols-2 lg:hidden">
+        {FISHBONE.map((x) => (
+          <div key={x.k} className="rounded-xl border border-slate-200 p-3">
+            <BoxList label={x.label} boxes={value[x.k]} editable={editable} onChange={(list) => onChange(x.k, list)} />
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+function BoneColumn({
+  label,
+  side,
+  boxes,
+  editable,
+  onChange,
+}: {
+  label: string;
+  side: "top" | "bottom";
+  boxes: string[];
+  editable: boolean;
+  onChange: (list: string[]) => void;
+}) {
+  const isTop = side === "top";
+  const n = boxes.length;
+  const header = (
+    <div className={cn("relative z-10 flex items-center gap-1.5", isTop ? "mb-2" : "mt-2")}>
+      <span className="rounded-md bg-brand-800 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white shadow-soft">{label}</span>
+      {editable && n < MAX_BOXES ? (
+        <button
+          type="button"
+          title="Acrescentar quadradinho"
+          onClick={() => onChange([...boxes, ""])}
+          className="grid size-6 place-items-center rounded-full border border-brand-200 bg-white text-brand-700 shadow-soft transition hover:bg-brand-600 hover:text-white"
+        >
+          <Plus className="size-3.5" />
+        </button>
+      ) : null}
+    </div>
+  );
+  return (
+    <div className={cn("relative flex min-h-[210px] flex-col", isTop ? "justify-start" : "justify-end")}>
+      {/* Espinha diagonal até a coluna central */}
+      <svg className="pointer-events-none absolute inset-0 size-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden>
+        <line
+          x1={isTop ? 6 : 98}
+          y1={isTop ? 8 : 0}
+          x2={isTop ? 98 : 6}
+          y2={isTop ? 100 : 92}
+          stroke="#0b2e5c"
+          strokeWidth={3}
+          vectorEffect="non-scaling-stroke"
+        />
+      </svg>
+      {isTop ? header : null}
+      <div className={cn("relative z-10 flex flex-col gap-2", isTop ? "pb-3" : "pt-3")}>
+        {boxes.map((text, i) => {
+          // Os quadradinhos acompanham a inclinação da espinha.
+          const t = n === 1 ? 0.5 : i / (n - 1);
+          const offset = 4 + (isTop ? t : 1 - t) * 40;
+          return (
+            <FishBox
+              key={i}
+              style={{ marginLeft: `${offset}%` }}
+              value={text}
+              editable={editable}
+              onChange={(v) => onChange(boxes.map((b, j) => (j === i ? v : b)))}
+              onRemove={n > 1 ? () => onChange(boxes.filter((_, j) => j !== i)) : undefined}
+            />
+          );
+        })}
+      </div>
+      {isTop ? null : header}
+    </div>
+  );
+}
+
+function BoxList({ label, boxes, editable, onChange }: { label: string; boxes: string[]; editable: boolean; onChange: (list: string[]) => void }) {
+  return (
+    <>
+      <div className="mb-2 flex items-center justify-between">
+        <span className="rounded-md bg-brand-800 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-white">{label}</span>
+        {editable && boxes.length < MAX_BOXES ? (
+          <button type="button" onClick={() => onChange([...boxes, ""])} className="flex items-center gap-1 text-xs font-semibold text-brand-700">
+            <Plus className="size-3.5" /> Quadradinho
+          </button>
+        ) : null}
+      </div>
+      <div className="space-y-2">
+        {boxes.map((text, i) => (
+          <FishBox
+            key={i}
+            value={text}
+            editable={editable}
+            onChange={(v) => onChange(boxes.map((b, j) => (j === i ? v : b)))}
+            onRemove={boxes.length > 1 ? () => onChange(boxes.filter((_, j) => j !== i)) : undefined}
+          />
+        ))}
+      </div>
+    </>
+  );
+}
+
+function FishBox({
+  value,
+  editable,
+  onChange,
+  onRemove,
+  style,
+}: {
+  value: string;
+  editable: boolean;
+  onChange: (v: string) => void;
+  onRemove?: () => void;
+  style?: React.CSSProperties;
+}) {
+  return (
+    <div style={style} className="group relative w-[54%] min-w-[150px] max-lg:w-full">
+      <textarea
+        rows={2}
+        value={value}
+        readOnly={!editable}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder="Causa…"
+        className="block w-full resize-none rounded-md border-2 border-brand-700/80 bg-white px-2 py-1.5 text-[12px] leading-snug text-slate-800 shadow-soft outline-none placeholder:text-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
+        style={{ fieldSizing: "content", minHeight: "2.6rem" } as React.CSSProperties}
+      />
+      {editable && onRemove ? (
+        <button
+          type="button"
+          title="Remover quadradinho"
+          onClick={onRemove}
+          className="absolute -right-2 -top-2 hidden size-5 place-items-center rounded-full bg-critico text-white shadow-soft group-hover:grid"
+        >
+          <X className="size-3" />
+        </button>
+      ) : null}
     </div>
   );
 }

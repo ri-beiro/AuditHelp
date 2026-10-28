@@ -106,7 +106,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
 
   section("3. Espinha de peixe");
   labelValue("Problema (cabeça)", r.problemStatement || inc.title);
-  for (const f of FISHBONE) labelValue(f.label, r.fishbone[f.k]);
+  for (const f of FISHBONE) labelValue(f.label, r.fishbone[f.k].filter((s) => s.trim()).map((s) => `• ${s.trim()}`).join("\n"));
   labelValue("Fatores essenciais", r.essentialFactors);
 
   section("4. 5 Porquês — O que levou ao incidente?");

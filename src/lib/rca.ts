@@ -94,14 +94,14 @@ export const SIX_W_TWO_H = [
 ] as const;
 export type SixWKey = (typeof SIX_W_TWO_H)[number]["k"];
 
-/** Seção 3 — Espinha de peixe (6M). */
+/** Seção 3 — Espinha de peixe, com as categorias do formulário (3 em cima, 3 embaixo). */
 export const FISHBONE = [
+  { k: "material", label: "Materiais" },
+  { k: "maquina", label: "Máquina" },
+  { k: "gestao", label: "Organização / Gestão" },
   { k: "maoDeObra", label: "Mão de obra" },
   { k: "metodo", label: "Método" },
-  { k: "maquina", label: "Máquina" },
-  { k: "material", label: "Material" },
   { k: "meioAmbiente", label: "Meio ambiente" },
-  { k: "medida", label: "Medida" },
 ] as const;
 export type FishKey = (typeof FISHBONE)[number]["k"];
 
@@ -129,7 +129,8 @@ export type RcaData = {
   sixW: Record<SixWKey, string>;
   problemStatement: string;
   solvedByBasics: YesNo;
-  fishbone: Record<FishKey, string>;
+  /** Cada categoria é uma lista de "quadradinhos" (uma causa por quadro). */
+  fishbone: Record<FishKey, string[]>;
   essentialFactors: string;
   whys: WhyRow[];
   rootCauseFound: YesNo;
@@ -151,7 +152,7 @@ export function emptyRca(): RcaData {
     sixW: Object.fromEntries(SIX_W_TWO_H.map((x) => [x.k, ""])) as Record<SixWKey, string>,
     problemStatement: "",
     solvedByBasics: "",
-    fishbone: Object.fromEntries(FISHBONE.map((x) => [x.k, ""])) as Record<FishKey, string>,
+    fishbone: Object.fromEntries(FISHBONE.map((x) => [x.k, [""]])) as Record<FishKey, string[]>,
     essentialFactors: "",
     whys: [emptyWhy()],
     rootCauseFound: "",
@@ -186,14 +187,21 @@ export function parseRca(raw: unknown): RcaData {
     sixW: Object.fromEntries(SIX_W_TWO_H.map((x) => [x.k, str(sixW[x.k], 4000)])) as Record<SixWKey, string>,
     problemStatement: str(r.problemStatement),
     solvedByBasics: yn(r.solvedByBasics),
-    fishbone: Object.fromEntries(FISHBONE.map((x) => [x.k, str(fish[x.k], 4000)])) as Record<FishKey, string>,
+    fishbone: Object.fromEntries(
+      FISHBONE.map((x) => {
+        // Versão anterior guardava texto com uma causa por linha (e "medida" no lugar de "gestao").
+        const v = fish[x.k] ?? (x.k === "gestao" ? fish.medida : undefined);
+        const list = Array.isArray(v) ? v.map((s) => str(s, 1000)) : str(v, 4000).split("\n").filter((s) => s.trim());
+        return [x.k, list.length ? list.slice(0, 12) : [""]];
+      }),
+    ) as Record<FishKey, string[]>,
     essentialFactors: str(r.essentialFactors),
     whys: whys.length
       ? whys.map((w) => {
           const o = obj(w);
           const list = Array.isArray(o.whys) ? o.whys : [];
           return {
-            category: str(o.category, 100),
+            category: str(o.category, 100) === "Material" ? "Materiais" : str(o.category, 100),
             factor: str(o.factor, 2000),
             whys: [0, 1, 2, 3, 4].map((i) => str(list[i], 4000)),
             rootCause: str(o.rootCause, 4000),
@@ -225,6 +233,8 @@ export function rootCauses(r: RcaData) {
     .map((w) => ({ label: w.causeType ? `${w.causeType} — ${w.rootCause.trim()}` : w.rootCause.trim(), type: w.causeType }));
 }
 
+const fishFilled = (r: RcaData) => FISHBONE.some((f) => r.fishbone[f.k].some((s) => s.trim()));
+
 /** Itens que faltam para a RCA ser considerada completa. */
 export function rcaMissing(r: RcaData) {
   const missing: string[] = [];
@@ -232,7 +242,7 @@ export function rcaMissing(r: RcaData) {
   if (answered < RCA_BASIC_QUESTIONS.length) missing.push(`Condições básicas (${answered}/${RCA_BASIC_QUESTIONS.length} respondidas)`);
   if (!r.sixW.what.trim() || !r.sixW.how.trim()) missing.push("6W2H (pelo menos O quê e Como)");
   if (!r.problemStatement.trim()) missing.push("Declaração do problema refocalizada");
-  if (!FISHBONE.some((f) => r.fishbone[f.k].trim())) missing.push("Espinha de peixe");
+  if (!fishFilled(r)) missing.push("Espinha de peixe");
   if (!r.whys.some((w) => w.rootCause.trim())) missing.push("5 porquês com causa raiz identificada");
   if (!r.immediate.some((a) => a.action.trim())) missing.push("Ações imediatas");
   return missing;
@@ -244,7 +254,7 @@ export function rcaSections(r: RcaData) {
   return [
     { n: 1, label: "Condições básicas", done: answered === RCA_BASIC_QUESTIONS.length, partial: answered > 0 },
     { n: 2, label: "6W2H", done: !!(r.sixW.what.trim() && r.sixW.how.trim() && r.problemStatement.trim()), partial: Object.values(r.sixW).some((v) => v.trim()) },
-    { n: 3, label: "Espinha de peixe", done: FISHBONE.some((f) => r.fishbone[f.k].trim()), partial: false },
+    { n: 3, label: "Espinha de peixe", done: fishFilled(r), partial: false },
     { n: 4, label: "5 Porquês", done: r.whys.some((w) => w.rootCause.trim()), partial: r.whys.some((w) => w.factor.trim() || w.whys[0].trim()) },
     { n: 5, label: "Ações imediatas", done: r.immediate.some((a) => a.action.trim()), partial: false },
   ];
