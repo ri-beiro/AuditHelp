@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, FileText, ListTodo, UserRound } from "lucide-react";
+import { CheckCircle2, FileText, ListTodo, Search, UserRound } from "lucide-react";
 import type { ElementSummary } from "@/server/queries";
 import { cn, fmtDate, fmtPct, fmtScore, STATUS_LABEL, TONE_CLASSES, TONE_LABEL } from "@/lib/utils";
 import { ElementIcon } from "@/components/element-icon";
@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { GradeBadge } from "@/components/grade-badge";
 
-export function ElementCard({ el, onOpen }: { el: ElementSummary; onOpen: () => void }) {
+export function ElementCard({ el, onOpen, matches }: { el: ElementSummary; onOpen: () => void; matches?: number }) {
   const t = TONE_CLASSES[el.tone];
   const isWise = el.framework === "WISE";
   return (
@@ -17,6 +17,14 @@ export function ElementCard({ el, onOpen }: { el: ElementSummary; onOpen: () => 
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/70 bg-white text-left shadow-soft transition duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lift focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/25"
     >
       <span className={cn("absolute inset-x-0 top-0 h-[3px]", t.bar)} />
+      {matches ? (
+        <span
+          className="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-bold text-amber-800 ring-1 ring-amber-300"
+          title={`${matches} requisito(s) com a palavra pesquisada`}
+        >
+          <Search className="size-3" /> {matches}
+        </span>
+      ) : null}
       <div className="flex items-start gap-3 p-4 pb-3">
         <div
           className="relative grid size-12 shrink-0 place-items-center rounded-2xl text-white shadow-soft ring-1 ring-inset ring-white/20"

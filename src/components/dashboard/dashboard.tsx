@@ -20,6 +20,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input, Select } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ElementCard } from "./element-card";
+import { CriteriaSearch } from "./criteria-search";
 import { Kpi } from "./kpi";
 import { ElementSheet } from "@/components/element/element-sheet";
 
@@ -47,6 +48,7 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
   const openCode = params.get("el");
   const ov = tab === "wise" ? wise : basics;
   const [filters, setFilters] = useState(EMPTY);
+  const [matchCounts, setMatchCounts] = useState<Record<string, number> | null>(null);
 
   const setParams = (patch: Record<string, string | null>) => {
     const next = new URLSearchParams(params.toString());
@@ -171,6 +173,10 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
               </TabsTrigger>
             </TabsList>
           </Tabs>
+          <CriteriaSearch
+            onCounts={setMatchCounts}
+            onOpen={(r) => setParams({ tab: r.framework === "WISE" ? null : "basicos", el: r.element.code, view: null, req: r.id })}
+          />
           <div className="grid grid-cols-1 gap-2 rounded-2xl border border-slate-200/70 bg-white/70 p-2 shadow-soft backdrop-blur sm:grid-cols-2 lg:grid-cols-[1.2fr_repeat(4,1fr)_auto]">
             <Input
               value={filters.text}
@@ -278,7 +284,7 @@ export function Dashboard({ unit, cycle, wise, basics, members, perms, blobEnabl
         ) : (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
             {elements.map((el) => (
-              <ElementCard key={el.id} el={el} onOpen={() => setParams({ el: el.code, view: null, req: null })} />
+              <ElementCard key={el.id} el={el} matches={matchCounts?.[el.code]} onOpen={() => setParams({ el: el.code, view: null, req: null })} />
             ))}
           </div>
         )}
