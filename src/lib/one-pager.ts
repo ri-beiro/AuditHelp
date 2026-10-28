@@ -1,6 +1,5 @@
 // One Pagers da investigação, nos modelos corporativos:
-// - Inicial (todas as ocorrências): "Alerta de Segurança" (Pare / Pense / Aja) ou, em HIPO e acidentes com lesão,
-//   "One-Pager Inicial de Incidente" (Stop / Think / Act + status da investigação).
+// - Inicial (todas as ocorrências): "One-Pager Inicial de Incidente" (Stop / Think / Act + status da investigação).
 // - Final (HIPO e acidentes com lesão): "One-Pager Final de Incidente" (conclusões, qualidade, aprendizados e prevenção).
 
 import type { IncidentTypeKey } from "./incidents";
@@ -40,9 +39,7 @@ export const POPULATION = [
 ] as const;
 
 export type InitialPager = {
-  zone: string;
   injury: string;
-  propertyDamage: string;
   stop: string;
   think: string[];
   act: string[];
@@ -80,20 +77,15 @@ export const PAGER_EVENT: Record<IncidentTypeKey, string> = {
 
 const WITH_INJURY: IncidentTypeKey[] = ["FATALIDADE", "LTA", "NLTA", "FAC"];
 
-/**
- * HIPO e acidentes com lesão usam o "One-Pager Inicial de Incidente" e exigem o One Pager final;
- * os demais usam o "Alerta de Segurança" e não têm One Pager final.
- */
-export function usesIncidentPager(i: { type: IncidentTypeKey; hipo: boolean }) {
+/** O One Pager final é exigido em HIPO e acidentes com lesão. */
+export function requiresFinalPager(i: { type: IncidentTypeKey; hipo: boolean }) {
   return i.hipo || WITH_INJURY.includes(i.type);
 }
 
 export function emptyPagers(type?: IncidentTypeKey): OnePagers {
   return {
     initial: {
-      zone: "LATAM",
       injury: type && !WITH_INJURY.includes(type) ? "Não houve lesões" : "",
-      propertyDamage: "",
       stop: "",
       think: [""],
       act: [""],
@@ -137,9 +129,7 @@ export function parsePagers(raw: unknown, type?: IncidentTypeKey): OnePagers {
   const q = obj(f.quality);
   return {
     initial: {
-      zone: "zone" in i ? str(i.zone, 60) : base.initial.zone,
       injury: "injury" in i ? str(i.injury, 300) : base.initial.injury,
-      propertyDamage: str(i.propertyDamage, 10),
       stop: str(i.stop),
       think: list(i.think),
       act: list(i.act),
@@ -168,9 +158,9 @@ const filled = (l: string[]) => l.some((s) => s.trim());
 export function initialMissing(p: InitialPager, description: string) {
   if (p.file) return [];
   const m: string[] = [];
-  if (!(p.stop || description).trim()) m.push("Descrição (Pare / Stop)");
-  if (!filled(p.think)) m.push("Pense / Think");
-  if (!filled(p.act)) m.push("Aja / Act");
+  if (!(p.stop || description).trim()) m.push("Descrição (Stop)");
+  if (!filled(p.think)) m.push("Think");
+  if (!filled(p.act)) m.push("Act");
   return m;
 }
 

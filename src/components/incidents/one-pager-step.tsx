@@ -5,7 +5,6 @@ import { CheckCircle2, ExternalLink, FileText, ImagePlus, Loader2, Maximize2, Mi
 import { toast } from "sonner";
 import type { IncidentDetail } from "@/server/incident-queries";
 import {
-  usesIncidentPager,
   finalMissing,
   initialMissing,
   type FinalPager,
@@ -131,11 +130,7 @@ export function OnePagerStep({
   }, [full]);
 
   const title =
-    kind === "initial"
-      ? usesIncidentPager(inc)
-        ? `One-Pager Inicial de Incidente (${inc.hipo ? "HIPO" : "acidente com lesão"})`
-        : "Alerta de Segurança · One Pager inicial"
-      : `One-Pager Final de Incidente (${inc.hipo ? "HIPO" : "acidente com lesão"})`;
+    kind === "initial" ? "One-Pager Inicial de Incidente" : `One-Pager Final de Incidente (${inc.hipo ? "HIPO" : "acidente com lesão"})`;
 
   return (
     <div className="space-y-5">

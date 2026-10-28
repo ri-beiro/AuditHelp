@@ -26,7 +26,6 @@ import {
   PAGER_EVENT,
   POPULATION,
   QUALITY_CHECKS,
-  usesIncidentPager,
   type FinalPager,
   type InitialPager,
   type OnePagers,
@@ -78,11 +77,7 @@ export function OnePagerSheet({
   edit?: SheetEdit;
 }) {
   if (kind === "final") return <FinalSheet inc={inc} pagers={pagers} edit={edit} />;
-  return usesIncidentPager(inc) ? (
-    <HipoInitialSheet inc={inc} pagers={pagers} photos={photos} edit={edit} />
-  ) : (
-    <AlertSheet inc={inc} pagers={pagers} photos={photos} edit={edit} />
-  );
+  return <InitialSheet inc={inc} pagers={pagers} photos={photos} edit={edit} />;
 }
 
 // ---------------------------------------------------------------------------
@@ -407,105 +402,7 @@ function Head({ icon: Icon, color, word, subtitle }: { icon: "stop" | "think" | 
 }
 
 // ---------------------------------------------------------------------------
-// Inicial (sem HIPO) — "Alerta de Segurança"
-// ---------------------------------------------------------------------------
-
-function AlertSheet({ inc, pagers, photos, edit }: { inc: SheetIncident; pagers: OnePagers; photos: string[]; edit?: SheetEdit }) {
-  const p = pagers.initial;
-  const set = edit?.setInitial;
-  const green = "#4d9a1f";
-  return (
-    <Frame band="INCIDENTE INICIAL UM PAGER">
-      <div className="absolute left-[18px] top-[14px] text-[40px] font-black uppercase tracking-tight">Alerta de Segurança</div>
-      <div className="absolute right-[90px] top-[14px] flex items-center gap-5">
-        <Wise className="h-[72px] w-[72px]" />
-        <StopThinkAct />
-      </div>
-      <div className="absolute left-[12px] top-[74px] w-[320px] text-[13px] leading-[1.35]">
-        <p className="flex items-baseline gap-1">
-          Zona / CBU:
-          <b className="flex-1" style={{ color: green }}>
-            <Txt inline value={p.zone} onChange={set && ((zone) => set({ zone }))} />
-          </b>
-        </p>
-        <ReportValue edit={edit}>
-          <p>
-            Tipo de local: <b style={{ color: green }}>{inc.unitName.toUpperCase()}</b>
-          </p>
-          <p>SPHERA ID: {inc.spheraId ?? ""}</p>
-          <p>Local do evento: {inc.area}</p>
-          <p>
-            Hora | Data do evento: {fmtDate(inc.occurredAt)} às {fmtTime(inc.occurredAt)}
-          </p>
-        </ReportValue>
-      </div>
-      <div className="absolute left-[338px] top-[64px] w-[390px] text-[13px] leading-[1.35]">
-        <ReportValue edit={edit}>
-          <p>Tipo de evento: {PAGER_EVENT[inc.type]}</p>
-          <p>HIPO: {inc.hipo ? "SIM" : "NÃO"}</p>
-        </ReportValue>
-        <div className="flex items-baseline gap-1">
-          <span className="shrink-0">Tipo e gravidade da lesão/possível lesão:</span>
-          <Txt inline value={p.injury} onChange={set && ((injury) => set({ injury }))} placeholder="descreva" />
-        </div>
-        <p className="flex items-center gap-1">
-          Danos patrimoniais:{" "}
-          {set ? (
-            <span className="inline-flex gap-1">
-              {["Sim", "Não"].map((o) => (
-                <button
-                  key={o}
-                  type="button"
-                  onClick={() => set({ propertyDamage: p.propertyDamage === o ? "" : o })}
-                  className={`rounded-[3px] px-1 ${p.propertyDamage === o ? "bg-sky-600 text-white" : "text-slate-400 hover:bg-sky-100"}`}
-                >
-                  {o}
-                </button>
-              ))}
-            </span>
-          ) : (
-            p.propertyDamage
-          )}
-        </p>
-        <ReportValue edit={edit}>
-          <p>12 Básicos: {inc.basicRef ?? ""}</p>
-        </ReportValue>
-      </div>
-
-      <div className="absolute left-[12px] top-[188px] w-[704px]">
-        <Head icon="stop" color="#e8231c" word="PARE" subtitle="Descrição do incidente" />
-        <Dashed className="mt-1 h-[116px] overflow-hidden px-3 py-3 text-[16px] leading-snug">
-          <Fit>
-            <Txt value={p.stop || (set ? "" : inc.description)} onChange={set && ((stop) => set({ stop }))} placeholder="Descreva o incidente" />
-          </Fit>
-        </Dashed>
-        <div className="mt-2">
-          <Head icon="think" color="#f07f17" word="PENSE" subtitle="(potenciais) consequências / fatores de influência do incidente" />
-        </div>
-        <Dashed className="mt-1 h-[128px] overflow-hidden px-2 py-2 text-[12.5px] leading-snug">
-          <Fit>
-            <EditList list={p.think} onChange={set && ((think) => set({ think }))} marker={num()} className="space-y-2" />
-          </Fit>
-        </Dashed>
-        <div className="mt-1">
-          <Head icon="act" color="#9bcf53" word="AJA" subtitle="Principais ações para evitar recorrência / aprendizados para compartilhar" />
-        </div>
-        <Dashed className="mt-1 h-[92px] overflow-hidden px-3 py-2 text-[15px] leading-snug">
-          <Fit>
-            <EditList list={p.act} onChange={set && ((act) => set({ act }))} marker={num()} className="space-y-0.5" />
-          </Fit>
-        </Dashed>
-      </div>
-      <div className="absolute left-[730px] top-[110px] h-[586px] w-[476px]">
-        <Photos photos={photos} title="Imagem e ilustração:" edit={edit} />
-      </div>
-      <Danone className="absolute bottom-[4px] left-[60px]" />
-    </Frame>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Resumo com ícones (HIPO inicial e final)
+// Resumo com ícones (inicial e final)
 // ---------------------------------------------------------------------------
 
 function Summary({ inc, pagers, edit, children }: { inc: SheetIncident; pagers: OnePagers; edit?: SheetEdit; children?: React.ReactNode }) {
@@ -564,10 +461,10 @@ function Summary({ inc, pagers, edit, children }: { inc: SheetIncident; pagers: 
 }
 
 // ---------------------------------------------------------------------------
-// Inicial HIPO — "One-Pager Inicial de Incidente"
+// Inicial (todas as ocorrências) — "One-Pager Inicial de Incidente"
 // ---------------------------------------------------------------------------
 
-function HipoInitialSheet({ inc, pagers, photos, edit }: { inc: SheetIncident; pagers: OnePagers; photos: string[]; edit?: SheetEdit }) {
+function InitialSheet({ inc, pagers, photos, edit }: { inc: SheetIncident; pagers: OnePagers; photos: string[]; edit?: SheetEdit }) {
   const p = pagers.initial;
   const set = edit?.setInitial;
   const green = "#4d9a1f";
