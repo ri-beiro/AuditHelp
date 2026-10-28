@@ -311,6 +311,8 @@ model ActionPlan {
   auditRecordId String?
   auditRecord   AuditRecord? @relation(fields: [auditRecordId], references: [id], onDelete: SetNull)
   evidence      String? // evidência de conclusão (texto ou link)
+  controlHierarchy String? // RCA: Eliminação, Substituição, Engenharia, Administrativa, EPI
+  rootCauseRef     String? // RCA: causa raiz associada
 
   priority    ActionPriority @default(MEDIA)
   status      ActionStatus   @default(ABERTA)
@@ -445,6 +447,8 @@ model Incident {
   meetingAt           DateTime?
   participants        String?
   meetingNotes        String? // ata
+  /// Análise de Causa Raiz (RCA): condições básicas, 6W2H, espinha de peixe, 5 porquês, ações imediatas.
+  rca                 Json?
 
   // Etapa 3 — Plano de ação (ações em ActionPlan.incidentId)
   planStatus StepStatus @default(NAO_INICIADO)

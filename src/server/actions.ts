@@ -253,6 +253,8 @@ const actionSchema = z.object({
   incidentId: z.string().nullable().optional(),
   auditRecordId: z.string().nullable().optional(),
   evidence: z.string().max(2000).optional(),
+  controlHierarchy: z.string().max(40).optional(),
+  rootCauseRef: z.string().max(1000).optional(),
   priority: z.enum(["BAIXA", "MEDIA", "ALTA", "CRITICA"]),
   status: z.enum(["ABERTA", "EM_ANDAMENTO", "CONCLUIDA", "CANCELADA"]),
 });
@@ -285,6 +287,8 @@ export async function saveActionPlan(input: ActionInput) {
       incidentId: data.incidentId ?? existing?.incidentId ?? null,
       auditRecordId: data.auditRecordId ?? existing?.auditRecordId ?? null,
       evidence: data.evidence === undefined ? (existing?.evidence ?? null) : data.evidence || null,
+      controlHierarchy: data.controlHierarchy === undefined ? (existing?.controlHierarchy ?? null) : data.controlHierarchy || null,
+      rootCauseRef: data.rootCauseRef === undefined ? (existing?.rootCauseRef ?? null) : data.rootCauseRef || null,
       priority: data.priority as ActionPriority,
       status: data.status as ActionStatus,
       completedAt:

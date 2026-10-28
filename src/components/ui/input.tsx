@@ -23,10 +23,10 @@ export function Label({ className, ...props }: React.LabelHTMLAttributes<HTMLLab
   return <label className={cn("text-xs font-medium text-slate-600", className)} {...props} />;
 }
 
-export function Field({ label, children, className }: { label: string; children: React.ReactNode; className?: string }) {
+export function Field({ label, children, className }: { label?: string; children: React.ReactNode; className?: string }) {
   return (
     <div className={cn("flex flex-col gap-1.5", className)}>
-      <Label>{label}</Label>
+      {label ? <Label>{label}</Label> : null}
       {children}
     </div>
   );

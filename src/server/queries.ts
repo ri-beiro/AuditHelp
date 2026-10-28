@@ -369,6 +369,8 @@ export function serializeAction(a: {
   incidentId?: string | null;
   auditRecordId?: string | null;
   evidence?: string | null;
+  controlHierarchy?: string | null;
+  rootCauseRef?: string | null;
   priority: string;
   status: string;
   elementId: string;
@@ -392,6 +394,8 @@ export function serializeAction(a: {
     incidentId: a.incidentId ?? null,
     auditRecordId: a.auditRecordId ?? null,
     evidence: a.evidence ?? "",
+    controlHierarchy: a.controlHierarchy ?? "",
+    rootCauseRef: a.rootCauseRef ?? "",
     priority: a.priority,
     status: a.status,
     elementId: a.elementId,

@@ -9,6 +9,7 @@ import { ACTION_STATUS_LABEL, PRIORITY_LABEL } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Field, Input, Select, Textarea } from "@/components/ui/input";
+import { CONTROL_HIERARCHY } from "@/lib/rca";
 
 export type ActionFormContext = {
   unitId: string;
@@ -29,6 +30,8 @@ export type ActionPreset = {
   auditItemCode?: string | null;
   incidentId?: string | null;
   auditRecordId?: string | null;
+  /** Causas raiz da RCA da ocorrência, para vincular a ação. */
+  rootCauses?: string[];
 };
 
 export function ActionFormDialog({
@@ -93,11 +96,15 @@ function ActionForm({
     cost: initial?.cost != null ? String(initial.cost) : "",
     spheraId: initial?.spheraId ?? "",
     evidence: initial?.evidence ?? "",
+    controlHierarchy: initial?.controlHierarchy ?? "",
+    rootCauseRef: initial?.rootCauseRef ?? "",
     priority: initial?.priority ?? preset?.priority ?? "MEDIA",
     status: initial?.status ?? "ABERTA",
   });
   const set = (k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setF({ ...f, [k]: e.target.value });
+  const fromIncident = !!(initial?.incidentId ?? preset?.incidentId);
+  const causes = [...new Set([...(preset?.rootCauses ?? []), ...(f.rootCauseRef ? [f.rootCauseRef] : [])])];
   const reqs = context.requirements?.filter((r) => r.elementId === f.elementId) ?? [];
 
   const submit = (e: React.FormEvent) => {
@@ -122,6 +129,7 @@ function ActionForm({
         incidentId: initial?.incidentId ?? preset?.incidentId ?? null,
         auditRecordId: initial?.auditRecordId ?? preset?.auditRecordId ?? null,
         evidence: f.evidence,
+        ...(fromIncident ? { controlHierarchy: f.controlHierarchy, rootCauseRef: f.rootCauseRef } : {}),
         priority: f.priority as ActionInput["priority"],
         status: f.status as ActionInput["status"],
       };
@@ -187,6 +195,30 @@ function ActionForm({
       <Field label="Evidência de conclusão (texto ou link)" className="sm:col-span-2">
         <Input value={f.evidence} onChange={set("evidence")} placeholder="Ex.: foto do isolamento instalado, link do treinamento…" />
       </Field>
+      {fromIncident ? (
+        <>
+          <Field label="Hierarquia de controle">
+            <Select value={f.controlHierarchy} onChange={set("controlHierarchy")}>
+              <option value="">Selecione…</option>
+              {CONTROL_HIERARCHY.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </Select>
+          </Field>
+          <Field label="Causa raiz associada (RCA)">
+            <Select value={f.rootCauseRef} onChange={set("rootCauseRef")}>
+              <option value="">{causes.length ? "Selecione…" : "Preencha os 5 porquês na Etapa 2"}</option>
+              {causes.map((c) => (
+                <option key={c} value={c}>
+                  {c.length > 90 ? `${c.slice(0, 90)}…` : c}
+                </option>
+              ))}
+            </Select>
+          </Field>
+        </>
+      ) : null}
       <Field label="ID Sphera (finding / evento)" className="sm:col-span-2">
         <Input value={f.spheraId} onChange={set("spheraId")} placeholder="Ex.: 28126781" />
       </Field>

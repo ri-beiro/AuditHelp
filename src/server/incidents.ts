@@ -6,6 +6,9 @@ import type { IncidentType, StepStatus } from "@prisma/client";
 import { db } from "@/lib/db";
 import { assertUnitAccess, can, requirePermission, requireUser, type CurrentUser } from "./context";
 import { INCIDENT_TYPE_VALUES, loadIncidentDetail, nextIncidentNumber } from "./incident-queries";
+import { parseRca, rcaMissing, rcaRequired } from "@/lib/rca";
+import type { IncidentTypeKey } from "@/lib/incidents";
+import type { Prisma } from "@prisma/client";
 
 type Result<T = undefined> = { ok: true; data?: T } | { ok: false; error: string };
 
@@ -80,6 +83,7 @@ const updateSchema = reportSchema.omit({ unitId: true }).partial().extend({
   meetingAt: z.string().nullable().optional(),
   participants: z.string().max(4000).optional(),
   meetingNotes: z.string().max(20000).optional(),
+  rca: z.unknown().optional(),
   planStatus: z.enum(["NAO_INICIADO", "EM_ANDAMENTO", "CONCLUIDO"]).optional(),
   lessonsStatus: z.enum(["NAO_INICIADO", "EM_ANDAMENTO", "CONCLUIDO"]).optional(),
   rootCause: z.string().max(8000).optional(),
@@ -91,16 +95,24 @@ const updateSchema = reportSchema.omit({ unitId: true }).partial().extend({
 
 export async function updateIncident(input: z.infer<typeof updateSchema>) {
   return run(async () => {
-    const { id, occurredAt, meetingAt, type, ...rest } = updateSchema.parse(input);
+    const { id, occurredAt, meetingAt, type, rca, ...rest } = updateSchema.parse(input);
     const { user, incident } = await incidentForUser(id);
     if (!canManage(user, incident)) throw new Error("Sem permissão para editar esta ocorrência.");
     if (incident.closedAt) throw new Error("Ocorrência encerrada. Reabra para editar.");
     if (rest.lessonsStatus === "CONCLUIDO" && !incident.approvedAt)
       throw new Error("As lições aprendidas precisam ser aprovadas para concluir a etapa.");
+    const parsedRca = rca === undefined ? undefined : parseRca(rca);
+    if (rest.investigationStatus === "CONCLUIDO") {
+      const kind = { type: (type ?? incident.type) as IncidentTypeKey, hipo: rest.hipo ?? incident.hipo };
+      const missing = rcaRequired(kind) ? rcaMissing(parsedRca ?? parseRca(incident.rca)) : [];
+      if (missing.length)
+        throw new Error(`RCA obrigatória para este tipo de ocorrência. Falta preencher: ${missing.join("; ")}.`);
+    }
     await db.incident.update({
       where: { id },
       data: {
         ...rest,
+        ...(parsedRca ? { rca: parsedRca as unknown as Prisma.InputJsonValue } : {}),
         responsibleId: rest.responsibleId === undefined ? undefined : rest.responsibleId || null,
         spheraId: rest.spheraId === undefined ? undefined : rest.spheraId || null,
         type: type as IncidentType | undefined,

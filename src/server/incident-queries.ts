@@ -10,6 +10,7 @@ import {
   type IncidentTypeKey,
   type Step,
 } from "@/lib/incidents";
+import { parseRca, rcaRequired } from "@/lib/rca";
 import { serializeAction } from "./queries";
 
 const listInclude = {
@@ -118,6 +119,8 @@ export async function loadIncidentDetail(id: string) {
     createdAt: i.createdAt.toISOString(),
     participants: i.participants ?? "",
     meetingNotes: i.meetingNotes ?? "",
+    rca: parseRca(i.rca),
+    rcaRequired: rcaRequired({ type: i.type as IncidentTypeKey, hipo: i.hipo }),
     rootCause: i.rootCause ?? "",
     whatHappened: i.whatHappened ?? "",
     howToPrevent: i.howToPrevent ?? "",

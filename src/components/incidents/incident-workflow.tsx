@@ -46,6 +46,8 @@ import { ActionFormDialog } from "@/components/actions/action-form";
 import { ActionStatusBadge, isOverdue } from "@/components/actions/action-badges";
 import { MonthCalendar } from "@/components/safety/month-calendar";
 import { HipoBadge, StepBadge, TypeBadge } from "./bits";
+import { RcaForm } from "./rca-form";
+import { rootCauses } from "@/lib/rca";
 
 type StepKey = "reporte" | "investigacao" | "plano" | "licoes" | "encerramento";
 
@@ -510,6 +512,9 @@ function InvestigationStep({ inc, ctx, editable, save, apply }: { inc: IncidentD
           <Attachments inc={inc} ctx={ctx} apply={apply} title="Ata e documentos" hint="Anexe a ata assinada, lista de presença e análises." />
         </div>
       </Panel>
+      <div className="xl:col-span-2">
+        <RcaForm inc={inc} editable={editable} members={ctx.members} onSave={(rca) => save({ rca }, "RCA salva")} />
+      </div>
     </div>
   );
 }
@@ -572,6 +577,7 @@ function PlanStep({ inc, ctx, editable, save, reload }: { inc: IncidentDetail; c
           <thead className="bg-slate-50 text-left text-xs text-slate-500">
             <tr>
               <th className="px-3 py-2.5 font-medium">Ação</th>
+              <th className="px-3 py-2.5 font-medium">Hierarquia / causa raiz</th>
               <th className="px-3 py-2.5 font-medium">Responsável</th>
               <th className="px-3 py-2.5 font-medium">Prazo</th>
               <th className="px-3 py-2.5 font-medium">Evidência</th>
@@ -582,7 +588,7 @@ function PlanStep({ inc, ctx, editable, save, reload }: { inc: IncidentDetail; c
           <tbody>
             {list.length === 0 ? (
               <tr>
-                <td colSpan={6} className="px-3 py-8 text-center text-slate-500">
+                <td colSpan={7} className="px-3 py-8 text-center text-slate-500">
                   Nenhuma ação cadastrada.
                   {editable && inc.steps.plan !== "CONCLUIDO" ? (
                     <button type="button" className="ml-1 font-semibold text-brand-700 hover:underline" onClick={() => save({ planStatus: "CONCLUIDO" }, "Etapa concluída sem ações")}>
@@ -602,6 +608,13 @@ function PlanStep({ inc, ctx, editable, save, reload }: { inc: IncidentDetail; c
                   <td className="max-w-sm px-3 py-2.5">
                     <p className="font-medium text-slate-800">{a.what}</p>
                     {a.how ? <p className="line-clamp-2 text-xs text-slate-500">{a.how}</p> : null}
+                  </td>
+                  <td className="max-w-[220px] px-3 py-2.5 text-xs">
+                    {a.controlHierarchy ? (
+                      <span className="mb-1 inline-block rounded-full bg-brand-50 px-2 py-0.5 font-semibold text-brand-700">{a.controlHierarchy}</span>
+                    ) : null}
+                    {a.rootCauseRef ? <p className="line-clamp-2 text-slate-600">{a.rootCauseRef}</p> : null}
+                    {!a.controlHierarchy && !a.rootCauseRef ? <span className="text-slate-400">—</span> : null}
                   </td>
                   <td className="px-3 py-2.5 text-slate-700">{a.ownerName ?? <span className="text-slate-400">A definir</span>}</td>
                   <td className="px-3 py-2.5 tabular-nums text-slate-700">{fmtDate(a.dueDate)}</td>
@@ -652,6 +665,7 @@ function PlanStep({ inc, ctx, editable, save, reload }: { inc: IncidentDetail; c
           why: `Ocorrência ${inc.number}: ${inc.title}`,
           where: inc.area,
           priority: inc.hipo ? "CRITICA" : "ALTA",
+          rootCauses: rootCauses(inc.rca).map((c) => c.label),
         }}
         context={{ unitId: inc.unitId, elements: ctx.elements, members: ctx.members }}
         onSaved={reload}
@@ -666,8 +680,8 @@ function PlanStep({ inc, ctx, editable, save, reload }: { inc: IncidentDetail; c
 
 function LessonsStep({ inc, ctx, editable, save, apply }: { inc: IncidentDetail; ctx: Ctx; editable: boolean; save: SaveFn; apply: ApplyFn }) {
   const [f, setF] = useState({
-    rootCause: inc.rootCause,
-    whatHappened: inc.whatHappened,
+    rootCause: inc.rootCause || rootCauses(inc.rca).map((c) => c.label).join("\n"),
+    whatHappened: inc.whatHappened || inc.rca.problemStatement,
     howToPrevent: inc.howToPrevent,
     goodPractices: inc.goodPractices,
     sharedWith: inc.sharedWith,
