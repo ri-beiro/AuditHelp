@@ -80,6 +80,14 @@ export const PAGER_EVENT: Record<IncidentTypeKey, string> = {
 
 const WITH_INJURY: IncidentTypeKey[] = ["FATALIDADE", "LTA", "NLTA", "FAC"];
 
+/**
+ * Modelo do One Pager inicial: HIPO e acidentes com lesão usam o "One-Pager Inicial de Incidente";
+ * os demais usam o "Alerta de Segurança".
+ */
+export function usesIncidentPager(i: { type: IncidentTypeKey; hipo: boolean }) {
+  return i.hipo || WITH_INJURY.includes(i.type);
+}
+
 export function emptyPagers(type?: IncidentTypeKey): OnePagers {
   return {
     initial: {

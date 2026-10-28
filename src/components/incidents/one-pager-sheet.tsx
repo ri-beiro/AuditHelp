@@ -26,6 +26,7 @@ import {
   PAGER_EVENT,
   POPULATION,
   QUALITY_CHECKS,
+  usesIncidentPager,
   type FinalPager,
   type InitialPager,
   type OnePagers,
@@ -77,7 +78,7 @@ export function OnePagerSheet({
   edit?: SheetEdit;
 }) {
   if (kind === "final") return <FinalSheet inc={inc} pagers={pagers} edit={edit} />;
-  return inc.hipo ? (
+  return usesIncidentPager(inc) ? (
     <HipoInitialSheet inc={inc} pagers={pagers} photos={photos} edit={edit} />
   ) : (
     <AlertSheet inc={inc} pagers={pagers} photos={photos} edit={edit} />
@@ -636,14 +637,14 @@ function HipoInitialSheet({ inc, pagers, photos, edit }: { inc: SheetIncident; p
               {s.label}
             </Tick>
           ))}
-          <span className="flex items-center gap-1.5">
+          <span className="flex items-center gap-1.5 whitespace-nowrap">
             {p.reportDue ? <CheckSquare className="size-4 shrink-0" /> : <Square className="size-4 shrink-0" />} Relatório previsto:{" "}
             {set ? (
               <input
                 type="date"
                 value={p.reportDue}
                 onChange={(e) => set({ reportDue: e.target.value })}
-                className="w-[112px] rounded-[3px] bg-transparent text-[12px] outline-none hover:bg-sky-100/60 focus:ring-2 focus:ring-sky-400"
+                className="w-[104px] rounded-[3px] bg-transparent text-[11px] outline-none hover:bg-sky-100/60 focus:ring-2 focus:ring-sky-400"
               />
             ) : p.reportDue ? (
               fmtDate(`${p.reportDue}T12:00:00`)
