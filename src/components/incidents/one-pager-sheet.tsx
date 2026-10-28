@@ -667,7 +667,7 @@ function HipoInitialSheet({ inc, pagers, photos, edit }: { inc: SheetIncident; p
 }
 
 // ---------------------------------------------------------------------------
-// Final (HIPO) — "One-Pager Final de Incidente"
+// Final (HIPO e acidentes com lesão) — "One-Pager Final de Incidente"
 // ---------------------------------------------------------------------------
 
 function Tab({ n, title, color, className = "" }: { n: number; title: string; color: string; className?: string }) {

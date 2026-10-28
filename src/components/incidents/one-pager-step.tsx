@@ -135,7 +135,7 @@ export function OnePagerStep({
       ? usesIncidentPager(inc)
         ? `One-Pager Inicial de Incidente (${inc.hipo ? "HIPO" : "acidente com lesão"})`
         : "Alerta de Segurança · One Pager inicial"
-      : "One-Pager Final de Incidente (HIPO)";
+      : `One-Pager Final de Incidente (${inc.hipo ? "HIPO" : "acidente com lesão"})`;
 
   return (
     <div className="space-y-5">
@@ -150,7 +150,7 @@ export function OnePagerStep({
               <p className="text-sm text-slate-500">
                 {kind === "initial"
                   ? "Primeiro passo da investigação. Preencha aqui ou anexe o arquivo oficial. Os dados do reporte entram automaticamente."
-                  : "Obrigatório para HIPO. Resume conclusões, qualidade da investigação, aprendizados e medidas de prevenção."}
+                  : "Obrigatório para HIPO e acidentes com lesão. Resume conclusões, qualidade da investigação, aprendizados e medidas de prevenção."}
               </p>
             </div>
           </div>

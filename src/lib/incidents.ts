@@ -140,11 +140,11 @@ export type InvestigationSteps = {
   investigation: Step;
   plan: Step;
   lessons: Step;
-  /** One Pager final: só existe em HIPO. */
+  /** One Pager final: só existe em HIPO e acidentes com lesão. */
   finalPager: Step | null;
 };
 
-/** Percentual de etapas concluídas (One Pager inicial, Reporte, Investigação, Plano, Lições e, em HIPO, One Pager final). */
+/** Percentual de etapas concluídas (One Pager inicial, Reporte, Investigação, Plano, Lições e, em HIPO e acidentes com lesão, One Pager final). */
 export function investigationProgress(steps: InvestigationSteps) {
   const order = [steps.onePager, steps.report, steps.investigation, steps.plan, steps.lessons];
   if (steps.finalPager) order.push(steps.finalPager);

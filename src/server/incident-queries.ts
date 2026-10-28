@@ -11,7 +11,7 @@ import {
   type Step,
 } from "@/lib/incidents";
 import { parseRca, rcaRequired } from "@/lib/rca";
-import { parsePagers } from "@/lib/one-pager";
+import { parsePagers, usesIncidentPager } from "@/lib/one-pager";
 import { serializeAction } from "./queries";
 
 const listInclude = {
@@ -29,7 +29,7 @@ export function serializeIncidentRow(i: IncidentRow) {
     investigation: i.investigationStatus as Step,
     plan,
     lessons: i.lessonsStatus as Step,
-    finalPager: i.hipo ? (i.finalPagerStatus as Step) : null,
+    finalPager: usesIncidentPager({ type: i.type as IncidentTypeKey, hipo: i.hipo }) ? (i.finalPagerStatus as Step) : null,
   };
   const now = new Date();
   const openActions = i.actionPlans.filter((a) => a.status === "ABERTA" || a.status === "EM_ANDAMENTO");

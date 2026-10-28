@@ -84,8 +84,8 @@ export function IncidentWorkflow({ initial, ctx, initialStep }: { initial: Incid
   const router = useRouter();
   const [inc, setInc] = useState(initial);
   const [pending, start] = useTransition();
-  // O One Pager final só existe em HIPO.
-  const STEPS = ALL_STEPS.filter((s) => s.key !== "final" || inc.hipo);
+  // O One Pager final só existe em HIPO e acidentes com lesão.
+  const STEPS = ALL_STEPS.filter((s) => s.key !== "final" || inc.steps.finalPager !== null);
   const firstOpen = (): StepKey => {
     if (inc.closed) return "encerramento";
     if (inc.steps.onePager !== "CONCLUIDO") return "onepager";
@@ -793,7 +793,7 @@ function ClosingStep({
     { key: "investigacao", label: "Investigação concluída", st: inc.steps.investigation },
     { key: "plano", label: "Plano de ação concluído", st: inc.steps.plan },
     { key: "licoes", label: "Lições aprendidas aprovadas", st: inc.steps.lessons },
-    ...(inc.steps.finalPager ? [{ key: "final" as StepKey, label: "One Pager final concluído (HIPO)", st: inc.steps.finalPager }] : []),
+    ...(inc.steps.finalPager ? [{ key: "final" as StepKey, label: "One Pager final concluído", st: inc.steps.finalPager }] : []),
   ];
   return (
     <Panel title="Encerramento" description="A ocorrência só pode ser encerrada com todas as etapas concluídas (100%)." icon={Flag}>

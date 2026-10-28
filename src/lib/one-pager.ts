@@ -1,7 +1,7 @@
 // One Pagers da investigação, nos modelos corporativos:
-// - Inicial (todas as ocorrências): "Alerta de Segurança" (Pare / Pense / Aja) ou, em HIPO,
+// - Inicial (todas as ocorrências): "Alerta de Segurança" (Pare / Pense / Aja) ou, em HIPO e acidentes com lesão,
 //   "One-Pager Inicial de Incidente" (Stop / Think / Act + status da investigação).
-// - Final (somente HIPO): "One-Pager Final de Incidente" (conclusões, qualidade, aprendizados e prevenção).
+// - Final (HIPO e acidentes com lesão): "One-Pager Final de Incidente" (conclusões, qualidade, aprendizados e prevenção).
 
 import type { IncidentTypeKey } from "./incidents";
 
@@ -81,8 +81,8 @@ export const PAGER_EVENT: Record<IncidentTypeKey, string> = {
 const WITH_INJURY: IncidentTypeKey[] = ["FATALIDADE", "LTA", "NLTA", "FAC"];
 
 /**
- * Modelo do One Pager inicial: HIPO e acidentes com lesão usam o "One-Pager Inicial de Incidente";
- * os demais usam o "Alerta de Segurança".
+ * HIPO e acidentes com lesão usam o "One-Pager Inicial de Incidente" e exigem o One Pager final;
+ * os demais usam o "Alerta de Segurança" e não têm One Pager final.
  */
 export function usesIncidentPager(i: { type: IncidentTypeKey; hipo: boolean }) {
   return i.hipo || WITH_INJURY.includes(i.type);
