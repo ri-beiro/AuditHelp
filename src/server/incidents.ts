@@ -7,6 +7,7 @@ import { db } from "@/lib/db";
 import { assertUnitAccess, can, requirePermission, requireUser, type CurrentUser } from "./context";
 import { INCIDENT_TYPE_VALUES, loadIncidentDetail, nextIncidentNumber } from "./incident-queries";
 import { parseRca, rcaMissing, rcaRequired } from "@/lib/rca";
+import { finalMissing, initialMissing, parsePagers } from "@/lib/one-pager";
 import type { IncidentTypeKey } from "@/lib/incidents";
 import type { Prisma } from "@prisma/client";
 
@@ -84,6 +85,9 @@ const updateSchema = reportSchema.omit({ unitId: true }).partial().extend({
   participants: z.string().max(4000).optional(),
   meetingNotes: z.string().max(20000).optional(),
   rca: z.unknown().optional(),
+  onePager: z.unknown().optional(),
+  onePagerStatus: z.enum(["NAO_INICIADO", "EM_ANDAMENTO", "CONCLUIDO"]).optional(),
+  finalPagerStatus: z.enum(["NAO_INICIADO", "EM_ANDAMENTO", "CONCLUIDO"]).optional(),
   planStatus: z.enum(["NAO_INICIADO", "EM_ANDAMENTO", "CONCLUIDO"]).optional(),
   lessonsStatus: z.enum(["NAO_INICIADO", "EM_ANDAMENTO", "CONCLUIDO"]).optional(),
   rootCause: z.string().max(8000).optional(),
@@ -95,13 +99,23 @@ const updateSchema = reportSchema.omit({ unitId: true }).partial().extend({
 
 export async function updateIncident(input: z.infer<typeof updateSchema>) {
   return run(async () => {
-    const { id, occurredAt, meetingAt, type, rca, ...rest } = updateSchema.parse(input);
+    const { id, occurredAt, meetingAt, type, rca, onePager, ...rest } = updateSchema.parse(input);
     const { user, incident } = await incidentForUser(id);
     if (!canManage(user, incident)) throw new Error("Sem permissão para editar esta ocorrência.");
     if (incident.closedAt) throw new Error("Ocorrência encerrada. Reabra para editar.");
     if (rest.lessonsStatus === "CONCLUIDO" && !incident.approvedAt)
       throw new Error("As lições aprendidas precisam ser aprovadas para concluir a etapa.");
     const parsedRca = rca === undefined ? undefined : parseRca(rca);
+    const parsedPagers = onePager === undefined ? undefined : parsePagers(onePager, (type ?? incident.type) as IncidentTypeKey);
+    const pagers = parsedPagers ?? parsePagers(incident.onePager, incident.type as IncidentTypeKey);
+    if (rest.onePagerStatus === "CONCLUIDO") {
+      const missing = initialMissing(pagers.initial, rest.description ?? incident.description);
+      if (missing.length) throw new Error(`One Pager inicial incompleto. Falta: ${missing.join("; ")} (ou anexe o arquivo oficial).`);
+    }
+    if (rest.finalPagerStatus === "CONCLUIDO") {
+      const missing = finalMissing(pagers.final);
+      if (missing.length) throw new Error(`One Pager final incompleto. Falta: ${missing.join("; ")} (ou anexe o arquivo oficial).`);
+    }
     if (rest.investigationStatus === "CONCLUIDO") {
       const kind = { type: (type ?? incident.type) as IncidentTypeKey, hipo: rest.hipo ?? incident.hipo };
       const missing = rcaRequired(kind) ? rcaMissing(parsedRca ?? parseRca(incident.rca)) : [];
@@ -113,6 +127,9 @@ export async function updateIncident(input: z.infer<typeof updateSchema>) {
       data: {
         ...rest,
         ...(parsedRca ? { rca: parsedRca as unknown as Prisma.InputJsonValue } : {}),
+        ...(parsedPagers ? { onePager: parsedPagers as unknown as Prisma.InputJsonValue } : {}),
+        onePagerStatus: rest.onePagerStatus as StepStatus | undefined,
+        finalPagerStatus: rest.finalPagerStatus as StepStatus | undefined,
         responsibleId: rest.responsibleId === undefined ? undefined : rest.responsibleId || null,
         spheraId: rest.spheraId === undefined ? undefined : rest.spheraId || null,
         type: type as IncidentType | undefined,
@@ -151,7 +168,7 @@ export async function closeIncident(id: string, close: boolean) {
     if (!canManage(user, incident)) throw new Error("Sem permissão.");
     if (close) {
       const detail = await loadIncidentDetail(id);
-      if (detail && detail.progress < 100) throw new Error("Conclua as quatro etapas antes de encerrar.");
+      if (detail && detail.progress < 100) throw new Error("Conclua todas as etapas (incluindo os One Pagers) antes de encerrar.");
     }
     await db.incident.update({ where: { id }, data: { closedAt: close ? new Date() : null } });
     refresh(id);

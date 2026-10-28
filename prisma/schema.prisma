@@ -439,6 +439,11 @@ model Incident {
   reportedById  String?
   reportedBy    User?      @relation("IncidentReporter", fields: [reportedById], references: [id], onDelete: SetNull)
 
+  // One Pagers (inicial em todas; final só em HIPO) — conteúdo em onePager
+  onePagerStatus   StepStatus @default(NAO_INICIADO)
+  finalPagerStatus StepStatus @default(NAO_INICIADO)
+  onePager         Json?
+
   // Etapa 1 — Reporte
   reportStatus StepStatus @default(EM_ANDAMENTO)
 

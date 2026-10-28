@@ -32,9 +32,14 @@ describe("Criticidade e investigação", () => {
   });
 
   it("progresso em etapas de 25%", () => {
-    expect(investigationProgress({ report: "EM_ANDAMENTO", investigation: "NAO_INICIADO", plan: "NAO_INICIADO", lessons: "NAO_INICIADO" })).toBe(0);
-    expect(investigationProgress({ report: "CONCLUIDO", investigation: "CONCLUIDO", plan: "EM_ANDAMENTO", lessons: "NAO_INICIADO" })).toBe(50);
-    expect(investigationProgress({ report: "CONCLUIDO", investigation: "CONCLUIDO", plan: "CONCLUIDO", lessons: "CONCLUIDO" })).toBe(100);
+    const base = { onePager: "NAO_INICIADO", report: "EM_ANDAMENTO", investigation: "NAO_INICIADO", plan: "NAO_INICIADO", lessons: "NAO_INICIADO", finalPager: null } as const;
+    expect(investigationProgress(base)).toBe(0);
+    expect(investigationProgress({ ...base, onePager: "CONCLUIDO", report: "CONCLUIDO" })).toBe(40);
+    const all = { ...base, onePager: "CONCLUIDO", report: "CONCLUIDO", investigation: "CONCLUIDO", plan: "CONCLUIDO", lessons: "CONCLUIDO" } as const;
+    expect(investigationProgress(all)).toBe(100);
+    // HIPO: o One Pager final também conta
+    expect(investigationProgress({ ...all, finalPager: "NAO_INICIADO" })).toBe(83);
+    expect(investigationProgress({ ...all, finalPager: "CONCLUIDO" })).toBe(100);
   });
 
   it("plano conclui quando todas as ações terminam", () => {

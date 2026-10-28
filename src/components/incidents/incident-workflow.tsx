@@ -17,6 +17,7 @@ import {
   Paperclip,
   Pencil,
   Plus,
+  Presentation,
   RotateCcw,
   Save,
   ShieldCheck,
@@ -47,15 +48,18 @@ import { ActionStatusBadge, isOverdue } from "@/components/actions/action-badges
 import { MonthCalendar } from "@/components/safety/month-calendar";
 import { HipoBadge, StepBadge, TypeBadge } from "./bits";
 import { RcaForm } from "./rca-form";
+import { OnePagerStep } from "./one-pager-step";
 import { rootCauses } from "@/lib/rca";
 
-type StepKey = "reporte" | "investigacao" | "plano" | "licoes" | "encerramento";
+type StepKey = "onepager" | "reporte" | "investigacao" | "plano" | "licoes" | "final" | "encerramento";
 
-const STEPS: { key: StepKey; label: string; short: string; icon: typeof FileText }[] = [
+const ALL_STEPS: { key: StepKey; label: string; short: string; icon: typeof FileText }[] = [
+  { key: "onepager", label: "One Pager inicial", short: "1-Pager", icon: Presentation },
   { key: "reporte", label: "Reporte", short: "Reporte", icon: FileText },
   { key: "investigacao", label: "Investigação", short: "Investig.", icon: CalendarClock },
   { key: "plano", label: "Plano de Ação", short: "Plano", icon: ClipboardList },
   { key: "licoes", label: "Lições Aprendidas", short: "Lições", icon: Lightbulb },
+  { key: "final", label: "One Pager final", short: "1-Pager F.", icon: Presentation },
   { key: "encerramento", label: "Encerramento", short: "Encerr.", icon: Flag },
 ];
 
@@ -80,18 +84,24 @@ export function IncidentWorkflow({ initial, ctx, initialStep }: { initial: Incid
   const router = useRouter();
   const [inc, setInc] = useState(initial);
   const [pending, start] = useTransition();
+  // O One Pager final só existe em HIPO.
+  const STEPS = ALL_STEPS.filter((s) => s.key !== "final" || inc.hipo);
   const firstOpen = (): StepKey => {
     if (inc.closed) return "encerramento";
+    if (inc.steps.onePager !== "CONCLUIDO") return "onepager";
     if (inc.steps.report !== "CONCLUIDO") return "reporte";
     if (inc.steps.investigation !== "CONCLUIDO") return "investigacao";
     if (inc.steps.plan !== "CONCLUIDO") return "plano";
     if (inc.steps.lessons !== "CONCLUIDO") return "licoes";
+    if (inc.steps.finalPager && inc.steps.finalPager !== "CONCLUIDO") return "final";
     return "encerramento";
   };
-  const [step, setStep] = useState<StepKey>(STEPS.some((s) => s.key === initialStep) ? (initialStep as StepKey) : firstOpen());
+  const [step, setStep] = useState<StepKey>(ALL_STEPS.some((s) => s.key === initialStep) ? (initialStep as StepKey) : firstOpen());
   const editable = ctx.canManage && !inc.closed;
 
   const statusOf: Record<StepKey, Step> = {
+    onepager: inc.steps.onePager,
+    final: inc.steps.finalPager ?? "NAO_INICIADO",
     reporte: inc.steps.report,
     investigacao: inc.steps.investigation,
     plano: inc.steps.plan,
@@ -165,7 +175,7 @@ export function IncidentWorkflow({ initial, ctx, initialStep }: { initial: Incid
         </div>
 
         {/* Stepper */}
-        <ol className="mt-6 grid grid-cols-5 gap-1">
+        <ol className="mt-6 grid gap-1" style={{ gridTemplateColumns: `repeat(${STEPS.length}, minmax(0, 1fr))` }}>
           {STEPS.map((s, idx) => {
             const st = statusOf[s.key];
             const done = st === "CONCLUIDO";
@@ -201,7 +211,6 @@ export function IncidentWorkflow({ initial, ctx, initialStep }: { initial: Incid
                   <span className="hidden sm:block">
                     <StepBadge status={st} />
                   </span>
-                  <span className="text-[10px] font-semibold tabular-nums text-slate-400">{(idx + 1) * 25 - 25}%</span>
                 </button>
               </li>
             );
@@ -210,6 +219,8 @@ export function IncidentWorkflow({ initial, ctx, initialStep }: { initial: Incid
       </div>
 
       <div className={cn(pending && "pointer-events-none opacity-70 transition-opacity")}>
+        {step === "onepager" ? <OnePagerStep key="initial" kind="initial" inc={inc} editable={editable} blobEnabled={ctx.blobEnabled} save={save} apply={apply} /> : null}
+        {step === "final" ? <OnePagerStep key="final" kind="final" inc={inc} editable={editable} blobEnabled={ctx.blobEnabled} save={save} apply={apply} /> : null}
         {step === "reporte" ? <ReportStep inc={inc} ctx={ctx} editable={editable} save={save} apply={apply} /> : null}
         {step === "investigacao" ? <InvestigationStep inc={inc} ctx={ctx} editable={editable} save={save} apply={apply} /> : null}
         {step === "plano" ? <PlanStep inc={inc} ctx={ctx} editable={editable} save={save} reload={() => apply(() => reloadIncident(inc.id))} /> : null}
@@ -777,13 +788,15 @@ function ClosingStep({
   onDelete: () => void;
 }) {
   const checks: { key: StepKey; label: string; st: Step }[] = [
+    { key: "onepager", label: "One Pager inicial concluído", st: inc.steps.onePager },
     { key: "reporte", label: "Reporte validado", st: inc.steps.report },
     { key: "investigacao", label: "Investigação concluída", st: inc.steps.investigation },
     { key: "plano", label: "Plano de ação concluído", st: inc.steps.plan },
     { key: "licoes", label: "Lições aprendidas aprovadas", st: inc.steps.lessons },
+    ...(inc.steps.finalPager ? [{ key: "final" as StepKey, label: "One Pager final concluído (HIPO)", st: inc.steps.finalPager }] : []),
   ];
   return (
-    <Panel title="Encerramento" description="A ocorrência só pode ser encerrada com as quatro etapas concluídas (100%)." icon={Flag}>
+    <Panel title="Encerramento" description="A ocorrência só pode ser encerrada com todas as etapas concluídas (100%)." icon={Flag}>
       <ul className="grid gap-2 sm:grid-cols-2">
         {checks.map((c) => (
           <li key={c.key}>

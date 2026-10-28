@@ -134,14 +134,21 @@ export function planStepStatus(stored: Step, actions: { status: string }[]): Ste
   return done ? "CONCLUIDO" : "EM_ANDAMENTO";
 }
 
-export function investigationProgress(steps: { report: Step; investigation: Step; plan: Step; lessons: Step }) {
-  const order = [steps.report, steps.investigation, steps.plan, steps.lessons];
-  let pct = 0;
-  for (const s of order) {
-    if (s !== "CONCLUIDO") break;
-    pct += 25;
-  }
-  return pct;
+export type InvestigationSteps = {
+  onePager: Step;
+  report: Step;
+  investigation: Step;
+  plan: Step;
+  lessons: Step;
+  /** One Pager final: só existe em HIPO. */
+  finalPager: Step | null;
+};
+
+/** Percentual de etapas concluídas (One Pager inicial, Reporte, Investigação, Plano, Lições e, em HIPO, One Pager final). */
+export function investigationProgress(steps: InvestigationSteps) {
+  const order = [steps.onePager, steps.report, steps.investigation, steps.plan, steps.lessons];
+  if (steps.finalPager) order.push(steps.finalPager);
+  return Math.round((order.filter((s) => s === "CONCLUIDO").length / order.length) * 100);
 }
 
 export const DEFAULT_AREAS = [

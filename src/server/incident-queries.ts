@@ -11,6 +11,7 @@ import {
   type Step,
 } from "@/lib/incidents";
 import { parseRca, rcaRequired } from "@/lib/rca";
+import { parsePagers } from "@/lib/one-pager";
 import { serializeAction } from "./queries";
 
 const listInclude = {
@@ -23,10 +24,12 @@ type IncidentRow = Prisma.IncidentGetPayload<{ include: typeof listInclude }>;
 export function serializeIncidentRow(i: IncidentRow) {
   const plan = planStepStatus(i.planStatus as Step, i.actionPlans);
   const steps = {
+    onePager: i.onePagerStatus as Step,
     report: i.reportStatus as Step,
     investigation: i.investigationStatus as Step,
     plan,
     lessons: i.lessonsStatus as Step,
+    finalPager: i.hipo ? (i.finalPagerStatus as Step) : null,
   };
   const now = new Date();
   const openActions = i.actionPlans.filter((a) => a.status === "ABERTA" || a.status === "EM_ANDAMENTO");
@@ -101,6 +104,7 @@ export async function loadIncidentDetail(id: string) {
     include: {
       ...listInclude,
       reportedBy: { select: { name: true } },
+      unit: { select: { name: true } },
       approvedBy: { select: { name: true } },
       attachments: { orderBy: { createdAt: "desc" }, include: { uploadedBy: { select: { name: true } } } },
       actionPlans: {
@@ -120,6 +124,8 @@ export async function loadIncidentDetail(id: string) {
     participants: i.participants ?? "",
     meetingNotes: i.meetingNotes ?? "",
     rca: parseRca(i.rca),
+    onePager: parsePagers(i.onePager, i.type as IncidentTypeKey),
+    unitName: i.unit.name,
     rcaRequired: rcaRequired({ type: i.type as IncidentTypeKey, hipo: i.hipo }),
     rootCause: i.rootCause ?? "",
     whatHappened: i.whatHappened ?? "",
