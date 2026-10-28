@@ -1,14 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CheckCircle2, ExternalLink, FileText, ImagePlus, Loader2, Plus, Save, Trash2, Upload, Wand2, X } from "lucide-react";
+import { CheckCircle2, ExternalLink, FileText, ImagePlus, Loader2, Maximize2, Minimize2, MousePointerClick, Save, Upload, Wand2, X } from "lucide-react";
 import { toast } from "sonner";
 import type { IncidentDetail } from "@/server/incident-queries";
 import {
-  APPLICABILITY,
-  HIPO_STATUS,
-  POPULATION,
-  QUALITY_CHECKS,
   finalMissing,
   initialMissing,
   type FinalPager,
@@ -20,9 +16,9 @@ import { fileHref } from "@/lib/file-url";
 import { cn } from "@/lib/utils";
 import { addIncidentAttachment, updateIncident } from "@/server/incidents";
 import { Button } from "@/components/ui/button";
-import { Field, Input, Textarea } from "@/components/ui/input";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { StepBadge } from "./bits";
-import { OnePagerSheet, type SheetKind } from "./one-pager-sheet";
+import { OnePagerSheet, type SheetEdit, type SheetKind } from "./one-pager-sheet";
 
 type Patch = Omit<Parameters<typeof updateIncident>[0], "id">;
 type Res = { ok: true; data?: IncidentDetail | null } | { ok: false; error: string };
@@ -82,6 +78,8 @@ export function OnePagerStep({
 }) {
   const [p, setP] = useState<OnePagers>(() => withDefaults(inc));
   const [busy, setBusy] = useState(false);
+  const [full, setFull] = useState(false);
+  const [picking, setPicking] = useState(false);
   const status = kind === "initial" ? inc.steps.onePager : (inc.steps.finalPager ?? "NAO_INICIADO");
   const statusKey = kind === "initial" ? "onePagerStatus" : "finalPagerStatus";
   const missing = kind === "initial" ? initialMissing(p.initial, inc.description) : finalMissing(p.final);
@@ -90,6 +88,7 @@ export function OnePagerStep({
   const images = inc.attachments.filter((a) => a.mimeType?.startsWith("image/"));
   const photos = p.initial.photos.map((id) => images.find((a) => a.id === id)).filter(Boolean).map((a) => fileHref(a!.url));
   const file = kind === "initial" ? p.initial.file : p.final.file;
+  const sheetEdit: SheetEdit | undefined = editable ? { setInitial: setI, setFinal: setF, onPhotos: () => setPicking(true) } : undefined;
 
   const persist = (next: OnePagers, extra: Patch = {}, msg = "One Pager salvo") => save({ onePager: next, ...extra }, msg);
 
@@ -123,6 +122,13 @@ export function OnePagerStep({
     }
   };
 
+  useEffect(() => {
+    if (!full) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setFull(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [full]);
+
   const title = kind === "initial" ? (inc.hipo ? "One-Pager Inicial de Incidente (HIPO)" : "Alerta de Segurança · One Pager inicial") : "One-Pager Final de Incidente (HIPO)";
 
   return (
@@ -144,6 +150,9 @@ export function OnePagerStep({
           </div>
           <div className="flex flex-wrap items-center gap-2">
             <StepBadge status={status} />
+            <Button variant="outline" onClick={() => setFull(true)}>
+              <Maximize2 /> Tela cheia
+            </Button>
             <Button variant="outline" asChild>
               <a href={`/one-pager/${inc.id}/${kind === "initial" ? "inicial" : "final"}`} target="_blank" rel="noreferrer">
                 <ExternalLink /> Abrir para imprimir / PDF
@@ -152,18 +161,43 @@ export function OnePagerStep({
           </div>
         </header>
 
-        <div className="grid gap-5 xl:grid-cols-[minmax(0,430px)_minmax(0,1fr)]">
-          {/* Formulário */}
-          <fieldset disabled={!editable} className="space-y-4">
-            {kind === "initial" ? (
-              <InitialForm p={p.initial} set={setI} inc={inc} images={images} photosBusy={busy} onUploadPhotos={uploadPhotos} />
-            ) : (
-              <FinalForm p={p.final} set={setF} />
-            )}
-          </fieldset>
+        {editable ? (
+          <div className="mb-3 flex flex-wrap items-center gap-2 rounded-xl bg-sky-50 px-3 py-2 text-xs text-sky-900">
+            <MousePointerClick className="size-4" />
+            <span>
+              <b>Edite direto na folha:</b> clique nos textos para escrever, <kbd className="rounded bg-white px-1">Enter</kbd> cria um novo item da lista,
+              clique nas caixas para marcar e na área de fotos para escolher as imagens. Dados do reporte (site, data, tipo, Sphera, 12 Básicos) são
+              alterados na etapa Reporte.
+            </span>
+            {kind === "initial" && inc.rca.immediate.some((a) => a.action.trim()) ? (
+              <button
+                type="button"
+                className="ml-auto flex items-center gap-1 font-semibold text-brand-700 hover:underline"
+                onClick={() => setI({ act: inc.rca.immediate.map((a) => a.action).filter((a) => a.trim()) })}
+              >
+                <Wand2 className="size-3.5" /> Usar ações imediatas da RCA
+              </button>
+            ) : null}
+          </div>
+        ) : null}
 
-          {/* Prévia */}
-          <div className="space-y-3 self-start xl:sticky xl:top-20">
+        <div className={cn(full && "fixed inset-0 z-[80] flex flex-col items-center justify-center gap-3 bg-slate-900/90 p-4")}>
+          {full ? (
+            <div className="flex w-full max-w-[1600px] items-center justify-between text-white">
+              <span className="text-sm font-semibold">{title}</span>
+              <div className="flex gap-2">
+                {editable ? (
+                  <Button type="button" variant="outline" size="sm" onClick={() => persist(p)}>
+                    <Save /> Salvar
+                  </Button>
+                ) : null}
+                <Button type="button" variant="outline" size="sm" onClick={() => setFull(false)}>
+                  <Minimize2 /> Sair da tela cheia
+                </Button>
+              </div>
+            </div>
+          ) : null}
+          <div className={cn("relative w-full", full && "max-w-[min(1600px,calc((100vh-90px)*16/9))]")}>
             <Preview>
               <OnePagerSheet
                 kind={kind}
@@ -179,46 +213,88 @@ export function OnePagerStep({
                 }}
                 pagers={p}
                 photos={photos}
+                edit={sheetEdit}
               />
             </Preview>
-            <div className="flex flex-wrap items-center gap-3 rounded-xl border border-slate-200 bg-slate-50/70 p-3">
-              <Upload className="size-4 text-brand-600" />
-              <div className="min-w-0 flex-1 text-sm">
-                <p className="font-semibold text-slate-700">Arquivo oficial do One Pager</p>
-                {file ? (
-                  <a href={fileHref(file.url)} target="_blank" rel="noreferrer" className="block truncate text-brand-700 hover:underline">
-                    {file.name}
-                  </a>
-                ) : (
-                  <p className="text-xs text-slate-500">PowerPoint ou PDF. Anexar o arquivo também permite concluir a etapa.</p>
-                )}
-              </div>
-              {editable ? (
-                <>
-                  {file ? (
-                    <Button
-                      type="button"
-                      variant="ghost"
-                      size="sm"
-                      className="text-critico hover:bg-critico-bg hover:text-critico"
-                      onClick={() => {
-                        const next = kind === "initial" ? { ...p, initial: { ...p.initial, file: null } } : { ...p, final: { ...p.final, file: null } };
-                        setP(next);
-                        persist(next, {}, "Arquivo removido");
-                      }}
-                    >
-                      <X /> Remover
-                    </Button>
-                  ) : null}
-                  <label className="inline-flex cursor-pointer items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-semibold text-slate-700 hover:bg-slate-50">
-                    {busy ? <Loader2 className="size-4 animate-spin" /> : <Upload className="size-4" />} {file ? "Substituir" : "Enviar arquivo"}
-                    <input type="file" accept=".pptx,.ppt,.pdf,image/*" className="hidden" onChange={(e) => uploadOfficial(e.target.files?.[0])} />
-                  </label>
-                </>
-              ) : null}
-            </div>
           </div>
         </div>
+
+        <div className="mt-3 flex flex-wrap items-center gap-3 rounded-xl border border-slate-200 bg-slate-50/70 p-3">
+          <Upload className="size-4 text-brand-600" />
+          <div className="min-w-0 flex-1 text-sm">
+            <p className="font-semibold text-slate-700">Arquivo oficial do One Pager</p>
+            {file ? (
+              <a href={fileHref(file.url)} target="_blank" rel="noreferrer" className="block truncate text-brand-700 hover:underline">
+                {file.name}
+              </a>
+            ) : (
+              <p className="text-xs text-slate-500">PowerPoint ou PDF. Anexar o arquivo também permite concluir a etapa.</p>
+            )}
+          </div>
+          {editable ? (
+            <>
+              {file ? (
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  className="text-critico hover:bg-critico-bg hover:text-critico"
+                  onClick={() => {
+                    const next = kind === "initial" ? { ...p, initial: { ...p.initial, file: null } } : { ...p, final: { ...p.final, file: null } };
+                    setP(next);
+                    persist(next, {}, "Arquivo removido");
+                  }}
+                >
+                  <X /> Remover
+                </Button>
+              ) : null}
+              <label className="inline-flex cursor-pointer items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-semibold text-slate-700 hover:bg-slate-50">
+                {busy ? <Loader2 className="size-4 animate-spin" /> : <Upload className="size-4" />} {file ? "Substituir" : "Enviar arquivo"}
+                <input type="file" accept=".pptx,.ppt,.pdf,image/*" className="hidden" onChange={(e) => uploadOfficial(e.target.files?.[0])} />
+              </label>
+            </>
+          ) : null}
+        </div>
+
+        <Dialog open={picking} onOpenChange={setPicking}>
+          <DialogContent title="Fotos e ilustração" description="Escolha até 4 imagens entre os anexos da ocorrência ou envie novas.">
+            <div className="grid grid-cols-3 gap-3 sm:grid-cols-4">
+              {images.map((a) => {
+                const on = p.initial.photos.includes(a.id);
+                return (
+                  <button
+                    key={a.id}
+                    type="button"
+                    title={a.name}
+                    onClick={() =>
+                      setI({ photos: on ? p.initial.photos.filter((x) => x !== a.id) : p.initial.photos.length < 4 ? [...p.initial.photos, a.id] : p.initial.photos })
+                    }
+                    className={cn("relative aspect-square overflow-hidden rounded-xl border-2", on ? "border-brand-600 ring-2 ring-brand-500/30" : "border-slate-200 opacity-70 hover:opacity-100")}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={fileHref(a.url)} alt="" className="size-full object-cover" />
+                    {on ? (
+                      <span className="absolute right-1 top-1 grid size-6 place-items-center rounded-full bg-brand-600 text-xs font-bold text-white">
+                        {p.initial.photos.indexOf(a.id) + 1}
+                      </span>
+                    ) : null}
+                  </button>
+                );
+              })}
+              <label className="grid aspect-square cursor-pointer place-items-center rounded-xl border-2 border-dashed border-slate-300 text-slate-400 hover:border-brand-300 hover:text-brand-600">
+                <span className="flex flex-col items-center gap-1 text-xs font-semibold">
+                  {busy ? <Loader2 className="size-6 animate-spin" /> : <ImagePlus className="size-6" />} Enviar fotos
+                </span>
+                <input type="file" accept="image/*" multiple className="hidden" onChange={(e) => uploadPhotos(e.target.files)} />
+              </label>
+            </div>
+            <div className="mt-4 flex justify-end">
+              <Button type="button" onClick={() => setPicking(false)}>
+                Pronto
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
 
         {editable ? (
           <div className="sticky bottom-3 z-10 mt-5 flex flex-wrap items-center justify-end gap-3 rounded-2xl border border-slate-200 bg-white/95 p-3 shadow-lift backdrop-blur">
@@ -265,204 +341,5 @@ function Preview({ children }: { children: React.ReactNode }) {
     <div ref={ref} className="overflow-hidden rounded-xl border border-slate-200 shadow-soft" style={{ height: 720 * scale }}>
       <div style={{ transform: `scale(${scale})`, transformOrigin: "top left", width: 1280, height: 720 }}>{children}</div>
     </div>
-  );
-}
-
-function ListEditor({ label, value, onChange, placeholder, max = 8 }: { label: string; value: string[]; onChange: (l: string[]) => void; placeholder?: string; max?: number }) {
-  return (
-    <Field label={label}>
-      <div className="space-y-1.5">
-        {value.map((v, i) => (
-          <div key={i} className="flex items-start gap-1.5">
-            <span className="mt-2 w-5 shrink-0 text-right text-xs font-bold text-slate-400">{i + 1}.</span>
-            <Textarea rows={1} value={v} placeholder={placeholder} onChange={(e) => onChange(value.map((x, j) => (j === i ? e.target.value : x)))} className="min-h-9 py-1.5 text-sm" style={{ fieldSizing: "content" } as React.CSSProperties} />
-            {value.length > 1 ? (
-              <button type="button" title="Remover" className="mt-1.5 rounded p-1 text-slate-400 hover:bg-critico-bg hover:text-critico" onClick={() => onChange(value.filter((_, j) => j !== i))}>
-                <Trash2 className="size-4" />
-              </button>
-            ) : null}
-          </div>
-        ))}
-        {value.length < max ? (
-          <button type="button" className="ml-6 flex items-center gap-1 text-xs font-semibold text-brand-700 hover:underline" onClick={() => onChange([...value, ""])}>
-            <Plus className="size-3.5" /> Adicionar item
-          </button>
-        ) : null}
-      </div>
-    </Field>
-  );
-}
-
-function Seg({ value, options, onChange }: { value: string; options: string[]; onChange: (v: string) => void }) {
-  return (
-    <span className="inline-flex overflow-hidden rounded-lg border border-slate-200">
-      {options.map((o) => (
-        <button
-          key={o}
-          type="button"
-          onClick={() => onChange(value === o ? "" : o)}
-          className={cn("border-l border-slate-200 px-3 py-1.5 text-xs font-semibold first:border-l-0", value === o ? "bg-brand-600 text-white" : "bg-white text-slate-600 hover:bg-slate-50")}
-        >
-          {o}
-        </button>
-      ))}
-    </span>
-  );
-}
-
-function InitialForm({
-  p,
-  set,
-  inc,
-  images,
-  photosBusy,
-  onUploadPhotos,
-}: {
-  p: InitialPager;
-  set: (x: Partial<InitialPager>) => void;
-  inc: IncidentDetail;
-  images: IncidentDetail["attachments"];
-  photosBusy: boolean;
-  onUploadPhotos: (f: FileList | null) => void;
-}) {
-  return (
-    <>
-      <div className="rounded-xl bg-slate-50 p-3 text-xs text-slate-600">
-        Vêm do reporte: <b>site</b> ({inc.unitName}), <b>Sphera ID</b> ({inc.spheraId ?? "—"}), <b>local</b>, <b>data/hora</b>, <b>tipo de evento</b>, <b>HIPO</b> e <b>12 Básicos</b> ({inc.basicRef ?? "—"}). Para alterar, use a etapa Reporte.
-      </div>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {!inc.hipo ? (
-          <Field label="Zona / CBU">
-            <Input value={p.zone} onChange={(e) => set({ zone: e.target.value })} />
-          </Field>
-        ) : null}
-        <Field label={inc.hipo ? "Lesão" : "Tipo e gravidade da lesão / possível lesão"} className={inc.hipo ? "sm:col-span-2" : ""}>
-          <Input value={p.injury} onChange={(e) => set({ injury: e.target.value })} placeholder="Ex.: Não houve lesões / contusões, cortes…" />
-        </Field>
-        {!inc.hipo ? (
-          <Field label="Danos patrimoniais">
-            <Seg value={p.propertyDamage} options={["Sim", "Não"]} onChange={(v) => set({ propertyDamage: v })} />
-          </Field>
-        ) : null}
-      </div>
-      <Field label={inc.hipo ? "STOP · Descrição do incidente" : "PARE · Descrição do incidente"}>
-        <Textarea rows={3} value={p.stop} onChange={(e) => set({ stop: e.target.value })} />
-      </Field>
-      <ListEditor
-        label={inc.hipo ? "THINK · (potenciais) consequências / fatores influenciadores" : "PENSE · (potenciais) consequências / fatores de influência"}
-        value={p.think}
-        onChange={(think) => set({ think })}
-        placeholder="Ex.: Altura e padrão de paletização: …"
-      />
-      <ListEditor
-        label={inc.hipo ? "ACT · Contenção imediata e aprendizado inicial" : "AJA · Principais ações para evitar recorrência / aprendizados"}
-        value={p.act}
-        onChange={(act) => set({ act })}
-        placeholder="Ex.: Avaliação do local"
-      />
-      {inc.rca.immediate.some((a) => a.action.trim()) ? (
-        <button
-          type="button"
-          className="-mt-2 ml-6 flex items-center gap-1 text-xs font-semibold text-brand-700 hover:underline"
-          onClick={() => set({ act: inc.rca.immediate.map((a) => a.action).filter((a) => a.trim()) })}
-        >
-          <Wand2 className="size-3.5" /> Usar as ações imediatas da RCA
-        </button>
-      ) : null}
-
-      <Field label="Fotos e ilustração (até 4)">
-        <div className="flex flex-wrap gap-2">
-          {images.map((a) => {
-            const on = p.photos.includes(a.id);
-            return (
-              <button
-                key={a.id}
-                type="button"
-                title={a.name}
-                onClick={() => set({ photos: on ? p.photos.filter((x) => x !== a.id) : p.photos.length < 4 ? [...p.photos, a.id] : p.photos })}
-                className={cn("relative size-16 overflow-hidden rounded-lg border-2", on ? "border-brand-600 ring-2 ring-brand-500/30" : "border-slate-200 opacity-60 hover:opacity-100")}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={fileHref(a.url)} alt="" className="size-full object-cover" />
-                {on ? <CheckCircle2 className="absolute right-0.5 top-0.5 size-4 rounded-full bg-white text-brand-600" /> : null}
-              </button>
-            );
-          })}
-          <label className="grid size-16 cursor-pointer place-items-center rounded-lg border-2 border-dashed border-slate-300 text-slate-400 hover:border-brand-300 hover:text-brand-600">
-            {photosBusy ? <Loader2 className="size-5 animate-spin" /> : <ImagePlus className="size-5" />}
-            <input type="file" accept="image/*" multiple className="hidden" onChange={(e) => onUploadPhotos(e.target.files)} />
-          </label>
-        </div>
-      </Field>
-
-      {inc.hipo ? (
-        <Field label="Status atual da investigação">
-          <div className="grid gap-1.5 rounded-xl border border-slate-200 p-3 sm:grid-cols-2">
-            {HIPO_STATUS.map((s) => (
-              <label key={s.k} className="flex items-center gap-2 text-sm text-slate-700">
-                <input type="checkbox" checked={p.status[s.k]} onChange={(e) => set({ status: { ...p.status, [s.k]: e.target.checked } })} />
-                {s.label}
-              </label>
-            ))}
-            <label className="flex items-center gap-2 text-sm text-slate-700 sm:col-span-2">
-              Relatório previsto
-              <Input type="date" className="h-8 w-40" value={p.reportDue} onChange={(e) => set({ reportDue: e.target.value })} />
-            </label>
-          </div>
-        </Field>
-      ) : null}
-    </>
-  );
-}
-
-function FinalForm({ p, set }: { p: FinalPager; set: (x: Partial<FinalPager>) => void }) {
-  return (
-    <>
-      <Field label="1. Breve descrição do incidente (máx. 3 linhas)">
-        <Textarea rows={3} maxLength={600} value={p.summary} onChange={(e) => set({ summary: e.target.value })} />
-      </Field>
-      <div className="grid gap-3 sm:grid-cols-2">
-        <ListEditor label="2. Causas imediatas" value={p.immediateCauses} onChange={(immediateCauses) => set({ immediateCauses })} placeholder="O que causou diretamente" max={5} />
-        <ListEditor label="2. Causas raiz" value={p.rootCauses} onChange={(rootCauses) => set({ rootCauses })} placeholder="Falhas no sistema" max={5} />
-      </div>
-      <Field label="3. Qualidade da investigação e verificação de evidências">
-        <div className="space-y-1.5 rounded-xl border border-slate-200 p-3">
-          {QUALITY_CHECKS.map((q) => (
-            <label key={q.k} className="flex items-center gap-2 text-sm text-slate-700">
-              <input type="checkbox" checked={p.quality[q.k]} onChange={(e) => set({ quality: { ...p.quality, [q.k]: e.target.checked } })} />
-              {q.label}
-            </label>
-          ))}
-        </div>
-      </Field>
-      <ListEditor label="4. Principais aprendizados para o negócio" value={p.learnings} onChange={(learnings) => set({ learnings })} placeholder="O que aprendemos?" max={4} />
-      <div className="grid gap-3 sm:grid-cols-2">
-        <Field label="Isso poderia acontecer em outro lugar?">
-          <div className="space-y-1.5 rounded-xl border border-slate-200 p-3">
-            {APPLICABILITY.map((a) => (
-              <label key={a.k} className="flex items-center gap-2 text-sm text-slate-700">
-                <input type="radio" name="applicability" checked={p.applicability === a.k} onChange={() => set({ applicability: a.k })} />
-                {a.label}
-              </label>
-            ))}
-          </div>
-        </Field>
-        <Field label="População impactada">
-          <div className="space-y-1.5 rounded-xl border border-slate-200 p-3">
-            {POPULATION.map((a) => (
-              <label key={a.k} className="flex items-center gap-2 text-sm text-slate-700">
-                <input
-                  type="checkbox"
-                  checked={p.population.includes(a.k)}
-                  onChange={(e) => set({ population: e.target.checked ? [...p.population, a.k] : p.population.filter((x) => x !== a.k) })}
-                />
-                {a.label}
-              </label>
-            ))}
-          </div>
-        </Field>
-      </div>
-      <ListEditor label="5. Principais medidas de prevenção" value={p.preventions} onChange={(preventions) => set({ preventions })} placeholder="Medida para prevenir a recorrência" max={5} />
-    </>
   );
 }
