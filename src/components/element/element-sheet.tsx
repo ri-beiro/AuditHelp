@@ -10,6 +10,7 @@ import {
   Loader2,
   MessageCircleQuestion,
   NotebookPen,
+  FolderCheck,
 } from "lucide-react";
 import { toast } from "sonner";
 import type { ElementStatus } from "@prisma/client";
@@ -29,6 +30,8 @@ import { MatrixBasics } from "./matrix-basics";
 import { EvidencePanel } from "./evidence-panel";
 import { ActionsPanel } from "./actions-panel";
 import { InterviewPanel } from "./interview-panel";
+import { DocumentsPanel } from "./documents-panel";
+import { buildAuditDocs } from "@/lib/audit-docs";
 
 type Props = {
   code: string | null;
@@ -60,6 +63,8 @@ export function ElementSheet(props: Props) {
   const [view, setView] = useState("matriz");
   const [evidenceReq, setEvidenceReq] = useState<string | null>(null);
   const [actionReq, setActionReq] = useState<string | null>(null);
+  // Linha aberta a partir da aba Documentos (tem prioridade sobre ?req= da URL).
+  const [focusReq, setFocusReq] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     if (!code) return;
@@ -72,7 +77,8 @@ export function ElementSheet(props: Props) {
 
   useEffect(() => {
     setDetail(null);
-    setView(props.initialView === "evidencias" ? "evidencias" : "matriz");
+    setFocusReq(null);
+    setView(props.initialView === "evidencias" ? "evidencias" : props.initialView === "documentos" ? "documentos" : "matriz");
     load();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [code, assessmentId]);
@@ -108,7 +114,11 @@ export function ElementSheet(props: Props) {
             view={view}
             setView={setView}
             loading={loading}
-            focusRequirement={props.focusRequirement}
+            focusRequirement={focusReq ?? props.focusRequirement}
+            openRequirement={(id) => {
+              setFocusReq(id);
+              setView("matriz");
+            }}
             evidenceReq={evidenceReq}
             clearEvidenceReq={() => setEvidenceReq(null)}
             actionReq={actionReq}
@@ -137,7 +147,9 @@ function SheetBody({
   onPrev,
   onNext,
   reload,
+  openRequirement,
 }: {
+  openRequirement: (id: string) => void;
   detail: ElementDetail;
   ctx: SheetCtx;
   view: string;
@@ -156,6 +168,8 @@ function SheetBody({
   const isWise = result.kind === "WISE";
   const tone = TONE_CLASSES[result.tone];
   const pendingActions = detail.actions.filter((a) => a.status === "ABERTA" || a.status === "EM_ANDAMENTO").length;
+  const docs = buildAuditDocs(detail.requirements);
+  const docsDone = docs.filter((d) => detail.documents.some((x) => x.key === d.key && x.status !== "PENDENTE")).length;
 
   return (
     <>
@@ -213,6 +227,12 @@ function SheetBody({
                   {result.answered}/{result.total}
                 </span>
               </TabsTrigger>
+              <TabsTrigger value="documentos">
+                <FolderCheck /> Documentos{" "}
+                <span className="text-xs text-slate-400">
+                  {docsDone}/{docs.length}
+                </span>
+              </TabsTrigger>
               <TabsTrigger value="evidencias">
                 <FileText /> Evidências <span className="text-xs text-slate-400">{detail.evidences.length}</span>
               </TabsTrigger>
@@ -238,6 +258,9 @@ function SheetBody({
             ) : (
               <MatrixBasics ctx={ctx} focusRequirement={focusRequirement} />
             )}
+          </TabsContent>
+          <TabsContent value="documentos" className="pt-4">
+            <DocumentsPanel ctx={ctx} onOpenRequirement={openRequirement} />
           </TabsContent>
           <TabsContent value="evidencias" className="pt-4">
             <EvidencePanel ctx={ctx} presetRequirement={evidenceReq} onPresetUsed={clearEvidenceReq} />

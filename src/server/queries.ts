@@ -240,7 +240,7 @@ export async function loadElementDetail(assessmentId: string, code: string) {
       requirements: { orderBy: [{ level: "asc" }, { order: "asc" }] },
     },
   });
-  const [scores, ea, evidences, actions, members, interview] = await Promise.all([
+  const [scores, ea, evidences, actions, members, interview, auditDocs] = await Promise.all([
     db.requirementScore.findMany({
       where: { assessmentId, requirement: { elementId: element.id } },
       include: { updatedBy: { select: { name: true } } },
@@ -261,6 +261,7 @@ export async function loadElementDetail(assessmentId: string, code: string) {
     }),
     unitMembers(assessment.unitId),
     db.interviewAnswer.findMany({ where: { assessmentId, elementId: element.id }, orderBy: { questionIndex: "asc" } }),
+    db.auditDocument.findMany({ where: { assessmentId, elementId: element.id } }),
   ]);
   const byReq = new Map(scores.map((s) => [s.requirementId, s]));
   const requirements = element.requirements.map((r) => {
@@ -322,10 +323,18 @@ export async function loadElementDetail(assessmentId: string, code: string) {
       size: e.size,
       description: e.description,
       requirementId: e.requirementId,
+      documentKey: e.documentKey,
       uploadedBy: e.uploadedBy?.name ?? null,
       createdAt: e.createdAt.toISOString(),
     })),
     actions: actions.map(serializeAction),
+    documents: auditDocs.map((d) => ({
+      key: d.key,
+      status: d.status as "PENDENTE" | "RECEBIDO" | "NAO_APLICAVEL",
+      note: d.note ?? "",
+      updatedBy: d.updatedByName,
+      updatedAt: d.updatedAt.toISOString(),
+    })),
     members,
     interview: interview.map((a) => ({
       index: a.questionIndex,

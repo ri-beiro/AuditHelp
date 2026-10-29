@@ -224,6 +224,7 @@ model Assessment {
 
   @@unique([unitId, framework, cycle])
   interviewAnswers InterviewAnswer[]
+  auditDocuments   AuditDocument[]
 }
 
 model ElementAssessment {
@@ -274,11 +275,34 @@ model Evidence {
   mimeType      String?
   size          Int?
   description   String?
+  /// Documento da auditoria (aba Documentos) a que o arquivo responde.
+  documentKey   String?
   uploadedById  String?
   uploadedBy    User?        @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
   createdAt     DateTime     @default(now())
 
   @@index([assessmentId, elementId])
+}
+
+enum AuditDocumentStatus {
+  PENDENTE
+  RECEBIDO
+  NAO_APLICAVEL
+}
+
+/// Status de cada documento da aba Documentos (lista derivada das evidências sugeridas da matriz).
+model AuditDocument {
+  id            String              @id @default(cuid())
+  assessmentId  String
+  assessment    Assessment          @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  elementId     String
+  key           String
+  status        AuditDocumentStatus @default(PENDENTE)
+  note          String?
+  updatedByName String?
+  updatedAt     DateTime            @updatedAt
+
+  @@unique([assessmentId, elementId, key])
 }
 
 // Plano de ação no modelo 5W2H

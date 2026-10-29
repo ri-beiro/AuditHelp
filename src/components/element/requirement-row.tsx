@@ -74,7 +74,10 @@ export function RequirementRow({
 
   useEffect(() => setObs(req.observation), [req.observation]);
   useEffect(() => {
-    if (focus) ref.current?.scrollIntoView({ block: "center", behavior: "smooth" });
+    if (focus) {
+      setOpen(true);
+      ref.current?.scrollIntoView({ block: "center", behavior: "smooth" });
+    }
   }, [focus]);
 
   const persist = (patch: { value?: string | null; observation?: string }) =>

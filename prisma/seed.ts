@@ -5,6 +5,7 @@ import bcrypt from "bcryptjs";
 import wiseMatrix from "./data/wise-matrix.json";
 import basicsChecklist from "./data/basics-checklist.json";
 import wiseGuidanceJson from "./data/wise-guidance.json";
+import basicsEvidenceJson from "./data/basics-evidence.json";
 import mhcData from "./data/mhc.json";
 import { applyMhc } from "../src/lib/mhc-apply";
 import type { MhcData } from "../src/lib/mhc";
@@ -21,6 +22,8 @@ const prisma = new PrismaClient();
 
 /** Direcionamento por linha WISE: critérios das notas 0/1/2, o que verificar e evidências. */
 const wiseGuidance = wiseGuidanceJson as Record<string, Record<string, string>>;
+/** Documentos/evidências a solicitar por linha dos 12 Básicos (aba Documentos). */
+const basicsEvidence = basicsEvidenceJson as Record<string, string>;
 
 type SeedRequirement = {
   code: string;
@@ -119,7 +122,10 @@ async function main() {
         code: r.code,
         text: r.text,
         riskLevel: r.risk,
-        criteria: (r as { criteria?: Record<string, string | null> }).criteria,
+        criteria: {
+          ...(r as { criteria?: Record<string, string | null> }).criteria,
+          ...(basicsEvidence[r.code] ? { evidence: basicsEvidence[r.code] } : {}),
+        },
       })),
     );
   }

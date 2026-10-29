@@ -197,6 +197,7 @@ const evidenceSchema = z.object({
   mimeType: z.string().max(200).nullable().optional(),
   size: z.number().int().nullable().optional(),
   description: z.string().max(2000).nullable().optional(),
+  documentKey: z.string().max(120).nullable().optional(),
 });
 
 export async function createEvidence(input: z.infer<typeof evidenceSchema>) {
@@ -208,7 +209,39 @@ export async function createEvidence(input: z.infer<typeof evidenceSchema>) {
     if (data.kind === "FILE" && !/^(https:\/\/|\/api\/files\/)/.test(data.url)) throw new Error("Arquivo inválido.");
     const element = await db.element.findUniqueOrThrow({ where: { id: data.elementId } });
     await db.evidence.create({ data: { ...data, assessmentId: assessment.id, uploadedById: user.id } });
+    // Arquivo anexado pela aba Documentos marca o documento como recebido.
+    if (data.documentKey)
+      await db.auditDocument.upsert({
+        where: { assessmentId_elementId_key: { assessmentId: assessment.id, elementId: element.id, key: data.documentKey } },
+        update: { status: "RECEBIDO", updatedByName: user.name },
+        create: { assessmentId: assessment.id, elementId: element.id, key: data.documentKey, status: "RECEBIDO", updatedByName: user.name },
+      });
     await touchElement(assessment.id, element.id, user.id);
+    revalidatePath("/", "layout");
+    return loadElementDetail(assessment.id, element.code);
+  });
+}
+
+const docSchema = z.object({
+  assessmentId: z.string(),
+  elementId: z.string(),
+  key: z.string().min(1).max(120),
+  status: z.enum(["PENDENTE", "RECEBIDO", "NAO_APLICAVEL"]),
+  note: z.string().max(1000).optional(),
+});
+
+/** Status de um documento da aba Documentos (pendente / recebido / não aplicável). */
+export async function setAuditDocument(input: z.infer<typeof docSchema>) {
+  return run(async () => {
+    const data = docSchema.parse(input);
+    const { user, assessment } = await assessmentForUser(data.assessmentId);
+    await requirePermission("evidence");
+    const element = await db.element.findUniqueOrThrow({ where: { id: data.elementId } });
+    await db.auditDocument.upsert({
+      where: { assessmentId_elementId_key: { assessmentId: assessment.id, elementId: element.id, key: data.key } },
+      update: { status: data.status, note: data.note ?? undefined, updatedByName: user.name },
+      create: { assessmentId: assessment.id, elementId: element.id, key: data.key, status: data.status, note: data.note ?? null, updatedByName: user.name },
+    });
     revalidatePath("/", "layout");
     return loadElementDetail(assessment.id, element.code);
   });
