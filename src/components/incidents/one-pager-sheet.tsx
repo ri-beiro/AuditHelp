@@ -30,7 +30,7 @@ import {
   type InitialPager,
   type OnePagers,
 } from "@/lib/one-pager";
-import type { IncidentTypeKey } from "@/lib/incidents";
+import { INCIDENT_TYPES, type IncidentTypeKey } from "@/lib/incidents";
 
 export type SheetIncident = {
   unitName: string;
@@ -50,6 +50,10 @@ export type SheetEdit = {
   setInitial: (patch: Partial<InitialPager>) => void;
   setFinal: (patch: Partial<FinalPager>) => void;
   onPhotos: () => void;
+  /** Dados do reporte editados na folha (salvos junto com o One Pager). */
+  setReport: (patch: Partial<Pick<SheetIncident, "occurredAt" | "type" | "hipo" | "spheraId" | "basicRef">>) => void;
+  /** Sugestões para o campo 12 Básicos. */
+  basics: string[];
 };
 
 const BAND = "#1b5fae";
@@ -61,7 +65,30 @@ const fmtTime = (iso: string) =>
     minute: "2-digit",
   });
 const items = (l: string[]) => l.map((s) => s.trim()).filter(Boolean);
-const FROM_REPORT = "Vem do reporte — altere na etapa Reporte";
+const FROM_REPORT = "Site = unidade da ocorrência";
+/** Data (aaaa-mm-dd) no fuso de Brasília. */
+const spDate = (iso: string) => new Date(iso).toLocaleDateString("en-CA", { timeZone: "America/Sao_Paulo" });
+/** Troca o dia mantendo a hora do evento (Brasília, UTC−3). */
+const withDate = (iso: string, day: string) => {
+  const hm = new Date(iso).toLocaleTimeString("en-GB", { timeZone: "America/Sao_Paulo", hour: "2-digit", minute: "2-digit" });
+  return new Date(`${day}T${hm}:00-03:00`).toISOString();
+};
+const FIELD_CLS = "rounded-[3px] bg-transparent outline-none hover:bg-sky-100/60 focus:bg-sky-50 focus:ring-2 focus:ring-sky-400";
+
+/** Campo de uma linha editável na folha (dados do reporte). */
+function Inp({ value, onChange, className = "", list, placeholder }: { value: string; onChange?: (v: string) => void; className?: string; list?: string; placeholder?: string }) {
+  if (!onChange) return <span className={className}>{value}</span>;
+  return (
+    <input
+      value={value}
+      list={list}
+      placeholder={placeholder ?? "Clique para escrever"}
+      onChange={(e) => onChange(e.target.value)}
+      className={`${FIELD_CLS} min-w-0 placeholder:text-slate-300 ${className}`}
+      style={{ width: `${Math.max(10, value.length + 3)}ch` }}
+    />
+  );
+}
 
 export function OnePagerSheet({
   kind,
@@ -406,22 +433,63 @@ function Head({ icon: Icon, color, word, subtitle }: { icon: "stop" | "think" | 
 // ---------------------------------------------------------------------------
 
 function Summary({ inc, pagers, edit, children }: { inc: SheetIncident; pagers: OnePagers; edit?: SheetEdit; children?: React.ReactNode }) {
-  const cells = [
-    { icon: MapPin, label: "SITE / CBU", value: inc.unitName.toUpperCase() },
+  const setR = edit?.setReport;
+  const setI = edit?.setInitial;
+  const cells: { icon: typeof MapPin; label: string; value: React.ReactNode; big?: boolean; fixed?: boolean }[] = [
+    { icon: MapPin, label: "SITE / CBU", value: inc.unitName.toUpperCase(), fixed: true },
     {
       icon: CalendarDays,
       label: "DATA DO EVENTO",
-      value: fmtDate(inc.occurredAt),
       big: true,
+      value: setR ? (
+        <input
+          type="date"
+          value={spDate(inc.occurredAt)}
+          onChange={(e) => e.target.value && setR({ occurredAt: withDate(inc.occurredAt, e.target.value) })}
+          className={`${FIELD_CLS} w-[150px]`}
+        />
+      ) : (
+        fmtDate(inc.occurredAt)
+      ),
     },
     {
       icon: AlertTriangle,
       label: "TIPO DE EVENTO",
-      value: PAGER_EVENT[inc.type],
+      value: setR ? (
+        <select value={inc.type} onChange={(e) => setR({ type: e.target.value as IncidentTypeKey })} className={`${FIELD_CLS} -ml-1 max-w-[150px]`}>
+          {INCIDENT_TYPES.map((t) => (
+            <option key={t} value={t}>
+              {PAGER_EVENT[t]}
+            </option>
+          ))}
+        </select>
+      ) : (
+        PAGER_EVENT[inc.type]
+      ),
     },
-    { icon: ListChecks, label: "HIPO", value: inc.hipo ? "SIM" : "NÃO" },
+    {
+      icon: ListChecks,
+      label: "HIPO",
+      value: setR ? (
+        <span className="inline-flex gap-1">
+          {[true, false].map((v) => (
+            <button
+              key={String(v)}
+              type="button"
+              onClick={() => setR({ hipo: v })}
+              className={`rounded-[3px] px-1.5 ${inc.hipo === v ? "bg-sky-600 text-white" : "text-slate-400 hover:bg-sky-100"}`}
+            >
+              {v ? "SIM" : "NÃO"}
+            </button>
+          ))}
+        </span>
+      ) : inc.hipo ? (
+        "SIM"
+      ) : (
+        "NÃO"
+      ),
+    },
   ];
-  const setI = edit?.setInitial;
   return (
     <div className="relative">
       <div className="absolute -top-[13px] left-[2px] z-10 rounded-t-md px-6 py-1 text-[13px] font-semibold text-white" style={{ background: BAND }}>
@@ -429,17 +497,24 @@ function Summary({ inc, pagers, edit, children }: { inc: SheetIncident; pagers: 
       </div>
       <div className="rounded-[22px] border-2 border-dashed border-slate-500 px-3 pb-2 pt-5">
         <div className="grid grid-cols-5 gap-2">
-          {cells.map((c) => (
-            <ReportValue key={c.label} edit={edit}>
+          {cells.map((c) => {
+            const cell = (
               <div className="flex items-start gap-2.5">
                 <c.icon className="mt-0.5 size-9 shrink-0 stroke-[1.4] text-slate-800" />
                 <div className="min-w-0">
                   <p className="text-[14px] font-bold leading-tight">{c.label}</p>
-                  <p className={c.big ? "mt-1 text-[16px] leading-tight" : "mt-1 text-[13px] leading-tight"}>{c.value}</p>
+                  <div className={c.big ? "mt-1 text-[16px] leading-tight" : "mt-1 text-[13px] leading-tight"}>{c.value}</div>
                 </div>
               </div>
-            </ReportValue>
-          ))}
+            );
+            return c.fixed ? (
+              <ReportValue key={c.label} edit={edit}>
+                {cell}
+              </ReportValue>
+            ) : (
+              <div key={c.label}>{cell}</div>
+            );
+          })}
           <div className="flex items-start gap-2.5">
             <HeartPulse className="mt-0.5 size-9 shrink-0 stroke-[1.4] text-slate-800" />
             <div className="min-w-0 flex-1">
@@ -479,9 +554,9 @@ function InitialSheet({ inc, pagers, photos, edit }: { inc: SheetIncident; pager
           <br />
           SPHERA:
         </span>
-        <ReportValue edit={edit}>
-          <span className="font-normal">{inc.spheraId ?? ""}</span>
-        </ReportValue>
+        <span className="font-normal">
+          <Inp value={inc.spheraId ?? ""} onChange={edit && ((spheraId) => edit.setReport({ spheraId }))} placeholder="ID" />
+        </span>
       </div>
       <StopThinkAct className="absolute right-[86px] top-[14px]" />
 
@@ -495,10 +570,17 @@ function InitialSheet({ inc, pagers, photos, edit }: { inc: SheetIncident; pager
           <Dashed className="grid h-[38px] w-[150px] place-items-center">
             <AlertTriangle className="size-6 fill-amber-300 text-slate-900" />
           </Dashed>
-          <span className="text-[14px] font-bold">RELAÇÃO 12 BÁSICOS</span>
-          <ReportValue edit={edit}>
-            <span className="-ml-2 text-[16px]">{inc.basicRef ?? ""}</span>
-          </ReportValue>
+          <span className="whitespace-nowrap text-[14px] font-bold">RELAÇÃO 12 BÁSICOS</span>
+          <span className="-ml-2 min-w-0 text-[16px]">
+            <Inp value={inc.basicRef ?? ""} onChange={edit && ((basicRef) => edit.setReport({ basicRef }))} list="op-basics" placeholder="Básico relacionado" />
+            {edit ? (
+              <datalist id="op-basics">
+                {edit.basics.map((b) => (
+                  <option key={b} value={b} />
+                ))}
+              </datalist>
+            ) : null}
+          </span>
         </div>
         <Dashed className="mt-2 h-[96px] overflow-hidden px-3 py-3 text-[15px] leading-snug" style={{ color: green }}>
           <Fit>
@@ -599,9 +681,9 @@ function FinalSheet({ inc, pagers, edit }: { inc: SheetIncident; pagers: OnePage
           <br />
           EVENTO:
         </span>
-        <ReportValue edit={edit}>
-          <span className="font-normal">{inc.spheraId ?? ""}</span>
-        </ReportValue>
+        <span className="font-normal">
+          <Inp value={inc.spheraId ?? ""} onChange={edit && ((spheraId) => edit.setReport({ spheraId }))} placeholder="ID" />
+        </span>
       </div>
       <StopThinkAct className="absolute right-[80px] top-[12px]" />
 

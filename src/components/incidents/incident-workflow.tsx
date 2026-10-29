@@ -97,7 +97,9 @@ export function IncidentWorkflow({ initial, ctx, initialStep }: { initial: Incid
     return "encerramento";
   };
   const [step, setStep] = useState<StepKey>(ALL_STEPS.some((s) => s.key === initialStep) ? (initialStep as StepKey) : firstOpen());
-  const editable = ctx.canManage && !inc.closed;
+  const basics = ctx.elements.filter((e) => e.code.startsWith("B")).map((e) => e.label.split(" · ")[1] ?? e.label);
+  // Ocorrências encerradas continuam editáveis (ex.: importadas do Sphera).
+  const editable = ctx.canManage;
 
   const statusOf: Record<StepKey, Step> = {
     onepager: inc.steps.onePager,
@@ -219,8 +221,8 @@ export function IncidentWorkflow({ initial, ctx, initialStep }: { initial: Incid
       </div>
 
       <div className={cn(pending && "pointer-events-none opacity-70 transition-opacity")}>
-        {step === "onepager" ? <OnePagerStep key="initial" kind="initial" inc={inc} editable={editable} blobEnabled={ctx.blobEnabled} save={save} apply={apply} /> : null}
-        {step === "final" ? <OnePagerStep key="final" kind="final" inc={inc} editable={editable} blobEnabled={ctx.blobEnabled} save={save} apply={apply} /> : null}
+        {step === "onepager" ? <OnePagerStep key="initial" kind="initial" inc={inc} editable={editable} blobEnabled={ctx.blobEnabled} save={save} apply={apply} basics={basics} /> : null}
+        {step === "final" ? <OnePagerStep key="final" kind="final" inc={inc} editable={editable} blobEnabled={ctx.blobEnabled} save={save} apply={apply} basics={basics} /> : null}
         {step === "reporte" ? <ReportStep inc={inc} ctx={ctx} editable={editable} save={save} apply={apply} /> : null}
         {step === "investigacao" ? <InvestigationStep inc={inc} ctx={ctx} editable={editable} save={save} apply={apply} /> : null}
         {step === "plano" ? <PlanStep inc={inc} ctx={ctx} editable={editable} save={save} reload={() => apply(() => reloadIncident(inc.id))} /> : null}
@@ -401,7 +403,7 @@ function Attachments({ inc, ctx, apply, title, hint }: { inc: IncidentDetail; ct
   };
   return (
     <Panel title={title} description={hint} icon={Paperclip}>
-      {!inc.closed ? (
+      {ctx.canManage ? (
         <label className="flex cursor-pointer flex-col items-center gap-1 rounded-xl border-2 border-dashed border-slate-200 p-5 text-center text-sm text-slate-500 hover:border-brand-300 hover:bg-brand-50/40">
           {busy ? <Loader2 className="size-5 animate-spin text-brand-600" /> : <Upload className="size-5 text-brand-600" />}
           <span className="font-semibold text-slate-700">Enviar arquivos</span>
@@ -430,7 +432,7 @@ function Attachments({ inc, ctx, apply, title, hint }: { inc: IncidentDetail; ct
                 {a.uploadedBy ? ` · ${a.uploadedBy}` : ""}
               </p>
             </div>
-            {!inc.closed ? (
+            {ctx.canManage ? (
               <button
                 type="button"
                 className="rounded p-1 text-slate-400 hover:bg-critico-bg hover:text-critico"
@@ -745,7 +747,7 @@ function LessonsStep({ inc, ctx, editable, save, apply }: { inc: IncidentDetail;
             <p className="mt-1 text-sm text-slate-600">
               {inc.approvedBy ?? "—"} · {fmtDateTime(inc.approvedAt)}
             </p>
-            {ctx.canApprove && !inc.closed ? (
+            {ctx.canApprove ? (
               <Button variant="outline" size="sm" className="mt-3" onClick={() => apply(() => approveLessons(inc.id, false), "Aprovação revogada")}>
                 <XCircle /> Revogar aprovação
               </Button>
@@ -756,7 +758,7 @@ function LessonsStep({ inc, ctx, editable, save, apply }: { inc: IncidentDetail;
             <p className="text-sm text-slate-600">
               {f.rootCause.trim() ? "Lição pronta para avaliação." : "Preencha e salve a causa raiz antes de enviar para aprovação."}
             </p>
-            {ctx.canApprove && !inc.closed ? (
+            {ctx.canApprove ? (
               <Button variant="green" disabled={!inc.rootCause.trim()} onClick={() => apply(() => approveLessons(inc.id, true), "Lição aprovada")}>
                 <ShieldCheck /> Aprovar lição aprendida
               </Button>

@@ -95,6 +95,7 @@ const updateSchema = reportSchema.omit({ unitId: true }).partial().extend({
   howToPrevent: z.string().max(8000).optional(),
   goodPractices: z.string().max(8000).optional(),
   sharedWith: z.string().max(2000).optional(),
+  basicRef: z.string().trim().max(120).nullable().optional(),
 });
 
 export async function updateIncident(input: z.infer<typeof updateSchema>) {
@@ -102,7 +103,7 @@ export async function updateIncident(input: z.infer<typeof updateSchema>) {
     const { id, occurredAt, meetingAt, type, rca, onePager, ...rest } = updateSchema.parse(input);
     const { user, incident } = await incidentForUser(id);
     if (!canManage(user, incident)) throw new Error("Sem permissão para editar esta ocorrência.");
-    if (incident.closedAt) throw new Error("Ocorrência encerrada. Reabra para editar.");
+    // Ocorrências encerradas continuam editáveis (o encerramento só muda ao reabrir).
     if (rest.lessonsStatus === "CONCLUIDO" && !incident.approvedAt)
       throw new Error("As lições aprendidas precisam ser aprovadas para concluir a etapa.");
     const parsedRca = rca === undefined ? undefined : parseRca(rca);
@@ -132,6 +133,7 @@ export async function updateIncident(input: z.infer<typeof updateSchema>) {
         finalPagerStatus: rest.finalPagerStatus as StepStatus | undefined,
         responsibleId: rest.responsibleId === undefined ? undefined : rest.responsibleId || null,
         spheraId: rest.spheraId === undefined ? undefined : rest.spheraId || null,
+        basicRef: rest.basicRef === undefined ? undefined : rest.basicRef || null,
         type: type as IncidentType | undefined,
         reportStatus: rest.reportStatus as StepStatus | undefined,
         investigationStatus: rest.investigationStatus as StepStatus | undefined,

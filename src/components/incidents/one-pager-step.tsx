@@ -68,7 +68,9 @@ export function OnePagerStep({
   blobEnabled,
   save,
   apply,
+  basics,
 }: {
+  basics: string[];
   kind: SheetKind;
   inc: IncidentDetail;
   editable: boolean;
@@ -88,9 +90,26 @@ export function OnePagerStep({
   const images = inc.attachments.filter((a) => a.mimeType?.startsWith("image/"));
   const photos = p.initial.photos.map((id) => images.find((a) => a.id === id)).filter(Boolean).map((a) => fileHref(a!.url));
   const file = kind === "initial" ? p.initial.file : p.final.file;
-  const sheetEdit: SheetEdit | undefined = editable ? { setInitial: setI, setFinal: setF, onPhotos: () => setPicking(true) } : undefined;
+  // Dados do reporte editados na própria folha; vão junto no salvar.
+  const [rep, setRep] = useState({ occurredAt: inc.occurredAt, type: inc.type, hipo: inc.hipo, spheraId: inc.spheraId, basicRef: inc.basicRef });
+  const repPatch = (): Patch => ({
+    ...(rep.occurredAt !== inc.occurredAt ? { occurredAt: rep.occurredAt } : {}),
+    ...(rep.type !== inc.type ? { type: rep.type } : {}),
+    ...(rep.hipo !== inc.hipo ? { hipo: rep.hipo } : {}),
+    ...((rep.spheraId ?? "") !== (inc.spheraId ?? "") ? { spheraId: rep.spheraId ?? "" } : {}),
+    ...((rep.basicRef ?? "") !== (inc.basicRef ?? "") ? { basicRef: rep.basicRef ?? "" } : {}),
+  });
+  const sheetEdit: SheetEdit | undefined = editable
+    ? {
+        setInitial: setI,
+        setFinal: setF,
+        onPhotos: () => setPicking(true),
+        setReport: (patch) => setRep((r) => ({ ...r, ...patch })),
+        basics,
+      }
+    : undefined;
 
-  const persist = (next: OnePagers, extra: Patch = {}, msg = "One Pager salvo") => save({ onePager: next, ...extra }, msg);
+  const persist = (next: OnePagers, extra: Patch = {}, msg = "One Pager salvo") => save({ onePager: next, ...repPatch(), ...extra }, msg);
 
   const uploadOfficial = async (f: File | undefined) => {
     if (!f) return;
@@ -167,8 +186,8 @@ export function OnePagerStep({
             <MousePointerClick className="size-4" />
             <span>
               <b>Edite direto na folha:</b> clique nos textos para escrever, <kbd className="rounded bg-white px-1">Enter</kbd> cria um novo item da lista,
-              clique nas caixas para marcar e na área de fotos para escolher as imagens. Dados do reporte (site, data, tipo, Sphera, 12 Básicos) são
-              alterados na etapa Reporte.
+              clique nas caixas para marcar e na área de fotos para escolher as imagens. Data, tipo de evento, HIPO, Sphera ID e 12 Básicos também
+              são editáveis aqui e atualizam o reporte ao salvar.
             </span>
             {kind === "initial" && inc.rca.immediate.some((a) => a.action.trim()) ? (
               <button
@@ -204,13 +223,13 @@ export function OnePagerStep({
                 kind={kind}
                 inc={{
                   unitName: inc.unitName,
-                  spheraId: inc.spheraId,
-                  occurredAt: inc.occurredAt,
+                  spheraId: rep.spheraId,
+                  occurredAt: rep.occurredAt,
                   area: inc.area,
-                  type: inc.type,
-                  hipo: inc.hipo,
+                  type: rep.type,
+                  hipo: rep.hipo,
                   description: inc.description,
-                  basicRef: inc.basicRef,
+                  basicRef: rep.basicRef,
                 }}
                 pagers={p}
                 photos={photos}
