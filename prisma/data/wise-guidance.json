@@ -320,5 +320,3946 @@
     "n2": "As lições aprendidas são bem comunicadas e integradas ao plano de segurança em menos de 3 meses.",
     "verify": "Verifique alertas externos recebidos e o tempo até virar ação no plano.",
     "evidence": "Alertas de segurança recebidos; datas de inclusão no plano"
+  },
+  "E2.N1.1": {
+    "n0": "A política não é comunicada.",
+    "n1": "Comunicada só em alguns canais ou para parte do site.",
+    "n2": "Comunicada de forma geral a todo o site (murais, e-mail, integração).",
+    "verify": "Pergunte como a política foi divulgada e para quem.",
+    "evidence": "Registros de divulgação; e-mails; quadros"
+  },
+  "E2.N1.2": {
+    "n0": "Política não está publicada nos quadros.",
+    "n1": "Publicada em parte dos prédios/entradas.",
+    "n2": "Publicada nos quadros de cada prédio e entrada principal.",
+    "verify": "Percorra as entradas e prédios e confira a política exposta e atualizada.",
+    "evidence": "Fotos dos quadros; versão vigente da política"
+  },
+  "E2.N1.3": {
+    "n0": "Menos de 10% sabe que a política existe.",
+    "n1": "Entre 10% e 25% sabe que existe e onde encontrar.",
+    "n2": "Pelo menos 25% sabe que existe e onde encontrar.",
+    "verify": "Pergunte a uma amostra de funcionários: 'Existe política de segurança? Onde fica?'",
+    "evidence": "Entrevistas no chão (amostra por área/turno)"
+  },
+  "E2.N2.1": {
+    "n0": "Comunicação apenas geral (murais).",
+    "n1": "Há comunicação pessoal pontual (alguns líderes).",
+    "n2": "Além do geral, a política é comunicada pessoalmente pelos líderes às equipes.",
+    "verify": "Verifique se líderes apresentaram a política às equipes (DDS, reuniões).",
+    "evidence": "Listas de presença; pautas de DDS"
+  },
+  "E2.N2.2": {
+    "n0": "A política não é discutida pela liderança.",
+    "n1": "Discutida ocasionalmente em algumas reuniões.",
+    "n2": "Liderança e gestão intermediária discutem a política com frequência (reuniões, avaliações de desempenho).",
+    "verify": "Veja atas de reuniões e avaliações individuais que citam a política.",
+    "evidence": "Atas; formulários de avaliação de desempenho"
+  },
+  "E2.N2.3": {
+    "n0": "Menos de 25% lembra as mensagens da política.",
+    "n1": "Entre 25% e 50% lembra as principais mensagens.",
+    "n2": "Pelo menos 50% lembra as mensagens e entende o significado para o site.",
+    "verify": "Peça aos funcionários as principais mensagens da política.",
+    "evidence": "Entrevistas no chão"
+  },
+  "E2.N2.4": {
+    "n0": "Novos funcionários não recebem a política na integração.",
+    "n1": "Recebem a política, mas sem as regras ou sem explicação.",
+    "n2": "Todos os novos recebem política e regras do site com explicação na integração.",
+    "verify": "Confira o roteiro de integração e registros dos últimos admitidos.",
+    "evidence": "Roteiro de integração; termos de recebimento"
+  },
+  "E2.N2.5": {
+    "n0": "A política é genérica e desalinhada da corporativa.",
+    "n1": "Alinhada à corporativa, mas pouco adaptada ao site.",
+    "n2": "Relevante para o contexto do site e alinhada à política corporativa.",
+    "verify": "Compare a política do site com a corporativa e com os riscos do site.",
+    "evidence": "Política do site x corporativa"
+  },
+  "E2.N2.6": {
+    "n0": "A política foi definida sem a liderança/equipe de segurança.",
+    "n1": "Participação parcial na definição.",
+    "n2": "Liderança e equipe de segurança participaram da definição.",
+    "verify": "Pergunte quem elaborou e aprovou a política.",
+    "evidence": "Atas de elaboração; assinaturas"
+  },
+  "E2.N3.1": {
+    "n0": "Não há ação para os funcionários se apropriarem da política.",
+    "n1": "Ações pontuais de apropriação.",
+    "n2": "Liderança e gestão intermediária garantem a apropriação com ações regulares.",
+    "verify": "Veja ações periódicas (discussões, quizzes, campanhas) sobre a política.",
+    "evidence": "Registros de ações; cronograma"
+  },
+  "E2.N3.2": {
+    "n0": "Não há verificação da compreensão.",
+    "n1": "Verificação informal ou em parte das áreas.",
+    "n2": "Processo sistemático verifica compreensão e cumprimento da política.",
+    "verify": "Peça o método de verificação (auditorias, entrevistas, testes) e os resultados.",
+    "evidence": "Resultados de verificações; auditorias comportamentais"
+  },
+  "E2.N3.3": {
+    "n0": "Os funcionários não relacionam a política com suas atividades.",
+    "n1": "Parte relaciona a política com seu trabalho.",
+    "n2": "A maioria entende o significado e o impacto da política nas próprias atividades.",
+    "verify": "Pergunte: 'Como a política afeta o seu trabalho?'",
+    "evidence": "Entrevistas no chão"
+  },
+  "E2.N3.4": {
+    "n0": "A liderança não demonstra valor pela política.",
+    "n1": "Fala da política às vezes, mas não reage a desvios.",
+    "n2": "A liderança fala da política, reage aos desvios e demonstra os princípios no dia a dia.",
+    "verify": "Observe e pergunte como a liderança reage a desvios.",
+    "evidence": "Registros de abordagens; entrevistas"
+  },
+  "E2.N3.5": {
+    "n0": "A política não orienta o comportamento.",
+    "n1": "Orienta parte das atividades.",
+    "n2": "A política é relevante e traz princípios-chave que guiam o comportamento dos funcionários.",
+    "verify": "Verifique se os princípios da política aparecem nas regras e treinamentos.",
+    "evidence": "Política; materiais de treinamento"
+  },
+  "E2.N3.6": {
+    "n0": "A liderança não relaciona a política com o trabalho.",
+    "n1": "Relaciona em algumas áreas.",
+    "n2": "A liderança relaciona de forma eficaz a política com o trabalho de cada equipe.",
+    "verify": "Pergunte aos líderes como explicam a política para a sua equipe.",
+    "evidence": "Entrevistas com líderes; DDS"
+  },
+  "E2.N3.7": {
+    "n0": "Os sistemas e procedimentos não se baseiam na política.",
+    "n1": "Alguns procedimentos citam a política.",
+    "n2": "A política é vista como a base dos sistemas e procedimentos de segurança do site.",
+    "verify": "Confira se o manual/procedimentos referenciam a política.",
+    "evidence": "Manual de segurança; procedimentos"
+  },
+  "E2.N3.8": {
+    "n0": "A política não define responsabilidades nem metas.",
+    "n1": "Define parte das responsabilidades ou metas.",
+    "n2": "Esclarece responsabilidades, expectativas e cria metas.",
+    "verify": "Leia a política e verifique responsabilidades e metas.",
+    "evidence": "Texto da política; desdobramento de metas"
+  },
+  "E2.N3.9": {
+    "n0": "A política não está na visão do site.",
+    "n1": "Citada, mas não alinhada à visão.",
+    "n2": "Incluída e alinhada à visão do site.",
+    "verify": "Compare a visão do site com a política.",
+    "evidence": "Documento de visão; política"
+  },
+  "E2.N4.1": {
+    "n0": "Funcionários não participam da revisão.",
+    "n1": "Participação de poucos ou informal.",
+    "n2": "Funcionários contribuem efetivamente para a revisão da política.",
+    "verify": "Pergunte como os funcionários participaram da última revisão.",
+    "evidence": "Registros de consulta; sugestões recebidas"
+  },
+  "E2.N4.2": {
+    "n0": "Não há processo de coleta de sugestões.",
+    "n1": "Coleta informal ou esporádica.",
+    "n2": "Processo estruturado (subcomitê, grupos de trabalho, feedback) coleta sugestões.",
+    "verify": "Veja o processo e as sugestões coletadas no último ciclo.",
+    "evidence": "Procedimento; atas do subcomitê; formulários"
+  },
+  "E2.N4.3": {
+    "n0": "Menos de 50% assume responsabilidade pela política.",
+    "n1": "Entre 50% e 75%.",
+    "n2": "Pelo menos 75% entende e aceita a responsabilidade pelo cumprimento da política.",
+    "verify": "Entreviste funcionários sobre seu papel no cumprimento da política.",
+    "evidence": "Entrevistas; pesquisa de percepção"
+  },
+  "E2.N4.4": {
+    "n0": "A política não declara a segurança como prioridade.",
+    "n1": "Declara prioridade, mas não é usada como guia nas decisões.",
+    "n2": "Política escrita e assinada declara a segurança como prioridade alta e guia decisões.",
+    "verify": "Peça exemplos de decisões tomadas com base na política.",
+    "evidence": "Política assinada; atas de decisões"
+  },
+  "E2.N4.5": {
+    "n0": "Saúde e bem-estar não constam da política.",
+    "n1": "Citados de forma superficial.",
+    "n2": "Saúde e bem-estar integrados à política de segurança.",
+    "verify": "Leia a política e verifique o tratamento de saúde e bem-estar.",
+    "evidence": "Texto da política"
+  },
+  "E2.N4.6": {
+    "n0": "A ligação saúde/bem-estar/segurança não é visível.",
+    "n1": "Visível em algumas ações.",
+    "n2": "Liderança torna visível e coerente a ligação entre saúde, bem-estar e segurança.",
+    "verify": "Veja campanhas e ações conjuntas de saúde e segurança.",
+    "evidence": "Campanhas; programa de bem-estar"
+  },
+  "E2.N4.7": {
+    "n0": "Menos de 50% reconhece o compromisso da liderança.",
+    "n1": "Entre 50% e 75%.",
+    "n2": "Pelo menos 75% reconhece o compromisso consistente da liderança com saúde, bem-estar e segurança.",
+    "verify": "Pergunte aos funcionários se percebem esse compromisso.",
+    "evidence": "Entrevistas; pesquisa de clima"
+  },
+  "E2.N4.8": {
+    "n0": "A política nunca é revisada.",
+    "n1": "Revisada sem periodicidade definida.",
+    "n2": "A liderança revisa e ajusta a política periodicamente.",
+    "verify": "Confira data da última revisão e a periodicidade definida.",
+    "evidence": "Histórico de versões"
+  },
+  "E2.N4.9": {
+    "n0": "A revisão não usa dados.",
+    "n1": "Usa parte das fontes (só acidentes, por exemplo).",
+    "n2": "Revisão baseada em auditorias, avaliação de riscos e acidentes, acompanhando a evolução da cultura.",
+    "verify": "Pergunte quais dados embasaram a última revisão.",
+    "evidence": "Atas de revisão; relatórios usados"
+  },
+  "E2.N4.10": {
+    "n0": "Gestores não veem a política como alavanca de desempenho.",
+    "n1": "Parte dos gestores vê.",
+    "n2": "Todos os gestores veem a política como alavanca de melhoria do desempenho.",
+    "verify": "Entreviste gestores de áreas diferentes.",
+    "evidence": "Entrevistas com gestores"
+  },
+  "E2.N4.11": {
+    "n0": "Política desconectada dos outros sistemas de gestão.",
+    "n1": "Coerente com parte dos sistemas.",
+    "n2": "Ajustada e coerente com DaMaWay, Qualidade, RH e demais sistemas do site.",
+    "verify": "Compare a política com as políticas dos outros sistemas.",
+    "evidence": "Políticas integradas; matriz de sistemas"
+  },
+  "E2.N5.1": {
+    "n0": "A política não inspira as pessoas.",
+    "n1": "Inspira parte das pessoas.",
+    "n2": "A política inspira, reflete princípios comuns e dá base clara para decisões.",
+    "verify": "Converse com funcionários sobre o que a política significa para eles.",
+    "evidence": "Entrevistas; exemplos de decisões"
+  },
+  "E2.N5.2": {
+    "n0": "Comportamentos não refletem a política.",
+    "n1": "Refletem em parte do site.",
+    "n2": "Em todo o site, decisões, recursos e atitudes demonstram crença na política.",
+    "verify": "Observe decisões e comportamentos em várias áreas.",
+    "evidence": "Observação de campo; exemplos documentados"
+  },
+  "E2.N5.3": {
+    "n0": "SST não é tratada como valor.",
+    "n1": "Valor em parte da organização.",
+    "n2": "Saúde e segurança vivas como valor fundamental em toda a organização.",
+    "verify": "Busque evidências do valor em todas as áreas e níveis.",
+    "evidence": "Entrevistas em todos os níveis; pesquisa de cultura"
+  },
+  "E2.N5.4": {
+    "n0": "A política não é usada para transformação.",
+    "n1": "Usada por alguns gestores.",
+    "n2": "Todos os níveis de gestão usam a política como alavanca de transformação rumo à visão.",
+    "verify": "Peça exemplos de projetos de transformação ligados à política.",
+    "evidence": "Projetos; planos estratégicos"
+  },
+  "E2.N5.5": {
+    "n0": "A visão dupla Danone não aparece no site.",
+    "n1": "Aparece em parte das iniciativas.",
+    "n2": "A política torna concreta e visível a visão social/societária e econômica da Danone.",
+    "verify": "Verifique iniciativas que conectam SST à visão dupla.",
+    "evidence": "Iniciativas; comunicação interna"
+  },
+  "E2.N5.6": {
+    "n0": "O site não é referência.",
+    "n1": "Referência pontual.",
+    "n2": "Site reconhecido como best in class e solicitado para benchmarks.",
+    "verify": "Pergunte por benchmarks recebidos e reconhecimentos externos.",
+    "evidence": "Solicitações de benchmark; prêmios"
+  },
+  "E3.N1.1": {
+    "n0": "Não há regras gerais nem procedimentos de emergência.",
+    "n1": "Existem regras ou procedimentos de emergência, mas incompletos.",
+    "n2": "Regras gerais de conduta segura e procedimentos de emergência definidos.",
+    "verify": "Peça as regras gerais e o plano de emergência vigentes.",
+    "evidence": "Regras gerais; plano de emergência"
+  },
+  "E3.N1.2": {
+    "n0": "As regras gerais não são comunicadas.",
+    "n1": "Comunicadas a parte dos funcionários.",
+    "n2": "Regras gerais comunicadas a todos os funcionários.",
+    "verify": "Verifique registros de comunicação/integração das regras.",
+    "evidence": "Listas de presença; integração"
+  },
+  "E3.N1.3": {
+    "n0": "Menos de 25% conhece as regras básicas.",
+    "n1": "Entre 25% e 50%.",
+    "n2": "Pelo menos 50% conhece claramente as regras básicas de proteção.",
+    "verify": "Pergunte a funcionários quais são as regras básicas do site.",
+    "evidence": "Entrevistas no chão"
+  },
+  "E3.N1.4": {
+    "n0": "Regras e procedimentos sem aprovação.",
+    "n1": "Aprovação parcial ou desatualizada.",
+    "n2": "Regras gerais e procedimentos de emergência aprovados pelo gestor de segurança.",
+    "verify": "Confira assinaturas e datas de aprovação.",
+    "evidence": "Documentos aprovados"
+  },
+  "E3.N1.5": {
+    "n0": "As pessoas não sabem agir em emergência.",
+    "n1": "Parte sabe; simulados irregulares.",
+    "n2": "As pessoas sabem o que fazer (rotas, ponto de encontro, alarme) e há simulados.",
+    "verify": "Pergunte o que fazer em caso de alarme; veja o último simulado.",
+    "evidence": "Relatórios de simulado; entrevistas"
+  },
+  "E3.N1.6": {
+    "n0": "Requisitos legais não são conhecidos.",
+    "n1": "Conhecidos, mas não integrados às normas.",
+    "n2": "Requisitos legais conhecidos e integrados às normas (PT, isolamento, EPI etc.).",
+    "verify": "Confira a lista de requisitos legais e sua presença nos procedimentos.",
+    "evidence": "Matriz de requisitos legais; procedimentos"
+  },
+  "E3.N1.7": {
+    "n0": "Requisitos legais básicos não cumpridos.",
+    "n1": "Cumprimento parcial com pendências.",
+    "n2": "Requisitos legais básicos controlados e cumpridos.",
+    "verify": "Verifique pendências legais (NRs, laudos, licenças).",
+    "evidence": "Laudos; licenças; controle de vencimentos"
+  },
+  "E3.N1.8": {
+    "n0": "Riscos principais não identificados.",
+    "n1": "Identificados de forma incompleta.",
+    "n2": "Principais riscos do site identificados.",
+    "verify": "Peça o mapa/inventário de riscos do site.",
+    "evidence": "Inventário de riscos; mapa de riscos"
+  },
+  "E3.N2.1": {
+    "n0": "Sem procedimentos para os principais perigos.",
+    "n1": "Procedimentos para parte dos perigos (LOTO, altura, espaço confinado, empilhadeira, elétrica, químicos).",
+    "n2": "Procedimentos básicos para todos os principais perigos do site.",
+    "verify": "Compare a lista de perigos com os procedimentos existentes.",
+    "evidence": "Procedimentos LOTO, altura, confinado, PIV, elétrica, químicos"
+  },
+  "E3.N2.2": {
+    "n0": "Procedimentos dispersos e de difícil acesso.",
+    "n1": "Agrupados, mas pouco acessíveis.",
+    "n2": "Agrupados em manual e facilmente acessíveis.",
+    "verify": "Peça a um funcionário que encontre um procedimento.",
+    "evidence": "Manual; acesso físico/digital"
+  },
+  "E3.N2.3": {
+    "n0": "Líderes não identificam situações de alto risco.",
+    "n1": "Parte dos líderes identifica.",
+    "n2": "Liderança e gestão intermediária identificam alto risco e sabem consultar os procedimentos.",
+    "verify": "Apresente situações e pergunte aos líderes como agiriam.",
+    "evidence": "Entrevistas com líderes"
+  },
+  "E3.N2.4": {
+    "n0": "Normas corporativas não incorporadas.",
+    "n1": "Incorporadas parcialmente.",
+    "n2": "Normas corporativas incorporadas às regras e procedimentos do site.",
+    "verify": "Compare normas corporativas (ex.: 12 Básicos) com procedimentos locais.",
+    "evidence": "Matriz norma corporativa x procedimento"
+  },
+  "E3.N2.5": {
+    "n0": "Não há educação sobre regras.",
+    "n1": "Educação esporádica.",
+    "n2": "Liderança educa regularmente os funcionários sobre regras e procedimentos.",
+    "verify": "Veja cronograma de DDS/treinamentos ministrados por líderes.",
+    "evidence": "DDS; treinamentos"
+  },
+  "E3.N2.6": {
+    "n0": "Funcionários não conhecem regras e riscos do seu trabalho.",
+    "n1": "Conhecimento parcial.",
+    "n2": "Funcionários conhecem regras, procedimentos e principais riscos do seu trabalho.",
+    "verify": "Pergunte a operadores sobre os riscos e regras da sua tarefa.",
+    "evidence": "Entrevistas; observação"
+  },
+  "E3.N2.7": {
+    "n0": "Regras/EPI não definidos por cargo.",
+    "n1": "Definidos para parte dos cargos.",
+    "n2": "Regras, procedimentos e EPI definidos para a maioria dos cargos.",
+    "verify": "Confira a matriz de EPI e procedimentos por cargo.",
+    "evidence": "Matriz EPI x cargo; procedimentos"
+  },
+  "E3.N2.8": {
+    "n0": "Não disponíveis no posto de trabalho.",
+    "n1": "Disponíveis em parte dos postos.",
+    "n2": "Disponíveis no local de trabalho.",
+    "verify": "Percorra postos e verifique procedimentos e sinalização de EPI.",
+    "evidence": "Fotos dos postos; quadros"
+  },
+  "E3.N2.9": {
+    "n0": "Limpeza ruim nas áreas.",
+    "n1": "Limpeza irregular.",
+    "n2": "Bons padrões de limpeza em oficinas, estoques e áreas operacionais.",
+    "verify": "Inspecione as áreas (5S).",
+    "evidence": "Auditoria 5S; fotos"
+  },
+  "E3.N3.1": {
+    "n0": "Expectativa de conformidade não comunicada.",
+    "n1": "Comunicada em parte das áreas.",
+    "n2": "Liderança comunica a expectativa de conformidade plena.",
+    "verify": "Pergunte aos funcionários o que a liderança espera sobre regras.",
+    "evidence": "Comunicados; entrevistas"
+  },
+  "E3.N3.2": {
+    "n0": "Violações são toleradas.",
+    "n1": "Ações corretivas inconsistentes.",
+    "n2": "Violações não são toleradas e geram ações corretivas (treinamento, advertência).",
+    "verify": "Analise registros de violações e ações tomadas.",
+    "evidence": "Registros de desvios e medidas"
+  },
+  "E3.N3.3": {
+    "n0": "Cumprir regras é visto como imposição.",
+    "n1": "Parte entende a obrigação.",
+    "n2": "Funcionários entendem que cumprir as normas é obrigação para a própria segurança.",
+    "verify": "Entreviste funcionários sobre o porquê das regras.",
+    "evidence": "Entrevistas"
+  },
+  "E3.N3.4": {
+    "n0": "Procedimentos básicos não são controlados.",
+    "n1": "Controle parcial.",
+    "n2": "Procedimentos básicos e de emergência são controlados e aplicados sistematicamente.",
+    "verify": "Verifique inspeções/auditorias dos procedimentos críticos.",
+    "evidence": "Checklists de verificação; auditorias"
+  },
+  "E3.N3.5": {
+    "n0": "Regras não são comunicadas.",
+    "n1": "Comunicadas de forma irregular.",
+    "n2": "Regras e procedimentos comunicados por treinamentos, reuniões e contatos diários.",
+    "verify": "Veja registros de treinamentos e DDS sobre procedimentos.",
+    "evidence": "Registros de treinamento; DDS"
+  },
+  "E3.N3.6": {
+    "n0": "Regras ambíguas ou diferentes por área.",
+    "n1": "Claras em parte das áreas.",
+    "n2": "Regras claras, sem margem para interpretação e consistentes no site.",
+    "verify": "Compare regras para o mesmo risco em áreas diferentes.",
+    "evidence": "Procedimentos de áreas diferentes"
+  },
+  "E3.N3.7": {
+    "n0": "Regras e EPI não aplicados.",
+    "n1": "Aplicação parcial.",
+    "n2": "Todos conhecem e aplicam consistentemente as regras, incluindo EPI.",
+    "verify": "Observe o cumprimento de regras e EPI em todas as áreas.",
+    "evidence": "Observação; BOS"
+  },
+  "E3.N3.8": {
+    "n0": "Procedimentos confusos, sem gestão visual.",
+    "n1": "Parte segue gestão visual.",
+    "n2": "Procedimentos claros, com gestão visual e boas práticas de engenharia.",
+    "verify": "Avalie a qualidade e o visual dos procedimentos.",
+    "evidence": "Procedimentos (amostra)"
+  },
+  "E3.N3.9": {
+    "n0": "Procedimentos nunca revisados.",
+    "n1": "Revisões fora do prazo.",
+    "n2": "Revisados a cada 1–2 anos e atualizados quando necessário.",
+    "verify": "Confira datas de revisão de uma amostra.",
+    "evidence": "Lista mestra com datas de revisão"
+  },
+  "E3.N3.10": {
+    "n0": "Mudança de equipamento sem atualizar procedimento.",
+    "n1": "Atualização às vezes.",
+    "n2": "Procedimentos criados/atualizados a cada equipamento novo ou alterado.",
+    "verify": "Pegue equipamentos novos/alterados e verifique o procedimento.",
+    "evidence": "Gestão de mudança; procedimentos"
+  },
+  "E3.N3.11": {
+    "n0": "Normas não refletem os equipamentos.",
+    "n1": "Refletem parcialmente.",
+    "n2": "Normas atualizadas e refletindo as mudanças nos equipamentos.",
+    "verify": "Compare procedimento com o equipamento em campo.",
+    "evidence": "Observação de campo"
+  },
+  "E3.N3.12": {
+    "n0": "Acidentes não geram revisão.",
+    "n1": "Revisão em parte dos acidentes.",
+    "n2": "Procedimentos revistos sempre que há acidente.",
+    "verify": "Verifique acidentes recentes e as revisões geradas.",
+    "evidence": "Investigações; versões revisadas"
+  },
+  "E3.N3.13": {
+    "n0": "Procedimentos não incorporam aprendizados.",
+    "n1": "Incorporam alguns.",
+    "n2": "Procedimentos refletem aprendizados dos acidentes e buscam eliminar riscos.",
+    "verify": "Identifique mudanças nos procedimentos ligadas a lições aprendidas.",
+    "evidence": "Lições aprendidas; procedimentos"
+  },
+  "E3.N3.14": {
+    "n0": "Não há manual de segurança.",
+    "n1": "Manual incompleto.",
+    "n2": "Manual com política, normas gerais e específicas e requisitos de EPI.",
+    "verify": "Peça o manual e confira o conteúdo.",
+    "evidence": "Manual de segurança"
+  },
+  "E3.N3.15": {
+    "n0": "Manual desorganizado.",
+    "n1": "Estruturado, mas difícil de acessar.",
+    "n2": "Manual estruturado, fácil de usar e acessar.",
+    "verify": "Peça a líderes que encontrem um item no manual.",
+    "evidence": "Manual; acesso"
+  },
+  "E3.N3.16": {
+    "n0": "Líderes sem acesso às normas.",
+    "n1": "Acesso parcial.",
+    "n2": "Liderança tem acesso fácil a todas as normas aplicáveis.",
+    "verify": "Verifique o acesso dos líderes (rede, papel, sistema).",
+    "evidence": "Acesso ao repositório"
+  },
+  "E3.N4.1": {
+    "n0": "Segurança isolada dos outros padrões.",
+    "n1": "Integração parcial.",
+    "n2": "Segurança integrada aos padrões Q C D M E num sistema de gestão único.",
+    "verify": "Veja se os padrões de operação tratam S, Q, C, D, M, E juntos.",
+    "evidence": "Sistema de gestão integrado"
+  },
+  "E3.N4.2": {
+    "n0": "POPs sem segurança integrada.",
+    "n1": "Integração em parte dos POPs.",
+    "n2": "POPs, recursos visuais e checklists integram SQCDME num só conjunto.",
+    "verify": "Analise POPs e checklists de uma linha/área.",
+    "evidence": "POPs; checklists"
+  },
+  "E3.N4.3": {
+    "n0": "Procedimentos de baixa qualidade.",
+    "n1": "Qualidade variável.",
+    "n2": "Procedimentos simples, claros, visuais e evoluindo como sistema único.",
+    "verify": "Avalie se anormalidades ficam visíveis no posto.",
+    "evidence": "Gestão visual; POPs"
+  },
+  "E3.N4.4": {
+    "n0": "Sem gestão de mudança.",
+    "n1": "Gestão de mudança informal.",
+    "n2": "Sistema de gestão de mudança implantado para pessoas, equipamentos e tecnologia.",
+    "verify": "Peça o procedimento de GM e registros recentes.",
+    "evidence": "Procedimento GM; registros"
+  },
+  "E3.N4.5": {
+    "n0": "GM não cobre riscos e treinamento.",
+    "n1": "Cobre parte dos itens.",
+    "n2": "GM inclui avaliação de risco, treinamento e comunicação das mudanças.",
+    "verify": "Analise uma GM recente completa.",
+    "evidence": "Registro de GM com APR e treinamento"
+  },
+  "E3.N4.6": {
+    "n0": "Projetos seguem sem checar normas.",
+    "n1": "Checagem em parte dos projetos.",
+    "n2": "Nenhum projeto segue sem garantir cumprimento das normas.",
+    "verify": "Verifique o gate de segurança dos projetos.",
+    "evidence": "Checklists de projeto; aprovações"
+  },
+  "E3.N4.7": {
+    "n0": "Representantes não envolvidos.",
+    "n1": "Envolvimento pontual.",
+    "n2": "Representantes dos trabalhadores envolvidos na atualização das normas.",
+    "verify": "Veja participação da CIPA/representantes nas revisões.",
+    "evidence": "Atas da CIPA; revisões"
+  },
+  "E3.N4.8": {
+    "n0": "Normas vistas como opcionais.",
+    "n1": "Parte percebe como obrigação.",
+    "n2": "Todos percebem que cumprir normas é condição de emprego.",
+    "verify": "Entreviste funcionários.",
+    "evidence": "Entrevistas; código de conduta"
+  },
+  "E3.N4.9": {
+    "n0": "Não há verificação do ciclo de trabalho.",
+    "n1": "Verificações esporádicas.",
+    "n2": "Verificações do ciclo de trabalho usadas para conformidade e melhoria contínua.",
+    "verify": "Peça registros de verificação de ciclo de trabalho.",
+    "evidence": "Registros de verificação"
+  },
+  "E3.N4.10": {
+    "n0": "Equipes não revisam procedimentos.",
+    "n1": "Envolvimento pontual.",
+    "n2": "Equipes experientes revisam procedimentos a cada 1–2 anos.",
+    "verify": "Veja quem participou das últimas revisões.",
+    "evidence": "Registros de revisão com participantes"
+  },
+  "E3.N4.11": {
+    "n0": "Mudança vista como ameaça.",
+    "n1": "Parte vê como oportunidade.",
+    "n2": "Todos veem cada mudança como oportunidade de melhorar a segurança.",
+    "verify": "Entreviste funcionários sobre mudanças recentes.",
+    "evidence": "Entrevistas"
+  },
+  "E3.N4.12": {
+    "n0": "Atualização sem avaliação de risco.",
+    "n1": "Avaliação de risco em parte das atualizações.",
+    "n2": "Atualização baseada em avaliação estruturada de risco.",
+    "verify": "Relacione revisões de normas com APRs.",
+    "evidence": "APR; procedimentos revisados"
+  },
+  "E3.N4.13": {
+    "n0": "Procedimento diferente da prática.",
+    "n1": "Diferenças pontuais.",
+    "n2": "Procedimentos refletem a prática real e cobrem os riscos.",
+    "verify": "Compare o procedimento com a tarefa observada.",
+    "evidence": "Observação x procedimento"
+  },
+  "E3.N4.14": {
+    "n0": "Sem procedimentos para trabalhos fora da rotina.",
+    "n1": "Procedimentos para parte deles.",
+    "n2": "Procedimentos adequados para trabalhos fora da rotina.",
+    "verify": "Identifique trabalhos não rotineiros e seus procedimentos.",
+    "evidence": "Permissões de trabalho; APRs"
+  },
+  "E3.N4.15": {
+    "n0": "Não rotineiros sem gestão.",
+    "n1": "Gestão parcial.",
+    "n2": "Não rotineiros gerenciados como as demais normas (definir, atualizar, comunicar, monitorar).",
+    "verify": "Verifique o ciclo de gestão desses procedimentos.",
+    "evidence": "Lista mestra; monitoramento"
+  },
+  "E3.N4.16": {
+    "n0": "Conformidade corporativa baixa.",
+    "n1": "Conformidade parcial.",
+    "n2": "100% de conformidade com as normas corporativas no nível certo.",
+    "verify": "Confira resultado das auditorias de normas corporativas.",
+    "evidence": "Auditoria 12 Básicos/corporativa"
+  },
+  "E3.N4.17": {
+    "n0": "Baixo empenho em aplicar normas.",
+    "n1": "Parte se empenha.",
+    "n2": "100% dos colaboradores se empenham em aplicar as normas.",
+    "verify": "Observe e entreviste em todos os turnos.",
+    "evidence": "Observação; BOS"
+  },
+  "E3.N5.1": {
+    "n0": "Normas não usadas para melhoria.",
+    "n1": "Uso pontual.",
+    "n2": "Normas usadas efetivamente como instrumento de melhoria contínua.",
+    "verify": "Peça exemplos de melhorias geradas a partir das normas.",
+    "evidence": "Projetos de melhoria"
+  },
+  "E3.N5.2": {
+    "n0": "Sem monitoramento PDCA/SDCA.",
+    "n1": "Monitoramento parcial.",
+    "n2": "Atividades padrão monitoradas continuamente por PDCA/SDCA (disciplina operativa).",
+    "verify": "Veja o ciclo PDCA/SDCA de um padrão.",
+    "evidence": "Registros SDCA; auditorias de padrão"
+  },
+  "E3.N5.3": {
+    "n0": "Retrabalho e riscos frequentes.",
+    "n1": "Eficiência parcial.",
+    "n2": "Atividades padrão executadas bem na primeira vez e sempre com segurança.",
+    "verify": "Analise indicadores de retrabalho e desvios.",
+    "evidence": "Indicadores; observação"
+  },
+  "E3.N5.4": {
+    "n0": "Gestores não usam PDCA/SDCA.",
+    "n1": "Parte usa.",
+    "n2": "Todos os gerentes usam PDCA/SDCA como ferramenta de gestão.",
+    "verify": "Pergunte a gerentes como aplicam o PDCA/SDCA.",
+    "evidence": "Entrevistas; registros"
+  },
+  "E3.N5.5": {
+    "n0": "Incidentes por falta de conhecimento das normas.",
+    "n1": "Ocorrências pontuais.",
+    "n2": "Nenhum incidente causado por desconhecimento das normas.",
+    "verify": "Revise causas das investigações recentes.",
+    "evidence": "Investigações de incidentes"
+  },
+  "E3.N5.6": {
+    "n0": "Funcionários não questionam normas.",
+    "n1": "Participação pontual.",
+    "n2": "Funcionários proativos em questionar normas e participar das avaliações de risco.",
+    "verify": "Veja sugestões de mudança de normas vindas dos funcionários.",
+    "evidence": "Sugestões; APRs com participação"
+  },
+  "E3.N5.7": {
+    "n0": "Padrões pessoais baixos.",
+    "n1": "Parte tem padrões elevados.",
+    "n2": "Todos com padrões elevados de comportamento seguro e redução proativa de riscos.",
+    "verify": "Observe comportamentos e iniciativas espontâneas.",
+    "evidence": "Observação; reportes"
+  },
+  "E3.N5.8": {
+    "n0": "Normas sem rastreabilidade.",
+    "n1": "Rastreabilidade parcial.",
+    "n2": "Normas documentadas com acesso fácil, RACI clara, TI e rastreabilidade.",
+    "verify": "Verifique o sistema documental e a RACI.",
+    "evidence": "Sistema documental; RACI"
+  },
+  "E3.N5.9": {
+    "n0": "Atualização difícil e defasada.",
+    "n1": "Atualização irregular.",
+    "n2": "Atualização contínua e suave; procedimentos refletem a prática e as exigências recentes.",
+    "verify": "Compare requisitos recentes com procedimentos.",
+    "evidence": "Lista mestra; observação"
+  },
+  "E3.N5.10": {
+    "n0": "Dados não usados para atualizar padrões.",
+    "n1": "Uso parcial.",
+    "n2": "Tendências de indicadores e análises de incidentes usados para atualizar padrões continuamente.",
+    "verify": "Relacione atualizações a indicadores/incidentes.",
+    "evidence": "Indicadores; histórico de revisões"
+  },
+  "E3.N5.11": {
+    "n0": "Site não gera boas práticas.",
+    "n1": "Algumas práticas compartilhadas.",
+    "n2": "Site desenvolve boas práticas internas/externas reconhecidas pela CBU/WWBU.",
+    "verify": "Pergunte por práticas do site compartilhadas.",
+    "evidence": "Boas práticas publicadas"
+  },
+  "E3.N5.12": {
+    "n0": "Sem participação em redes.",
+    "n1": "Participação pontual.",
+    "n2": "Representantes participam de redes nacionais/regionais.",
+    "verify": "Veja registros de participação em redes.",
+    "evidence": "Registros de redes"
+  },
+  "E3.N5.13": {
+    "n0": "Normas sem benchmarks.",
+    "n1": "Uso pontual de referências.",
+    "n2": "Setores atualizam normas com boas práticas de engenharia e classe mundial.",
+    "verify": "Peça exemplos de normas revisadas com benchmarks.",
+    "evidence": "Normas revisadas; referências"
+  },
+  "E4.N1.1": {
+    "n0": "Não há objetivo anual de segurança.",
+    "n1": "Objetivo informal ou sem base no FR1.",
+    "n2": "Objetivo anual definido com base na taxa FR1.",
+    "verify": "Peça o objetivo anual e como foi calculado.",
+    "evidence": "Metas anuais; cálculo do FR1"
+  },
+  "E4.N1.2": {
+    "n0": "Relatórios legais/corporativos não são feitos.",
+    "n1": "Feitos com atraso ou incompletos.",
+    "n2": "Relatórios legais e corporativos feitos e usados como impulsionador.",
+    "verify": "Confira envios (CAT, Sphera, corporativo).",
+    "evidence": "CATs; registros no Sphera"
+  },
+  "E4.N1.3": {
+    "n0": "Não há atividade de segurança.",
+    "n1": "Atividades só reativas.",
+    "n2": "Atividades de segurança movidas por bom senso e reação a incidentes (nível básico).",
+    "verify": "Pergunte o que dispara as ações de segurança.",
+    "evidence": "Entrevistas; histórico de ações"
+  },
+  "E4.N1.4": {
+    "n0": "Acidentes não documentados.",
+    "n1": "Documentação parcial.",
+    "n2": "LTA e NLTA de funcionários documentados.",
+    "verify": "Compare registros com o histórico de acidentes.",
+    "evidence": "Registros de acidentes; Sphera"
+  },
+  "E4.N1.5": {
+    "n0": "Estatísticas inexistentes.",
+    "n1": "Estatísticas incompletas.",
+    "n2": "Estatísticas de LTA e NLTA acumuladas para a organização.",
+    "verify": "Peça as estatísticas do ano.",
+    "evidence": "Relatório de estatísticas"
+  },
+  "E4.N2.1": {
+    "n0": "Sem objetivos individuais de segurança.",
+    "n1": "Só a liderança tem objetivos.",
+    "n2": "Liderança e pelo menos 50% da gestão intermediária com objetivos individuais.",
+    "verify": "Confira metas individuais (PLR, avaliação).",
+    "evidence": "Fichas de metas individuais"
+  },
+  "E4.N2.2": {
+    "n0": "Sem plano plurianual.",
+    "n1": "Plano de curto prazo apenas.",
+    "n2": "Plano com meta de redução do FR1 para 2–3 anos.",
+    "verify": "Peça o plano plurianual.",
+    "evidence": "Plano 2–3 anos"
+  },
+  "E4.N2.3": {
+    "n0": "Líderes desconhecem os principais riscos.",
+    "n1": "Conhecem, mas não monitoram planos.",
+    "n2": "Liderança entende os riscos principais e monitora planos de ação regularmente.",
+    "verify": "Pergunte aos líderes os 3 maiores riscos e as ações.",
+    "evidence": "Entrevistas; planos de ação"
+  },
+  "E4.N2.4": {
+    "n0": "Objetivos vagos.",
+    "n1": "Parte dos critérios SMART atendida.",
+    "n2": "Objetivos baseados em resultados (LTA, FR1) e SMART.",
+    "verify": "Avalie se os objetivos são específicos, mensuráveis e com prazo.",
+    "evidence": "Metas documentadas"
+  },
+  "E4.N2.5": {
+    "n0": "Gestores das áreas de risco sem objetivos de prevenção.",
+    "n1": "Parte dos gestores tem.",
+    "n2": "Gestores das áreas de maior risco têm objetivos de prevenção e conformidade.",
+    "verify": "Confira metas dos gestores das áreas críticas.",
+    "evidence": "Metas individuais"
+  },
+  "E4.N2.6": {
+    "n0": "Sem processo de registro de incidentes.",
+    "n1": "Processo informal.",
+    "n2": "Processo estruturado para registrar, documentar e analisar todos os incidentes.",
+    "verify": "Veja o procedimento e o sistema de registro.",
+    "evidence": "Procedimento; Sphera"
+  },
+  "E4.N2.7": {
+    "n0": "Estatísticas não analisadas.",
+    "n1": "Só LTA/NLTA analisados.",
+    "n2": "LTA, NLTA, primeiros socorros e quase acidentes analisados.",
+    "verify": "Peça a análise estatística por tipo.",
+    "evidence": "Relatórios de análise"
+  },
+  "E4.N2.8": {
+    "n0": "Metas sem base em resultados.",
+    "n1": "Base parcial.",
+    "n2": "Metas definidas com base nos resultados.",
+    "verify": "Compare metas com o histórico de resultados.",
+    "evidence": "Metas; histórico"
+  },
+  "E4.N2.9": {
+    "n0": "Acidentes de contratadas não registrados.",
+    "n1": "Registro parcial.",
+    "n2": "Acidentes com perda de tempo de contratadas documentados.",
+    "verify": "Confira registros de contratadas.",
+    "evidence": "Registros de contratadas"
+  },
+  "E4.N3.1": {
+    "n0": "Sem visão de 3 anos.",
+    "n1": "Visão sem contratadas ou incompleta.",
+    "n2": "Visão de 3 anos de melhoria, incluindo contratadas.",
+    "verify": "Peça a visão e o roteiro.",
+    "evidence": "Documento de visão"
+  },
+  "E4.N3.2": {
+    "n0": "Visão sem base em dados.",
+    "n1": "Base parcial, sem roteiro.",
+    "n2": "Visão baseada em tendências, auditorias e riscos, com roteiro de médio prazo.",
+    "verify": "Verifique os dados que embasaram a visão.",
+    "evidence": "Roteiro; análises"
+  },
+  "E4.N3.3": {
+    "n0": "Ideia de zero acidentes ausente.",
+    "n1": "Presente em menos de 50%.",
+    "n2": "Ideia de zero acidentes presente em pelo menos 50% dos funcionários.",
+    "verify": "Pergunte se acreditam que zero acidentes é possível.",
+    "evidence": "Entrevistas; pesquisa"
+  },
+  "E4.N3.4": {
+    "n0": "Metas não são animadas.",
+    "n1": "Animação irregular.",
+    "n2": "Animação pelo menos mensal e sistemática das metas e planos.",
+    "verify": "Veja o calendário de reuniões de acompanhamento.",
+    "evidence": "Atas mensais"
+  },
+  "E4.N3.5": {
+    "n0": "Resultados não compartilhados.",
+    "n1": "Compartilhados de forma irregular.",
+    "n2": "Liderança compartilha regularmente o andamento (reuniões, SIM).",
+    "verify": "Assista/veja registros do SIM.",
+    "evidence": "Registros do SIM; quadros"
+  },
+  "E4.N3.6": {
+    "n0": "Funcionários não conhecem sua contribuição.",
+    "n1": "Menos de 75% conhece.",
+    "n2": "Pelo menos 75% conhece sua contribuição e participa dos planos.",
+    "verify": "Pergunte qual é sua contribuição para a segurança.",
+    "evidence": "Entrevistas"
+  },
+  "E4.N3.7": {
+    "n0": "Equipes sem painel de indicadores.",
+    "n1": "Painéis desatualizados ou em parte das equipes.",
+    "n2": "Cada equipe tem painel com indicadores reativos e proativos x objetivos.",
+    "verify": "Percorra os painéis das equipes.",
+    "evidence": "Fotos dos painéis"
+  },
+  "E4.N3.8": {
+    "n0": "Metas não desdobradas.",
+    "n1": "Desdobramento parcial.",
+    "n2": "Metas de curto prazo desdobradas para todos os níveis.",
+    "verify": "Siga uma meta do site até o nível da equipe.",
+    "evidence": "Desdobramento de metas"
+  },
+  "E4.N3.9": {
+    "n0": "Gestores sem objetivos individuais.",
+    "n1": "Objetivos só reativos.",
+    "n2": "Todos os gestores com pelo menos 1 indicador reativo e 1 proativo.",
+    "verify": "Confira metas individuais dos gestores.",
+    "evidence": "Fichas de metas"
+  },
+  "E4.N3.10": {
+    "n0": "Objetivos da equipe não visíveis.",
+    "n1": "Visíveis em parte.",
+    "n2": "Objetivos e planos da equipe comunicados e visíveis a todos.",
+    "verify": "Verifique quadros das equipes.",
+    "evidence": "Quadros; comunicados"
+  },
+  "E4.N3.11": {
+    "n0": "Indicadores proativos não usados.",
+    "n1": "Uso pontual.",
+    "n2": "Indicadores proativos acionam objetivos e planos em todos os setores.",
+    "verify": "Peça exemplos de ações disparadas por indicadores proativos.",
+    "evidence": "Planos de ação; indicadores"
+  },
+  "E4.N3.12": {
+    "n0": "Sem processo de quase acidentes.",
+    "n1": "Processo pouco ativo.",
+    "n2": "Processo de quase acidentes ativo e estatísticas usadas para tendências e ações.",
+    "verify": "Analise volume e tratamento de quase acidentes.",
+    "evidence": "Registros de quase acidentes"
+  },
+  "E4.N3.13": {
+    "n0": "Tendências não analisadas.",
+    "n1": "Análise sem relação com as ações.",
+    "n2": "Tendências dos indicadores reativos mostram a eficiência dos planos.",
+    "verify": "Compare tendência dos indicadores com as ações tomadas.",
+    "evidence": "Gráficos de tendência"
+  },
+  "E4.N3.14": {
+    "n0": "Sem avaliação de risco estruturada.",
+    "n1": "Avaliação sem uso para metas.",
+    "n2": "Avaliação estruturada; cotação dos riscos define metas e planos de redução.",
+    "verify": "Veja o inventário de riscos e as metas derivadas.",
+    "evidence": "Inventário de riscos; planos"
+  },
+  "E4.N4.1": {
+    "n0": "Meta zero acidentes ausente.",
+    "n1": "Citada informalmente.",
+    "n2": "Meta zero acidentes estabelecida na visão de médio prazo.",
+    "verify": "Leia a visão de médio prazo.",
+    "evidence": "Documento de visão"
+  },
+  "E4.N4.2": {
+    "n0": "Planos não abordam zero acidentes.",
+    "n1": "Abordam sem indicadores proativos.",
+    "n2": "Metas e planos para zero acidentes apoiados por indicadores proativos.",
+    "verify": "Confira os indicadores proativos usados.",
+    "evidence": "Planos; indicadores proativos"
+  },
+  "E4.N4.3": {
+    "n0": "Meta zero não é crível.",
+    "n1": "Crível para menos de 75%.",
+    "n2": "Pelo menos 75% acredita na meta zero acidentes.",
+    "verify": "Pesquise a percepção dos funcionários.",
+    "evidence": "Pesquisa; entrevistas"
+  },
+  "E4.N4.4": {
+    "n0": "Roteiro zero acidentes isolado.",
+    "n1": "Consistência parcial.",
+    "n2": "Roteiro consistente com os de qualidade, produtividade e RH.",
+    "verify": "Compare os roteiros dos objetivos de negócio.",
+    "evidence": "Roteiros"
+  },
+  "E4.N4.5": {
+    "n0": "Estrutura de objetivos não revisada.",
+    "n1": "Revisão irregular.",
+    "n2": "Estrutura de objetivos revisada anualmente e adaptada por setor.",
+    "verify": "Veja a última revisão anual da estrutura de metas.",
+    "evidence": "Atas da revisão"
+  },
+  "E4.N4.6": {
+    "n0": "Progresso não analisado com as equipes.",
+    "n1": "Análise irregular.",
+    "n2": "Todos os níveis analisam o progresso com as equipes e usam indicadores nas avaliações.",
+    "verify": "Veja reuniões de segurança e avaliações de desempenho.",
+    "evidence": "Atas; avaliações"
+  },
+  "E4.N4.7": {
+    "n0": "Setores sem programa próprio.",
+    "n1": "Parte dos setores tem.",
+    "n2": "Cada setor/equipe desenvolve e monitora seu programa.",
+    "verify": "Peça o programa de 2 ou 3 setores.",
+    "evidence": "Programas setoriais"
+  },
+  "E4.N4.8": {
+    "n0": "Programa sem conteúdo.",
+    "n1": "Cobre parte dos temas.",
+    "n2": "Programa inclui formação, condições de trabalho, comunicação e reconhecimento.",
+    "verify": "Confira o conteúdo dos programas.",
+    "evidence": "Programas setoriais"
+  },
+  "E4.N4.9": {
+    "n0": "Equipes não apoiam a execução.",
+    "n1": "Execução atrasada.",
+    "n2": "Equipes executam o programa no prazo e orçamento.",
+    "verify": "Analise o status de execução.",
+    "evidence": "Status do programa"
+  },
+  "E4.N4.10": {
+    "n0": "Sem PDCA no plano.",
+    "n1": "PDCA parcial.",
+    "n2": "Plano monitorado por cada setor via PDCA.",
+    "verify": "Veja o ciclo PDCA de um setor.",
+    "evidence": "Registros PDCA"
+  },
+  "E4.N4.11": {
+    "n0": "Saúde fora das metas.",
+    "n1": "Integração parcial.",
+    "n2": "Saúde e bem-estar integrados às metas e planos.",
+    "verify": "Confira metas de saúde.",
+    "evidence": "Metas; planos"
+  },
+  "E4.N4.12": {
+    "n0": "Ações de saúde sem monitoramento.",
+    "n1": "Monitoramento parcial.",
+    "n2": "Ações de saúde monitoradas como as de segurança.",
+    "verify": "Veja o acompanhamento das ações de saúde.",
+    "evidence": "Planos de saúde; indicadores"
+  },
+  "E4.N4.13": {
+    "n0": "Gestão de saúde não reconhecida.",
+    "n1": "Menos de 50% reconhece.",
+    "n2": "Pelo menos 50% reconhece a gestão consistente de saúde e segurança.",
+    "verify": "Entreviste funcionários.",
+    "evidence": "Entrevistas"
+  },
+  "E4.N4.14": {
+    "n0": "Ergonomia não tratada.",
+    "n1": "Abordagem pontual.",
+    "n2": "Abordagem estruturada de ergonomia com metas e planos.",
+    "verify": "Peça análises ergonômicas e planos.",
+    "evidence": "AET; planos de ergonomia"
+  },
+  "E4.N5.1": {
+    "n0": "Metas de SST não apoiam a transformação.",
+    "n1": "Apoio parcial.",
+    "n2": "Metas e planos de SST apoiam visivelmente a transformação do site.",
+    "verify": "Relacione metas de SST aos projetos de transformação.",
+    "evidence": "Projetos; metas"
+  },
+  "E4.N5.2": {
+    "n0": "SST isolada dos objetivos de negócio.",
+    "n1": "Ligação parcial.",
+    "n2": "SST ligada a objetivos mais amplos (pessoas, excelência, ambiente).",
+    "verify": "Veja a conexão nas metas do negócio.",
+    "evidence": "Metas do negócio"
+  },
+  "E4.N5.3": {
+    "n0": "SST vista como custo.",
+    "n1": "Parte vê como vantagem.",
+    "n2": "Todos veem SST como vantagem competitiva e sustentabilidade.",
+    "verify": "Entreviste diversos níveis.",
+    "evidence": "Entrevistas"
+  },
+  "E4.N5.4": {
+    "n0": "Objetivos SQCDME isolados.",
+    "n1": "Integração parcial.",
+    "n2": "Objetivos SQCDME construídos juntos e se reforçando.",
+    "verify": "Analise os planos SQCDME.",
+    "evidence": "Planos integrados"
+  },
+  "E4.N5.5": {
+    "n0": "Metas definidas só pela gestão.",
+    "n1": "Equipes participam em parte.",
+    "n2": "Metas SQCDME ambiciosas, desenvolvidas e entregues pelas equipes locais.",
+    "verify": "Veja projetos entregues pelas equipes.",
+    "evidence": "Projetos de melhoria"
+  },
+  "E4.N5.6": {
+    "n0": "Aprendizados externos não usados.",
+    "n1": "Uso pontual.",
+    "n2": "Aprendizados externos atualizam metas e objetivos.",
+    "verify": "Peça exemplos de metas revistas por benchmarks.",
+    "evidence": "Benchmarks; metas"
+  },
+  "E4.N5.7": {
+    "n0": "Planejamento sem foco nos 13 elementos.",
+    "n1": "Foco parcial.",
+    "n2": "Planejamento de médio prazo focado em melhorar os 13 elementos com aprendizagem contínua.",
+    "verify": "Verifique o plano por elemento WISE.",
+    "evidence": "Plano WISE de médio prazo"
+  },
+  "E4.N5.8": {
+    "n0": "Acidentes fora do trabalho ignorados.",
+    "n1": "Relatos raros.",
+    "n2": "Acidentes fora do trabalho relatados voluntariamente e compartilhados.",
+    "verify": "Pergunte se há relatos fora do trabalho.",
+    "evidence": "Registros voluntários"
+  },
+  "E4.N5.9": {
+    "n0": "Sem sistema para eventos fora do trabalho.",
+    "n1": "Sistema pouco usado.",
+    "n2": "Sistema para relatar e analisar acidentes fora do trabalho, usado em campanhas.",
+    "verify": "Veja o sistema e campanhas derivadas.",
+    "evidence": "Sistema; campanhas"
+  },
+  "E4.N5.10": {
+    "n0": "Segurança só no trabalho.",
+    "n1": "Menos de 75% aplica fora.",
+    "n2": "Pelo menos 75% acredita que segurança vale dentro e fora do trabalho.",
+    "verify": "Pesquise a percepção dos funcionários.",
+    "evidence": "Pesquisa; entrevistas"
+  },
+  "E4.N5.11": {
+    "n0": "Funcionários não participam de eventos.",
+    "n1": "Participação pontual.",
+    "n2": "Funcionários organizam e promovem eventos de segurança (família, dias educativos).",
+    "verify": "Veja eventos recentes e quem organizou.",
+    "evidence": "Registros de eventos"
+  },
+  "E5.N1.1": {
+    "n0": "Nenhuma pessoa nomeada para coordenar a segurança.",
+    "n1": "Pessoa designada informalmente, sem tempo definido.",
+    "n2": "Gerente/coordenador de segurança nomeado formalmente (integral, parcial ou compartilhado).",
+    "verify": "Peça a nomeação e o tempo dedicado.",
+    "evidence": "Carta de nomeação; organograma"
+  },
+  "E5.N1.2": {
+    "n0": "Regras não definidas pela equipe de segurança.",
+    "n1": "Definidas parcialmente; conformidade pouco cobrada.",
+    "n2": "Equipe de segurança define regras e procedimentos e reforça a conformidade.",
+    "verify": "Veja autoria dos procedimentos e ações de cobrança.",
+    "evidence": "Procedimentos; inspeções"
+  },
+  "E5.N1.3": {
+    "n0": "Requisitos legais básicos não cumpridos.",
+    "n1": "Cumprimento parcial.",
+    "n2": "Requisitos legais básicos cumpridos (segurança ainda vista como assunto de especialista).",
+    "verify": "Verifique pendências legais.",
+    "evidence": "Laudos; licenças"
+  },
+  "E5.N1.4": {
+    "n0": "Ninguém conduz as ações de segurança.",
+    "n1": "Ações conduzidas de forma irregular.",
+    "n2": "Equipe de segurança responde pelas principais ações (nível básico).",
+    "verify": "Pergunte quem conduz as ações de segurança.",
+    "evidence": "Plano de ações; responsáveis"
+  },
+  "E5.N1.5": {
+    "n0": "Equipe sem treinamento.",
+    "n1": "Treinamento parcial nas exigências legais.",
+    "n2": "Equipe treinada nas exigências legais.",
+    "verify": "Confira certificados da equipe de segurança.",
+    "evidence": "Certificados; matriz de treinamento"
+  },
+  "E5.N1.6": {
+    "n0": "Conformidade legal não acompanhada.",
+    "n1": "Acompanhamento irregular.",
+    "n2": "Equipe de segurança reforça a conformidade com requisitos legais.",
+    "verify": "Veja controles de conformidade legal.",
+    "evidence": "Matriz legal; auditorias"
+  },
+  "E5.N2.1": {
+    "n0": "Representantes não participam do programa.",
+    "n1": "Participação pontual.",
+    "n2": "Representantes dos funcionários contribuem para o programa de SST.",
+    "verify": "Verifique participação da CIPA/representantes.",
+    "evidence": "Atas da CIPA"
+  },
+  "E5.N2.2": {
+    "n0": "Sem apoio nem recursos da liderança.",
+    "n1": "Apoio parcial.",
+    "n2": "Equipe de segurança recebe apoio e recursos da liderança.",
+    "verify": "Pergunte sobre recursos aprovados e apoio recebido.",
+    "evidence": "Orçamento; atas"
+  },
+  "E5.N2.3": {
+    "n0": "Equipe não executa as atividades sozinha.",
+    "n1": "Executa parte (inspeções, treinamentos).",
+    "n2": "Equipe realiza de forma autônoma inspeções, auditorias, treinamentos, relatórios e investigações.",
+    "verify": "Veja registros dessas atividades conduzidas pela equipe.",
+    "evidence": "Inspeções; auditorias; investigações"
+  },
+  "E5.N2.4": {
+    "n0": "Funções não definidas.",
+    "n1": "Definidas de forma incompleta.",
+    "n2": "Funções e responsabilidades da equipe de segurança claramente definidas.",
+    "verify": "Peça descrições de cargo.",
+    "evidence": "Descrições de função"
+  },
+  "E5.N2.5": {
+    "n0": "Equipe sem treinamento WISE.",
+    "n1": "Parte da equipe treinada.",
+    "n2": "Equipe de segurança concluiu o treinamento de liderança WISE.",
+    "verify": "Confira certificados WISE.",
+    "evidence": "Certificados WISE"
+  },
+  "E5.N3.1": {
+    "n0": "Sem acesso direto à liderança.",
+    "n1": "Acesso indireto ou eventual.",
+    "n2": "Gerente de segurança com canal direto com a liderança do site.",
+    "verify": "Pergunte como o gerente de segurança aciona a liderança.",
+    "evidence": "Organograma; entrevistas"
+  },
+  "E5.N3.2": {
+    "n0": "Não participa das reuniões da liderança.",
+    "n1": "Participa às vezes.",
+    "n2": "Participa regularmente das reuniões da liderança e tem contato direto com a autoridade máxima.",
+    "verify": "Veja atas de reunião da liderança.",
+    "evidence": "Atas com presença"
+  },
+  "E5.N3.3": {
+    "n0": "Não influencia decisões.",
+    "n1": "Influência pontual.",
+    "n2": "Gerente de segurança influencia as decisões de segurança da liderança.",
+    "verify": "Peça exemplos de decisões influenciadas.",
+    "evidence": "Atas; decisões"
+  },
+  "E5.N3.4": {
+    "n0": "Liderança não se apropria do programa.",
+    "n1": "Apropriação parcial.",
+    "n2": "Equipe de segurança apoia a apropriação eficaz do programa pela liderança.",
+    "verify": "Veja quem conduz o programa na prática.",
+    "evidence": "Programa; responsáveis"
+  },
+  "E5.N3.5": {
+    "n0": "Atividades concentradas em SST.",
+    "n1": "Compartilhamento parcial.",
+    "n2": "Atividades compartilhadas de forma equilibrada; SST orienta gestores em auditorias e investigações.",
+    "verify": "Analise quem executou auditorias e investigações recentes.",
+    "evidence": "Registros com autores"
+  },
+  "E5.N3.6": {
+    "n0": "Programa não chega aos setores.",
+    "n1": "Ativo em parte dos setores.",
+    "n2": "Programa ativo em cada setor sob responsabilidade dos gestores.",
+    "verify": "Verifique objetivos e planos por setor.",
+    "evidence": "Planos setoriais"
+  },
+  "E5.N3.7": {
+    "n0": "Equipe desatualizada.",
+    "n1": "Atualização eventual.",
+    "n2": "Equipe atualizada com legislação e boas práticas.",
+    "verify": "Pergunte como a equipe se atualiza.",
+    "evidence": "Assinaturas; cursos; matriz legal"
+  },
+  "E5.N3.8": {
+    "n0": "Gerente isolado.",
+    "n1": "Conexões internas limitadas.",
+    "n2": "Gerente conectado internamente e participa de eventos externos.",
+    "verify": "Veja participações em eventos e visitas.",
+    "evidence": "Registros de eventos"
+  },
+  "E5.N3.9": {
+    "n0": "Atividades desatualizadas.",
+    "n1": "Parcialmente atualizadas.",
+    "n2": "Atividades alinhadas às técnicas e legislação mais recentes.",
+    "verify": "Compare práticas com a legislação vigente.",
+    "evidence": "Matriz legal; procedimentos"
+  },
+  "E5.N3.10": {
+    "n0": "Sem desenvolvimento contínuo.",
+    "n1": "Desenvolvimento esporádico.",
+    "n2": "Treinamento contínuo nos riscos do site, com estudo específico de avaliação de risco e investigação.",
+    "verify": "Veja o plano de desenvolvimento da equipe.",
+    "evidence": "PDI; certificados"
+  },
+  "E5.N3.11": {
+    "n0": "Treinamento genérico.",
+    "n1": "Parte ligada ao site.",
+    "n2": "Treinamento ligado às exigências do site (LOTO, altura, confinado, ergonomia etc.).",
+    "verify": "Compare conteúdos com os riscos do site.",
+    "evidence": "Ementas; certificados"
+  },
+  "E5.N3.12": {
+    "n0": "Equipe não multiplica.",
+    "n1": "Multiplica parcialmente.",
+    "n2": "Equipe de segurança é multiplicadora interna do treinamento do sistema de gestão.",
+    "verify": "Veja turmas ministradas pela equipe.",
+    "evidence": "Listas de presença"
+  },
+  "E5.N4.1": {
+    "n0": "Conhecimento concentrado em SST.",
+    "n1": "Cascata parcial.",
+    "n2": "Conhecimento cascateado pela linha (gerentes, campeões, funções de segurança).",
+    "verify": "Verifique campeões e multiplicadores.",
+    "evidence": "Lista de campeões; treinamentos"
+  },
+  "E5.N4.2": {
+    "n0": "Sem treinamento especializado.",
+    "n1": "Oferta parcial.",
+    "n2": "Equipe oferece treinamento especializado (ergonomia, investigação, didática).",
+    "verify": "Veja o catálogo de treinamentos.",
+    "evidence": "Catálogo; turmas"
+  },
+  "E5.N4.3": {
+    "n0": "Experiência isolada.",
+    "n1": "Enraizada em parte.",
+    "n2": "Experiência de SST enraizada na gestão operacional.",
+    "verify": "Observe se gestores usam ferramentas de SST sozinhos.",
+    "evidence": "Observação; entrevistas"
+  },
+  "E5.N4.4": {
+    "n0": "Sem redes externas.",
+    "n1": "Participação pontual.",
+    "n2": "Equipe participa de redes internas fora da CBU e de organizações profissionais.",
+    "verify": "Peça registros de participação.",
+    "evidence": "Redes; associações"
+  },
+  "E5.N4.5": {
+    "n0": "Não conhece fontes externas.",
+    "n1": "Conhece algumas.",
+    "n2": "Sabe onde está o conhecimento externo e como acessá-lo rápido.",
+    "verify": "Pergunte quais fontes usam para um risco específico.",
+    "evidence": "Lista de fontes; contatos"
+  },
+  "E5.N4.6": {
+    "n0": "Nenhum conhecimento trazido.",
+    "n1": "Pouco aplicado.",
+    "n2": "Conhecimento útil trazido e aplicado no site.",
+    "verify": "Peça exemplos aplicados.",
+    "evidence": "Exemplos implantados"
+  },
+  "E5.N4.7": {
+    "n0": "Sem arquitetura de auditorias.",
+    "n1": "Arquitetura parcial.",
+    "n2": "Equipe monitora a arquitetura de auditorias (tipos, metas, escopo, recursos) e a qualidade.",
+    "verify": "Veja o programa anual de auditorias.",
+    "evidence": "Programa de auditorias"
+  },
+  "E5.N4.8": {
+    "n0": "Auditorias sem valor agregado.",
+    "n1": "Recomendações pouco tratadas.",
+    "n2": "Equipe treina auditores e faz recomendações tratadas de forma rápida e eficaz.",
+    "verify": "Verifique tratamento das recomendações.",
+    "evidence": "Relatórios; status das ações"
+  },
+  "E5.N4.9": {
+    "n0": "Auditorias vistas como fiscalização.",
+    "n1": "Parte vê como melhoria.",
+    "n2": "Auditorias vistas como oportunidade de melhoria e ferramenta de gestão.",
+    "verify": "Entreviste gestores sobre auditorias.",
+    "evidence": "Entrevistas"
+  },
+  "E5.N4.10": {
+    "n0": "Sem auditorias de gestão.",
+    "n1": "Auditorias pontuais.",
+    "n2": "Equipe realiza auditorias de gestão (WISE interna, processos, padrões).",
+    "verify": "Peça relatórios de auditoria de gestão.",
+    "evidence": "Relatórios WISE interno"
+  },
+  "E5.N4.11": {
+    "n0": "Gerente de segurança fora da liderança.",
+    "n1": "Participa sem reporte direto.",
+    "n2": "Faz parte da liderança e reporta à autoridade máxima.",
+    "verify": "Confira organograma.",
+    "evidence": "Organograma"
+  },
+  "E5.N4.12": {
+    "n0": "Função pouco respeitada.",
+    "n1": "Respeitada por parte.",
+    "n2": "Função reconhecida como fundamental por todos.",
+    "verify": "Entreviste gestores.",
+    "evidence": "Entrevistas"
+  },
+  "E5.N4.13": {
+    "n0": "Função sem perspectiva.",
+    "n1": "Perspectiva pouco clara.",
+    "n2": "Função é passo de carreira para cargos superiores.",
+    "verify": "Pergunte por trajetórias de ex-gerentes de segurança.",
+    "evidence": "Histórico de carreira"
+  },
+  "E5.N4.14": {
+    "n0": "SST executa tudo.",
+    "n1": "Linha executa parte.",
+    "n2": "SST orienta o programa e a linha executa as atividades.",
+    "verify": "Analise quem executa as atividades do programa.",
+    "evidence": "Responsáveis no plano"
+  },
+  "E5.N4.15": {
+    "n0": "Sem análise de tendências.",
+    "n1": "Análise parcial.",
+    "n2": "Análise regular de tendências (auditorias, incidentes, riscos) orienta o programa.",
+    "verify": "Peça a última análise de tendências.",
+    "evidence": "Relatórios de análise"
+  },
+  "E5.N4.16": {
+    "n0": "Postura reativa.",
+    "n1": "Alertas eventuais.",
+    "n2": "Equipe identifica fraquezas proativamente e seus alertas orientam a liderança.",
+    "verify": "Peça exemplos de alertas que viraram decisão.",
+    "evidence": "Atas; alertas"
+  },
+  "E5.N5.1": {
+    "n0": "Não é consultada.",
+    "n1": "Consultada por alguns.",
+    "n2": "Equipe é conselheira de confiança para todos os níveis.",
+    "verify": "Entreviste gestores sobre consultas à SST.",
+    "evidence": "Entrevistas"
+  },
+  "E5.N5.2": {
+    "n0": "Sem papel estratégico.",
+    "n1": "Aconselhamento pontual.",
+    "n2": "Aconselha estrategicamente em SQCDME e gestão de mudança.",
+    "verify": "Veja participação em decisões estratégicas.",
+    "evidence": "Atas; projetos"
+  },
+  "E5.N5.3": {
+    "n0": "Sugestões ignoradas.",
+    "n1": "Impacto menor.",
+    "n2": "Sugestões com o mesmo peso dos demais membros da liderança.",
+    "verify": "Compare decisões tomadas com sugestões de SST.",
+    "evidence": "Atas"
+  },
+  "E5.N5.4": {
+    "n0": "Conhecimento não circula.",
+    "n1": "Circula devagar.",
+    "n2": "Conhecimento circula rápido entre CBUs/sites e gera ações.",
+    "verify": "Veja alertas recebidos/enviados e ações.",
+    "evidence": "Alertas; planos"
+  },
+  "E5.N5.5": {
+    "n0": "Práticas de outros sites ignoradas.",
+    "n1": "Uso pontual.",
+    "n2": "Práticas de sites/CBUs usadas para melhorar padrões.",
+    "verify": "Peça exemplos.",
+    "evidence": "Padrões revisados"
+  },
+  "E5.N5.6": {
+    "n0": "Sem influência na transformação.",
+    "n1": "Influência pontual.",
+    "n2": "Experiência da equipe molda a transformação do sistema de SST.",
+    "verify": "Veja projetos de transformação.",
+    "evidence": "Projetos"
+  },
+  "E5.N5.7": {
+    "n0": "Não é referência.",
+    "n1": "Referência local.",
+    "n2": "Especialistas reconhecidos e consultados externamente.",
+    "verify": "Pergunte por convites e consultas externas.",
+    "evidence": "Convites; apresentações"
+  },
+  "E5.N5.8": {
+    "n0": "Sem acesso a conhecimento externo.",
+    "n1": "Acesso lento.",
+    "n2": "Acesso rápido e eficaz a conhecimento de classe mundial.",
+    "verify": "Peça exemplos recentes.",
+    "evidence": "Benchmarks; contatos"
+  },
+  "E6.N1.1": {
+    "n0": "Liderança desconhece sua responsabilidade.",
+    "n1": "Parte conhece.",
+    "n2": "A maioria conhece sua responsabilidade (ainda delegando a execução à SST).",
+    "verify": "Pergunte aos líderes qual é sua responsabilidade em SST.",
+    "evidence": "Entrevistas"
+  },
+  "E6.N1.2": {
+    "n0": "Segurança não reconhecida no desempenho.",
+    "n1": "Reconhecimento raro.",
+    "n2": "Segurança reconhecida informalmente no desempenho da liderança.",
+    "verify": "Pergunte se segurança pesa na avaliação.",
+    "evidence": "Entrevistas"
+  },
+  "E6.N1.3": {
+    "n0": "Liderança ausente mesmo em incidentes.",
+    "n1": "Envolvimento eventual.",
+    "n2": "Liderança se envolve quando ocorrem incidentes (nível básico).",
+    "verify": "Veja participação da liderança nas investigações.",
+    "evidence": "Investigações"
+  },
+  "E6.N2.1": {
+    "n0": "Liderança não participa das atividades.",
+    "n1": "Participação irregular.",
+    "n2": "Liderança e 25% dos gerentes participam ao menos mensalmente das atividades.",
+    "verify": "Confira registros de participação mensal.",
+    "evidence": "Registros de tours/auditorias"
+  },
+  "E6.N2.2": {
+    "n0": "Sem objetivos de segurança.",
+    "n1": "Menos de 50% tem.",
+    "n2": "Liderança e 50% dos gerentes com objetivos avaliados no desempenho.",
+    "verify": "Veja fichas de metas e avaliações.",
+    "evidence": "Metas; avaliações"
+  },
+  "E6.N2.3": {
+    "n0": "Atividades não acontecem.",
+    "n1": "Ocasionais.",
+    "n2": "Atividades acontecem movidas pelos requisitos do sistema.",
+    "verify": "Verifique o calendário de atividades.",
+    "evidence": "Calendário"
+  },
+  "E6.N2.4": {
+    "n0": "Riscos graves sem dono.",
+    "n1": "Tratamento lento.",
+    "n2": "Liderança assume corrigir riscos e deficiências graves.",
+    "verify": "Veja riscos graves e prazos de correção.",
+    "evidence": "Lista de riscos críticos; ações"
+  },
+  "E6.N2.5": {
+    "n0": "Riscos não chegam à liderança.",
+    "n1": "Chegam de forma informal.",
+    "n2": "Sistema para compartilhar riscos e deficiências com a liderança.",
+    "verify": "Peça o fluxo de reporte.",
+    "evidence": "Procedimento; registros"
+  },
+  "E6.N2.6": {
+    "n0": "Funcionários não reportam.",
+    "n1": "Reportam pouco.",
+    "n2": "Funcionários reportam riscos sempre que observam.",
+    "verify": "Analise volume de reportes por área.",
+    "evidence": "Reportes de condição insegura"
+  },
+  "E6.N3.1": {
+    "n0": "Gerentes não lideram atividades.",
+    "n1": "Liderança mensal.",
+    "n2": "Liderança, gerência e 25% dos de primeira linha lideram atividades semanalmente.",
+    "verify": "Verifique registros semanais.",
+    "evidence": "Registros de atividades"
+  },
+  "E6.N3.2": {
+    "n0": "Responsabilidades indefinidas.",
+    "n1": "Definidas sem comunicação.",
+    "n2": "Responsabilidades (incluindo disciplina) definidas, documentadas e comunicadas.",
+    "verify": "Peça a matriz de responsabilidades.",
+    "evidence": "Matriz; comunicados"
+  },
+  "E6.N3.3": {
+    "n0": "Segurança fora do desempenho.",
+    "n1": "Menos de 75%.",
+    "n2": "Liderança e 75% dos gerentes tratam segurança como parte do desempenho e dedicam tempo.",
+    "verify": "Entreviste gerentes.",
+    "evidence": "Entrevistas; agendas"
+  },
+  "E6.N3.4": {
+    "n0": "Investigações só por SST.",
+    "n1": "Liderança participa às vezes.",
+    "n2": "Liderança e gerentes conduzem pessoalmente investigações.",
+    "verify": "Veja quem conduziu as últimas investigações.",
+    "evidence": "Relatórios de investigação"
+  },
+  "E6.N3.5": {
+    "n0": "Gerentes delegam tudo à SST.",
+    "n1": "Menos de 50% assume.",
+    "n2": "Pelo menos 50% dos gerentes assume as investigações da sua equipe.",
+    "verify": "Analise autores das investigações.",
+    "evidence": "Investigações"
+  },
+  "E6.N3.6": {
+    "n0": "Sem desenvolvimento dos subordinados.",
+    "n1": "Desenvolvimento pontual.",
+    "n2": "Liderança desenvolve habilidades de SST dos subordinados.",
+    "verify": "Veja PDIs e treinamentos dos subordinados.",
+    "evidence": "PDIs"
+  },
+  "E6.N3.7": {
+    "n0": "Sem coaching.",
+    "n1": "Coaching menos que quinzenal.",
+    "n2": "Coaching ao menos 2x/mês com feedback imediato (SIM, auditorias, diálogos).",
+    "verify": "Peça registros de coaching.",
+    "evidence": "Registros SIM; feedbacks"
+  },
+  "E6.N3.8": {
+    "n0": "Sem cascata de responsabilização.",
+    "n1": "Cascata parcial.",
+    "n2": "Cascata clara de responsabilização pela linha.",
+    "verify": "Siga a responsabilidade do diretor ao líder de turno.",
+    "evidence": "Matriz de responsabilidades"
+  },
+  "E6.N3.9": {
+    "n0": "Gerentes não se veem como líderes de SST.",
+    "n1": "Menos de 50%.",
+    "n2": "Pelo menos 50% dos gerentes entende seu papel e age como líder de segurança.",
+    "verify": "Entreviste e observe gerentes.",
+    "evidence": "Entrevistas; observação"
+  },
+  "E6.N4.1": {
+    "n0": "Compromisso pouco visível.",
+    "n1": "Liderança semanal.",
+    "n2": "Gerentes lideram atividades diariamente com compromisso inspirador.",
+    "verify": "Observe a rotina diária dos gerentes.",
+    "evidence": "Agenda; observação"
+  },
+  "E6.N4.2": {
+    "n0": "Dados não direcionam o programa.",
+    "n1": "Uso parcial.",
+    "n2": "Incidentes, auditorias e sugestões identificam tendências e direcionam o programa.",
+    "verify": "Peça a análise de tendências usada no programa.",
+    "evidence": "Relatórios; programa"
+  },
+  "E6.N4.3": {
+    "n0": "Funcionários pouco envolvidos.",
+    "n1": "Menos de 50%.",
+    "n2": "Pelo menos 50% contribui proativamente para melhorias.",
+    "verify": "Analise participação em sugestões/grupos.",
+    "evidence": "Sugestões; grupos"
+  },
+  "E6.N4.4": {
+    "n0": "Sem reuniões de segurança na produção.",
+    "n1": "Reuniões irregulares ou de mão única.",
+    "n2": "Reuniões semanais na produção com comunicação bilateral.",
+    "verify": "Assista a uma reunião.",
+    "evidence": "Atas; observação"
+  },
+  "E6.N4.5": {
+    "n0": "Funcionários não estimulados.",
+    "n1": "Estímulo pontual.",
+    "n2": "Todos os gerentes incentivam a apropriação e participação dos funcionários.",
+    "verify": "Entreviste funcionários.",
+    "evidence": "Entrevistas"
+  },
+  "E6.N4.6": {
+    "n0": "Pouco desenvolvimento em SST.",
+    "n1": "Abaixo de 75% gestores/25% funcionários.",
+    "n2": "75% dos gestores e 25% dos funcionários desenvolvem SST de forma contínua.",
+    "verify": "Confira treinamentos e iniciativas.",
+    "evidence": "Matriz de treinamento"
+  },
+  "E6.N4.7": {
+    "n0": "Gestores não orientam.",
+    "n1": "Orientação pontual.",
+    "n2": "Gestores orientam e sensibilizam todos sobre liderança e riscos.",
+    "verify": "Veja ações de sensibilização conduzidas por gestores.",
+    "evidence": "Registros de DDS; campanhas"
+  },
+  "E6.N4.8": {
+    "n0": "Sem capacidade interna.",
+    "n1": "Capacidade parcial.",
+    "n2": "Grandes capacidades internas para desenvolver o sistema.",
+    "verify": "Avalie competências, processos e padrões.",
+    "evidence": "Matriz de competências"
+  },
+  "E6.N4.9": {
+    "n0": "Gestores não identificam riscos.",
+    "n1": "Parte identifica.",
+    "n2": "Todos os gestores identificam e corrigem riscos.",
+    "verify": "Faça um tour com gestores e observe.",
+    "evidence": "Observação; inspeções"
+  },
+  "E6.N4.10": {
+    "n0": "Riscos óbvios sem plano.",
+    "n1": "Parte coberta.",
+    "n2": "Nenhum risco óbvio ou ergonômico sem plano de correção.",
+    "verify": "Percorra o site buscando riscos sem plano.",
+    "evidence": "Inventário x plano de ação"
+  },
+  "E6.N5.1": {
+    "n0": "Equipes não assumem SST.",
+    "n1": "Parte assume.",
+    "n2": "Equipes assumem proativamente todas as questões de SST no dia a dia.",
+    "verify": "Observe equipes resolvendo questões sozinhas.",
+    "evidence": "Observação; registros"
+  },
+  "E6.N5.2": {
+    "n0": "Resultados sem ênfase em segurança.",
+    "n1": "Ênfase parcial.",
+    "n2": "Resultados medidos com ênfase em segurança, qualidade, produtividade e pessoas.",
+    "verify": "Veja os indicadores de equipe.",
+    "evidence": "Painéis"
+  },
+  "E6.N5.3": {
+    "n0": "SST fora da cultura.",
+    "n1": "Presente em parte.",
+    "n2": "SST é ingrediente essencial da cultura e da visão dupla Danone.",
+    "verify": "Busque evidências culturais.",
+    "evidence": "Entrevistas; pesquisa"
+  },
+  "E6.N5.4": {
+    "n0": "SST ignorada nas decisões.",
+    "n1": "Considerada às vezes.",
+    "n2": "Segurança é consideração fundamental em todas as decisões.",
+    "verify": "Analise decisões recentes.",
+    "evidence": "Atas"
+  },
+  "E6.N5.5": {
+    "n0": "Equipes acomodadas.",
+    "n1": "Parte busca melhorar.",
+    "n2": "Equipes cobram de si e da organização melhoria constante.",
+    "verify": "Entreviste equipes.",
+    "evidence": "Entrevistas; sugestões"
+  },
+  "E6.N5.6": {
+    "n0": "Pouco desenvolvimento.",
+    "n1": "Menos de 90%.",
+    "n2": "90% dos funcionários desenvolvem conhecimento de SST continuamente.",
+    "verify": "Confira a matriz de treinamento.",
+    "evidence": "Matriz de treinamento"
+  },
+  "E6.N5.7": {
+    "n0": "Gerir SST não é requisito.",
+    "n1": "Requisito para parte.",
+    "n2": "Gerir SST é requisito em todos os níveis de gestão.",
+    "verify": "Veja perfis de cargo e critérios de promoção.",
+    "evidence": "Perfis de cargo"
+  },
+  "E6.N5.8": {
+    "n0": "Excelência em SST não valorizada.",
+    "n1": "Valorizada por parte.",
+    "n2": "Excelência em SST vista como componente de gestão de sucesso.",
+    "verify": "Entreviste gestores.",
+    "evidence": "Entrevistas; critérios de avaliação"
+  },
+  "E6.N5.9": {
+    "n0": "Desatenção tolerada.",
+    "n1": "Tolerância ocasional.",
+    "n2": "Inaceitável qualquer nível demonstrar pouca atenção à segurança.",
+    "verify": "Pergunte como desatenção é tratada.",
+    "evidence": "Registros de abordagem"
+  },
+  "E6.N5.10": {
+    "n0": "Sem participação externa.",
+    "n1": "Participação pontual.",
+    "n2": "Liderança participa de comissões externas de SST.",
+    "verify": "Peça registros.",
+    "evidence": "Registros de participação"
+  },
+  "E6.N5.11": {
+    "n0": "Sem comparação externa.",
+    "n1": "Comparação pontual.",
+    "n2": "Liderança compara e incorpora melhores práticas.",
+    "verify": "Peça exemplos.",
+    "evidence": "Benchmarks"
+  },
+  "E6.N5.12": {
+    "n0": "Lições externas não integradas.",
+    "n1": "Integração em mais de 3 meses.",
+    "n2": "Lições integradas ao plano em menos de 3 meses.",
+    "verify": "Verifique datas de alertas e ações.",
+    "evidence": "Alertas; plano"
+  },
+  "E7.N1.1": {
+    "n0": "Organização abaixo do mínimo legal.",
+    "n1": "Atende parte do mínimo legal.",
+    "n2": "Organização e representantes atendem ao mínimo legal (CIPA, SESMT).",
+    "verify": "Confira dimensionamento legal.",
+    "evidence": "Atas CIPA; SESMT"
+  },
+  "E7.N1.2": {
+    "n0": "Sem corpo de segurança.",
+    "n1": "Atuação ad hoc incompleta.",
+    "n2": "Corpo legal focado em assuntos legais; atividades conduzidas pela SST.",
+    "verify": "Veja atas e atividades do corpo legal.",
+    "evidence": "Atas"
+  },
+  "E7.N1.3": {
+    "n0": "Requisitos legais da organização não cumpridos.",
+    "n1": "Cumprimento parcial.",
+    "n2": "Requisitos legais referentes à organização cumpridos.",
+    "verify": "Verifique obrigações legais (CIPA, SESMT, PGR).",
+    "evidence": "Documentos legais"
+  },
+  "E7.N2.1": {
+    "n0": "Segurança fora da pauta.",
+    "n1": "Pauta eventual.",
+    "n2": "Segurança é item fixo da pauta da liderança.",
+    "verify": "Veja pautas das reuniões de liderança.",
+    "evidence": "Pautas; atas"
+  },
+  "E7.N2.2": {
+    "n0": "Acidentes e problemas não pautados.",
+    "n1": "Pautados às vezes.",
+    "n2": "Acidentes e problemas trazidos pela força de trabalho entram na agenda.",
+    "verify": "Confira atas com acidentes discutidos.",
+    "evidence": "Atas"
+  },
+  "E7.N2.3": {
+    "n0": "Decisões não comunicadas.",
+    "n1": "Comunicação parcial.",
+    "n2": "Decisões comunicadas aos envolvidos e ações implementadas.",
+    "verify": "Rastreie uma decisão até a implementação.",
+    "evidence": "Atas; ações"
+  },
+  "E7.N2.4": {
+    "n0": "Decisões só em reuniões formais.",
+    "n1": "Rotina parcial.",
+    "n2": "Decisões e atividades de segurança acontecem no dia a dia.",
+    "verify": "Observe a rotina.",
+    "evidence": "Observação; registros"
+  },
+  "E7.N2.5": {
+    "n0": "SST sem apoio.",
+    "n1": "Apoio pontual.",
+    "n2": "SST conduz atividades com apoio efetivo da liderança e gestão.",
+    "verify": "Entreviste SST e gestores.",
+    "evidence": "Entrevistas"
+  },
+  "E7.N2.6": {
+    "n0": "Organização não descrita.",
+    "n1": "Descrição incompleta.",
+    "n2": "Organização e funções de segurança descritas.",
+    "verify": "Peça o organograma e as funções.",
+    "evidence": "Organograma; descrições"
+  },
+  "E7.N2.7": {
+    "n0": "Representantes ausentes.",
+    "n1": "Participação pontual.",
+    "n2": "Representantes participam das atividades e programas.",
+    "verify": "Veja registros de participação.",
+    "evidence": "Atas CIPA; atividades"
+  },
+  "E7.N3.1": {
+    "n0": "Sem reuniões em cascata.",
+    "n1": "Cascata parcial.",
+    "n2": "Reuniões em cascata nos setores, presididas pelo gestor local.",
+    "verify": "Verifique reuniões setoriais.",
+    "evidence": "Atas setoriais"
+  },
+  "E7.N3.2": {
+    "n0": "Sem discussão com funcionários.",
+    "n1": "Temas pouco relevantes.",
+    "n2": "Discussões relevantes e alinhadas ao comitê do site.",
+    "verify": "Assista a uma reunião local.",
+    "evidence": "Atas; observação"
+  },
+  "E7.N3.3": {
+    "n0": "Gerentes não recomendam implementação.",
+    "n1": "Menos de 50%.",
+    "n2": "Pelo menos 50% dos gerentes promove a implementação das decisões.",
+    "verify": "Entreviste gerentes.",
+    "evidence": "Entrevistas"
+  },
+  "E7.N3.4": {
+    "n0": "Feedback não incentivado.",
+    "n1": "Incentivo pontual.",
+    "n2": "Feedback incentivado e levado ao comitê do site.",
+    "verify": "Veja feedbacks registrados no comitê.",
+    "evidence": "Atas do comitê"
+  },
+  "E7.N3.5": {
+    "n0": "Decisões não compreendidas.",
+    "n1": "Menos de 75%.",
+    "n2": "Pelo menos 75% compreende as decisões de segurança.",
+    "verify": "Pergunte sobre decisões recentes.",
+    "evidence": "Entrevistas"
+  },
+  "E7.N3.6": {
+    "n0": "Sem grupos funcionais.",
+    "n1": "Grupos sem representação adequada.",
+    "n2": "Grupos funcionais apoiam o comitê com representação adequada.",
+    "verify": "Veja composição dos grupos.",
+    "evidence": "Lista de grupos"
+  },
+  "E7.N3.7": {
+    "n0": "Decisões centralizadas.",
+    "n1": "Menos de 50% no nível certo.",
+    "n2": "50% das decisões no nível apropriado.",
+    "verify": "Analise onde as decisões foram tomadas.",
+    "evidence": "Atas por nível"
+  },
+  "E7.N3.8": {
+    "n0": "Funcionários fora de grupos.",
+    "n1": "Menos de 25%.",
+    "n2": "25% dos funcionários em grupos de trabalho.",
+    "verify": "Conte participantes.",
+    "evidence": "Lista de membros"
+  },
+  "E7.N3.9": {
+    "n0": "Sem RACI.",
+    "n1": "RACI parcial.",
+    "n2": "Principais atividades com RACI clara.",
+    "verify": "Peça a RACI.",
+    "evidence": "Matriz RACI"
+  },
+  "E7.N3.10": {
+    "n0": "Setores sem responsável.",
+    "n1": "Parte com responsável.",
+    "n2": "100% dos setores com gerente responsável identificado.",
+    "verify": "Confira mapa de responsáveis.",
+    "evidence": "Mapa de áreas"
+  },
+  "E7.N3.11": {
+    "n0": "Áreas sem dono.",
+    "n1": "Parte das áreas com dono.",
+    "n2": "Cada metro quadrado tem dono.",
+    "verify": "Percorra o site e confira identificação de donos.",
+    "evidence": "Mapa; placas de dono"
+  },
+  "E7.N3.12": {
+    "n0": "Sem comitê local.",
+    "n1": "Comitê sem presidência do site.",
+    "n2": "Comitê local presidido pelo responsável do site como órgão operacional.",
+    "verify": "Veja composição e atas.",
+    "evidence": "Atas do comitê"
+  },
+  "E7.N3.13": {
+    "n0": "Comitê irregular.",
+    "n1": "Reuniões não mensais.",
+    "n2": "Liderança e SST representadas; reuniões mensais.",
+    "verify": "Confira a frequência das reuniões.",
+    "evidence": "Atas mensais"
+  },
+  "E7.N3.14": {
+    "n0": "Comitê sem poder.",
+    "n1": "Poder parcial.",
+    "n2": "Comitê com poder de decisão e papel entendido por todos os gestores.",
+    "verify": "Veja decisões tomadas pelo comitê.",
+    "evidence": "Atas"
+  },
+  "E7.N3.15": {
+    "n0": "Roteiro não discutido.",
+    "n1": "Discussão eventual.",
+    "n2": "Progresso e roteiro de médio prazo discutidos.",
+    "verify": "Confira pautas.",
+    "evidence": "Atas"
+  },
+  "E7.N4.1": {
+    "n0": "Gerentes fora dos programas.",
+    "n1": "Parte envolvida.",
+    "n2": "Todos os gerentes envolvidos e responsáveis pelo desempenho.",
+    "verify": "Entreviste gerentes.",
+    "evidence": "Entrevistas; planos"
+  },
+  "E7.N4.2": {
+    "n0": "Ferramentas não usadas pelos gestores.",
+    "n1": "Uso parcial.",
+    "n2": "Gestores integram ferramentas (avaliação de risco, investigação) à rotina.",
+    "verify": "Veja registros feitos pelos gestores.",
+    "evidence": "APRs; investigações"
+  },
+  "E7.N4.3": {
+    "n0": "Pouco envolvimento formal.",
+    "n1": "Menos de 50%.",
+    "n2": "50% dos funcionários envolvidos formalmente em programas de SST.",
+    "verify": "Conte participantes.",
+    "evidence": "Listas"
+  },
+  "E7.N4.4": {
+    "n0": "Sem campeões.",
+    "n1": "Campeões sem apoio.",
+    "n2": "Campeões identificados e apoiados nas principais áreas.",
+    "verify": "Peça a lista de campeões.",
+    "evidence": "Lista; agendas"
+  },
+  "E7.N4.5": {
+    "n0": "Sem estrutura de comitês.",
+    "n1": "Estrutura parcial.",
+    "n2": "Sistema estruturado de comitês e subcomitês cobrindo toda a organização.",
+    "verify": "Veja o organograma de comitês.",
+    "evidence": "Estrutura de comitês"
+  },
+  "E7.N4.6": {
+    "n0": "Trabalhadores fora do comitê.",
+    "n1": "Participação eventual.",
+    "n2": "Representantes dos trabalhadores no comitê do site.",
+    "verify": "Confira a composição.",
+    "evidence": "Atas"
+  },
+  "E7.N4.7": {
+    "n0": "Representantes não são parceiros.",
+    "n1": "Parceria pontual.",
+    "n2": "Representantes parceiros com participação regular nas ações.",
+    "verify": "Veja ações com participação deles.",
+    "evidence": "Planos; atas"
+  },
+  "E7.N4.8": {
+    "n0": "Papéis dos comitês indefinidos.",
+    "n1": "Definidos sem compreensão geral.",
+    "n2": "Papéis dos comitês e subcomitês definidos e compreendidos por todos.",
+    "verify": "Entreviste membros.",
+    "evidence": "Regimentos; entrevistas"
+  },
+  "E7.N4.9": {
+    "n0": "Decisões no nível errado.",
+    "n1": "Parte no nível certo.",
+    "n2": "Decisões tomadas no nível adequado da organização.",
+    "verify": "Analise decisões por nível.",
+    "evidence": "Atas"
+  },
+  "E7.N5.1": {
+    "n0": "Gestores sem responsabilidade total.",
+    "n1": "Responsabilidade parcial.",
+    "n2": "Todos os gestores responsáveis por ambição, objetivos, planos e desempenho.",
+    "verify": "Entreviste gestores.",
+    "evidence": "Metas; planos"
+  },
+  "E7.N5.2": {
+    "n0": "Indicadores não usados.",
+    "n1": "Uso parcial.",
+    "n2": "Gestores usam indicadores proativos e reativos para direcionar recursos.",
+    "verify": "Peça exemplos.",
+    "evidence": "Painéis; decisões"
+  },
+  "E7.N5.3": {
+    "n0": "SST fora da avaliação de risco do negócio.",
+    "n1": "Considerada às vezes.",
+    "n2": "SST usada para avaliar risco do negócio e como impulsionadora de sustentabilidade.",
+    "verify": "Veja a matriz de riscos do negócio.",
+    "evidence": "Matriz de riscos"
+  },
+  "E7.N5.4": {
+    "n0": "Mudanças sem análise.",
+    "n1": "Análise parcial.",
+    "n2": "Riscos de mudanças e influências externas analisados e tratados.",
+    "verify": "Veja análises recentes.",
+    "evidence": "Registros de GM"
+  },
+  "E7.N5.5": {
+    "n0": "SST desalinhada das funções.",
+    "n1": "Alinhamento parcial.",
+    "n2": "SST alinhada a qualidade, desempenho industrial e RH.",
+    "verify": "Entreviste as funções.",
+    "evidence": "Entrevistas; projetos conjuntos"
+  },
+  "E7.N5.6": {
+    "n0": "SST gerida separada.",
+    "n1": "Integração parcial.",
+    "n2": "SST integrada ao SQCDME e à gestão de novos projetos.",
+    "verify": "Veja ferramentas comuns.",
+    "evidence": "Painéis SQCDME; gates"
+  },
+  "E7.N5.7": {
+    "n0": "Funcionários não veem SST como excelência.",
+    "n1": "Parte vê.",
+    "n2": "Todos apoiam SST como impulsionadora da excelência operacional.",
+    "verify": "Entreviste funcionários.",
+    "evidence": "Entrevistas"
+  },
+  "E8.N1.1": {
+    "n0": "Sem placas nem campanhas.",
+    "n1": "Material escasso ou desatualizado.",
+    "n2": "SST usa placas e cartazes de campanha para promover a segurança.",
+    "verify": "Percorra as áreas verificando cartazes atuais.",
+    "evidence": "Fotos de campanhas"
+  },
+  "E8.N1.2": {
+    "n0": "Sem programa de conscientização.",
+    "n1": "Campanhas raras.",
+    "n2": "Programa de conscientização baseado em campanhas de cartazes (nível básico).",
+    "verify": "Veja o histórico de campanhas.",
+    "evidence": "Calendário de campanhas"
+  },
+  "E8.N1.3": {
+    "n0": "Menos de 10% lembra das campanhas.",
+    "n1": "Entre 10% e 25%.",
+    "n2": "25% lembra que questões de segurança são anunciadas.",
+    "verify": "Pergunte sobre a última campanha.",
+    "evidence": "Entrevistas"
+  },
+  "E8.N1.4": {
+    "n0": "Regras ignoradas.",
+    "n1": "Cumprimento irregular.",
+    "n2": "Pessoas seguem regras para evitar sanções (nível básico).",
+    "verify": "Observe comportamentos.",
+    "evidence": "Observação"
+  },
+  "E8.N2.1": {
+    "n0": "Liderança não demonstra nem elogia.",
+    "n1": "Menos de 25% dos gerentes.",
+    "n2": "Liderança e 25% dos gerentes mostram a importância e elogiam comportamentos seguros.",
+    "verify": "Entreviste funcionários sobre elogios recebidos.",
+    "evidence": "Registros de reconhecimento"
+  },
+  "E8.N2.2": {
+    "n0": "Ferramentas não usadas.",
+    "n1": "Uso parcial.",
+    "n2": "Liderança usa objetivos, investigação de incidentes e diálogos de segurança.",
+    "verify": "Veja registros dessas ferramentas.",
+    "evidence": "Diálogos; investigações"
+  },
+  "E8.N2.3": {
+    "n0": "Normas desconhecidas.",
+    "n1": "Menos de 50% respeita.",
+    "n2": "Funcionários conhecem as normas e 50% respeitam.",
+    "verify": "Observe e entreviste.",
+    "evidence": "Observação; BOS"
+  },
+  "E8.N2.4": {
+    "n0": "Sem medidas disciplinares para riscos de vida.",
+    "n1": "Medidas pouco claras.",
+    "n2": "Medidas disciplinares claras para regras de risco à vida.",
+    "verify": "Peça a política de consequências.",
+    "evidence": "Política; regras de ouro"
+  },
+  "E8.N2.5": {
+    "n0": "Disciplina sem processo.",
+    "n1": "Tratamento inconsistente.",
+    "n2": "Aplicação de medidas tratada pelo RH.",
+    "verify": "Veja o fluxo com o RH.",
+    "evidence": "Procedimento RH"
+  },
+  "E8.N2.6": {
+    "n0": "Sanções não aplicadas.",
+    "n1": "Aplicação irregular.",
+    "n2": "Sanções aplicadas efetivamente.",
+    "verify": "Analise casos recentes.",
+    "evidence": "Registros de medidas"
+  },
+  "E8.N2.7": {
+    "n0": "Treinamento não usado para motivar.",
+    "n1": "Uso pontual.",
+    "n2": "Treinamento e educação usados para motivar.",
+    "verify": "Veja o plano de treinamento.",
+    "evidence": "Plano; listas"
+  },
+  "E8.N2.8": {
+    "n0": "Sem ligação treinamento-trabalho.",
+    "n1": "Ligação parcial.",
+    "n2": "Supervisão liga o treinamento à aplicação no trabalho.",
+    "verify": "Pergunte aos supervisores como acompanham.",
+    "evidence": "Verificações pós-treinamento"
+  },
+  "E8.N2.9": {
+    "n0": "Funcionários não identificam riscos.",
+    "n1": "Parte identifica.",
+    "n2": "Funcionários identificam os principais riscos do posto.",
+    "verify": "Pergunte no posto de trabalho.",
+    "evidence": "Entrevistas"
+  },
+  "E8.N2.10": {
+    "n0": "Sem incentivos ou eventos.",
+    "n1": "Ações pontuais.",
+    "n2": "Programas de incentivo, eventos e concursos geram motivação.",
+    "verify": "Veja ações do ano.",
+    "evidence": "Registros de eventos"
+  },
+  "E8.N2.11": {
+    "n0": "Sem programa estruturado.",
+    "n1": "Programa com poucos meios.",
+    "n2": "Programa estruturado com temas focados e vários meios.",
+    "verify": "Peça o programa de sensibilização.",
+    "evidence": "Programa; materiais"
+  },
+  "E8.N2.12": {
+    "n0": "Sem participação.",
+    "n1": "Participação baixa.",
+    "n2": "Participação ativa durante os programas de animação.",
+    "verify": "Analise a adesão.",
+    "evidence": "Listas de participação"
+  },
+  "E8.N3.1": {
+    "n0": "Sem regras próprias.",
+    "n1": "Regras sem disciplina associada.",
+    "n2": "Regras próprias e medidas disciplinares relacionadas.",
+    "verify": "Peça regras e consequências.",
+    "evidence": "Regras; política"
+  },
+  "E8.N3.2": {
+    "n0": "Supervisores sem autonomia.",
+    "n1": "Processo informal.",
+    "n2": "Processo formal permite ao supervisor sancionar.",
+    "verify": "Veja o procedimento.",
+    "evidence": "Procedimento; registros"
+  },
+  "E8.N3.3": {
+    "n0": "Funcionários desconhecem recompensas/sanções.",
+    "n1": "Conhecimento parcial.",
+    "n2": "Funcionários entendem recompensas e sanções e seu contexto.",
+    "verify": "Entreviste funcionários.",
+    "evidence": "Entrevistas"
+  },
+  "E8.N3.4": {
+    "n0": "Sem sistema de reconhecimento.",
+    "n1": "Reconhecimento informal.",
+    "n2": "Sistema estruturado de desempenho e recompensa.",
+    "verify": "Peça a descrição do sistema.",
+    "evidence": "Procedimento; registros"
+  },
+  "E8.N3.5": {
+    "n0": "Sistema não implantado.",
+    "n1": "Parte dos níveis.",
+    "n2": "Sistema em todos os níveis, revisto anualmente e explicado aos funcionários.",
+    "verify": "Verifique a última revisão.",
+    "evidence": "PDR; metas"
+  },
+  "E8.N3.6": {
+    "n0": "Sistema visto como injusto.",
+    "n1": "Percepção dividida.",
+    "n2": "Funcionários entendem, acham justo e se sentem reconhecidos.",
+    "verify": "Pesquise percepção.",
+    "evidence": "Pesquisa; entrevistas"
+  },
+  "E8.N3.7": {
+    "n0": "Gestores não influenciam comportamento.",
+    "n1": "Uso parcial.",
+    "n2": "Gestores usam treinamento, aconselhamento e correção para influenciar comportamento.",
+    "verify": "Peça exemplos.",
+    "evidence": "Registros"
+  },
+  "E8.N3.8": {
+    "n0": "Sem conversas frequentes.",
+    "n1": "Conversas menos que semanais.",
+    "n2": "Discussões semanais; quem não segue normas recebe treinamento.",
+    "verify": "Veja registros semanais.",
+    "evidence": "Atas; retreinamentos"
+  },
+  "E8.N3.9": {
+    "n0": "Pouca proatividade.",
+    "n1": "Menos de 50%.",
+    "n2": "50% dos funcionários proativos e 50% dos gerentes priorizam melhorias.",
+    "verify": "Analise sugestões e ações.",
+    "evidence": "Sugestões; planos"
+  },
+  "E8.N3.10": {
+    "n0": "Realizações ignoradas.",
+    "n1": "Reconhecimento raro.",
+    "n2": "Realizações de segurança reconhecidas.",
+    "verify": "Veja exemplos.",
+    "evidence": "Registros"
+  },
+  "E8.N3.11": {
+    "n0": "Sem comemorações.",
+    "n1": "Comemorações pontuais.",
+    "n2": "Comemorações, prêmios e reconhecimentos individuais.",
+    "verify": "Veja eventos do ano.",
+    "evidence": "Fotos; registros"
+  },
+  "E8.N3.12": {
+    "n0": "Poucos contribuem.",
+    "n1": "Menos de 25%.",
+    "n2": "25% em todos os níveis contribuem para melhorias.",
+    "verify": "Conte participantes.",
+    "evidence": "Registros"
+  },
+  "E8.N4.1": {
+    "n0": "Só reconhecimento monetário ou nenhum.",
+    "n1": "Uso pontual.",
+    "n2": "Reconhecimento não monetário usado para incentivar.",
+    "verify": "Peça exemplos.",
+    "evidence": "Registros"
+  },
+  "E8.N4.2": {
+    "n0": "Sistema estático.",
+    "n1": "Melhorias raras.",
+    "n2": "Sistema enriquecido constantemente com boas práticas.",
+    "verify": "Veja histórico de mudanças.",
+    "evidence": "Versões do sistema"
+  },
+  "E8.N4.3": {
+    "n0": "Pouca participação voluntária.",
+    "n1": "Menos de 50%.",
+    "n2": "50% de participação voluntária visível.",
+    "verify": "Analise participação.",
+    "evidence": "Listas"
+  },
+  "E8.N4.4": {
+    "n0": "Primeira linha não é exemplo.",
+    "n1": "Parte é.",
+    "n2": "Primeira linha lidera pelo exemplo.",
+    "verify": "Observe líderes.",
+    "evidence": "Observação"
+  },
+  "E8.N4.5": {
+    "n0": "Segurança cede sob pressão.",
+    "n1": "Cede às vezes.",
+    "n2": "Inegociável mesmo sob pressão.",
+    "verify": "Pergunte sobre situações de pressão.",
+    "evidence": "Entrevistas; exemplos"
+  },
+  "E8.N4.6": {
+    "n0": "Primeira linha sem credibilidade.",
+    "n1": "Credibilidade parcial.",
+    "n2": "Primeira linha crível em toda a organização.",
+    "verify": "Entreviste funcionários.",
+    "evidence": "Entrevistas"
+  },
+  "E8.N4.7": {
+    "n0": "SST fora da carreira.",
+    "n1": "Considerada às vezes.",
+    "n2": "Desempenho em SST considerado na progressão.",
+    "verify": "Veja critérios de promoção.",
+    "evidence": "Critérios RH"
+  },
+  "E8.N4.8": {
+    "n0": "SST fora da avaliação.",
+    "n1": "Parâmetro sem peso.",
+    "n2": "SST na RDP com peso; mau desempenho compromete promoção.",
+    "verify": "Confira formulários de avaliação.",
+    "evidence": "RDP; avaliações"
+  },
+  "E8.N4.9": {
+    "n0": "Gestores não motivados.",
+    "n1": "Motivação parcial.",
+    "n2": "Gestores motivados a assumir SST pela carreira.",
+    "verify": "Entreviste gestores.",
+    "evidence": "Entrevistas"
+  },
+  "E8.N4.10": {
+    "n0": "Sem diretrizes progressivas.",
+    "n1": "Diretrizes sem acordo.",
+    "n2": "Diretrizes progressivas acordadas com representantes.",
+    "verify": "Peça o documento e o acordo.",
+    "evidence": "Diretrizes; atas"
+  },
+  "E8.N4.11": {
+    "n0": "Disciplina injusta ou punitiva.",
+    "n1": "Inconsistente.",
+    "n2": "Disciplina justa, coerente e educativa.",
+    "verify": "Analise casos.",
+    "evidence": "Registros"
+  },
+  "E8.N4.12": {
+    "n0": "SST não é condição.",
+    "n1": "Parte entende.",
+    "n2": "Funcionários entendem SST como condição de emprego.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E8.N4.13": {
+    "n0": "Sem reconhecimento público.",
+    "n1": "Raro.",
+    "n2": "Gestão reconhece publicamente as realizações.",
+    "verify": "Veja comunicados.",
+    "evidence": "Comunicados"
+  },
+  "E8.N4.14": {
+    "n0": "Exco/Codi ausentes.",
+    "n1": "Comunicação rara.",
+    "n2": "Exco/Codi reconhecem e comunicam eventos e conquistas.",
+    "verify": "Peça comunicações da direção.",
+    "evidence": "E-mails; vídeos"
+  },
+  "E8.N4.15": {
+    "n0": "Funcionários não percebem.",
+    "n1": "Percepção parcial.",
+    "n2": "Funcionários percebem que a direção leva SST a sério.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E8.N5.1": {
+    "n0": "Não compartilham.",
+    "n1": "Compartilhamento pontual.",
+    "n2": "Funcionários apresentam realizações voluntariamente, interna e externamente.",
+    "verify": "Veja apresentações.",
+    "evidence": "Registros"
+  },
+  "E8.N5.2": {
+    "n0": "Não sabem sua contribuição.",
+    "n1": "Menos de 50%.",
+    "n2": "50% falam da sua contribuição.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E8.N5.3": {
+    "n0": "Sem orgulho.",
+    "n1": "Orgulho em parte.",
+    "n2": "Orgulho evidente das realizações.",
+    "verify": "Observe e entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E8.N5.4": {
+    "n0": "Práticas não comparadas.",
+    "n1": "Comparação pontual.",
+    "n2": "Práticas comparadas e adaptadas continuamente.",
+    "verify": "Peça benchmarks.",
+    "evidence": "Benchmarks"
+  },
+  "E8.N5.5": {
+    "n0": "Equipes sem autonomia.",
+    "n1": "Autonomia parcial.",
+    "n2": "Equipes habilitadas; adesão alta e autodesafiada.",
+    "verify": "Observe equipes.",
+    "evidence": "Observação; auditorias"
+  },
+  "E8.N5.6": {
+    "n0": "SST não vista como excelência.",
+    "n1": "Parte vê.",
+    "n2": "Maioria convencida de que SST impulsiona a excelência.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E8.N5.7": {
+    "n0": "Sem exemplos.",
+    "n1": "Exemplos pontuais.",
+    "n2": "Gerentes e operadores inspiram pelo exemplo.",
+    "verify": "Observe.",
+    "evidence": "Observação"
+  },
+  "E8.N5.8": {
+    "n0": "Sem compartilhamento espontâneo.",
+    "n1": "Pontual.",
+    "n2": "Maioria compartilha e ensina colegas espontaneamente.",
+    "verify": "Observe e entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E8.N5.9": {
+    "n0": "Cada um por si.",
+    "n1": "Menos de 75%.",
+    "n2": "75% se sentem responsáveis pelos colegas e agem.",
+    "verify": "Pergunte sobre cuidado ativo.",
+    "evidence": "Entrevistas; observação"
+  },
+  "E9.N1.1": {
+    "n0": "Nada é comunicado.",
+    "n1": "Comunicação incompleta.",
+    "n2": "Segurança comunicada quando há LTA/incidente grave.",
+    "verify": "Veja comunicações dos últimos LTAs.",
+    "evidence": "Alertas; e-mails"
+  },
+  "E9.N1.2": {
+    "n0": "Sem comunicações publicadas.",
+    "n1": "Publicações raras.",
+    "n2": "Regras, LTAs e problemas compartilhados por placas e folhetos.",
+    "verify": "Percorra os quadros.",
+    "evidence": "Fotos; folhetos"
+  },
+  "E9.N1.3": {
+    "n0": "Funcionários alheios.",
+    "n1": "Conhecimento parcial.",
+    "n2": "Funcionários conscientes dos problemas importantes e LTAs.",
+    "verify": "Pergunte sobre o último LTA.",
+    "evidence": "Entrevistas"
+  },
+  "E9.N1.4": {
+    "n0": "Regras básicas não comunicadas.",
+    "n1": "Comunicadas a parte.",
+    "n2": "Regras básicas comunicadas a todos.",
+    "verify": "Verifique registros.",
+    "evidence": "Listas; integração"
+  },
+  "E9.N1.5": {
+    "n0": "Não conhecem regras.",
+    "n1": "Conhecimento parcial.",
+    "n2": "Funcionários conhecem regras e expectativas.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E9.N2.1": {
+    "n0": "Sem reuniões com segurança na pauta.",
+    "n1": "Participação parcial.",
+    "n2": "Maioria participa de reuniões com segurança na pauta.",
+    "verify": "Veja listas de presença.",
+    "evidence": "Listas; pautas"
+  },
+  "E9.N2.2": {
+    "n0": "Sem comunicação.",
+    "n1": "Comunicação irregular.",
+    "n2": "Comunicação top down regular (contatos, resultados, acidentes).",
+    "verify": "Veja registros.",
+    "evidence": "Atas"
+  },
+  "E9.N2.3": {
+    "n0": "Segurança vista como irrelevante.",
+    "n1": "Parte reconhece.",
+    "n2": "Funcionários sabem que segurança é importante.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E9.N2.4": {
+    "n0": "Não comunicados.",
+    "n1": "Comunicação parcial.",
+    "n2": "Política, regras, procedimentos e riscos comunicados a todos.",
+    "verify": "Verifique registros.",
+    "evidence": "Registros"
+  },
+  "E9.N2.5": {
+    "n0": "Indisponíveis no posto.",
+    "n1": "Parcialmente disponíveis.",
+    "n2": "Disponíveis no posto e comunicados por treinamento e reuniões.",
+    "verify": "Percorra postos.",
+    "evidence": "Fotos; listas"
+  },
+  "E9.N2.6": {
+    "n0": "Desconhecem riscos e normas.",
+    "n1": "Conhecimento parcial.",
+    "n2": "Conhecem riscos, normas e procedimentos do seu trabalho.",
+    "verify": "Entreviste no posto.",
+    "evidence": "Entrevistas"
+  },
+  "E9.N3.1": {
+    "n0": "Sem troca entre sites.",
+    "n1": "Troca rara.",
+    "n2": "Boas práticas compartilhadas via gerentes de segurança.",
+    "verify": "Peça exemplos.",
+    "evidence": "E-mails; redes"
+  },
+  "E9.N3.2": {
+    "n0": "Gestão não recebe práticas.",
+    "n1": "Recebe às vezes.",
+    "n2": "Práticas de outros sites compartilhadas com a gestão.",
+    "verify": "Veja pautas.",
+    "evidence": "Atas"
+  },
+  "E9.N3.3": {
+    "n0": "Nenhuma implementada.",
+    "n1": "Implementação sem comunicação.",
+    "n2": "Práticas de outros sites implementadas e comunicadas.",
+    "verify": "Peça exemplos.",
+    "evidence": "Implementações"
+  },
+  "E9.N3.4": {
+    "n0": "Pouca informação.",
+    "n1": "Comunicação menos que mensal.",
+    "n2": "Informações amplas comunicadas mensalmente a todos.",
+    "verify": "Veja o calendário.",
+    "evidence": "Boletins mensais"
+  },
+  "E9.N3.5": {
+    "n0": "Um único meio.",
+    "n1": "Poucos meios.",
+    "n2": "Diversos meios adequados incentivando a participação.",
+    "verify": "Liste os meios usados.",
+    "evidence": "Quadros; intranet; boletins"
+  },
+  "E9.N3.6": {
+    "n0": "Desconhecem incidentes recentes.",
+    "n1": "Conhecimento parcial.",
+    "n2": "Conhecem incidentes, investigações, riscos e como os padrões protegem.",
+    "verify": "Pergunte sobre o último incidente.",
+    "evidence": "Entrevistas"
+  },
+  "E9.N3.7": {
+    "n0": "Sem processo de captação.",
+    "n1": "Processo informal.",
+    "n2": "Processo estruturado para preocupações, riscos, sugestões e quase acidentes.",
+    "verify": "Veja o fluxo.",
+    "evidence": "Procedimento; registros"
+  },
+  "E9.N3.8": {
+    "n0": "Sem incentivo.",
+    "n1": "Incentivo pontual.",
+    "n2": "Funcionários incentivados a identificar riscos e sugerir.",
+    "verify": "Entreviste.",
+    "evidence": "Campanhas; registros"
+  },
+  "E9.N3.9": {
+    "n0": "Preocupações ignoradas.",
+    "n1": "Tratamento sem retorno.",
+    "n2": "Preocupações tratadas, ações concluídas e comunicadas.",
+    "verify": "Rastreie reportes até o retorno.",
+    "evidence": "Registros com retorno"
+  },
+  "E9.N3.10": {
+    "n0": "Liderança não conduz reuniões.",
+    "n1": "Condução irregular.",
+    "n2": "Liderança organiza e lidera reuniões de segurança com a equipe.",
+    "verify": "Veja registros.",
+    "evidence": "Atas"
+  },
+  "E9.N3.11": {
+    "n0": "Comunicação unilateral.",
+    "n1": "Bilateral às vezes.",
+    "n2": "Comunicação bilateral e com temas atuais.",
+    "verify": "Assista a uma reunião.",
+    "evidence": "Observação"
+  },
+  "E9.N3.12": {
+    "n0": "Não entendem prioridades.",
+    "n1": "Entendimento parcial.",
+    "n2": "Entendem prioridades, ações e impacto no seu trabalho.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E9.N3.13": {
+    "n0": "Sem eventos.",
+    "n1": "Eventos para parte.",
+    "n2": "Eventos para todos os funcionários.",
+    "verify": "Veja calendário.",
+    "evidence": "Registros"
+  },
+  "E9.N3.14": {
+    "n0": "Sem evento anual.",
+    "n1": "Evento sem a liderança.",
+    "n2": "Evento anual com liderança e gerentes.",
+    "verify": "Confira o último evento.",
+    "evidence": "Fotos; listas"
+  },
+  "E9.N3.15": {
+    "n0": "Não percebem compromisso.",
+    "n1": "Percepção parcial.",
+    "n2": "Entendem o alto comprometimento da liderança.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E9.N4.1": {
+    "n0": "Primeira linha não discute.",
+    "n1": "Discussão irregular.",
+    "n2": "Primeira linha discute sistematicamente com funcionários e contratados.",
+    "verify": "Observe reuniões e contatos diários.",
+    "evidence": "Observação; atas"
+  },
+  "E9.N4.2": {
+    "n0": "Só top down.",
+    "n1": "Pouca comunicação de baixo para cima.",
+    "n2": "Bastante bottom up; funcionários lideram comunicações.",
+    "verify": "Veja quem conduz DDS/contatos.",
+    "evidence": "Registros"
+  },
+  "E9.N4.3": {
+    "n0": "Não participam.",
+    "n1": "Participação parcial.",
+    "n2": "Funcionários participam e contribuem efetivamente.",
+    "verify": "Analise participação.",
+    "evidence": "Registros"
+  },
+  "E9.N4.4": {
+    "n0": "Sem gestão visual de SST.",
+    "n1": "Integração parcial.",
+    "n2": "Segurança integrada à gestão visual do posto.",
+    "verify": "Percorra postos.",
+    "evidence": "Fotos"
+  },
+  "E9.N4.5": {
+    "n0": "Instruções separadas.",
+    "n1": "Integração parcial.",
+    "n2": "Segurança integrada ao QCDME num conjunto único e visual.",
+    "verify": "Analise instruções.",
+    "evidence": "POPs; quadros"
+  },
+  "E9.N4.6": {
+    "n0": "Normas de SST secundárias.",
+    "n1": "Parte equipara.",
+    "n2": "Todos consideram normas de SST tão importantes quanto as demais.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E9.N4.7": {
+    "n0": "Subcomitês isolados.",
+    "n1": "Comunicação pontual.",
+    "n2": "Subcomitês se comunicam em conjunto.",
+    "verify": "Veja reuniões conjuntas.",
+    "evidence": "Atas"
+  },
+  "E9.N4.8": {
+    "n0": "Sem coordenação.",
+    "n1": "Coordenação parcial.",
+    "n2": "Subcomitês coordenam atividades e compartilham práticas.",
+    "verify": "Veja planos conjuntos.",
+    "evidence": "Planos"
+  },
+  "E9.N4.9": {
+    "n0": "Programa incoerente.",
+    "n1": "Coerência parcial.",
+    "n2": "Subcomitês asseguram coerência do programa.",
+    "verify": "Analise o programa.",
+    "evidence": "Programa"
+  },
+  "E9.N4.10": {
+    "n0": "Sem plano de comunicação.",
+    "n1": "Plano parcial.",
+    "n2": "Plano estruturado (atividades, mídia, público) gerencia a comunicação.",
+    "verify": "Peça o plano.",
+    "evidence": "Plano de comunicação"
+  },
+  "E9.N4.11": {
+    "n0": "Plano desconectado.",
+    "n1": "Atualização irregular.",
+    "n2": "Plano apoia prioridades e riscos do site, atualizado e supervisionado pela liderança.",
+    "verify": "Veja revisões do plano.",
+    "evidence": "Plano; atas"
+  },
+  "E9.N4.12": {
+    "n0": "Pouco envolvimento.",
+    "n1": "Menos de 75%.",
+    "n2": "75% qualificados nos temas e envolvidos.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E9.N5.1": {
+    "n0": "Sem cuidado mútuo.",
+    "n1": "Menos de 75%.",
+    "n2": "75% cuidam ativamente da segurança dos colegas.",
+    "verify": "Observe intervenções entre colegas.",
+    "evidence": "Observação"
+  },
+  "E9.N5.2": {
+    "n0": "Canais fechados.",
+    "n1": "Abertura parcial.",
+    "n2": "Canais totalmente abertos; problemas vistos como oportunidade.",
+    "verify": "Entreviste.",
+    "evidence": "Pesquisa; entrevistas"
+  },
+  "E9.N5.3": {
+    "n0": "Sem espírito de equipe.",
+    "n1": "Parcial.",
+    "n2": "Funcionários se sentem parte de equipe com objetivos comuns.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E9.N5.4": {
+    "n0": "Ninguém em redes externas.",
+    "n1": "Menos de 5%.",
+    "n2": "Mais de 5% ativos em comitês ou redes externas.",
+    "verify": "Conte participantes.",
+    "evidence": "Registros"
+  },
+  "E9.N5.5": {
+    "n0": "Sem networking.",
+    "n1": "Pontual.",
+    "n2": "Networking com partes externas para trocar ideias.",
+    "verify": "Peça exemplos.",
+    "evidence": "Registros"
+  },
+  "E9.N5.6": {
+    "n0": "Sem embaixadores.",
+    "n1": "Poucos.",
+    "n2": "Funcionários orgulhosos como embaixadores fora da CBU.",
+    "verify": "Peça exemplos.",
+    "evidence": "Registros"
+  },
+  "E9.N5.7": {
+    "n0": "Práticas não espalhadas.",
+    "n1": "Espalhamento pontual.",
+    "n2": "Boas práticas implementadas sistematicamente entre sites.",
+    "verify": "Veja práticas replicadas.",
+    "evidence": "Registros"
+  },
+  "E9.N5.8": {
+    "n0": "Comunicação isolada.",
+    "n1": "Ligação parcial.",
+    "n2": "Comunicação ligada a gestão de desempenho, DaMaWay, RH, riscos etc.",
+    "verify": "Analise comunicações.",
+    "evidence": "Comunicados"
+  },
+  "E9.N5.9": {
+    "n0": "Impacto não mostrado.",
+    "n1": "Mostrado às vezes.",
+    "n2": "Comunicações mostram o impacto positivo da SST no negócio.",
+    "verify": "Analise comunicações.",
+    "evidence": "Comunicados"
+  },
+  "E9.N5.10": {
+    "n0": "Programas desconhecidos.",
+    "n1": "Conhecimento parcial.",
+    "n2": "Metas, planos e desempenho familiares a todos.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E10.N1.1": {
+    "n0": "Sem integração para novos/transferidos.",
+    "n1": "Integração irregular.",
+    "n2": "Integração para novos e transferidos.",
+    "verify": "Confira os últimos admitidos/transferidos.",
+    "evidence": "Registros de integração"
+  },
+  "E10.N1.2": {
+    "n0": "Integração sem conteúdo de SST.",
+    "n1": "Conteúdo parcial.",
+    "n2": "Integração com política, regras gerais e emergência.",
+    "verify": "Veja o conteúdo da integração.",
+    "evidence": "Roteiro; material"
+  },
+  "E10.N1.3": {
+    "n0": "Treinamentos legais pendentes.",
+    "n1": "Cumprimento parcial.",
+    "n2": "Treinamentos legais em dia; emergência conhecida.",
+    "verify": "Confira matriz legal e simulados.",
+    "evidence": "Certificados; simulados"
+  },
+  "E10.N1.4": {
+    "n0": "Sem treinamento por tarefa.",
+    "n1": "Parte das funções.",
+    "n2": "Treinamentos básicos por tarefa e exigidos localmente implantados.",
+    "verify": "Veja por função (operador, mecânico, motorista).",
+    "evidence": "Matriz de treinamento"
+  },
+  "E10.N1.5": {
+    "n0": "Sem treinamento formal.",
+    "n1": "Ministração irregular.",
+    "n2": "Supervisores ou SST ministram o treinamento formal.",
+    "verify": "Veja instrutores.",
+    "evidence": "Listas de presença"
+  },
+  "E10.N2.1": {
+    "n0": "Sem plano de treinamento de SST.",
+    "n1": "Plano isolado.",
+    "n2": "Plano de SST integrado ao programa global do site.",
+    "verify": "Peça o plano.",
+    "evidence": "Plano anual"
+  },
+  "E10.N2.2": {
+    "n0": "Sem recursos.",
+    "n1": "Recursos parciais.",
+    "n2": "Plano com orçamento e multiplicadores.",
+    "verify": "Veja orçamento.",
+    "evidence": "Orçamento"
+  },
+  "E10.N2.3": {
+    "n0": "Plano não executado.",
+    "n1": "Desvios sem análise.",
+    "n2": "Plano executado; desvios monitorados e analisados.",
+    "verify": "Compare realizado x planejado.",
+    "evidence": "Indicador de aderência"
+  },
+  "E10.N2.4": {
+    "n0": "Liderança sem WISE.",
+    "n1": "Parte participou.",
+    "n2": "Liderança e gerência participam do treinamento WISE.",
+    "verify": "Confira lista.",
+    "evidence": "Certificados"
+  },
+  "E10.N2.5": {
+    "n0": "Treinamento só teórico.",
+    "n1": "Prática parcial.",
+    "n2": "Treinamento WISE com prática de campo e multiplicador qualificado.",
+    "verify": "Veja programa e instrutor.",
+    "evidence": "Programa; qualificação"
+  },
+  "E10.N2.6": {
+    "n0": "Princípios desconhecidos.",
+    "n1": "Aplicação parcial.",
+    "n2": "Liderança conhece os princípios e aplica as atividades-chave.",
+    "verify": "Entreviste e observe.",
+    "evidence": "Entrevistas"
+  },
+  "E10.N2.7": {
+    "n0": "Menos de 50% treinados.",
+    "n1": "Entre 50% e 90%.",
+    "n2": "90% da liderança e toda a gerência treinadas em WISE.",
+    "verify": "Calcule o percentual.",
+    "evidence": "Matriz"
+  },
+  "E10.N2.8": {
+    "n0": "Sem treinamento em procedimentos.",
+    "n1": "Parte treinada.",
+    "n2": "Envolvidos e supervisores treinados em procedimentos e padrões corporativos.",
+    "verify": "Cruze funções x treinamentos (LOTO, contratados, direção).",
+    "evidence": "Matriz; certificados"
+  },
+  "E10.N2.9": {
+    "n0": "Sem orientações nem registros.",
+    "n1": "Registros incompletos.",
+    "n2": "Orientações definidas e sistema registra qualificações.",
+    "verify": "Veja o sistema de registros.",
+    "evidence": "Sistema; registros"
+  },
+  "E10.N2.10": {
+    "n0": "Comportamento não reflete treinamento.",
+    "n1": "Reflete em parte.",
+    "n2": "Comportamento demonstra conhecimento das regras e procedimentos.",
+    "verify": "Observe em campo.",
+    "evidence": "Observação"
+  },
+  "E10.N3.1": {
+    "n0": "Sem matriz de competências.",
+    "n1": "Matriz incompleta.",
+    "n2": "Matriz define requisitos e reciclagens por função e monitora qualificações.",
+    "verify": "Peça a matriz.",
+    "evidence": "Matriz de competências"
+  },
+  "E10.N3.2": {
+    "n0": "Sem lista de qualificados.",
+    "n1": "Lista desatualizada.",
+    "n2": "Lista atualizada de pessoas qualificadas por função.",
+    "verify": "Confira a lista com a escala.",
+    "evidence": "Lista; escalas"
+  },
+  "E10.N3.3": {
+    "n0": "Tarefas feitas sem qualificação.",
+    "n1": "Casos pontuais.",
+    "n2": "Ninguém executa tarefa sem qualificação total.",
+    "verify": "Cruze escalas com qualificações.",
+    "evidence": "Escalas x matriz"
+  },
+  "E10.N3.4": {
+    "n0": "Mudança de cargo sem treino.",
+    "n1": "Treino depois de assumir.",
+    "n2": "Quem muda de cargo é treinado proativamente.",
+    "verify": "Veja casos recentes.",
+    "evidence": "Registros"
+  },
+  "E10.N3.5": {
+    "n0": "Certificações vencidas.",
+    "n1": "Reavaliação irregular.",
+    "n2": "Certificações reavaliadas regularmente.",
+    "verify": "Confira vencimentos.",
+    "evidence": "Controle de validade"
+  },
+  "E10.N3.6": {
+    "n0": "Treinamento sem ligação com riscos.",
+    "n1": "Ligação parcial.",
+    "n2": "Planos ligados à avaliação de risco e reforçados pela linha.",
+    "verify": "Compare riscos x conteúdos.",
+    "evidence": "Inventário; ementas"
+  },
+  "E10.N3.7": {
+    "n0": "Conteúdo básico ausente.",
+    "n1": "Parcial.",
+    "n2": "Treinamento inclui perigos, prevenção, práticas seguras e EPI.",
+    "verify": "Veja ementas.",
+    "evidence": "Ementas"
+  },
+  "E10.N3.8": {
+    "n0": "Pouca habilidade prática.",
+    "n1": "Menos de 50%.",
+    "n2": "50% demonstram na prática identificar riscos.",
+    "verify": "Teste em campo.",
+    "evidence": "Observação; testes"
+  },
+  "E10.N3.9": {
+    "n0": "Sem verificação prática.",
+    "n1": "Verificação pontual.",
+    "n2": "Linha confirma compreensão com testes e certificações práticas.",
+    "verify": "Veja registros de verificação.",
+    "evidence": "Testes; certificações"
+  },
+  "E10.N3.10": {
+    "n0": "Gestores sem WISE.",
+    "n1": "Treinados após 6 meses.",
+    "n2": "Todos os gestores fazem WISE em até 6 meses.",
+    "verify": "Confira datas de admissão x treinamento.",
+    "evidence": "Matriz"
+  },
+  "E10.N3.11": {
+    "n0": "Gestores sem ferramentas.",
+    "n1": "Conteúdo parcial.",
+    "n2": "Treinamento de gestores inclui investigação, avaliação de risco e diálogos.",
+    "verify": "Veja ementa.",
+    "evidence": "Ementa; certificados"
+  },
+  "E10.N3.12": {
+    "n0": "Gestores sem conhecimento.",
+    "n1": "Menos de 75%.",
+    "n2": "75% dos gestores conhecem e implementam a gestão de SST.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E10.N3.13": {
+    "n0": "Sem lista de multiplicadores.",
+    "n1": "Lista incompleta.",
+    "n2": "Lista de multiplicadores internos e externos qualificados.",
+    "verify": "Peça a lista.",
+    "evidence": "Lista"
+  },
+  "E10.N3.14": {
+    "n0": "Instrutores sem qualificação.",
+    "n1": "Parte qualificada.",
+    "n2": "Treinamento ministrado por pessoas qualificadas.",
+    "verify": "Verifique qualificações.",
+    "evidence": "Certificados de instrutor"
+  },
+  "E10.N3.15": {
+    "n0": "Treinamento visto como inútil.",
+    "n1": "Percepção dividida.",
+    "n2": "Funcionários percebem o treinamento como útil.",
+    "verify": "Entreviste e veja avaliações.",
+    "evidence": "Avaliações de reação"
+  },
+  "E10.N3.16": {
+    "n0": "Sem feedback.",
+    "n1": "Feedback sem uso.",
+    "n2": "Feedback formal sistemático usado para melhorar.",
+    "verify": "Veja melhorias geradas.",
+    "evidence": "Avaliações; mudanças"
+  },
+  "E10.N4.1": {
+    "n0": "Eficácia não auditada.",
+    "n1": "Avaliação parcial.",
+    "n2": "Eficácia auditada para melhorar instrutores, métodos e conteúdo.",
+    "verify": "Peça auditoria de eficácia.",
+    "evidence": "Relatórios"
+  },
+  "E10.N4.2": {
+    "n0": "Métodos expositivos apenas.",
+    "n1": "Variedade limitada.",
+    "n2": "Métodos adequados (casos, prática, e-learning) revistos regularmente.",
+    "verify": "Veja métodos usados.",
+    "evidence": "Material"
+  },
+  "E10.N4.3": {
+    "n0": "Incidentes por falta de treino frequentes.",
+    "n1": "Ocorrências pontuais.",
+    "n2": "Incidentes por falta de treinamento muito baixos.",
+    "verify": "Revise causas das investigações.",
+    "evidence": "Investigações"
+  },
+  "E10.N4.4": {
+    "n0": "Liderança não revisa programas.",
+    "n1": "Revisão eventual.",
+    "n2": "Liderança revisa os programas de formação.",
+    "verify": "Veja atas.",
+    "evidence": "Atas"
+  },
+  "E10.N4.5": {
+    "n0": "Gestor não acompanha.",
+    "n1": "Acompanhamento parcial.",
+    "n2": "Gestor pede feedback, apoia a aplicação e revisa anualmente.",
+    "verify": "Veja registros e avaliações.",
+    "evidence": "Avaliações anuais"
+  },
+  "E10.N4.6": {
+    "n0": "Orçamento cortado.",
+    "n1": "Apoio irregular.",
+    "n2": "Gestor apoia e orçamento de SST não é cortado sob pressão.",
+    "verify": "Compare orçamento x realizado.",
+    "evidence": "Orçamento"
+  },
+  "E10.N4.7": {
+    "n0": "Plano estático.",
+    "n1": "Atualização parcial.",
+    "n2": "Plano atualizado por levantamento contínuo; reciclagens planejadas.",
+    "verify": "Veja o levantamento de necessidades.",
+    "evidence": "LNT; plano"
+  },
+  "E10.N4.8": {
+    "n0": "Mudanças sem revisão de treino.",
+    "n1": "Revisão parcial.",
+    "n2": "Programa revisto a cada mudança e nova exigência legal.",
+    "verify": "Relacione GMs a revisões de treino.",
+    "evidence": "GM; programa"
+  },
+  "E10.N4.9": {
+    "n0": "Funcionários despreparados.",
+    "n1": "Preparo parcial.",
+    "n2": "Todos totalmente treinados, inclusive após mudanças.",
+    "verify": "Cruze mudanças recentes com treinamentos.",
+    "evidence": "Matriz"
+  },
+  "E10.N5.1": {
+    "n0": "Treino não ligado à excelência.",
+    "n1": "Ligação parcial.",
+    "n2": "Treinamento de SST visto como alavanca de excelência.",
+    "verify": "Entreviste gestores.",
+    "evidence": "Entrevistas"
+  },
+  "E10.N5.2": {
+    "n0": "Programas desconectados.",
+    "n1": "Ligação parcial.",
+    "n2": "Coerência visível com qualidade, DaMaWay, WISE, CODE.",
+    "verify": "Compare programas.",
+    "evidence": "Programas"
+  },
+  "E10.N5.3": {
+    "n0": "Lesões por desconhecimento.",
+    "n1": "Casos raros.",
+    "n2": "Nenhuma lesão por falta de conhecimento ou aplicação.",
+    "verify": "Revise investigações.",
+    "evidence": "Investigações"
+  },
+  "E10.N5.4": {
+    "n0": "Sem oportunidades.",
+    "n1": "Poucas.",
+    "n2": "Oportunidades de liderança em SST e participação no desenvolvimento de cursos.",
+    "verify": "Veja funcionários instrutores.",
+    "evidence": "Registros"
+  },
+  "E10.N5.5": {
+    "n0": "Autodesenvolvimento opcional.",
+    "n1": "Parcial.",
+    "n2": "Autodesenvolvimento obrigatório; liderança em SST faz parte da liderança.",
+    "verify": "Veja metas individuais.",
+    "evidence": "PDIs"
+  },
+  "E10.N5.6": {
+    "n0": "Sem responsabilidade mútua.",
+    "n1": "Parcial.",
+    "n2": "Membros responsáveis pelo desenvolvimento uns dos outros.",
+    "verify": "Entreviste equipes.",
+    "evidence": "Entrevistas"
+  },
+  "E11.N1.1": {
+    "n0": "Sem procedimento escrito.",
+    "n1": "Procedimento incompleto ou desatualizado.",
+    "n2": "Procedimento escrito de notificação e investigação de LTA e NLTA, atendendo requisitos legais e corporativos.",
+    "verify": "Peça o procedimento vigente.",
+    "evidence": "Procedimento de investigação"
+  },
+  "E11.N1.2": {
+    "n0": "Lesões não investigadas.",
+    "n1": "Investigações eventuais.",
+    "n2": "Investigações conduzidas pela equipe de segurança (nível básico).",
+    "verify": "Veja investigações recentes.",
+    "evidence": "Relatórios"
+  },
+  "E11.N1.3": {
+    "n0": "Sem gestão das informações.",
+    "n1": "Arquivo desorganizado.",
+    "n2": "Processo para gerenciar, armazenar e recuperar informações de lesões.",
+    "verify": "Peça um caso antigo e veja se é encontrado.",
+    "evidence": "Sphera; arquivo"
+  },
+  "E11.N2.1": {
+    "n0": "Resultados não documentados.",
+    "n1": "Ações sem acompanhamento.",
+    "n2": "Investigações documentadas e ações acompanhadas até o encerramento.",
+    "verify": "Rastreie ações de uma investigação.",
+    "evidence": "Plano de ação; status"
+  },
+  "E11.N2.2": {
+    "n0": "Líderes sem treinamento.",
+    "n1": "Parte treinada.",
+    "n2": "Líderes de investigação treinados conforme normas Danone.",
+    "verify": "Confira certificados.",
+    "evidence": "Certificados"
+  },
+  "E11.N2.3": {
+    "n0": "Resultados não compartilhados.",
+    "n1": "Compartilhados com parte.",
+    "n2": "Relatórios compartilhados com todos os afetados.",
+    "verify": "Veja comunicações.",
+    "evidence": "Alertas; atas"
+  },
+  "E11.N2.4": {
+    "n0": "Sem coleta de dados.",
+    "n1": "Dados incompletos.",
+    "n2": "Dados (hora, tipo, causa, gravidade, processo) coletados para todos os registráveis.",
+    "verify": "Analise a base de dados.",
+    "evidence": "Base de incidentes"
+  },
+  "E11.N2.5": {
+    "n0": "Investigação sem envolvimento.",
+    "n1": "Envolvimento parcial.",
+    "n2": "Investigação com o lesionado, representantes e especialistas.",
+    "verify": "Veja participantes das investigações.",
+    "evidence": "Relatórios"
+  },
+  "E11.N2.6": {
+    "n0": "Processo de reporte desconhecido.",
+    "n1": "Cumprimento parcial.",
+    "n2": "Funcionários cumprem o reporte de registráveis e da maioria dos primeiros socorros.",
+    "verify": "Compare ambulatório x reportes.",
+    "evidence": "Registros ambulatório x Sphera"
+  },
+  "E11.N3.1": {
+    "n0": "Incidentes não comunicados.",
+    "n1": "Comunicação parcial.",
+    "n2": "Todos os incidentes comunicados e discutidos (SIM, pausas, turnos).",
+    "verify": "Veja atas e registros do SIM.",
+    "evidence": "Atas; SIM"
+  },
+  "E11.N3.2": {
+    "n0": "Recomendações não replicadas.",
+    "n1": "Replicação parcial.",
+    "n2": "Sistema garante aplicação das recomendações em todos os setores relevantes.",
+    "verify": "Rastreie uma recomendação nos setores.",
+    "evidence": "Registros de replicação"
+  },
+  "E11.N3.3": {
+    "n0": "Desconhecem incidentes.",
+    "n1": "Menos de 50%.",
+    "n2": "50% entendem incidentes recentes e como evitá-los.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E11.N3.4": {
+    "n0": "Plano sem relação com causas.",
+    "n1": "Combate parcial.",
+    "n2": "Plano de ação combate as causas do incidente.",
+    "verify": "Compare causas x ações.",
+    "evidence": "Relatórios; planos"
+  },
+  "E11.N3.5": {
+    "n0": "Gestores não conduzem.",
+    "n1": "Conduzem às vezes.",
+    "n2": "Gestores conduzem investigações com o lesionado e perícia técnica.",
+    "verify": "Veja autores.",
+    "evidence": "Relatórios"
+  },
+  "E11.N3.6": {
+    "n0": "Investigação superficial.",
+    "n1": "Busca parcial de causas.",
+    "n2": "Gestão investiga causas incluindo fatores comportamentais e organizacionais.",
+    "verify": "Avalie a profundidade (5 porquês, Ishikawa).",
+    "evidence": "RCA"
+  },
+  "E11.N3.7": {
+    "n0": "Gestores ausentes.",
+    "n1": "Resposta lenta.",
+    "n2": "Gestores mostram compromisso: resposta imediata, revisão e ações contínuas.",
+    "verify": "Veja tempos de resposta.",
+    "evidence": "Registros; datas"
+  },
+  "E11.N3.8": {
+    "n0": "Só registráveis analisados.",
+    "n1": "Parte dos tipos.",
+    "n2": "Dados de registráveis, primeiros socorros e quase acidentes graves coletados e analisados.",
+    "verify": "Analise a base completa.",
+    "evidence": "Base de dados"
+  },
+  "E11.N3.9": {
+    "n0": "Sem análise de tendências.",
+    "n1": "Análise sem ações.",
+    "n2": "Tendências e padrões analisados para definir prevenção.",
+    "verify": "Peça a análise.",
+    "evidence": "Relatórios de tendência"
+  },
+  "E11.N3.10": {
+    "n0": "Medo de reportar.",
+    "n1": "Abertura parcial.",
+    "n2": "Ambiente aberto e de confiança para reportar quase acidentes.",
+    "verify": "Entreviste e veja volume de reportes.",
+    "evidence": "Entrevistas; volume"
+  },
+  "E11.N4.1": {
+    "n0": "Contratadas/visitantes ignorados.",
+    "n1": "Monitoramento parcial.",
+    "n2": "Lesões de contratadas e visitantes monitoradas e investigadas.",
+    "verify": "Confira registros.",
+    "evidence": "Registros"
+  },
+  "E11.N4.2": {
+    "n0": "Qualidade inferior.",
+    "n1": "Qualidade variável.",
+    "n2": "Relatórios de contratadas com qualidade igual aos dos funcionários.",
+    "verify": "Compare relatórios.",
+    "evidence": "Relatórios"
+  },
+  "E11.N4.3": {
+    "n0": "Contratadas não concluem ações.",
+    "n1": "Conclusão parcial.",
+    "n2": "Contratadas concluem ações corretivas.",
+    "verify": "Verifique status.",
+    "evidence": "Planos"
+  },
+  "E11.N4.4": {
+    "n0": "Não compartilhado.",
+    "n1": "Compartilhamento raro.",
+    "n2": "Conclusões e lições compartilhadas com outros sites.",
+    "verify": "Veja alertas enviados.",
+    "evidence": "Alertas"
+  },
+  "E11.N4.5": {
+    "n0": "Aprendizados externos ignorados.",
+    "n1": "Coleta parcial.",
+    "n2": "Aprendizados de outros sites coletados, analisados e cascateados.",
+    "verify": "Veja alertas recebidos e ações.",
+    "evidence": "Alertas; ações"
+  },
+  "E11.N4.6": {
+    "n0": "Riscos semelhantes sem revisão.",
+    "n1": "Revisão parcial.",
+    "n2": "Riscos semelhantes revisados com ação apropriada.",
+    "verify": "Peça exemplos de extensão de análise.",
+    "evidence": "Registros"
+  },
+  "E11.N4.7": {
+    "n0": "Nível de investigação aleatório.",
+    "n1": "Critério informal.",
+    "n2": "Avaliação de risco define potencial e nível de investigação.",
+    "verify": "Veja critério de classificação (HIPO).",
+    "evidence": "Procedimento; matriz"
+  },
+  "E11.N4.8": {
+    "n0": "HIPO sem dano não investigado.",
+    "n1": "Investigação superficial.",
+    "n2": "Incidentes de alto potencial investigados com igual vigor.",
+    "verify": "Analise investigações HIPO.",
+    "evidence": "Relatórios HIPO"
+  },
+  "E11.N4.9": {
+    "n0": "Funcionários não entendem.",
+    "n1": "Parte entende.",
+    "n2": "Funcionários entendem a importância de investigar alto potencial.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E11.N4.10": {
+    "n0": "Métricas não usadas.",
+    "n1": "Uso parcial.",
+    "n2": "Métricas atualizam formação e auditoria.",
+    "verify": "Relacione mudanças a incidentes.",
+    "evidence": "Planos de treinamento/auditoria"
+  },
+  "E11.N4.11": {
+    "n0": "Sem revisão anual.",
+    "n1": "Revisão sem eficácia.",
+    "n2": "Revisão anual da liderança sobre aprendizados e eficácia.",
+    "verify": "Peça a última revisão.",
+    "evidence": "Ata da revisão anual"
+  },
+  "E11.N4.12": {
+    "n0": "Sistema não melhora.",
+    "n1": "Melhoria pontual.",
+    "n2": "Sistema melhorado a partir das investigações.",
+    "verify": "Peça exemplos.",
+    "evidence": "Mudanças no sistema"
+  },
+  "E11.N5.1": {
+    "n0": "Baixo nível de reporte.",
+    "n1": "Reporte médio.",
+    "n2": "Alto nível de reporte e investigação, inclusive contratados e fora do trabalho.",
+    "verify": "Analise volume por tipo.",
+    "evidence": "Base de dados"
+  },
+  "E11.N5.2": {
+    "n0": "Setores muito desiguais.",
+    "n1": "Diferenças relevantes.",
+    "n2": "Todos os setores com a mesma eficácia de reporte.",
+    "verify": "Compare volume por setor.",
+    "evidence": "Indicadores por setor"
+  },
+  "E11.N5.3": {
+    "n0": "Aprendizado pouco valorizado.",
+    "n1": "Valorizado em parte.",
+    "n2": "Aprendizado altamente valorizado na melhoria contínua.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E11.N5.4": {
+    "n0": "Fora do trabalho ignorado.",
+    "n1": "Relatos raros.",
+    "n2": "Acidentes fora do trabalho relatados e compartilhados.",
+    "verify": "Veja registros.",
+    "evidence": "Registros"
+  },
+  "E11.N5.5": {
+    "n0": "Sem uso cultural.",
+    "n1": "Uso pontual.",
+    "n2": "Aprendizados fora do trabalho reforçam a cultura.",
+    "verify": "Veja campanhas.",
+    "evidence": "Campanhas"
+  },
+  "E11.N5.6": {
+    "n0": "Sem revisão no CODI.",
+    "n1": "Revisão rara.",
+    "n2": "Indicadores revisados no CODI ao menos 4x ao ano.",
+    "verify": "Peça atas do CODI.",
+    "evidence": "Atas"
+  },
+  "E11.N5.7": {
+    "n0": "Descobertas não usadas.",
+    "n1": "Uso parcial.",
+    "n2": "Descobertas usadas para prevenir recorrência e melhorar sistemas.",
+    "verify": "Peça exemplos.",
+    "evidence": "Registros"
+  },
+  "E12.N1.1": {
+    "n0": "Nenhuma observação.",
+    "n1": "Observações raras.",
+    "n2": "Algumas observações de senso comum realizadas.",
+    "verify": "Pergunte sobre observações recentes.",
+    "evidence": "Registros"
+  },
+  "E12.N1.2": {
+    "n0": "Sem recursos para inspeções.",
+    "n1": "Recursos insuficientes.",
+    "n2": "Recursos internos alocados para inspeções e acompanhamento.",
+    "verify": "Veja quem faz as inspeções.",
+    "evidence": "Escala; registros"
+  },
+  "E12.N1.3": {
+    "n0": "Não conformidades sem tratamento.",
+    "n1": "Tratamento parcial.",
+    "n2": "Principais não conformidades rastreadas e resolvidas.",
+    "verify": "Veja status das NCs.",
+    "evidence": "Lista de NCs"
+  },
+  "E12.N1.4": {
+    "n0": "Sem inspeções.",
+    "n1": "Inspeções irregulares.",
+    "n2": "Inspeções legais focadas em equipamentos de segurança.",
+    "verify": "Confira inspeções de extintores, hidrantes etc.",
+    "evidence": "Checklists"
+  },
+  "E12.N2.1": {
+    "n0": "Gestores nunca participam.",
+    "n1": "Participação rara.",
+    "n2": "Gestores participam ocasionalmente de inspeções e visitas.",
+    "verify": "Veja registros com gestores.",
+    "evidence": "Registros"
+  },
+  "E12.N2.2": {
+    "n0": "Sem compromisso.",
+    "n1": "Compromisso parcial.",
+    "n2": "Gestores comprometidos com riscos elevados e lacunas.",
+    "verify": "Veja ações dos gestores.",
+    "evidence": "Planos"
+  },
+  "E12.N2.3": {
+    "n0": "Procedimentos não seguidos.",
+    "n1": "Seguidos às vezes.",
+    "n2": "Procedimentos básicos seguidos consistentemente.",
+    "verify": "Observe em campo.",
+    "evidence": "Observação"
+  },
+  "E12.N2.4": {
+    "n0": "EPI abaixo de 50%.",
+    "n1": "Entre 50% e 75%.",
+    "n2": "75% cumprem plenamente o EPI.",
+    "verify": "Faça contagem amostral.",
+    "evidence": "Observação; BOS"
+  },
+  "E12.N2.5": {
+    "n0": "Sem inspeções de condições.",
+    "n1": "Irregulares.",
+    "n2": "SST realiza inspeções de condições perigosas.",
+    "verify": "Veja registros.",
+    "evidence": "Checklists"
+  },
+  "E12.N2.6": {
+    "n0": "Sem sistema de acompanhamento.",
+    "n1": "Sistema informal.",
+    "n2": "Sistema identifica e acompanha condições perigosas.",
+    "verify": "Peça o sistema.",
+    "evidence": "Planilha/sistema"
+  },
+  "E12.N2.7": {
+    "n0": "Ações não monitoradas.",
+    "n1": "Menos de 50% encerradas.",
+    "n2": "Ações monitoradas e 50% encerradas.",
+    "verify": "Calcule % encerradas.",
+    "evidence": "Status das ações"
+  },
+  "E12.N2.8": {
+    "n0": "Sem protocolos especializados.",
+    "n1": "Parte dos temas.",
+    "n2": "Protocolos para incêndio, limpeza, elétrica, equipamentos e EPI.",
+    "verify": "Veja checklists.",
+    "evidence": "Checklists"
+  },
+  "E12.N2.9": {
+    "n0": "Protocolos não cobrem riscos.",
+    "n1": "Cobertura parcial.",
+    "n2": "Protocolos cobrem todos os riscos principais.",
+    "verify": "Compare riscos x protocolos.",
+    "evidence": "Matriz"
+  },
+  "E12.N2.10": {
+    "n0": "Equipamentos em mau estado.",
+    "n1": "Parte em bom estado.",
+    "n2": "Equipamentos de segurança e críticos em bom estado.",
+    "verify": "Inspecione amostra.",
+    "evidence": "Inspeções; manutenção"
+  },
+  "E12.N3.1": {
+    "n0": "Informações não relatadas.",
+    "n1": "Relato parcial.",
+    "n2": "Informações de auditoria relatadas à liderança e funcionários.",
+    "verify": "Veja relatórios.",
+    "evidence": "Relatórios"
+  },
+  "E12.N3.2": {
+    "n0": "Resultados restritos.",
+    "n1": "Compartilhamento parcial.",
+    "n2": "Resultados compartilhados com todos os níveis, representantes e operadores.",
+    "verify": "Veja comunicações.",
+    "evidence": "Quadros; atas"
+  },
+  "E12.N3.3": {
+    "n0": "Liderança não usa.",
+    "n1": "Uso pontual.",
+    "n2": "Liderança usa auditorias para dirigir o programa.",
+    "verify": "Veja decisões.",
+    "evidence": "Atas"
+  },
+  "E12.N3.4": {
+    "n0": "Sem recomendações.",
+    "n1": "Recomendações genéricas.",
+    "n2": "Recomendações específicas para as questões levantadas.",
+    "verify": "Analise relatórios.",
+    "evidence": "Relatórios"
+  },
+  "E12.N3.5": {
+    "n0": "Ações lentas.",
+    "n1": "Parcial.",
+    "n2": "Linha implementa melhorias rapidamente.",
+    "verify": "Veja prazos.",
+    "evidence": "Status"
+  },
+  "E12.N3.6": {
+    "n0": "Sem plano de diálogos.",
+    "n1": "Plano incompleto.",
+    "n2": "Plano de diálogos (prioridades, abordagem, objetivos).",
+    "verify": "Peça o plano.",
+    "evidence": "Plano"
+  },
+  "E12.N3.7": {
+    "n0": "Diálogos não realizados.",
+    "n1": "Parte dos líderes.",
+    "n2": "Diálogos por liderança, gerentes e SST treinados.",
+    "verify": "Veja registros.",
+    "evidence": "Registros"
+  },
+  "E12.N3.8": {
+    "n0": "Diálogos sem foco.",
+    "n1": "Foco parcial; EPI abaixo de 100%.",
+    "n2": "Diálogos focados em atos/condições; EPI 100%.",
+    "verify": "Analise diálogos e EPI.",
+    "evidence": "Registros; observação"
+  },
+  "E12.N3.9": {
+    "n0": "Plano não seguido.",
+    "n1": "Cobertura parcial.",
+    "n2": "Plano adequado (todos ao menos trimestralmente) e seguido.",
+    "verify": "Calcule cobertura.",
+    "evidence": "Registros"
+  },
+  "E12.N3.10": {
+    "n0": "Conteúdo não analisado.",
+    "n1": "Análise pontual.",
+    "n2": "Conteúdo consolidado e analisado.",
+    "verify": "Peça a consolidação.",
+    "evidence": "Relatório"
+  },
+  "E12.N3.11": {
+    "n0": "Sem plano de auditoria.",
+    "n1": "Plano parcial.",
+    "n2": "Plano estruturado cobrindo todos os tipos de avaliação, riscos e setores.",
+    "verify": "Peça o plano.",
+    "evidence": "Plano"
+  },
+  "E12.N3.12": {
+    "n0": "Plano não validado.",
+    "n1": "Validação informal.",
+    "n2": "Plano validado pela liderança.",
+    "verify": "Veja aprovação.",
+    "evidence": "Ata"
+  },
+  "E12.N3.13": {
+    "n0": "Plano não executado.",
+    "n1": "Execução parcial.",
+    "n2": "Plano implementado e monitorado.",
+    "verify": "Compare planejado x realizado.",
+    "evidence": "Indicador"
+  },
+  "E12.N3.14": {
+    "n0": "Investigações não usadas.",
+    "n1": "Uso pontual.",
+    "n2": "Investigações alimentam o plano de auditoria.",
+    "verify": "Relacione auditorias a incidentes.",
+    "evidence": "Plano"
+  },
+  "E12.N4.1": {
+    "n0": "Sem pesquisas.",
+    "n1": "Pesquisa pontual.",
+    "n2": "Pesquisas de percepção de segurança usadas.",
+    "verify": "Peça resultados.",
+    "evidence": "Pesquisa"
+  },
+  "E12.N4.2": {
+    "n0": "Saúde fora das pesquisas.",
+    "n1": "Parcial.",
+    "n2": "Saúde e bem-estar incluídos e usados para promoção.",
+    "verify": "Veja questionário.",
+    "evidence": "Pesquisa"
+  },
+  "E12.N4.3": {
+    "n0": "Resultados não usados.",
+    "n1": "Uso parcial.",
+    "n2": "Resultados monitoram a evolução da cultura.",
+    "verify": "Veja séries históricas.",
+    "evidence": "Relatórios"
+  },
+  "E12.N4.4": {
+    "n0": "Sem cruzamento de dados.",
+    "n1": "Parcial.",
+    "n2": "Auditorias comparadas com incidentes e riscos para direcionar o sistema.",
+    "verify": "Peça a análise cruzada.",
+    "evidence": "Relatório"
+  },
+  "E12.N4.5": {
+    "n0": "Sem auditorias de 2ª/3ª parte.",
+    "n1": "Raras.",
+    "n2": "Auditorias de segunda e terceira parte regulares.",
+    "verify": "Veja relatórios.",
+    "evidence": "Relatórios"
+  },
+  "E12.N4.6": {
+    "n0": "Liderança não apoia.",
+    "n1": "Apoio parcial.",
+    "n2": "Liderança apoia a melhoria contínua do sistema de auditoria.",
+    "verify": "Entreviste.",
+    "evidence": "Atas"
+  },
+  "E12.N4.7": {
+    "n0": "Sem métricas.",
+    "n1": "Métricas parciais.",
+    "n2": "Métricas medem eficácia e consistência ao longo do tempo.",
+    "verify": "Peça os indicadores.",
+    "evidence": "Painel"
+  },
+  "E12.N4.8": {
+    "n0": "Sem verificação de ciclo.",
+    "n1": "Irregular.",
+    "n2": "Verificações de ciclo de trabalho regulares (1x/ano por procedimento crítico).",
+    "verify": "Veja registros.",
+    "evidence": "Registros"
+  },
+  "E12.N4.9": {
+    "n0": "Procedimento difere da prática.",
+    "n1": "Correções parciais.",
+    "n2": "POPs precisos; desvios ou POPs corrigidos.",
+    "verify": "Compare POP x prática.",
+    "evidence": "Observação"
+  },
+  "E12.N4.10": {
+    "n0": "Operadores fora das auditorias.",
+    "n1": "Envolvimento pontual.",
+    "n2": "Operadores auditam processos e sugerem melhorias.",
+    "verify": "Veja auditores.",
+    "evidence": "Registros"
+  },
+  "E12.N4.11": {
+    "n0": "Sem auditorias cruzadas.",
+    "n1": "Raras.",
+    "n2": "Diálogos e auditorias interdepartamentais.",
+    "verify": "Veja registros.",
+    "evidence": "Registros"
+  },
+  "E12.N4.12": {
+    "n0": "Setores isolados.",
+    "n1": "Troca pontual.",
+    "n2": "Aprendizagem mútua gera consistência entre setores.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E12.N4.13": {
+    "n0": "Atos perigosos ignorados.",
+    "n1": "Abordagem às vezes.",
+    "n2": "Atos perigosos abordados a qualquer momento.",
+    "verify": "Observe.",
+    "evidence": "Observação"
+  },
+  "E12.N4.14": {
+    "n0": "Sem treinamento em diálogo.",
+    "n1": "Parte treinada.",
+    "n2": "Todos os gestores, inclusive novos, treinados em diálogo.",
+    "verify": "Confira matriz.",
+    "evidence": "Certificados"
+  },
+  "E12.N4.15": {
+    "n0": "Treino superficial.",
+    "n1": "Sem reciclagem.",
+    "n2": "Treinamento com observação, comunicação e reciclagem.",
+    "verify": "Veja ementa.",
+    "evidence": "Ementa"
+  },
+  "E12.N4.16": {
+    "n0": "Primeira linha sem propriedade.",
+    "n1": "Propriedade parcial.",
+    "n2": "Primeira linha é dona do processo de auditoria.",
+    "verify": "Veja quem conduz.",
+    "evidence": "Registros"
+  },
+  "E12.N4.17": {
+    "n0": "Qualidade não monitorada.",
+    "n1": "Monitoramento pontual.",
+    "n2": "Qualidade monitorada (auditorias em dupla, revisão).",
+    "verify": "Veja registros.",
+    "evidence": "Registros"
+  },
+  "E12.N5.1": {
+    "n0": "Sistemas desalinhados.",
+    "n1": "Alinhamento parcial.",
+    "n2": "Sistemas de SST, ambiente, qualidade e desempenho alinhados.",
+    "verify": "Compare sistemas.",
+    "evidence": "Sistema integrado"
+  },
+  "E12.N5.2": {
+    "n0": "Auditorias confusas para o operador.",
+    "n1": "Integração parcial.",
+    "n2": "Auditorias coerentes e integradas na gestão visual.",
+    "verify": "Observe no posto.",
+    "evidence": "Quadros"
+  },
+  "E12.N5.3": {
+    "n0": "Sistema pouco reconhecido.",
+    "n1": "Reconhecimento parcial.",
+    "n2": "Sistema reconhecido por todos como crucial.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E12.N5.4": {
+    "n0": "Poucos envolvidos.",
+    "n1": "Parte envolvida.",
+    "n2": "Todos envolvidos em auditorias interdepartamentais.",
+    "verify": "Veja escala.",
+    "evidence": "Registros"
+  },
+  "E12.N5.5": {
+    "n0": "Diálogos só por gestores.",
+    "n1": "Parte dos funcionários.",
+    "n2": "Todos realizam diálogos com boa eficácia.",
+    "verify": "Veja registros.",
+    "evidence": "Registros"
+  },
+  "E12.N5.6": {
+    "n0": "Cultura depende do gestor.",
+    "n1": "Parcial.",
+    "n2": "Cultura presente mesmo sem o gestor no setor.",
+    "verify": "Observe sem o gestor presente.",
+    "evidence": "Observação"
+  },
+  "E12.N5.7": {
+    "n0": "Sem auditorias em outros sites.",
+    "n1": "Raras.",
+    "n2": "Funcionários auditam outros sites.",
+    "verify": "Veja registros.",
+    "evidence": "Registros"
+  },
+  "E12.N5.8": {
+    "n0": "Aprendizados externos ignorados.",
+    "n1": "Uso pontual.",
+    "n2": "Aprendizados de outros sites renovam práticas locais.",
+    "verify": "Peça exemplos.",
+    "evidence": "Registros"
+  },
+  "E13.N1.1": {
+    "n0": "Regras não compartilhadas.",
+    "n1": "Compartilhadas sem reunião pré-contratual.",
+    "n2": "Regras compartilhadas antes do início e reunião pré-contratual nos contratos significativos.",
+    "verify": "Peça atas de reuniões pré-contratuais.",
+    "evidence": "Atas; termos de ciência"
+  },
+  "E13.N1.2": {
+    "n0": "Gestores não informados.",
+    "n1": "Abaixo de 90%.",
+    "n2": "Gestores informados de pelo menos 90% das atividades de contratadas.",
+    "verify": "Cruze permissões de trabalho com gestores.",
+    "evidence": "PTs; comunicações"
+  },
+  "E13.N1.3": {
+    "n0": "Trabalhos inseguros.",
+    "n1": "Abaixo de 50%.",
+    "n2": "Mais de 50% dos trabalhos seguros e conforme as regras.",
+    "verify": "Observe contratadas em campo.",
+    "evidence": "Observação; auditorias"
+  },
+  "E13.N1.4": {
+    "n0": "Contratadas não auditadas.",
+    "n1": "Auditorias raras.",
+    "n2": "Contratadas auditadas pelo site conforme normas.",
+    "verify": "Veja auditorias de contratadas.",
+    "evidence": "Checklists de contratadas"
+  },
+  "E13.N1.5": {
+    "n0": "Dados não coletados.",
+    "n1": "Coleta parcial.",
+    "n2": "Acidentes de contratadas coletados e categorizados.",
+    "verify": "Veja a base.",
+    "evidence": "Registros"
+  },
+  "E13.N1.6": {
+    "n0": "Regulamentos ignorados.",
+    "n1": "Cumprimento parcial.",
+    "n2": "Contratadas obrigadas a trabalhar conforme regulamentos locais.",
+    "verify": "Veja cláusulas e documentos.",
+    "evidence": "Contratos; NRs"
+  },
+  "E13.N1.7": {
+    "n0": "Sem regra de álcool/drogas.",
+    "n1": "Regra sem controle.",
+    "n2": "Álcool e drogas terminantemente proibidos e controlados.",
+    "verify": "Veja regra e controles.",
+    "evidence": "Regra; registros"
+  },
+  "E13.N1.8": {
+    "n0": "Requisitos legais ignorados.",
+    "n1": "Cumprimento parcial.",
+    "n2": "Requisitos legais cumpridos ou condições aprovadas formalmente.",
+    "verify": "Confira documentação legal.",
+    "evidence": "Documentos trabalhistas"
+  },
+  "E13.N1.9": {
+    "n0": "Ninguém verifica documentos.",
+    "n1": "Verificação irregular.",
+    "n2": "Responsável verifica documentação antes do início; exceções aprovadas pelo gerente/RH.",
+    "verify": "Veja o fluxo de liberação.",
+    "evidence": "Checklist de liberação"
+  },
+  "E13.N2.1": {
+    "n0": "Sem integração de contratadas.",
+    "n1": "Integração não praticada.",
+    "n2": "Integração para todas as contratadas, compreendida e praticada.",
+    "verify": "Confira registros.",
+    "evidence": "Listas; material"
+  },
+  "E13.N2.2": {
+    "n0": "Responsabilidade indefinida.",
+    "n1": "Parcial.",
+    "n2": "Responsabilização clara pelo comportamento seguro das contratadas.",
+    "verify": "Veja definição.",
+    "evidence": "Procedimento; contratos"
+  },
+  "E13.N2.3": {
+    "n0": "Sem auditorias de PT.",
+    "n1": "Auditorias raras.",
+    "n2": "Responsabilização clara e auditorias de PT e procedimentos planejadas.",
+    "verify": "Veja plano de auditoria de PT.",
+    "evidence": "Plano; registros"
+  },
+  "E13.N2.4": {
+    "n0": "Segurança fora da seleção.",
+    "n1": "Critério parcial.",
+    "n2": "Seleção inclui desempenho e programas de segurança.",
+    "verify": "Veja critérios de seleção.",
+    "evidence": "Critérios de compra"
+  },
+  "E13.N2.5": {
+    "n0": "Sem avaliação.",
+    "n1": "Avaliação sem uso.",
+    "n2": "Desempenho avaliado e usado no próximo contrato.",
+    "verify": "Veja avaliações.",
+    "evidence": "Avaliações"
+  },
+  "E13.N2.6": {
+    "n0": "Acidentes não investigados.",
+    "n1": "Investigação sem o site.",
+    "n2": "Investigação pela contratada com participação ativa do site.",
+    "verify": "Veja relatórios.",
+    "evidence": "Relatórios"
+  },
+  "E13.N3.1": {
+    "n0": "Auditorias raras.",
+    "n1": "Menos que semanais.",
+    "n2": "Auditorias semanais, incluindo oficinas e áreas de armazenagem.",
+    "verify": "Veja frequência.",
+    "evidence": "Registros"
+  },
+  "E13.N3.2": {
+    "n0": "Sem reuniões.",
+    "n1": "Reuniões irregulares.",
+    "n2": "Reuniões trimestrais para revisar programas, auditorias e incidentes.",
+    "verify": "Veja atas.",
+    "evidence": "Atas"
+  },
+  "E13.N3.3": {
+    "n0": "Dados não usados.",
+    "n1": "Uso parcial.",
+    "n2": "Auditorias e incidentes atualizam programas, treinos e auditorias.",
+    "verify": "Relacione mudanças.",
+    "evidence": "Registros"
+  },
+  "E13.N3.4": {
+    "n0": "Comitê não discute contratadas.",
+    "n1": "Discussão eventual.",
+    "n2": "Comitê discute acidentes, quase acidentes e primeiros socorros de contratadas.",
+    "verify": "Veja atas.",
+    "evidence": "Atas"
+  },
+  "E13.N3.5": {
+    "n0": "Sem tendências.",
+    "n1": "Análise parcial.",
+    "n2": "Dados analisados para tendências e prevenção.",
+    "verify": "Peça análise.",
+    "evidence": "Relatório"
+  },
+  "E13.N3.6": {
+    "n0": "Aprendizados não compartilhados.",
+    "n1": "Compartilhamento parcial.",
+    "n2": "Aprendizados compartilhados para melhorar a gestão das contratadas.",
+    "verify": "Veja comunicações.",
+    "evidence": "Alertas"
+  },
+  "E13.N3.7": {
+    "n0": "Sem objetivos.",
+    "n1": "Objetivos parciais.",
+    "n2": "Objetivos de desempenho para contratadas e subcontratadas.",
+    "verify": "Veja metas.",
+    "evidence": "Metas"
+  },
+  "E13.N3.8": {
+    "n0": "Sem programas.",
+    "n1": "Programas parciais.",
+    "n2": "Programas para atingir os objetivos das contratadas.",
+    "verify": "Veja programas.",
+    "evidence": "Planos"
+  },
+  "E13.N3.9": {
+    "n0": "Contratadas desconhecem objetivos.",
+    "n1": "Parte conhece.",
+    "n2": "Contratadas conhecem e trabalham pelos objetivos.",
+    "verify": "Entreviste contratados.",
+    "evidence": "Entrevistas"
+  },
+  "E13.N3.10": {
+    "n0": "Regras não definidas.",
+    "n1": "Comunicação parcial.",
+    "n2": "Regras claramente definidas e comunicadas.",
+    "verify": "Veja material entregue.",
+    "evidence": "Manual de contratadas"
+  },
+  "E13.N3.11": {
+    "n0": "Regras fora do contrato.",
+    "n1": "Parcial.",
+    "n2": "Regras nas especificações de contrato/OC e explicadas em reuniões.",
+    "verify": "Confira contratos.",
+    "evidence": "Contratos; OCs"
+  },
+  "E13.N3.12": {
+    "n0": "Contratados desconhecem regras.",
+    "n1": "Menos de 75%.",
+    "n2": "75% conhecem regras e procedimentos.",
+    "verify": "Entreviste contratados.",
+    "evidence": "Entrevistas"
+  },
+  "E13.N4.1": {
+    "n0": "Processo incompleto.",
+    "n1": "Etapas faltando.",
+    "n2": "Processo de 6 etapas completo, com avaliação pós-contrato.",
+    "verify": "Verifique as 6 etapas.",
+    "evidence": "Registros por etapa"
+  },
+  "E13.N4.2": {
+    "n0": "Gerentes ausentes.",
+    "n1": "Envolvimento irregular.",
+    "n2": "Gerentes envolvidos semanalmente na gestão das contratadas.",
+    "verify": "Veja registros.",
+    "evidence": "Atas; auditorias"
+  },
+  "E13.N4.3": {
+    "n0": "Baixo cumprimento.",
+    "n1": "Cumprimento parcial.",
+    "n2": "Gestão e funcionários conhecem tudo; cumprimento 100%.",
+    "verify": "Audite em campo.",
+    "evidence": "Auditorias"
+  },
+  "E13.N4.4": {
+    "n0": "Sem reuniões com gestão.",
+    "n1": "Irregular.",
+    "n2": "Reuniões regulares com todos os tipos de contratadas.",
+    "verify": "Veja atas.",
+    "evidence": "Atas"
+  },
+  "E13.N4.5": {
+    "n0": "Sem programa de aptidão.",
+    "n1": "Parcial.",
+    "n2": "Programa de aptidão (fadiga, estresse) definido em contrato.",
+    "verify": "Veja cláusulas.",
+    "evidence": "Contratos"
+  },
+  "E13.N4.6": {
+    "n0": "Fixas fora dos programas.",
+    "n1": "Integração parcial.",
+    "n2": "Contratadas fixas integradas a auditorias, investigações e melhorias.",
+    "verify": "Veja participação.",
+    "evidence": "Registros"
+  },
+  "E13.N4.7": {
+    "n0": "Sem planos de melhoria.",
+    "n1": "Planos sem apoio.",
+    "n2": "Planos apoiados pela contratada, incluindo fadiga e estresse.",
+    "verify": "Veja planos.",
+    "evidence": "Planos"
+  },
+  "E13.N4.8": {
+    "n0": "Zero lesões não aceito.",
+    "n1": "Aceitação parcial.",
+    "n2": "Visão zero lesões aceita; todos os incidentes relatados e investigados.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas; registros"
+  },
+  "E13.N5.1": {
+    "n0": "Sem revisão anual.",
+    "n1": "Revisão sem plano.",
+    "n2": "Revisão anual com plano de ação executado pela contratada.",
+    "verify": "Veja ata e plano.",
+    "evidence": "Ata; plano"
+  },
+  "E13.N5.2": {
+    "n0": "Fixas passivas.",
+    "n1": "Participação parcial.",
+    "n2": "Contratadas fixas proativas nos programas do site.",
+    "verify": "Veja iniciativas.",
+    "evidence": "Registros"
+  },
+  "E13.N5.3": {
+    "n0": "Sem estratégia.",
+    "n1": "Estratégia parcial.",
+    "n2": "Estratégia definida e relatórios alinhados ao sistema corporativo.",
+    "verify": "Veja estratégia.",
+    "evidence": "Documento"
+  },
+  "E13.N5.4": {
+    "n0": "Sistemas desalinhados.",
+    "n1": "Parcial.",
+    "n2": "Sistemas da contratada alinhados aos do site.",
+    "verify": "Compare sistemas.",
+    "evidence": "Documentos"
+  },
+  "E13.N5.5": {
+    "n0": "Comunicação rara.",
+    "n1": "Menos que mensal.",
+    "n2": "Comunicação mensal entre gestões.",
+    "verify": "Veja registros.",
+    "evidence": "Atas"
+  },
+  "E13.N5.6": {
+    "n0": "SST fora do plano da contratada.",
+    "n1": "Parcial.",
+    "n2": "SST parte importante do plano de negócio da contratada.",
+    "verify": "Entreviste a gestão da contratada.",
+    "evidence": "Entrevistas"
+  },
+  "E13.N5.7": {
+    "n0": "Contratadas não evoluem.",
+    "n1": "Evolução lenta.",
+    "n2": "Site garante atualização contínua dos sistemas das contratadas.",
+    "verify": "Veja evolução.",
+    "evidence": "Registros"
+  },
+  "E13.N5.8": {
+    "n0": "Contratados não usam ferramentas.",
+    "n1": "Menos de 75%.",
+    "n2": "75% participam e usam ferramentas (reporte, diálogos).",
+    "verify": "Veja registros de contratados.",
+    "evidence": "Registros"
+  },
+  "E13.N5.9": {
+    "n0": "Não percebem pré-requisito.",
+    "n1": "Percepção parcial.",
+    "n2": "Contratadas entendem que desempenho é pré-requisito para contratos.",
+    "verify": "Entreviste.",
+    "evidence": "Entrevistas"
+  },
+  "E13.N5.10": {
+    "n0": "Sem classificação.",
+    "n1": "Classificação parcial.",
+    "n2": "Sistema de classificação avalia desempenho e envolvimento.",
+    "verify": "Veja ranking.",
+    "evidence": "Avaliações"
+  },
+  "E13.N5.11": {
+    "n0": "Avaliação sem responsáveis.",
+    "n1": "Parcial.",
+    "n2": "Avaliação feita pelo gestor coordenador e gerentes locais.",
+    "verify": "Veja quem avalia.",
+    "evidence": "Avaliações"
+  },
+  "E13.N5.12": {
+    "n0": "Desempenho inferior.",
+    "n1": "Parcialmente comparável.",
+    "n2": "Desempenho consistentemente alto e comparável aos funcionários.",
+    "verify": "Compare indicadores.",
+    "evidence": "Indicadores"
   }
 }
