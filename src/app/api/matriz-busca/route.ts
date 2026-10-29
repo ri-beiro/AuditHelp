@@ -15,6 +15,12 @@ const CRITERIA_LABEL: [string, string][] = [
   ["partial", "Parcial"],
   ["significant", "Significativo"],
   ["compliant", "Conforme"],
+  // WISE: direcionamento da linha
+  ["n0", "Nota 0"],
+  ["n1", "Nota 1"],
+  ["n2", "Nota 2"],
+  ["verify", "O que verificar"],
+  ["evidence", "Evidências"],
 ];
 
 type Field = { label: string; text: string; norm: string };

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AlertTriangle, Lock } from "lucide-react";
+import { AlertTriangle, ClipboardCheck, FileSearch, Lock } from "lucide-react";
 import { cn, fmtPct } from "@/lib/utils";
 import { WISE_GATE, type WiseElementResult } from "@/lib/scoring";
 import { Progress } from "@/components/ui/progress";
@@ -149,6 +149,7 @@ export function MatrixWise({ ctx, focusRequirement }: { ctx: SheetCtx; focusRequ
                   ctx={ctx}
                   options={OPTIONS}
                   focus={focusRequirement === r.id}
+                  extra={r.criteria ? <Guidance criteria={r.criteria} /> : null}
                   prefix={
                     <>
                       <span className="text-[11px] font-semibold text-slate-400">{r.code}</span>
@@ -169,6 +170,61 @@ export function MatrixWise({ ctx, focusRequirement }: { ctx: SheetCtx; focusRequ
         Escala: 2 = 100% implementado (&gt;90% do nível 1 ao 3) · 1 = parcialmente implementado (&gt;40%) · 0 = não
         implementado · em branco = não avaliado. Clique novamente na nota para limpar.
       </p>
+    </div>
+  );
+}
+
+/** Direcionamento da linha (mesmo formato dos critérios dos 12 Básicos). */
+function Guidance({ criteria }: { criteria: Record<string, string | null> }) {
+  const cards = [
+    ["n0", "Nota 0 · Não implementado", "border-critico/40"],
+    ["n1", "Nota 1 · Parcial (>40%)", "border-atencao/50"],
+    ["n2", "Nota 2 · Implementado (>90%)", "border-conforme/50"],
+  ] as const;
+  const evidence = (criteria.evidence ?? "")
+    .split(";")
+    .map((s) => s.trim())
+    .filter(Boolean);
+  return (
+    <div className="space-y-2">
+      <div className="grid gap-2 md:grid-cols-3">
+        {cards.map(([k, label, cls]) =>
+          criteria[k] ? (
+            <div key={k} className={cn("rounded-md border-l-4 bg-white p-2 text-xs text-slate-600", cls)}>
+              <div className="mb-0.5 font-semibold text-slate-700">{label}</div>
+              {criteria[k]}
+            </div>
+          ) : null,
+        )}
+      </div>
+      {criteria.verify || evidence.length ? (
+        <div className="grid gap-2 rounded-md bg-brand-50/60 p-2 text-xs text-slate-600 md:grid-cols-2">
+          {criteria.verify ? (
+            <div className="flex gap-2">
+              <ClipboardCheck className="mt-0.5 size-4 shrink-0 text-brand-600" />
+              <div>
+                <div className="font-semibold text-slate-700">O que verificar</div>
+                {criteria.verify}
+              </div>
+            </div>
+          ) : null}
+          {evidence.length ? (
+            <div className="flex gap-2">
+              <FileSearch className="mt-0.5 size-4 shrink-0 text-brand-600" />
+              <div>
+                <div className="font-semibold text-slate-700">Evidências sugeridas</div>
+                <div className="mt-1 flex flex-wrap gap-1">
+                  {evidence.map((e) => (
+                    <span key={e} className="rounded-full border border-brand-100 bg-white px-2 py-0.5 text-[11px] text-brand-800">
+                      {e}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
     </div>
   );
 }

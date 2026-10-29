@@ -1,0 +1,324 @@
+{
+  "E1.N1.1": {
+    "n0": "Não existe política de segurança formal, ou ela não foi assinada pela liderança do site.",
+    "n1": "Há política escrita, mas sem assinatura de toda a liderança ou ainda não divulgada aos funcionários.",
+    "n2": "Política assinada pela equipe de liderança, divulgada e exposta nas áreas; os gestores sabem explicá-la.",
+    "verify": "Confirme se a política existe, quem assinou, quando foi introduzida e se está visível nas áreas.",
+    "evidence": "Política assinada e datada; fotos dos quadros; registro de divulgação (DDS, e-mail, integração)"
+  },
+  "E1.N1.2": {
+    "n0": "A política não tem recursos associados (sem orçamento nem pessoas dedicadas à segurança).",
+    "n1": "Existem recursos pontuais (pessoa designada ou alguma verba), mas insuficientes ou não formalizados.",
+    "n2": "Há orçamento de segurança aprovado e pessoas dedicadas/designadas com tempo para as atividades.",
+    "verify": "Pergunte qual é o orçamento de segurança do ano e quem é responsável pelas atividades de SST.",
+    "evidence": "Orçamento/CAPEX de segurança; organograma com SST; descrição de função do responsável"
+  },
+  "E1.N1.3": {
+    "n0": "Os funcionários não percebem ações da gestão em segurança.",
+    "n1": "Alguns funcionários citam ações da gestão, mas a percepção não é geral.",
+    "n2": "A maioria dos entrevistados cita investimentos simples e visíveis (EPI, sinalização, melhorias) feitos pela gestão.",
+    "verify": "Entreviste funcionários de chão: 'O que a gestão fez recentemente pela sua segurança?'",
+    "evidence": "Entrevistas no chão; fotos de melhorias recentes; registros de compras/investimentos"
+  },
+  "E1.N2.1": {
+    "n0": "Liderança e gestão intermediária não aplicam as regras de segurança no dia a dia.",
+    "n1": "A aplicação depende da pessoa ou do turno; há gestores que não seguem ou não cobram as regras.",
+    "n2": "Liderança e gestão intermediária seguem e cobram as regras diariamente, em todos os turnos.",
+    "verify": "Observe gestores em campo (EPI, rotas, regras de ouro) e pergunte como cobram as regras.",
+    "evidence": "Observação em campo; registros de tours/abordagens; checklist de rotina do gestor"
+  },
+  "E1.N2.2": {
+    "n0": "Não há exemplo da liderança nem cobrança das regras com a equipe.",
+    "n1": "A liderança dá o exemplo, mas a cobrança (BOS/APR/BBS, medidas disciplinares) é esporádica.",
+    "n2": "A liderança é exemplo e cobra o cumprimento com BOS/APR/BBS e medidas disciplinares aplicadas quando necessário.",
+    "verify": "Verifique registros de BOS/APR/BBS feitos por líderes e casos de medida disciplinar aplicada.",
+    "evidence": "Registros BOS/APR/BBS por líder; advertências/medidas aplicadas; observação de comportamento"
+  },
+  "E1.N2.3": {
+    "n0": "Os funcionários não veem a liderança como modelo em segurança.",
+    "n1": "Parte dos funcionários reconhece alguns líderes como modelo; a pressão para seguir regras é fraca.",
+    "n2": "Os funcionários veem a liderança como modelo e sentem que devem seguir regras básicas, limpeza e procedimentos.",
+    "verify": "Pergunte aos funcionários quem é exemplo em segurança e o que acontece se alguém não segue a regra.",
+    "evidence": "Entrevistas com funcionários de diferentes turnos; observação de 5S e regras básicas"
+  },
+  "E1.N2.4": {
+    "n0": "A liderança não se comunica sobre segurança.",
+    "n1": "Há comunicação (DDS, contato de segurança), mas irregular ou só por SST.",
+    "n2": "A liderança conduz comunicações de segurança com frequência: DDS, paradas de segurança e contato de segurança antes das reuniões.",
+    "verify": "Confira a agenda de DDS/paradas e se as reuniões começam com contato de segurança.",
+    "evidence": "Listas de presença de DDS; atas com contato de segurança; cronograma de paradas"
+  },
+  "E1.N2.5": {
+    "n0": "As expectativas de segurança não são comunicadas.",
+    "n1": "Existem alguns canais (quadros, reuniões), mas desatualizados ou incompletos.",
+    "n2": "Política, regras, objetivos, indicadores e planos de ação são comunicados por quadros, reuniões e boletins atualizados.",
+    "verify": "Percorra os quadros de gestão e veja se política, metas, indicadores e planos estão atualizados.",
+    "evidence": "Quadros de gestão à vista; boletins informativos; pautas de reunião"
+  },
+  "E1.N2.6": {
+    "n0": "Os funcionários não sabem quais são as prioridades de segurança da gestão.",
+    "n1": "Alguns funcionários conhecem parte das expectativas.",
+    "n2": "A maioria dos funcionários explica as prioridades e expectativas de segurança da gestão.",
+    "verify": "Pergunte: 'Quais são as prioridades de segurança do site este ano?'",
+    "evidence": "Entrevistas no chão; comparação com objetivos divulgados"
+  },
+  "E1.N2.7": {
+    "n0": "Liderança e gerência intermediária não fizeram o treinamento de liderança WISE.",
+    "n1": "Parte da liderança/gerência intermediária concluiu o treinamento (menos de 90%).",
+    "n2": "Toda a equipe de liderança e a gerência intermediária concluíram o treinamento de liderança WISE.",
+    "verify": "Compare a lista de líderes e gestores com os registros de treinamento WISE.",
+    "evidence": "Matriz de treinamento; certificados/listas de presença do treinamento WISE"
+  },
+  "E1.N2.8": {
+    "n0": "Não há entendimento comum dos princípios do sistema de segurança.",
+    "n1": "Os gestores conhecem os princípios, mas explicam de formas diferentes.",
+    "n2": "Liderança e gerência intermediária explicam de forma consistente os princípios e o sistema de segurança do site.",
+    "verify": "Entreviste 2 ou 3 gestores separadamente e compare as respostas sobre o sistema de segurança.",
+    "evidence": "Entrevistas com gestores; documento do sistema de gestão de SST"
+  },
+  "E1.N2.9": {
+    "n0": "Não há plano estruturado para melhorar o desempenho de segurança.",
+    "n1": "Existe plano, mas com ações pontuais e poucos recursos.",
+    "n2": "Plano estruturado com ações e recursos consistentes (treinamento, redução de risco, atualização de equipamentos).",
+    "verify": "Solicite o plano de segurança do ano e verifique responsáveis, prazos e recursos.",
+    "evidence": "Plano anual de SST; status das ações; orçamento associado"
+  },
+  "E1.N3.1": {
+    "n0": "As normas de trabalho são definidas só por SST, sem envolvimento da liderança.",
+    "n1": "A liderança participa da definição de algumas normas.",
+    "n2": "Liderança e gestão intermediária participam ativamente da definição das normas de trabalho aceitáveis no site.",
+    "verify": "Pergunte quem participou da elaboração/revisão das normas e procedimentos recentes.",
+    "evidence": "Procedimentos com aprovação da liderança; atas de revisão de normas"
+  },
+  "E1.N3.2": {
+    "n0": "Não há tours/observações de segurança pela liderança.",
+    "n1": "Tours acontecem, mas com frequência menor que semanal ou sem diálogo com os funcionários.",
+    "n2": "Tours/observações semanais com diálogo aberto sobre os motivos dos padrões e comportamentos.",
+    "verify": "Verifique o cronograma e os registros de tours de segurança das últimas semanas.",
+    "evidence": "Registros de tours semanais; observações/diálogos registrados; agenda dos líderes"
+  },
+  "E1.N3.3": {
+    "n0": "Os funcionários não aplicam as normas de segurança de forma consistente.",
+    "n1": "As normas são aplicadas por parte dos funcionários ou em parte das áreas.",
+    "n2": "Os funcionários entendem e aplicam as normas de segurança consistentemente em todas as áreas.",
+    "verify": "Observe atividades em diferentes áreas e turnos e compare com as normas.",
+    "evidence": "Observação em campo; resultados de BOS/inspeções; taxa de desvios"
+  },
+  "E1.N3.4": {
+    "n0": "Práticas seguras não são reconhecidas nem promovidas.",
+    "n1": "Há reconhecimento ocasional, sem método.",
+    "n2": "Liderança e gestão intermediária reconhecem e promovem práticas seguras de forma regular e visível.",
+    "verify": "Pergunte como as práticas seguras são reconhecidas e veja exemplos recentes.",
+    "evidence": "Programa de reconhecimento; registros de premiações/elogios; comunicados"
+  },
+  "E1.N3.5": {
+    "n0": "A liderança não dedica tempo ao reconhecimento e às propostas de melhoria.",
+    "n1": "O tempo dedicado é irregular (não semanal).",
+    "n2": "Toda semana a liderança reconhece realizações, apoia iniciativas e incentiva propostas de melhoria.",
+    "verify": "Confira agenda/registros semanais de reconhecimento e acompanhamento de sugestões.",
+    "evidence": "Agenda dos líderes; registros semanais; quadro de sugestões com retorno"
+  },
+  "E1.N3.6": {
+    "n0": "Os funcionários não identificam riscos nem propõem melhorias.",
+    "n1": "Poucos funcionários reportam riscos ou propõem melhorias.",
+    "n2": "Os funcionários, motivados, identificam riscos e propõem melhorias com frequência.",
+    "verify": "Veja o volume de reportes de risco e sugestões por funcionário e converse com quem reportou.",
+    "evidence": "Reportes de condição insegura/quase acidente; sugestões de melhoria; entrevistas"
+  },
+  "E1.N3.7": {
+    "n0": "Não há comunicações sistemáticas de segurança pela liderança.",
+    "n1": "Há comunicações, mas sem regularidade semanal ou só de algumas áreas.",
+    "n2": "Comunicações semanais e sistemáticas de segurança (reuniões, contatos de segurança, SIM) conduzidas pela liderança.",
+    "verify": "Verifique pautas e registros das reuniões semanais e do SIM.",
+    "evidence": "Pautas e atas semanais; registros do SIM; contatos de segurança"
+  },
+  "E1.N3.8": {
+    "n0": "A comunicação é só de cima para baixo e sem temas relevantes.",
+    "n1": "Há espaço para perguntas, mas os temas nem sempre são atuais ou relevantes.",
+    "n2": "A comunicação é bilateral e trata de temas atuais: eventos, riscos do site e questões em aberto.",
+    "verify": "Assista a uma reunião ou DDS e veja se os funcionários participam e se os temas são atuais.",
+    "evidence": "Observação de reunião/DDS; atas com dúvidas e retornos registrados"
+  },
+  "E1.N3.9": {
+    "n0": "Os funcionários desconhecem as consequências de quebrar regras.",
+    "n1": "Conhecem as consequências, mas percebem que nem sempre são aplicadas.",
+    "n2": "Os funcionários conhecem as expectativas e percebem consequências consistentes (disciplina, desempenho) ao quebrar regras.",
+    "verify": "Pergunte: 'O que acontece se alguém descumprir uma regra de ouro?'",
+    "evidence": "Política de consequências; registros de medidas aplicadas; entrevistas"
+  },
+  "E1.N3.10": {
+    "n0": "Não há plano sistemático para as metas de segurança.",
+    "n1": "Existe plano, mas sem garantia de recursos ou acompanhamento.",
+    "n2": "Plano sistemático para cumprir as metas, com recursos garantidos para as atividades planejadas.",
+    "verify": "Confira o plano, os recursos alocados e o andamento das atividades planejadas.",
+    "evidence": "Plano de SST com recursos; acompanhamento de execução"
+  },
+  "E1.N3.11": {
+    "n0": "O plano não tem objetivos, metas ou recursos definidos.",
+    "n1": "Há objetivos e metas, mas os recursos são insuficientes ou o plano não chega a todas as áreas.",
+    "n2": "Objetivos, metas e recursos adequados (CAPEX, treinamentos) e plano desdobrado em toda a organização.",
+    "verify": "Veja se as metas do site aparecem nos planos das áreas/turnos.",
+    "evidence": "Desdobramento de metas por área; CAPEX/treinamentos aprovados"
+  },
+  "E1.N3.12": {
+    "n0": "A execução das ações não é monitorada.",
+    "n1": "O monitoramento existe, mas é irregular ou os resultados não são compartilhados.",
+    "n2": "Ações monitoradas e resultados acompanhados mensalmente, compartilhados com as equipes e usados para ajustar o plano.",
+    "verify": "Solicite o acompanhamento mensal dos últimos 3 meses e como foi divulgado.",
+    "evidence": "Relatórios mensais; quadros com status das ações; atas de revisão do plano"
+  },
+  "E1.N4.1": {
+    "n0": "Não há análise crítica da eficácia do sistema de SST.",
+    "n1": "A análise ocorre, mas sem todos os níveis de gestão ou com frequência menor que anual.",
+    "n2": "Equipes de todos os níveis, lideradas pela liderança, analisam a eficácia do sistema 1 a 2 vezes por ano.",
+    "verify": "Solicite as atas das últimas análises críticas e veja quem participou.",
+    "evidence": "Atas de análise crítica; lista de participantes; conclusões e ações"
+  },
+  "E1.N4.2": {
+    "n0": "Não há evidência de melhorias a partir das análises críticas.",
+    "n1": "Algumas melhorias decorrem das análises, mas sem rastreabilidade.",
+    "n2": "Há provas de que auditorias, investigações, treinamentos, reconhecimento e comunicação foram melhorados após as análises.",
+    "verify": "Relacione cada melhoria implementada com a análise crítica que a originou.",
+    "evidence": "Antes/depois de processos; ações rastreadas até a análise crítica"
+  },
+  "E1.N4.3": {
+    "n0": "A liderança não relaciona os elementos de saúde e segurança.",
+    "n1": "Há compreensão parcial, sem visão de adaptação ao contexto do site.",
+    "n2": "A liderança entende a conexão entre os elementos e tem visão de como adaptá-los ao contexto do site ao longo do tempo.",
+    "verify": "Peça à liderança que explique como os elementos se conectam e quais são os próximos passos do site.",
+    "evidence": "Entrevista com a liderança; plano de médio prazo de SST"
+  },
+  "E1.N4.4": {
+    "n0": "CBU Exco/Codi não participam de atividades de SST no site.",
+    "n1": "Participação rara ou apenas formal.",
+    "n2": "CBU Exco/Codi participam de atividades de saúde e segurança no site.",
+    "verify": "Verifique visitas e atividades recentes da alta direção no site.",
+    "evidence": "Agenda/fotos de visitas; registros de participação"
+  },
+  "E1.N4.5": {
+    "n0": "Exco/Codi não participam de atividades no site.",
+    "n1": "Participam uma vez por ano.",
+    "n2": "Exco/Codi participam pelo menos duas vezes por ano (Dia da Segurança, diálogos, eventos).",
+    "verify": "Conte as participações de Exco/Codi nos últimos 12 meses.",
+    "evidence": "Registros de eventos; fotos; listas de presença"
+  },
+  "E1.N4.6": {
+    "n0": "Os funcionários não sentem apoio da alta administração.",
+    "n1": "Parte dos funcionários sente o apoio.",
+    "n2": "Os funcionários sentem o apoio da alta administração e veem saúde e segurança como valores da empresa.",
+    "verify": "Pergunte aos funcionários se a alta direção apoia a segurança e por quê.",
+    "evidence": "Entrevistas; pesquisa de clima/percepção de segurança"
+  },
+  "E1.N4.7": {
+    "n0": "A política de SST não orienta as decisões do dia a dia.",
+    "n1": "Alguns gestores usam a política como guia.",
+    "n2": "Todos os níveis de gestão usam a política e os princípios de SST para as decisões diárias de negócio.",
+    "verify": "Peça exemplos de decisões recentes em que a segurança pesou.",
+    "evidence": "Exemplos documentados de decisões; atas de reuniões de produção"
+  },
+  "E1.N4.8": {
+    "n0": "Na falta de regra específica, prevalece a produção; atos perigosos são tolerados.",
+    "n1": "Os princípios orientam parte das situações; há tolerância ocasional a atos perigosos.",
+    "n2": "Os princípios guiam o comportamento sem regra específica e nenhum gestor aceita atos perigosos.",
+    "verify": "Pergunte como agiriam numa situação não prevista em procedimento; observe a reação a atos inseguros.",
+    "evidence": "Entrevistas com situações hipotéticas; observação de abordagens"
+  },
+  "E1.N4.9": {
+    "n0": "A segurança não faz parte da programação das atividades.",
+    "n1": "A segurança é considerada em algumas programações.",
+    "n2": "A segurança está integrada na programação diária de todas as atividades.",
+    "verify": "Veja a programação diária (produção, manutenção, logística) e se inclui itens de SST.",
+    "evidence": "Programações diárias; reuniões de início de turno"
+  },
+  "E1.N4.10": {
+    "n0": "Os gerentes não reconhecem nem promovem práticas seguras.",
+    "n1": "Parte dos gerentes reconhece e promove práticas seguras.",
+    "n2": "Todos os gerentes reconhecem e promovem práticas seguras para a melhoria contínua.",
+    "verify": "Peça a cada gerente exemplos recentes de reconhecimento.",
+    "evidence": "Registros de reconhecimento por gerente; comunicados"
+  },
+  "E1.N4.11": {
+    "n0": "Não há equipes de melhoria de segurança.",
+    "n1": "Existem equipes, mas envolvem menos de 50% dos funcionários ou estão sem recursos.",
+    "n2": "Equipes de melhoria envolvem pelo menos 50% dos funcionários, com recursos e em atividade.",
+    "verify": "Conte os participantes das equipes de melhoria em relação ao total de funcionários.",
+    "evidence": "Lista de equipes e membros; projetos em andamento; recursos aprovados"
+  },
+  "E1.N4.12": {
+    "n0": "As ações ficam abertas e as metas não são atingidas.",
+    "n1": "Parte das ações é resolvida no prazo e algumas metas são atingidas.",
+    "n2": "Ações resolvidas com eficiência, maioria das metas atingida e insatisfação saudável mesmo sem lesões.",
+    "verify": "Analise o % de ações no prazo e o atingimento das metas de segurança.",
+    "evidence": "Indicadores de ações no prazo; resultados das metas; atas"
+  },
+  "E1.N4.13": {
+    "n0": "A percepção de risco varia muito entre os funcionários.",
+    "n1": "Há percepção comum em parte das equipes.",
+    "n2": "Os funcionários têm percepção de risco comum e motivação uniforme por padrões elevados.",
+    "verify": "Pergunte a funcionários de áreas diferentes quais são os maiores riscos e compare.",
+    "evidence": "Entrevistas; pesquisa de percepção de risco"
+  },
+  "E1.N5.1": {
+    "n0": "A segurança não é tratada como impulsionadora da excelência operacional.",
+    "n1": "Alguns gerentes relacionam segurança ao desempenho do negócio.",
+    "n2": "Todos os níveis de gerência comunicam com convicção a segurança como impulsionadora da excelência operacional.",
+    "verify": "Observe reuniões e comunicações dos gerentes sobre desempenho.",
+    "evidence": "Comunicações da gerência; apresentações de resultados"
+  },
+  "E1.N5.2": {
+    "n0": "Não há integração da SST com os outros indicadores (SQCDME).",
+    "n1": "A integração SQCDME existe em algumas áreas.",
+    "n2": "Os gerentes treinam as equipes para integrar sistematicamente a SST aos outros indicadores (SQCDME).",
+    "verify": "Veja os quadros SQCDME das áreas e se a segurança vem primeiro.",
+    "evidence": "Quadros SQCDME; registros de treinamento das equipes"
+  },
+  "E1.N5.3": {
+    "n0": "Os funcionários não relacionam a SST ao desempenho do negócio.",
+    "n1": "Parte dos funcionários faz essa relação.",
+    "n2": "Todos os funcionários sabem que a SST é parte integrante do desempenho do site e do negócio.",
+    "verify": "Pergunte aos funcionários como a segurança afeta os resultados do site.",
+    "evidence": "Entrevistas no chão"
+  },
+  "E1.N5.4": {
+    "n0": "Mudanças acontecem sem avaliação de SST.",
+    "n1": "A avaliação de SST é feita em algumas mudanças.",
+    "n2": "Toda grande mudança (projeto, produto, processo, pessoas, equipamento) passa por avaliação de SST.",
+    "verify": "Escolha mudanças recentes e verifique se houve gestão de mudança com análise de risco.",
+    "evidence": "Registros de Gestão de Mudança (GM); análises de risco aprovadas"
+  },
+  "E1.N5.5": {
+    "n0": "As equipes não fazem suas próprias avaliações de risco.",
+    "n1": "Algumas equipes avaliam riscos, mas dependem da gestão para decidir.",
+    "n2": "As equipes estão habilitadas a avaliar riscos, decidir e alocar recursos no seu nível em todas as mudanças.",
+    "verify": "Veja avaliações de risco feitas pelas equipes e as decisões tomadas por elas.",
+    "evidence": "Avaliações de risco das equipes; alçadas definidas"
+  },
+  "E1.N5.6": {
+    "n0": "Custo e produção prevalecem sobre a SST nas decisões.",
+    "n1": "A SST é considerada em parte das decisões significativas.",
+    "n2": "A SST é sempre pré-requisito nas decisões significativas, antes de custo, qualidade, produção e lucro.",
+    "verify": "Analise decisões relevantes recentes (investimentos, mudanças de layout) e o peso dado à SST.",
+    "evidence": "Atas de comitês; aprovações de investimento"
+  },
+  "E1.N5.7": {
+    "n0": "A liderança não participa de comissões externas de SST.",
+    "n1": "Participação esporádica.",
+    "n2": "Membros da liderança participam regularmente de comissões externas de SST (associações, câmaras).",
+    "verify": "Pergunte em quais comissões externas a liderança participa e com que frequência.",
+    "evidence": "Registros de participação; convites/atas externas"
+  },
+  "E1.N5.8": {
+    "n0": "Não há comparação com melhores práticas externas.",
+    "n1": "Comparações pontuais, sem incorporação ao site.",
+    "n2": "A liderança compara práticas externas e incorpora aprendizados ao sistema do site.",
+    "verify": "Peça exemplos de práticas trazidas de fora e implantadas.",
+    "evidence": "Benchmarks realizados; práticas implantadas"
+  },
+  "E1.N5.9": {
+    "n0": "Lições externas não são comunicadas nem incorporadas.",
+    "n1": "As lições são comunicadas, mas a incorporação ao plano leva mais de 3 meses.",
+    "n2": "As lições aprendidas são bem comunicadas e integradas ao plano de segurança em menos de 3 meses.",
+    "verify": "Verifique alertas externos recebidos e o tempo até virar ação no plano.",
+    "evidence": "Alertas de segurança recebidos; datas de inclusão no plano"
+  }
+}
