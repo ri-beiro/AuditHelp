@@ -37,6 +37,10 @@ export function ActionsView({
   const [f, setF] = useState({ ...EMPTY, q: initialQuery, status: initialStatus ?? (initialQuery ? "" : "pendentes") });
   const [open, setOpen] = useState(false);
   const [editing, setEditing] = useState<Row | null>(null);
+  const ownerNames = useMemo(
+    () => [...new Set(actions.map((a) => a.ownerName).filter((n): n is string => !!n))].sort((a, b) => a.localeCompare(b, "pt-BR")),
+    [actions],
+  );
   const elById = useMemo(() => new Map(elements.map((e) => [e.id, e])), [elements]);
   const pillars = useMemo(() => [...new Map(elements.map((e) => [e.pillarId, e.pillarName])).entries()], [elements]);
 
@@ -54,7 +58,7 @@ export function ActionsView({
           : f.status === "atrasadas"
             ? isOverdue(a)
             : a.status === f.status)) &&
-      (!f.owner || (f.owner === "none" ? !a.ownerId : a.ownerId === f.owner)) &&
+      (!f.owner || (f.owner === "none" ? !a.ownerName : a.ownerName === f.owner)) &&
       (!f.priority || a.priority === f.priority) &&
       (!f.from || (a.dueDate && a.dueDate.slice(0, 10) >= f.from)) &&
       (!f.to || (a.dueDate && a.dueDate.slice(0, 10) <= f.to))
@@ -154,9 +158,9 @@ export function ActionsView({
         <Select value={f.owner} onChange={set("owner")}>
           <option value="">Todos os responsáveis</option>
           <option value="none">Sem responsável</option>
-          {members.map((m) => (
-            <option key={m.id} value={m.id}>
-              {m.name}
+          {ownerNames.map((n) => (
+            <option key={n} value={n}>
+              {n}
             </option>
           ))}
         </Select>

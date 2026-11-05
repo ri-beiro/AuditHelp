@@ -55,7 +55,7 @@ export async function loadAudit(auditId: string) {
       id: a.id,
       what: a.what,
       itemCode: a.auditItemCode,
-      ownerName: a.owner?.name ?? null,
+      ownerName: a.owner?.name ?? a.ownerText ?? null,
       dueDate: a.dueDate?.toISOString() ?? null,
       status: a.status,
       priority: a.priority,

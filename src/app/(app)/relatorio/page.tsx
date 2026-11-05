@@ -60,7 +60,7 @@ export default async function ReportPage() {
         id: a.id,
         what: a.what,
         element: `${a.element.code} · ${a.element.shortName}`,
-        owner: a.owner?.name ?? null,
+        owner: a.owner?.name ?? a.ownerText ?? null,
         dueDate: a.dueDate?.toISOString() ?? null,
         priority: a.priority,
         spheraId: a.spheraId,

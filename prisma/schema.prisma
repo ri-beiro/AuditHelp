@@ -321,6 +321,7 @@ model ActionPlan {
   why      String? // Por quê?
   ownerId  String? // Quem?
   owner    User?     @relation("ActionOwner", fields: [ownerId], references: [id], onDelete: SetNull)
+  ownerText String? // Quem? digitado manualmente (quando não é usuário do sistema)
   dueDate  DateTime? // Quando?
   where    String? // Onde?
   how      String? // Como?

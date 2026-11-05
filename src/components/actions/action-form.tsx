@@ -89,7 +89,7 @@ function ActionForm({
     requirementId: initial?.requirementId ?? preset?.requirementId ?? "",
     what: initial?.what ?? preset?.what ?? "",
     why: initial?.why ?? preset?.why ?? "",
-    ownerId: initial?.ownerId ?? "",
+    ownerName: initial?.ownerName ?? "",
     dueDate: initial?.dueDate?.slice(0, 10) ?? "",
     where: initial?.where ?? preset?.where ?? "",
     how: initial?.how ?? "",
@@ -118,7 +118,7 @@ function ActionForm({
         requirementId: f.requirementId || null,
         what: f.what,
         why: f.why,
-        ownerId: f.ownerId || null,
+        ownerName: f.ownerName,
         dueDate: f.dueDate || null,
         where: f.where,
         how: f.how,
@@ -171,14 +171,12 @@ function ActionForm({
         <Textarea rows={2} value={f.why} onChange={set("why")} placeholder="Desvio / causa que a ação trata" />
       </Field>
       <Field label="Quem? (responsável)">
-        <Select value={f.ownerId} onChange={set("ownerId")}>
-          <option value="">A definir</option>
+        <Input value={f.ownerName} onChange={set("ownerName")} list="action-owner-names" placeholder="Digite o nome do responsável" />
+        <datalist id="action-owner-names">
           {context.members.map((m) => (
-            <option key={m.id} value={m.id}>
-              {m.name}
-            </option>
+            <option key={m.id} value={m.name} />
           ))}
-        </Select>
+        </datalist>
       </Field>
       <Field label="Quando? (vencimento)">
         <Input type="date" value={f.dueDate} onChange={set("dueDate")} />

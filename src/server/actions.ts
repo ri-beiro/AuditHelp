@@ -276,6 +276,8 @@ const actionSchema = z.object({
   what: z.string().trim().min(3, "Descreva o que será feito.").max(1000),
   why: z.string().max(2000).optional(),
   ownerId: z.string().nullable().optional(),
+  /** Nome digitado livremente; se for igual ao nome de um usuário da unidade, vincula ao usuário. */
+  ownerName: z.string().trim().max(120).optional(),
   dueDate: z.string().nullable().optional(),
   where: z.string().max(500).optional(),
   how: z.string().max(4000).optional(),
@@ -294,6 +296,18 @@ const actionSchema = z.object({
 
 export type ActionInput = z.infer<typeof actionSchema>;
 
+/** Responsável do plano: texto livre; se coincidir com o nome de um usuário da unidade, vincula ao usuário. */
+async function resolveOwner(unitId: string, ownerId?: string | null, ownerName?: string) {
+  if (ownerName === undefined) return { ownerId: ownerId || null, ownerText: null };
+  const name = ownerName.trim();
+  if (!name) return { ownerId: null, ownerText: null };
+  const user = await db.user.findFirst({
+    where: { active: true, name: { equals: name, mode: "insensitive" }, OR: [{ role: "ADMIN" }, { units: { some: { unitId } } }] },
+    select: { id: true },
+  });
+  return user ? { ownerId: user.id, ownerText: null } : { ownerId: null, ownerText: name };
+}
+
 export async function saveActionPlan(input: ActionInput) {
   return run(async () => {
     const data = actionSchema.parse(input);
@@ -309,7 +323,7 @@ export async function saveActionPlan(input: ActionInput) {
       assessmentId: data.assessmentId ?? null,
       what: data.what,
       why: data.why || null,
-      ownerId: data.ownerId || null,
+      ...(await resolveOwner(data.unitId, data.ownerId, data.ownerName)),
       dueDate: data.dueDate ? new Date(data.dueDate) : null,
       where: data.where || null,
       how: data.how || null,

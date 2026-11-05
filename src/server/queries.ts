@@ -367,6 +367,7 @@ export function serializeAction(a: {
   what: string;
   why: string | null;
   ownerId: string | null;
+  ownerText?: string | null;
   owner?: { id: string; name: string } | null;
   dueDate: Date | null;
   where: string | null;
@@ -392,7 +393,7 @@ export function serializeAction(a: {
     what: a.what,
     why: a.why ?? "",
     ownerId: a.ownerId,
-    ownerName: a.owner?.name ?? null,
+    ownerName: a.owner?.name ?? a.ownerText ?? null,
     dueDate: a.dueDate?.toISOString() ?? null,
     where: a.where ?? "",
     how: a.how ?? "",
