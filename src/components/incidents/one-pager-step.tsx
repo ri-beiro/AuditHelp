@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CheckCircle2, ExternalLink, FileText, ImagePlus, Loader2, Maximize2, Minimize2, MousePointerClick, Save, Upload, Wand2, X } from "lucide-react";
+import { CheckCircle2, ExternalLink, FileText, Presentation, ImagePlus, Loader2, Maximize2, Minimize2, MousePointerClick, Save, Upload, Wand2, X } from "lucide-react";
 import { toast } from "sonner";
 import type { IncidentDetail } from "@/server/incident-queries";
 import {
@@ -109,6 +109,49 @@ export function OnePagerStep({
       }
     : undefined;
 
+  const sheetInc = {
+    unitName: inc.unitName,
+    spheraId: rep.spheraId,
+    occurredAt: rep.occurredAt,
+    area: inc.area,
+    type: rep.type,
+    hipo: rep.hipo,
+    description: inc.description,
+    basicRef: rep.basicRef,
+  };
+
+  // PowerPoint: folhas renderizadas fora da tela (sem edição) para capturar a imagem fiel.
+  const [exporting, setExporting] = useState(false);
+  const captureRefs = useRef<Partial<Record<SheetKind, HTMLDivElement | null>>>({});
+  const pptxKinds: SheetKind[] = kind === "initial" ? ["initial"] : ["initial", "final"];
+  const exportPptx = async () => {
+    setExporting(true);
+    try {
+      await new Promise((r) => setTimeout(r, 300));
+      const { toPng } = await import("html-to-image");
+      const { buildOnePagerPptx } = await import("@/lib/one-pager-pptx");
+      const pages = [];
+      for (const k of pptxKinds) {
+        const el = captureRefs.current[k];
+        await Promise.all([...(el?.querySelectorAll("img") ?? [])].map((img) => (img.complete ? null : new Promise((r) => ((img.onload = r), (img.onerror = r))))));
+        const image = el ? await toPng(el, { pixelRatio: 2, width: 1280, height: 720, backgroundColor: "#ffffff", skipFonts: true }).catch(() => undefined) : undefined;
+        pages.push({ kind: k, image });
+      }
+      await buildOnePagerPptx({
+        inc: sheetInc,
+        pagers: p,
+        photoUrls: photos,
+        pages,
+        fileName: `${inc.number}_OnePager_${kind === "initial" ? "inicial" : "inicial_final"}.pptx`,
+      });
+      toast.success("PowerPoint gerado");
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Falha ao gerar o PowerPoint");
+    } finally {
+      setExporting(false);
+    }
+  };
+
   const persist = (next: OnePagers, extra: Patch = {}, msg = "One Pager salvo") => save({ onePager: next, ...repPatch(), ...extra }, msg);
 
   const uploadOfficial = async (f: File | undefined) => {
@@ -173,6 +216,9 @@ export function OnePagerStep({
             <Button variant="outline" onClick={() => setFull(true)}>
               <Maximize2 /> Tela cheia
             </Button>
+            <Button variant="outline" onClick={exportPptx} disabled={exporting}>
+              {exporting ? <Loader2 className="animate-spin" /> : <Presentation />} Gerar PowerPoint
+            </Button>
             <Button variant="outline" asChild>
               <a href={`/one-pager/${inc.id}/${kind === "initial" ? "inicial" : "final"}`} target="_blank" rel="noreferrer">
                 <ExternalLink /> Abrir para imprimir / PDF
@@ -221,16 +267,7 @@ export function OnePagerStep({
             <Preview>
               <OnePagerSheet
                 kind={kind}
-                inc={{
-                  unitName: inc.unitName,
-                  spheraId: rep.spheraId,
-                  occurredAt: rep.occurredAt,
-                  area: inc.area,
-                  type: rep.type,
-                  hipo: rep.hipo,
-                  description: inc.description,
-                  basicRef: rep.basicRef,
-                }}
+                inc={sheetInc}
                 pagers={p}
                 photos={photos}
                 edit={sheetEdit}
@@ -275,6 +312,16 @@ export function OnePagerStep({
             </>
           ) : null}
         </div>
+
+        {exporting ? (
+          <div aria-hidden className="pointer-events-none fixed left-[-20000px] top-0">
+            {pptxKinds.map((k) => (
+              <div key={k} ref={(el) => void (captureRefs.current[k] = el)} style={{ width: 1280, height: 720 }}>
+                <OnePagerSheet kind={k} inc={sheetInc} pagers={p} photos={photos} />
+              </div>
+            ))}
+          </div>
+        ) : null}
 
         <Dialog open={picking} onOpenChange={setPicking}>
           <DialogContent title="Fotos e ilustração" description="Escolha até 4 imagens entre os anexos da ocorrência ou envie novas.">
